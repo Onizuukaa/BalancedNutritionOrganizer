@@ -20,7 +20,7 @@ public class ComposingDishesActivity extends AppCompatActivity {
             textViewComposhingDishesProtein;
     double caloriesSum, carbohydratesSum, gramSum, sugarSum, fatsSum, saturatedFatsSum, proteinSum;
     DecimalFormat format;
-    String zmiennaTestowaDlaGitHuba;
+
     String zmiennaTestowaDlaGitHuba3;
 
 
