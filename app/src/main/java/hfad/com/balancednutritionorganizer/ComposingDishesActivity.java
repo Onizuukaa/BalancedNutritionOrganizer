@@ -21,6 +21,7 @@ public class ComposingDishesActivity extends AppCompatActivity {
     double caloriesSum, carbohydratesSum, gramSum, sugarSum, fatsSum, saturatedFatsSum, proteinSum;
     DecimalFormat format;
     String zmiennaTestowaDlaGitHuba;
+    String zmiennaTestowaDlaGitHub2;
 
     private ArrayList<String> productName = new ArrayList<>();
     private ArrayList<String> productCaloriesArrayList = new ArrayList<>();
