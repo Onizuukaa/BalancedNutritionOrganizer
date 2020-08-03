@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Balanced Nutrition Organizer</string>
+
+    <string name="wyglodzenie">Wygłodzenie 16</string>
+
+    <string-array name="numbers">
+        <item>100</item>
+        <item>1000</item>
+        <item>Własna</item>
+    </string-array>
+</resources>

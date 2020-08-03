@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="40dp"
+    android:gravity="top|center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:gravity="center">
+
+        <TableRow>
+
+            <ImageView
+                android:id="@+id/imageViewBmiActivity"
+                android:layout_width="183dp"
+                android:layout_height="120dp"
+                app:srcCompat="@drawable/bmi" />
+
+            <ImageView
+                android:id="@+id/imageViewProductTable"
+                android:layout_width="193dp"
+                android:layout_height="122dp"
+                app:srcCompat="@drawable/product_table" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Calculate your BMI"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imageViewProductTable"
+                android:gravity="center"
+                android:text="Product Table"
+                android:textSize="20dp" />
+        </TableRow>
+
+        <TableRow>
+
+            <ImageView
+                android:id="@+id/imageViewYourDishes"
+                android:layout_width="183dp"
+                android:layout_height="105dp"
+                android:layout_marginTop="20dp"
+                android:onClick="openYourDish"
+                app:srcCompat="@drawable/your_dishes" />
+
+            <ImageView
+                android:id="@+id/imageViewDailyMeals"
+                android:layout_width="150dp"
+                android:layout_height="107dp"
+                android:layout_marginTop="20dp"
+                android:onClick="openDailyMeals"
+                app:srcCompat="@drawable/daily_meals" />
+        </TableRow>
+
+        <TableRow android:layout_marginBottom="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Your dishes"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Daily Meals"
+                android:textSize="20dp" />
+        </TableRow>
+
+        <TableRow>
+
+            <ImageView
+                android:id="@+id/imageViewComposeTheDish"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:onClick="openComposeTheDish"
+                app:srcCompat="@drawable/preparation" />
+        </TableRow>
+
+        <TableRow android:layout_width="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Compose the dish"
+                android:textSize="20dp" />
+        </TableRow>
+
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center">
+
+        <TableRow android:gravity="center">
+
+            <ProgressBar
+                android:id="@+id/progressBarWater"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:progress="0"
+                android:progressDrawable="@drawable/progress_bar_states" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Goal 2500ml"
+                android:textSize="20dp" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow
+
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/buttonAddWater"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/button_background"
+                android:text="Add 250ml water" />
+
+            <Button
+                android:id="@+id/buttonResetWater"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_background"
+                android:onClick="resetWater"
+                android:text="Reset water" />
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>

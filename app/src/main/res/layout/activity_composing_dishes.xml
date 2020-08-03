@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ComposingDishesActivity">
+
+    <EditText
+        android:id="@+id/editTextDishName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Dish name" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/editTextDishName"
+
+        android:text="Add dish" />
+
+    <GridLayout
+        android:id="@+id/gridLayoutComposhingDishes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="50dp"
+        android:background="@android:color/holo_purple"
+        android:columnCount="3"
+        android:rowCount="3">
+
+        <TextView
+            android:id="@+id/textViewComposhingDishesKcal"
+            android:layout_rowWeight="1"
+            android:layout_columnSpan="2"
+            android:layout_columnWeight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="341 \nKCAL" />
+
+        <TextView
+            android:id="@+id/textViewComposhingDishesGram"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="213g \nweight" />
+
+        <TextView
+            android:id="@+id/textViewComposhingDishesCarbohydrates"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="34g \ncarbohydrates" />
+
+        <TextView
+            android:id="@+id/textViewComposhingDishesFats"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="21g \nfats" />
+
+        <TextView
+            android:id="@+id/textViewComposhingDishesProtein"
+            android:layout_rowSpan="2"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="3g \nprotein" />
+
+        <TextView
+            android:id="@+id/textViewComposhingDishesSugar"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="21g \nsugar" />
+
+        <TextView
+            android:id="@+id/textViewComposhingDishesSaturatedFats"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="11g \nsaturatedFats" />
+    </GridLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/composingDishesRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gridLayoutComposhingDishes"
+        android:background="@android:color/darker_gray"
+        android:padding="4dp"
+        android:scrollbars="vertical" />
+
+</RelativeLayout>
