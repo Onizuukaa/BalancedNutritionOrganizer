@@ -39,7 +39,7 @@ public class ComposingDishesActivity extends AppCompatActivity {
         getIncomingIntent();
         format = new DecimalFormat("#.#");
         format.setDecimalSeparatorAlwaysShown(false);
-        
+
         textViewComposhingDishesKcal = (TextView) findViewById(R.id.textViewComposhingDishesKcal);
         textViewComposhingDishesCarbohydrates = (TextView) findViewById(R.id.textViewComposhingDishesCarbohydrates);
         textViewComposhingDishesGram = (TextView) findViewById(R.id.textViewComposhingDishesGram);
