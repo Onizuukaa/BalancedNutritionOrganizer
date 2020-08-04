@@ -14,7 +14,6 @@ public class BmiActivity extends AppCompatActivity {
     TextView textViewResultBMI;
     String height, weight;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
