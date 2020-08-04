@@ -46,7 +46,7 @@ public class RecyclerViewAdapter2 extends RecyclerView.Adapter<RecyclerViewAdapt
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
 
         holder.productName.setText(mProductNames.get(position));
-        double productCaloriesDouble =  parseDouble(mProductCalories.get(position));
+        double productCaloriesDouble = parseDouble(mProductCalories.get(position));
 
         String productCaloriesString = String.format("%.1f", productCaloriesDouble);
 

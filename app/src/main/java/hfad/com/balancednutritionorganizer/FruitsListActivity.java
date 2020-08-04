@@ -11,8 +11,8 @@ import android.os.Bundle;
 import java.util.ArrayList;
 
 public class FruitsListActivity extends AppCompatActivity {
-DatabaseHelper db;
-Cursor cursorForFruits;
+    DatabaseAccess databaseAccess;
+    Cursor cursorForFruits;
 
     private ArrayList<String> mProductNames = new ArrayList<>();
     private ArrayList<String> mProductCalories = new ArrayList<>();
@@ -28,22 +28,15 @@ Cursor cursorForFruits;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fruits_list);
         setTitle("Fruits");
-        db = new DatabaseHelper(this);
-        cursorForFruits = db.allDataForFruits();
+        databaseAccess = DatabaseAccess.getInstance(getApplicationContext());
+        databaseAccess.open();
+        cursorForFruits = databaseAccess.getAllDataFromTableFruits();
+
         createExampleList();
     }
 
-    private void initRecyclerView() {
-        RecyclerView recyclerView = findViewById(R.id.fruitsRecyclerView);
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, mProductImage, mProductNames, mProductCalories, mProductCarbohydrates,
-                mProductSugar, mProductFats, mProductSaturatedFats, mProductProtein);
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-    }
-    
     public void createExampleList() {
-        while(cursorForFruits.moveToNext())
-        {
+        while (cursorForFruits.moveToNext()) {
             mProductNames.add(cursorForFruits.getString(0));
             mProductImage.add(cursorForFruits.getString(1));
             mProductCalories.add(cursorForFruits.getString(2));
@@ -53,6 +46,17 @@ Cursor cursorForFruits;
             mProductSaturatedFats.add(cursorForFruits.getString(6));
             mProductProtein.add(cursorForFruits.getString(7));
         }
+        cursorForFruits.close();
+        databaseAccess.close();
+
         initRecyclerView();
+    }
+
+    private void initRecyclerView() {
+        RecyclerView recyclerView = findViewById(R.id.fruitsRecyclerView);
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, mProductImage, mProductNames, mProductCalories, mProductCarbohydrates,
+                mProductSugar, mProductFats, mProductSaturatedFats, mProductProtein);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 }

@@ -61,7 +61,7 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
         });
     }
 
-    public void OpenComposhingDishesActivity(View view){
+    public void OpenComposhingDishesActivity(View view) {
         Intent intent = new Intent(this, ComposingDishesActivity.class);
         startActivity(intent);
     }
@@ -75,7 +75,7 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.item1:
                 Intent intent = new Intent(this, MainActivity.class);
                 //Zapobiega odnowieniu MainActivity
@@ -90,21 +90,21 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
     // Button Method
     public void sendInformationAboutCurrentProductConfiguration(View view) {
 
-        if(theNumberOfGramsEnteredByTheUser != 0){
+        if (theNumberOfGramsEnteredByTheUser != 0) {
             Intent intent = new Intent("INTENT_NAME").putExtra("product_name", productName);
             LocalBroadcastManager.getInstance(AdvancedInformationAboutProductActivity.this).sendBroadcast(intent);
             intent.putExtra("product_image", imageUrl);
 
             //To niżej crashowało, dziwne :O // przez to crashuje :O
-           //intent.putExtra("product_calories", String.format("%.1f", caloriesInOneGramProduct * theNumberOfGramsEnteredByTheUser)+"");
-            intent.putExtra("product_calories",caloriesInOneGramProduct * theNumberOfGramsEnteredByTheUser+"");
+            //intent.putExtra("product_calories", String.format("%.1f", caloriesInOneGramProduct * theNumberOfGramsEnteredByTheUser)+"");
+            intent.putExtra("product_calories", caloriesInOneGramProduct * theNumberOfGramsEnteredByTheUser + "");
 
-            intent.putExtra("product_carbohydrates", carbohydratesInOneGramProduct * theNumberOfGramsEnteredByTheUser+"");
-            intent.putExtra("product_sugar", sugarInOneGramProduct * theNumberOfGramsEnteredByTheUser+"");
-            intent.putExtra("product_fats", FatsInOneGramProduct * theNumberOfGramsEnteredByTheUser+"");
-            intent.putExtra("product_saturatedFats", saturatedFatsInOneGramProduct * theNumberOfGramsEnteredByTheUser+"");
-            intent.putExtra("product_protein", proteinInOneGramProduct * theNumberOfGramsEnteredByTheUser+"");
-            intent.putExtra("product_gram", theNumberOfGramsEnteredByTheUserString+"");
+            intent.putExtra("product_carbohydrates", carbohydratesInOneGramProduct * theNumberOfGramsEnteredByTheUser + "");
+            intent.putExtra("product_sugar", sugarInOneGramProduct * theNumberOfGramsEnteredByTheUser + "");
+            intent.putExtra("product_fats", FatsInOneGramProduct * theNumberOfGramsEnteredByTheUser + "");
+            intent.putExtra("product_saturatedFats", saturatedFatsInOneGramProduct * theNumberOfGramsEnteredByTheUser + "");
+            intent.putExtra("product_protein", proteinInOneGramProduct * theNumberOfGramsEnteredByTheUser + "");
+            intent.putExtra("product_gram", theNumberOfGramsEnteredByTheUserString + "");
         }
 
     }

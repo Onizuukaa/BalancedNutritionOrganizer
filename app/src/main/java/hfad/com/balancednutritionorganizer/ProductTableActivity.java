@@ -44,5 +44,5 @@ public class ProductTableActivity extends AppCompatActivity {
         Intent intent = new Intent(this, FruitsListActivity.class);
         startActivity(intent);
     }
-    
+
 }

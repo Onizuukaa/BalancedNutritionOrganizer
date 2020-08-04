@@ -10,7 +10,7 @@ import android.os.Bundle;
 import java.util.ArrayList;
 
 public class VegetablesListActivity extends AppCompatActivity {
-    DatabaseHelper db;
+    DatabaseAccess databaseAccess;
     Cursor cursorForVegetables;
 
     private ArrayList<String> mProductNames = new ArrayList<>();
@@ -27,15 +27,16 @@ public class VegetablesListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vegetables_list);
         setTitle("Vegetables");
-        db = new DatabaseHelper(this);
-        cursorForVegetables = db.allDataForVegetables();
+        databaseAccess = DatabaseAccess.getInstance(getApplicationContext());
+        databaseAccess.open();
+        cursorForVegetables = databaseAccess.getAllDataFromTableVegetables();
+
         createExampleList();
     }
 
     public void createExampleList() {
 
-        while(cursorForVegetables.moveToNext())
-        {
+        while (cursorForVegetables.moveToNext()) {
             mProductNames.add(cursorForVegetables.getString(0));
             mProductImage.add(cursorForVegetables.getString(1));
             mProductCalories.add(cursorForVegetables.getString(2));
@@ -45,6 +46,9 @@ public class VegetablesListActivity extends AppCompatActivity {
             mProductSaturatedFats.add(cursorForVegetables.getString(6));
             mProductProtein.add(cursorForVegetables.getString(7));
         }
+        cursorForVegetables.close();
+        databaseAccess.close();
+
         initRecyclerView();
     }
 
