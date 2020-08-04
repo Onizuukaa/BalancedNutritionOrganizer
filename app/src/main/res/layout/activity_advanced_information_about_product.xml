@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
+    android:layout_marginTop="30dp"
+    android:gravity="top|center"
     android:orientation="vertical"
     tools:context=".AdvancedInformationAboutProductActivity">
 
@@ -260,21 +261,21 @@
 
     <Button
         android:id="@+id/buttonInformationSender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:onClick="sendInformationAboutCurrentProductConfiguration"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Send the current configuration"/>
+        android:text="Send the current configuration" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/buttonOpenComposhingDishesActivity"
-        android:text="Open Composhing Dishes"
-        android:onClick="OpenComposhingDishesActivity"/>
-<!--    <ImageView-->
-<!--        android:id="@+id/obrazek"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="200dp"-->
-<!--        android:src="@mipmap/ic_launcher" />-->
+    <!--    <Button-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:id="@+id/buttonOpenComposhingDishesActivity"-->
+    <!--        android:text="Open Composhing Dishes"-->
+    <!--        android:onClick="OpenComposhingDishesActivity"/>-->
+    <!--    <ImageView-->
+    <!--        android:id="@+id/obrazek"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="200dp"-->
+    <!--        android:src="@mipmap/ic_launcher" />-->
 </LinearLayout>
 

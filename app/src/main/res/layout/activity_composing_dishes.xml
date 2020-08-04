@@ -106,4 +106,14 @@
         android:padding="4dp"
         android:scrollbars="vertical" />
 
+    <TextView
+        android:id="@+id/textViewNoData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="#FAFAFA"
+        android:textSize="30dp"
+        android:layout_below="@+id/gridLayoutComposhingDishes"
+        android:text="No data. Data will be here after add from Product Table > specific kind of product > product > send the current configuration"/>
+
 </RelativeLayout>

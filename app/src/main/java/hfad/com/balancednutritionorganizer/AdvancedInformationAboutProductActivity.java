@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -16,6 +17,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -36,6 +38,8 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
         getIncomingIntent();
 
         editTextCustomNutritionalValues = (EditText) findViewById(R.id.editTextCustomNutritionalValues);
+        editTextCustomNutritionalValues.requestFocus();
+
         editTextCustomNutritionalValues.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -43,11 +47,13 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
+
             }
 
             @Override
             public void afterTextChanged(Editable s) {
                 theNumberOfGramsEnteredByTheUserString = editTextCustomNutritionalValues.getText().toString();
+
                 if (theNumberOfGramsEnteredByTheUserString.equals("")) {
                     textViewResultForCustomValueCalories.setText("0");
                 } else {
@@ -60,6 +66,7 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
             }
         });
     }
+
 
     public void OpenComposhingDishesActivity(View view) {
         Intent intent = new Intent(this, ComposingDishesActivity.class);
@@ -90,6 +97,14 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
     // Button Method
     public void sendInformationAboutCurrentProductConfiguration(View view) {
 
+        if (editTextCustomNutritionalValues.length() == 0){
+            Toast.makeText(this, "No data to send", Toast.LENGTH_SHORT).show();
+        }
+
+        if (editTextCustomNutritionalValues.getText().toString().contains("0")){
+            Toast.makeText(this, "0 will not be sent", Toast.LENGTH_SHORT).show();
+        }
+
         if (theNumberOfGramsEnteredByTheUser != 0) {
             Intent intent = new Intent("INTENT_NAME").putExtra("product_name", productName);
             LocalBroadcastManager.getInstance(AdvancedInformationAboutProductActivity.this).sendBroadcast(intent);
@@ -105,6 +120,9 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
             intent.putExtra("product_saturatedFats", saturatedFatsInOneGramProduct * theNumberOfGramsEnteredByTheUser + "");
             intent.putExtra("product_protein", proteinInOneGramProduct * theNumberOfGramsEnteredByTheUser + "");
             intent.putExtra("product_gram", theNumberOfGramsEnteredByTheUserString + "");
+            Toast.makeText(this, "The data has been sent", Toast.LENGTH_SHORT).show();
+            //Kod poniżej żeby zapobiec crashowi w momencie wciśnięcia przycisku po usunięciu wpisanej wartości ale bez wychodzenia z aktywności
+            theNumberOfGramsEnteredByTheUser = 0;
         }
 
     }

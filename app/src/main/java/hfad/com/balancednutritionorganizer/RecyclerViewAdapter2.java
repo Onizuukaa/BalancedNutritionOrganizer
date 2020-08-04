@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -46,11 +47,12 @@ public class RecyclerViewAdapter2 extends RecyclerView.Adapter<RecyclerViewAdapt
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
 
         holder.productName.setText(mProductNames.get(position));
+
         double productCaloriesDouble = parseDouble(mProductCalories.get(position));
-
         String productCaloriesString = String.format("%.1f", productCaloriesDouble);
-
         holder.productCalories.setText(productCaloriesString + " KCAL");
+
+
 
         //holder.productCalories.setText(mProductCalories.get(position) + " KCAL");
     }

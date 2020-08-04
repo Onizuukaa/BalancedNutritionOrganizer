@@ -5,7 +5,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -17,7 +19,7 @@ public class ComposingDishesActivity extends AppCompatActivity {
     String imageUrl;
     TextView textViewComposhingDishesKcal, textViewComposhingDishesCarbohydrates, textViewComposhingDishesGram,
             textViewComposhingDishesSugar, textViewComposhingDishesFats, textViewComposhingDishesSaturatedFats,
-            textViewComposhingDishesProtein;
+            textViewComposhingDishesProtein, textViewNoData;
     double caloriesSum, carbohydratesSum, gramSum, sugarSum, fatsSum, saturatedFatsSum, proteinSum;
     DecimalFormat format;
 
@@ -47,6 +49,8 @@ public class ComposingDishesActivity extends AppCompatActivity {
         textViewComposhingDishesFats = (TextView) findViewById(R.id.textViewComposhingDishesFats);
         textViewComposhingDishesSaturatedFats = (TextView) findViewById(R.id.textViewComposhingDishesSaturatedFats);
         textViewComposhingDishesProtein = (TextView) findViewById(R.id.textViewComposhingDishesProtein);
+        textViewNoData = (TextView) findViewById(R.id.textViewNoData);
+        textViewNoData.setVisibility(View.INVISIBLE);
 
         initRecyclerView();
 
@@ -75,6 +79,10 @@ public class ComposingDishesActivity extends AppCompatActivity {
                 productSugarArrayList, productFatsArrayList, productSaturatedFatsArrayList, productProteinArrayList);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        if(productName.isEmpty()){
+            textViewNoData.setVisibility(View.VISIBLE);
+        }
     }
 
     private void getIncomingIntent() {
