@@ -15,12 +15,18 @@
         android:text="Dish name" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonAddDish"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/editTextDishName"
-
         android:text="Add dish" />
+
+    <Button
+        android:id="@+id/buttonResetIngredients"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/editTextDishName"
+        android:text="Reset Ingredients" />
 
     <GridLayout
         android:id="@+id/gridLayoutComposhingDishes"
@@ -106,14 +112,33 @@
         android:padding="4dp"
         android:scrollbars="vertical" />
 
+    <EditText
+        android:inputType="number"
+        android:id="@+id/editText_removeItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/composingDishesRecyclerView"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="50dp"
+        android:text="25" />
+
+    <Button
+        android:id="@+id/button_removeItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/editText_removeItem"
+        android:layout_marginLeft="40dp"
+        android:layout_toRightOf="@id/editText_removeItem"
+        android:text="Remove Item" />
+
     <TextView
         android:id="@+id/textViewNoData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:background="#FAFAFA"
-        android:textSize="30dp"
         android:layout_below="@+id/gridLayoutComposhingDishes"
-        android:text="No data. Data will be here after add from Product Table > specific kind of product > product > send the current configuration"/>
+        android:background="#FAFAFA"
+        android:gravity="center"
+        android:text="No data. Data will be here after add from Product Table > specific kind of product > product > send the current configuration"
+        android:textSize="30dp" />
 
 </RelativeLayout>
