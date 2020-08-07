@@ -1,9 +1,11 @@
 package hfad.com.balancednutritionorganizer;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +15,7 @@ import android.widget.Toast;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Collection;
 
 import static java.lang.Double.parseDouble;
 
@@ -25,10 +28,10 @@ public class ComposingDishesActivity extends AppCompatActivity {
     double caloriesSum, carbohydratesSum, gramSum, sugarSum, fatsSum, saturatedFatsSum, proteinSum;
     DecimalFormat format;
     EditText editText_removeItem;
-    Button button_removeItem;
+    Button button_removeItem, button_removeAllItems;
     RecyclerViewAdapter2 adapter;
 
-    private ArrayList<String> productName = new ArrayList<>();
+    private ArrayList<String> productNameArrayList = new ArrayList<>();
     private ArrayList<String> productCaloriesArrayList = new ArrayList<>();
     private ArrayList<String> productGramArrayList = new ArrayList<>();
     private ArrayList<String> productCarbohydratesArrayList = new ArrayList<>();
@@ -43,6 +46,7 @@ public class ComposingDishesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_composing_dishes);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getIncomingIntent();
         format = new DecimalFormat("#.#");
         format.setDecimalSeparatorAlwaysShown(false);
@@ -58,6 +62,7 @@ public class ComposingDishesActivity extends AppCompatActivity {
         textViewNoData.setVisibility(View.INVISIBLE);
         editText_removeItem = (EditText) findViewById(R.id.editText_removeItem);
         button_removeItem = (Button) findViewById(R.id.button_removeItem);
+        button_removeAllItems = (Button) findViewById(R.id.buttonResetIngredients);
 
         button_removeItem.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,40 +77,47 @@ public class ComposingDishesActivity extends AppCompatActivity {
     }
 
     private void buttonRemoveItem(int position) {
-        productName.remove(position);
-        productCaloriesArrayList.remove(position);
-        productCarbohydratesArrayList.remove(position);
-        productSugarArrayList.remove(position);
-        productFatsArrayList.remove(position);
-        productSaturatedFatsArrayList.remove(position);
-        productProteinArrayList.remove(position);
-        adapter.notifyItemRemoved(position);
+        if (position >= productNameArrayList.size()) {
+            Toast.makeText(this, "No item with this index", Toast.LENGTH_SHORT).show();
+        } else {
+            productNameArrayList.remove(position);
+            productCaloriesArrayList.remove(position);
+            productCarbohydratesArrayList.remove(position);
+            productSugarArrayList.remove(position);
+            productFatsArrayList.remove(position);
+            productSaturatedFatsArrayList.remove(position);
+            productProteinArrayList.remove(position);
+            adapter.notifyItemRemoved(position);
 
-        caloriesSum = 0.0;
-        carbohydratesSum = 0.0;
-        gramSum = 0.0;
-        sugarSum = 0.0;
-        fatsSum = 0.0;
-        saturatedFatsSum = 0.0;
-        proteinSum = 0.0;
+            caloriesSum = 0.0;
+            carbohydratesSum = 0.0;
+            gramSum = 0.0;
+            sugarSum = 0.0;
+            fatsSum = 0.0;
+            saturatedFatsSum = 0.0;
+            proteinSum = 0.0;
 
-        sumAndViewMacros();
+            sumAndViewMacros();
+        }
+        if (productNameArrayList.size() == 0){
+            textViewNoData.setVisibility(View.VISIBLE);
+        }
     }
 
     private void initRecyclerView() {
         RecyclerView recyclerView = findViewById(R.id.composingDishesRecyclerView);
-        adapter = new RecyclerViewAdapter2(this, mProductImage, productName, productCaloriesArrayList, productCarbohydratesArrayList,
+        adapter = new RecyclerViewAdapter2(this, mProductImage, productNameArrayList, productCaloriesArrayList, productCarbohydratesArrayList,
                 productSugarArrayList, productFatsArrayList, productSaturatedFatsArrayList, productProteinArrayList);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        if (productName.isEmpty()) {
+        if (productNameArrayList.isEmpty()) {
             textViewNoData.setVisibility(View.VISIBLE);
         }
     }
 
     private void getIncomingIntent() {
-        productName = getIntent().getStringArrayListExtra("product_name");
+        productNameArrayList = getIntent().getStringArrayListExtra("product_name");
         imageUrl = getIntent().getStringExtra("product_image");
         productCaloriesArrayList = getIntent().getStringArrayListExtra("product_calories");
         productGramArrayList = getIntent().getStringArrayListExtra("product_gram");
@@ -115,7 +127,8 @@ public class ComposingDishesActivity extends AppCompatActivity {
         productSaturatedFatsArrayList = getIntent().getStringArrayListExtra("product_saturatedFats");
         productProteinArrayList = getIntent().getStringArrayListExtra("product_protein");
     }
-    private void sumAndViewMacros(){
+
+    private void sumAndViewMacros() {
         for (int i = 0; i < productCaloriesArrayList.size(); i++) {
             caloriesSum += parseDouble(productCaloriesArrayList.get(i));
             carbohydratesSum += parseDouble(productCarbohydratesArrayList.get(i));
@@ -133,5 +146,57 @@ public class ComposingDishesActivity extends AppCompatActivity {
         textViewComposhingDishesFats.setText(format.format(fatsSum) + "g\nfats");
         textViewComposhingDishesSaturatedFats.setText(format.format(saturatedFatsSum) + "g\nsaturated fats");
         textViewComposhingDishesProtein.setText(format.format(proteinSum) + "g\nprotein");
+    }
+
+    public void buttonClearAllArrayList(View view) {
+
+        productNameArrayList.removeAll(productNameArrayList);
+        productCaloriesArrayList.removeAll(productCaloriesArrayList);
+        productCarbohydratesArrayList.removeAll(productCarbohydratesArrayList);
+        productSugarArrayList.removeAll(productSugarArrayList);
+        productFatsArrayList.removeAll(productFatsArrayList);
+        productSaturatedFatsArrayList.removeAll(productSaturatedFatsArrayList);
+        productProteinArrayList.removeAll(productProteinArrayList);
+
+//        productNameArrayList.clear();
+//        productCaloriesArrayList.clear();
+//        productCarbohydratesArrayList.clear();
+//        productSugarArrayList.clear();
+//        productFatsArrayList.clear();
+//        productSaturatedFatsArrayList.clear();
+//        productProteinArrayList.clear();
+
+        adapter.notifyItemRangeRemoved(0,productNameArrayList.size());
+        
+
+        caloriesSum = 0.0;
+        carbohydratesSum = 0.0;
+        gramSum = 0.0;
+        sugarSum = 0.0;
+        fatsSum = 0.0;
+        saturatedFatsSum = 0.0;
+        proteinSum = 0.0;
+
+        sumAndViewMacros();
+        textViewNoData.setVisibility(View.VISIBLE);
+    }
+    public void buttonSendDish(View view){
+//        Intent intent = new Intent("INTENT_fromComposhingDishesActivity").putExtra("product_name", productName);
+//        LocalBroadcastManager.getInstance(ComposingDishesActivity.this).sendBroadcast(intent);
+//        intent.putExtra("product_image", imageUrl);
+//
+//        //To niżej crashowało, dziwne :O // przez to crashuje :O
+//        //intent.putExtra("product_calories", String.format("%.1f", caloriesInOneGramProduct * theNumberOfGramsEnteredByTheUser)+"");
+//        intent.putExtra("product_calories", caloriesInOneGramProduct * theNumberOfGramsEnteredByTheUser + "");
+//
+//        intent.putExtra("product_carbohydrates", carbohydratesInOneGramProduct * theNumberOfGramsEnteredByTheUser + "");
+//        intent.putExtra("product_sugar", sugarInOneGramProduct * theNumberOfGramsEnteredByTheUser + "");
+//        intent.putExtra("product_fats", FatsInOneGramProduct * theNumberOfGramsEnteredByTheUser + "");
+//        intent.putExtra("product_saturatedFats", saturatedFatsInOneGramProduct * theNumberOfGramsEnteredByTheUser + "");
+//        intent.putExtra("product_protein", proteinInOneGramProduct * theNumberOfGramsEnteredByTheUser + "");
+//        intent.putExtra("product_gram", theNumberOfGramsEnteredByTheUserString + "");
+//        Toast.makeText(this, "The data has been sent", Toast.LENGTH_SHORT).show();
+//        //Kod poniżej żeby zapobiec crashowi w momencie wciśnięcia przycisku po usunięciu wpisanej wartości ale bez wychodzenia z aktywności
+//        theNumberOfGramsEnteredByTheUser = 0;
     }
 }

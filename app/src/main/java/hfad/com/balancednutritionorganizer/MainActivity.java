@@ -118,6 +118,8 @@ public class MainActivity extends AppCompatActivity {
     //Open method Activity
     public void openComposeTheDish(View view) {
         Intent intent = new Intent(this, ComposingDishesActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+
         intent.putExtra("product_name", productNameArrayList);
         intent.putExtra("product_image", imageUrl);
         intent.putExtra("product_calories", productCaloriesArrayList);

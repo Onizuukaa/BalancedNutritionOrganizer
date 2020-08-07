@@ -15,6 +15,7 @@
         android:text="Dish name" />
 
     <Button
+        android:onClick="buttonSendDish"
         android:id="@+id/buttonAddDish"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -22,17 +23,19 @@
         android:text="Add dish" />
 
     <Button
+        android:onClick="buttonClearAllArrayList"
         android:id="@+id/buttonResetIngredients"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toLeftOf="@id/editTextDishName"
-        android:text="Reset Ingredients" />
+        android:text="Reset" />
 
     <GridLayout
         android:id="@+id/gridLayoutComposhingDishes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="15dp"
         android:background="@android:color/holo_purple"
         android:columnCount="3"
         android:rowCount="3">
@@ -107,35 +110,40 @@
         android:id="@+id/composingDishesRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/gridLayoutComposhingDishes"
+        android:layout_below="@+id/linearLayoutComposhingDishesActivity"
         android:background="@android:color/darker_gray"
         android:padding="4dp"
         android:scrollbars="vertical" />
 
-    <EditText
-        android:inputType="number"
-        android:id="@+id/editText_removeItem"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_marginBottom="15dp"
+        android:gravity="center"
+        android:id="@+id/linearLayoutComposhingDishesActivity"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/composingDishesRecyclerView"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="50dp"
-        android:text="25" />
+        android:layout_below="@+id/gridLayoutComposhingDishes"
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/button_removeItem"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/editText_removeItem"
-        android:layout_marginLeft="40dp"
-        android:layout_toRightOf="@id/editText_removeItem"
-        android:text="Remove Item" />
+        <EditText
+            android:layout_marginRight="10dp"
+            android:id="@+id/editText_removeItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:text="0" />
+
+        <Button
+            android:id="@+id/button_removeItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Remove Item" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/textViewNoData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/gridLayoutComposhingDishes"
+        android:layout_below="@+id/linearLayoutComposhingDishesActivity"
         android:background="#FAFAFA"
         android:gravity="center"
         android:text="No data. Data will be here after add from Product Table > specific kind of product > product > send the current configuration"
