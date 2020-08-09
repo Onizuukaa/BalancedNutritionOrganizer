@@ -26,7 +26,7 @@ public class RecyclerViewAdapterComposhingDishes extends RecyclerView.Adapter<Re
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.composing_dishes, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.scheme_composing_dishes, parent, false);
         ViewHolder holder = new ViewHolder(view);
         return holder;
     }
