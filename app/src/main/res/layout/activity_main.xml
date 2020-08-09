@@ -91,7 +91,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
-                android:onClick="openComposeTheDish"
+                android:onClick="buttonOpenComposeTheDish"
                 app:srcCompat="@drawable/preparation" />
         </TableRow>
 

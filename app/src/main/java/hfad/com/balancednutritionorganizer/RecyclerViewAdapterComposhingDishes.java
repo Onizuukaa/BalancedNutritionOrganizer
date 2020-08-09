@@ -1,6 +1,5 @@
 package hfad.com.balancednutritionorganizer;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,31 +13,26 @@ import java.util.ArrayList;
 
 import static java.lang.Double.parseDouble;
 
-public class RecyclerViewAdapter3 extends RecyclerView.Adapter<RecyclerViewAdapter3.ViewHolder>{
 
-    private ArrayList<String> mProductNames = new ArrayList<>();
-    private ArrayList<String> mProductCalories = new ArrayList<>();
-    private Context mContext;
+public class RecyclerViewAdapterComposhingDishes extends RecyclerView.Adapter<RecyclerViewAdapterComposhingDishes.ViewHolder> {
+    private ArrayList<String> mProductNames;
+    private ArrayList<String> mProductCalories;
 
-    public RecyclerViewAdapter3(Context mContext, ArrayList<String> mProductImages, ArrayList<String> mProductNames, ArrayList<String> mProductCalories,
-                                ArrayList<String> mProductCarbohydrates, ArrayList<String> mProductSugar, ArrayList<String> mProductFats,
-                                ArrayList<String> mProductSaturatedFats, ArrayList<String> mProductProtein) {
-
+    public RecyclerViewAdapterComposhingDishes(ArrayList<String> mProductNames, ArrayList<String> mProductCalories) {
         this.mProductNames = mProductNames;
         this.mProductCalories = mProductCalories;
-        this.mContext = mContext;
     }
 
     @NonNull
     @Override
-    public RecyclerViewAdapter3.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.your_dishes, parent, false);
-        RecyclerViewAdapter3.ViewHolder holder = new RecyclerViewAdapter3.ViewHolder(view);
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.composing_dishes, parent, false);
+        ViewHolder holder = new ViewHolder(view);
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerViewAdapter3.ViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
 
         holder.productName.setText(mProductNames.get(position));
 
@@ -63,7 +57,7 @@ public class RecyclerViewAdapter3 extends RecyclerView.Adapter<RecyclerViewAdapt
             super(itemView);
             productName = itemView.findViewById(R.id.textViewProductLeft);
             productCalories = itemView.findViewById(R.id.textViewHowManyGramProduct);
-            parentLayout = itemView.findViewById(R.id.sendedProduct);
+            parentLayout = itemView.findViewById(R.id.gridLayoutYourDishes);
         }
     }
 }

@@ -1,11 +1,9 @@
 package hfad.com.balancednutritionorganizer;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,7 +13,6 @@ import android.widget.Toast;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static java.lang.Double.parseDouble;
 
@@ -29,7 +26,7 @@ public class ComposingDishesActivity extends AppCompatActivity {
     DecimalFormat format;
     EditText editText_removeItem;
     Button button_removeItem, button_removeAllItems;
-    RecyclerViewAdapter2 adapter;
+    RecyclerViewAdapterComposhingDishes adapter;
 
     private ArrayList<String> productNameArrayList = new ArrayList<>();
     private ArrayList<String> productCaloriesArrayList = new ArrayList<>();
@@ -40,7 +37,6 @@ public class ComposingDishesActivity extends AppCompatActivity {
     private ArrayList<String> productSaturatedFatsArrayList = new ArrayList<>();
     private ArrayList<String> productProteinArrayList = new ArrayList<>();
 
-    private ArrayList<String> mProductImage = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,27 +47,7 @@ public class ComposingDishesActivity extends AppCompatActivity {
         format = new DecimalFormat("#.#");
         format.setDecimalSeparatorAlwaysShown(false);
 
-        textViewComposhingDishesKcal = (TextView) findViewById(R.id.textViewComposhingDishesKcal);
-        textViewComposhingDishesCarbohydrates = (TextView) findViewById(R.id.textViewComposhingDishesCarbohydrates);
-        textViewComposhingDishesGram = (TextView) findViewById(R.id.textViewComposhingDishesGram);
-        textViewComposhingDishesSugar = (TextView) findViewById(R.id.textViewComposhingDishesSugar);
-        textViewComposhingDishesFats = (TextView) findViewById(R.id.textViewComposhingDishesFats);
-        textViewComposhingDishesSaturatedFats = (TextView) findViewById(R.id.textViewComposhingDishesSaturatedFats);
-        textViewComposhingDishesProtein = (TextView) findViewById(R.id.textViewComposhingDishesProtein);
-        textViewNoData = (TextView) findViewById(R.id.textViewNoData);
-        textViewNoData.setVisibility(View.INVISIBLE);
-        editText_removeItem = (EditText) findViewById(R.id.editText_removeItem);
-        button_removeItem = (Button) findViewById(R.id.button_removeItem);
-        button_removeAllItems = (Button) findViewById(R.id.buttonResetIngredients);
-
-        button_removeItem.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int position = Integer.parseInt(editText_removeItem.getText().toString());
-                buttonRemoveItem(position);
-            }
-        });
-
+        initViews();
         initRecyclerView();
         sumAndViewMacros();
     }
@@ -106,8 +82,7 @@ public class ComposingDishesActivity extends AppCompatActivity {
 
     private void initRecyclerView() {
         RecyclerView recyclerView = findViewById(R.id.composingDishesRecyclerView);
-        adapter = new RecyclerViewAdapter2(this, mProductImage, productNameArrayList, productCaloriesArrayList, productCarbohydratesArrayList,
-                productSugarArrayList, productFatsArrayList, productSaturatedFatsArrayList, productProteinArrayList);
+        adapter = new RecyclerViewAdapterComposhingDishes(productNameArrayList, productCaloriesArrayList);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -180,6 +155,7 @@ public class ComposingDishesActivity extends AppCompatActivity {
         sumAndViewMacros();
         textViewNoData.setVisibility(View.VISIBLE);
     }
+
     public void buttonSendDish(View view){
 //        Intent intent = new Intent("INTENT_fromComposhingDishesActivity").putExtra("product_name", productName);
 //        LocalBroadcastManager.getInstance(ComposingDishesActivity.this).sendBroadcast(intent);
@@ -198,5 +174,28 @@ public class ComposingDishesActivity extends AppCompatActivity {
 //        Toast.makeText(this, "The data has been sent", Toast.LENGTH_SHORT).show();
 //        //Kod poniżej żeby zapobiec crashowi w momencie wciśnięcia przycisku po usunięciu wpisanej wartości ale bez wychodzenia z aktywności
 //        theNumberOfGramsEnteredByTheUser = 0;
+    }
+
+    private void initViews(){
+        textViewComposhingDishesKcal = (TextView) findViewById(R.id.textViewComposhingDishesKcal);
+        textViewComposhingDishesCarbohydrates = (TextView) findViewById(R.id.textViewComposhingDishesCarbohydrates);
+        textViewComposhingDishesGram = (TextView) findViewById(R.id.textViewComposhingDishesGram);
+        textViewComposhingDishesSugar = (TextView) findViewById(R.id.textViewComposhingDishesSugar);
+        textViewComposhingDishesFats = (TextView) findViewById(R.id.textViewComposhingDishesFats);
+        textViewComposhingDishesSaturatedFats = (TextView) findViewById(R.id.textViewComposhingDishesSaturatedFats);
+        textViewComposhingDishesProtein = (TextView) findViewById(R.id.textViewComposhingDishesProtein);
+        textViewNoData = (TextView) findViewById(R.id.textViewNoData);
+        textViewNoData.setVisibility(View.INVISIBLE);
+        editText_removeItem = (EditText) findViewById(R.id.editText_removeItem);
+        button_removeItem = (Button) findViewById(R.id.button_removeItem);
+        button_removeAllItems = (Button) findViewById(R.id.buttonResetIngredients);
+
+        button_removeItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int position = Integer.parseInt(editText_removeItem.getText().toString());
+                buttonRemoveItem(position);
+            }
+        });
     }
 }

@@ -17,20 +17,20 @@ import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
-    private ArrayList<String> mProductNames = new ArrayList<>();
-    private ArrayList<String> mProductCalories = new ArrayList<>();
-    private ArrayList<String> mProductImages = new ArrayList<>();
-    private ArrayList<String> mProductCarbohydrates = new ArrayList<>();
-    private ArrayList<String> mProductSugar = new ArrayList<>();
-    private ArrayList<String> mProductFats = new ArrayList<>();
-    private ArrayList<String> mProductSaturatedFats = new ArrayList<>();
-    private ArrayList<String> mProductProtein = new ArrayList<>();
+public class RecyclerViewAdapterSpecificProductList extends RecyclerView.Adapter<RecyclerViewAdapterSpecificProductList.ViewHolder> {
+    private ArrayList<String> mProductNames;
+    private ArrayList<String> mProductCalories;
+    private ArrayList<String> mProductImages;
+    private ArrayList<String> mProductCarbohydrates;
+    private ArrayList<String> mProductSugar;
+    private ArrayList<String> mProductFats;
+    private ArrayList<String> mProductSaturatedFats;
+    private ArrayList<String> mProductProtein;
     private Context mContext;
 
-    public RecyclerViewAdapter(Context mContext, ArrayList<String> mProductImages, ArrayList<String> mProductNames, ArrayList<String> mProductCalories,
-                               ArrayList<String> mProductCarbohydrates, ArrayList<String> mProductSugar, ArrayList<String> mProductFats,
-                               ArrayList<String> mProductSaturatedFats, ArrayList<String> mProductProtein) {
+    public RecyclerViewAdapterSpecificProductList(Context mContext, ArrayList<String> mProductImages, ArrayList<String> mProductNames, ArrayList<String> mProductCalories,
+                                                  ArrayList<String> mProductCarbohydrates, ArrayList<String> mProductSugar, ArrayList<String> mProductFats,
+                                                  ArrayList<String> mProductSaturatedFats, ArrayList<String> mProductProtein) {
         this.mProductImages = mProductImages;
         this.mProductNames = mProductNames;
         this.mProductCalories = mProductCalories;
@@ -45,7 +45,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.scheme_specific_product_list, parent, false);
         ViewHolder holder = new ViewHolder(view);
         return holder;
     }
@@ -105,7 +105,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             productFats = itemView.findViewById(R.id.textViewProductFatsFor100Gram);
             productSaturatedFats = itemView.findViewById(R.id.textViewProductSaturatedFatsFor100Gram);
             productProtein = itemView.findViewById(R.id.textViewProductProteinFor100Gram);
-            parentLayout = itemView.findViewById(R.id.parent_layout);
+            parentLayout = itemView.findViewById(R.id.schemeSpecificProductList);
         }
     }
 }

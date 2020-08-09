@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class YourDishesActivity extends AppCompatActivity {
 
-    RecyclerViewAdapter3 adapter;
+    RecyclerViewAdapterYourDishes adapter;
     private ArrayList<String> productNameArrayList = new ArrayList<>();
     private ArrayList<String> productCaloriesArrayList = new ArrayList<>();
     private ArrayList<String> productGramArrayList = new ArrayList<>();
@@ -29,9 +29,7 @@ public class YourDishesActivity extends AppCompatActivity {
 
     private void initRecyclerView() {
         RecyclerView recyclerView = findViewById(R.id.yourDishesRecyclerView);
-        adapter = new RecyclerViewAdapter3(this, mProductImage, productNameArrayList, productCaloriesArrayList,
-                productCarbohydratesArrayList, productSugarArrayList, productFatsArrayList, productSaturatedFatsArrayList,
-                productProteinArrayList);
+        adapter = new RecyclerViewAdapterYourDishes(this, productNameArrayList, productCaloriesArrayList);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }

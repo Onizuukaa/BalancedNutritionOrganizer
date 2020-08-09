@@ -263,15 +263,15 @@
         android:id="@+id/buttonInformationSender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="sendInformationAboutCurrentProductConfiguration"
+        android:onClick="button_SendInformationAboutCurrentProductConfiguration"
         android:text="Send the current configuration" />
 
-    <!--    <Button-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:id="@+id/buttonOpenComposhingDishesActivity"-->
-    <!--        android:text="Open Composhing Dishes"-->
-    <!--        android:onClick="OpenComposhingDishesActivity"/>-->
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonOpenComposhingDishesActivity"
+            android:text="Open Composhing Dishes"
+            android:onClick="OpenComposhingDishesActivity"/>
     <!--    <ImageView-->
     <!--        android:id="@+id/obrazek"-->
     <!--        android:layout_width="wrap_content"-->

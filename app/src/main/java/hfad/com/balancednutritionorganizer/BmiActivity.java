@@ -9,7 +9,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class BmiActivity extends AppCompatActivity {
-    Button buttonCalculateBMI;
     EditText editTextHeight, editTextWeight;
     TextView textViewResultBMI;
     String height, weight;
@@ -19,27 +18,20 @@ public class BmiActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bmi);
 
-        buttonCalculateBMI = (Button) findViewById(R.id.buttonCalculateBMI);
-        editTextHeight = (EditText) findViewById(R.id.editTextInsertHeight);
-        editTextWeight = (EditText) findViewById(R.id.editTextInsertWeight);
-        textViewResultBMI = (TextView) findViewById(R.id.textViewResultBMI);
+        initViews();
+    }
 
-        buttonCalculateBMI.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                height = editTextHeight.getText().toString();
-                weight = editTextWeight.getText().toString();
+    public void buttonCalculateBMI(View view){
+        height = editTextHeight.getText().toString();
+        weight = editTextWeight.getText().toString();
+        if (height != null && !"".equals(height) && weight != null && !"".equals(weight)) {
+            float heightValue = Float.parseFloat(height) / 100;
+            float weightValue = Float.parseFloat(weight);
 
-                if (height != null && !"".equals(height) && weight != null && !"".equals(weight)) {
-                    float heightValue = Float.parseFloat(height) / 100;
-                    float weightValue = Float.parseFloat(weight);
+            float bmi = weightValue / (heightValue * heightValue);
 
-                    float bmi = weightValue / (heightValue * heightValue);
-
-                    displayBMI(bmi);
-                }
-            }
-        });
+            displayBMI(bmi);
+        }
     }
 
     private void displayBMI(float bmi) {
@@ -67,5 +59,11 @@ public class BmiActivity extends AppCompatActivity {
         if (bmi > 40) {
             textViewResultBMI.setText("Otyłość klasy 3 \n" + String.format("%.1f", bmi));
         }
+    }
+
+    private void initViews(){
+        editTextHeight = (EditText) findViewById(R.id.editTextInsertHeight);
+        editTextWeight = (EditText) findViewById(R.id.editTextInsertWeight);
+        textViewResultBMI = (TextView) findViewById(R.id.textViewResultBMI);
     }
 }

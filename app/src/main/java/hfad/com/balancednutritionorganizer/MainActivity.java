@@ -38,34 +38,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver, new IntentFilter("INTENT_NAME"));
 
-        progressBarWater = (ProgressBar) findViewById(R.id.progressBarWater);
-        buttonAddWater = (Button) findViewById(R.id.buttonAddWater);
-        buttonAddWater.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                progressBarWater.setProgress(glassOfWater);
-                glassOfWater += 10;
-            }
-        });
+        initViews();
 
-        imageViewProductTable = (ImageView) findViewById(R.id.imageViewProductTable);
-        imageViewBmiActivity = (ImageView) findViewById(R.id.imageViewBmiActivity);
-        imageViewComposeTheDish = (ImageView) findViewById(R.id.imageViewComposeTheDish);
-        imageViewYourDishes = (ImageView) findViewById(R.id.imageViewYourDishes);
-        imageViewDailyMeals = (ImageView) findViewById(R.id.imageViewDailyMeals);
-
-        imageViewProductTable.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openProductTableActivity();
-            }
-        });
-        imageViewBmiActivity.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openBmiActivity();
-            }
-        });
     }
 
     public void openYourDish(View view) {
@@ -115,8 +89,7 @@ public class MainActivity extends AppCompatActivity {
         glassOfWater = 10;
     }
 
-    //Open method Activity
-    public void openComposeTheDish(View view) {
+    public void buttonOpenComposeTheDish(View view) {
         Intent intent = new Intent(this, ComposingDishesActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
 
@@ -130,5 +103,36 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("product_protein", productProteinArrayList);
         intent.putExtra("product_gram", productGramArrayList);
         startActivity(intent);
+    }
+
+    private void initViews(){
+        progressBarWater = (ProgressBar) findViewById(R.id.progressBarWater);
+        buttonAddWater = (Button) findViewById(R.id.buttonAddWater);
+        buttonAddWater.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                progressBarWater.setProgress(glassOfWater);
+                glassOfWater += 10;
+            }
+        });
+
+        imageViewProductTable = (ImageView) findViewById(R.id.imageViewProductTable);
+        imageViewBmiActivity = (ImageView) findViewById(R.id.imageViewBmiActivity);
+        imageViewComposeTheDish = (ImageView) findViewById(R.id.imageViewComposeTheDish);
+        imageViewYourDishes = (ImageView) findViewById(R.id.imageViewYourDishes);
+        imageViewDailyMeals = (ImageView) findViewById(R.id.imageViewDailyMeals);
+
+        imageViewProductTable.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openProductTableActivity();
+            }
+        });
+        imageViewBmiActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openBmiActivity();
+            }
+        });
     }
 }

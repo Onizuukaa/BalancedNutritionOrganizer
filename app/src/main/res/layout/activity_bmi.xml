@@ -52,6 +52,7 @@
             android:background="@drawable/edit_background" />
 
         <Button
+            android:onClick="buttonCalculateBMI"
             android:id="@+id/buttonCalculateBMI"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -17,12 +17,14 @@
         <TableRow>
 
             <ImageView
+                android:onClick="openVegetablesListActivity"
                 android:id="@+id/imageViewVegetablesTable"
                 android:layout_width="198dp"
                 android:layout_height="105dp"
                 app:srcCompat="@drawable/vegetables" />
 
             <ImageView
+                android:onClick="openFruitsListActivity"
                 android:id="@+id/imageViewFruitsTable"
                 android:layout_width="189dp"
                 android:layout_height="105dp"

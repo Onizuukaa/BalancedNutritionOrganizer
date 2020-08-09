@@ -54,7 +54,7 @@ public class VegetablesListActivity extends AppCompatActivity {
 
     private void initRecyclerView() {
         RecyclerView recyclerView = findViewById(R.id.vegetablesRecyclerView);
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, mProductImage, mProductNames, mProductCalories, mProductCarbohydrates,
+        RecyclerViewAdapterSpecificProductList adapter = new RecyclerViewAdapterSpecificProductList(this, mProductImage, mProductNames, mProductCalories, mProductCarbohydrates,
                 mProductSugar, mProductFats, mProductSaturatedFats, mProductProtein);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
