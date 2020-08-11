@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -19,7 +20,8 @@ public class MainActivity extends AppCompatActivity {
     ImageView imageViewProductTable, imageViewBmiActivity, imageViewComposeTheDish, imageViewYourDishes, imageViewDailyMeals;
     ProgressBar progressBarWater;
     Button buttonAddWater;
-    int glassOfWater = 10;
+    TextView textView_progressBarWater;
+    int glassOfWater = 10, water = 0;
     String imageUrl, productCaloriesString, productCarbohydratesString, productSugarString, productFatsString,
             productSaturatedFatsString, productProteinString, productNameString, productGramString;
 
@@ -87,11 +89,15 @@ public class MainActivity extends AppCompatActivity {
     public void resetWater(View view) {
         progressBarWater.setProgress(0);
         glassOfWater = 10;
+        water = 0;
+        textView_progressBarWater.setText(water + "/2500");
     }
 
     public void buttonOpenComposeTheDish(View view) {
         Intent intent = new Intent(this, ComposingDishesActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        //intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+
+//        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
 
         intent.putExtra("product_name", productNameArrayList);
         intent.putExtra("product_image", imageUrl);
@@ -103,16 +109,20 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("product_protein", productProteinArrayList);
         intent.putExtra("product_gram", productGramArrayList);
         startActivity(intent);
+
     }
 
     private void initViews(){
         progressBarWater = (ProgressBar) findViewById(R.id.progressBarWater);
+        textView_progressBarWater = (TextView) findViewById(R.id.textView_progressBarWater);
         buttonAddWater = (Button) findViewById(R.id.buttonAddWater);
         buttonAddWater.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 progressBarWater.setProgress(glassOfWater);
                 glassOfWater += 10;
+                water+=250;
+                textView_progressBarWater.setText(water + "/2500");
             }
         });
 

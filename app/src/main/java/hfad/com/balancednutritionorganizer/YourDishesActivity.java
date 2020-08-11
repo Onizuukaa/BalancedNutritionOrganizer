@@ -25,6 +25,7 @@ public class YourDishesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_your_dishes);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     private void initRecyclerView() {

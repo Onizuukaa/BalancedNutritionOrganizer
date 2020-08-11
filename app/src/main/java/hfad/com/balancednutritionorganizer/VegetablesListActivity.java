@@ -27,6 +27,7 @@ public class VegetablesListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vegetables_list);
         setTitle("Vegetables");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         databaseAccess = DatabaseAccess.getInstance(getApplicationContext());
         databaseAccess.open();
         cursorForVegetables = databaseAccess.getAllDataFromTableVegetables();

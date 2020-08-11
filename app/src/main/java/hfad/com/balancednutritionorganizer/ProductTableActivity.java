@@ -16,6 +16,7 @@ public class ProductTableActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_table);
         setTitle("Products Table");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     public void openVegetablesListActivity(View view) {

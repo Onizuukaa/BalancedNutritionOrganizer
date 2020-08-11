@@ -19,6 +19,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 import static java.lang.Double.parseDouble;
@@ -31,18 +32,21 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
             textViewResultForCustomValueFatsAndSaturatedFats, textViewResultForCustomValueProtein;
     public EditText editTextCustomNutritionalValues;
     String productName, imageUrl, theNumberOfGramsEnteredByTheUserString;
+    DecimalFormat format;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_advanced_information_about_product);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        format = new DecimalFormat("#.#");
+        format.setDecimalSeparatorAlwaysShown(false);
         getIncomingIntent();
         initViews();
     }
 
     public void OpenComposhingDishesActivity(View view) {
-        Intent intent = new Intent(this, ComposingDishesActivity.class);
-        startActivity(intent);
+
     }
 
     @Override
@@ -125,8 +129,8 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
         TextView productName = findViewById(R.id.textViewProductName);
         TextView productCaloriesFor100Gram = findViewById(R.id.textViewCaloriesFor100Gram);
         TextView productCaloriesFor200Gram = findViewById(R.id.textViewCaloriesFor200Gram);
-        TextView productCaloriesCarbohydratesFor100Gram = findViewById(R.id.textViewCarbohydratesFor100Gram);
-        TextView productCaloriesCarbohydratesFor200Gram = findViewById(R.id.textViewCarbohydratesFor200Gram);
+        TextView productCaloriesCarbohydratesAndSugarFor100Gram = findViewById(R.id.textViewCarbohydratesFor100Gram);
+        TextView productCaloriesCarbohydratesAndSugarFor200Gram = findViewById(R.id.textViewCarbohydratesFor200Gram);
         TextView productFatsFor100Gram = findViewById(R.id.textViewFatsFor100Gram);
         TextView productFatsFor200Gram = findViewById(R.id.textViewFatsFor200Gram);
         TextView productProteinFor100Gram = findViewById(R.id.textViewProteinFor100Gram);
@@ -146,17 +150,17 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
 
         productName.setText(productNames);
 
-        productCaloriesFor100Gram.setText(productsCaloriesFor100Gram);
-        productCaloriesFor200Gram.setText(parseInt(productsCaloriesFor100Gram) * 2 + "");
+        productCaloriesFor100Gram.setText(format.format(parseDouble(productsCaloriesFor100Gram)));
+        productCaloriesFor200Gram.setText(format.format(parseDouble(productsCaloriesFor100Gram) * 2));
 
-        productCaloriesCarbohydratesFor100Gram.setText(parseDouble(productCarbohydratesFor100Gram) + " (" + productSugarFor100Gram + ")");
-        productCaloriesCarbohydratesFor200Gram.setText(parseDouble(productCarbohydratesFor100Gram) * 2 + " (" + parseDouble(productSugarFor100Gram) * 2 + ")");
+        productCaloriesCarbohydratesAndSugarFor100Gram.setText(format.format(parseDouble(productCarbohydratesFor100Gram)) + " (" + format.format(parseDouble(productSugarFor100Gram)) + ")");
+        productCaloriesCarbohydratesAndSugarFor200Gram.setText(format.format(parseDouble(productCarbohydratesFor100Gram) * 2) + " (" + format.format(parseDouble(productSugarFor100Gram) * 2) + ")");
 
-        productFatsFor100Gram.setText(parseDouble(productFats) + " (" + productSaturatedFats + ")");
-        productFatsFor200Gram.setText(parseDouble(productFats) * 2 + " (" + parseDouble(productSaturatedFats) * 2 + ")");
+        productFatsFor100Gram.setText(format.format(parseDouble(productFats)) + " (" + format.format(parseDouble(productSaturatedFats)) + ")");
+        productFatsFor200Gram.setText(format.format(parseDouble(productFats) * 2) + " (" + format.format(parseDouble(productSaturatedFats) * 2) + ")");
 
-        productProteinFor100Gram.setText(productProtein);
-        productProteinFor200Gram.setText(parseDouble(productProtein) * 2 + "");
+        productProteinFor100Gram.setText(format.format(parseDouble(productProtein)));
+        productProteinFor200Gram.setText(format.format(parseDouble(productProtein) * 2));
     }
     private void initViews(){
         editTextCustomNutritionalValues = (EditText) findViewById(R.id.editTextCustomNutritionalValues);
@@ -177,14 +181,18 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
 
                 if (theNumberOfGramsEnteredByTheUserString.equals("")) {
                     textViewResultForCustomValueCalories.setText("0");
+                    textViewResultForCustomValueCarbohydratesAndSugar.setText("0");
+                    textViewResultForCustomValueFatsAndSaturatedFats.setText("0");
+                    textViewResultForCustomValueProtein.setText("0");
                 } else {
                     theNumberOfGramsEnteredByTheUser = parseDouble(theNumberOfGramsEnteredByTheUserString);
-                    textViewResultForCustomValueCalories.setText(String.format("%.1f", caloriesInOneGramProduct * theNumberOfGramsEnteredByTheUser));
-                    textViewResultForCustomValueCarbohydratesAndSugar.setText(String.format("%.1f", carbohydratesInOneGramProduct * theNumberOfGramsEnteredByTheUser) + " (" + String.format("%.1f", sugarInOneGramProduct * theNumberOfGramsEnteredByTheUser) + ")");
-                    textViewResultForCustomValueFatsAndSaturatedFats.setText(String.format("%.1f", FatsInOneGramProduct * theNumberOfGramsEnteredByTheUser) + " (" + String.format("%.1f", saturatedFatsInOneGramProduct * theNumberOfGramsEnteredByTheUser) + ")");
-                    textViewResultForCustomValueProtein.setText(String.format("%.1f", proteinInOneGramProduct * theNumberOfGramsEnteredByTheUser));
+                    textViewResultForCustomValueCalories.setText(format.format(caloriesInOneGramProduct * theNumberOfGramsEnteredByTheUser));
+                    textViewResultForCustomValueCarbohydratesAndSugar.setText(format.format(carbohydratesInOneGramProduct * theNumberOfGramsEnteredByTheUser) + " (" + format.format(sugarInOneGramProduct * theNumberOfGramsEnteredByTheUser) + ")");
+                    textViewResultForCustomValueFatsAndSaturatedFats.setText(format.format(FatsInOneGramProduct * theNumberOfGramsEnteredByTheUser) + " (" + format.format(saturatedFatsInOneGramProduct * theNumberOfGramsEnteredByTheUser) + ")");
+                    textViewResultForCustomValueProtein.setText(format.format(proteinInOneGramProduct * theNumberOfGramsEnteredByTheUser));
                 }
             }
         });
     }
+
 }

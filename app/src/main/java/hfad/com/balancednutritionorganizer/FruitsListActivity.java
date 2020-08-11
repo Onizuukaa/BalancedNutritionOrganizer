@@ -27,6 +27,7 @@ public class FruitsListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fruits_list);
         setTitle("Fruits");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         databaseAccess = DatabaseAccess.getInstance(getApplicationContext());
         databaseAccess.open();
         cursorForFruits = databaseAccess.getAllDataFromTableFruits();

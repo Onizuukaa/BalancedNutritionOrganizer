@@ -1,9 +1,14 @@
 package hfad.com.balancednutritionorganizer;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -27,6 +32,10 @@ public class ComposingDishesActivity extends AppCompatActivity {
     EditText editText_removeItem;
     Button button_removeItem, button_removeAllItems;
     RecyclerViewAdapterComposhingDishes adapter;
+    //Czy apka działała?
+    private boolean running;
+    private boolean wasRunning;
+
 
     private ArrayList<String> productNameArrayList = new ArrayList<>();
     private ArrayList<String> productCaloriesArrayList = new ArrayList<>();
@@ -42,6 +51,14 @@ public class ComposingDishesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_composing_dishes);
+        Toast.makeText(this, "onCreate", Toast.LENGTH_SHORT).show();
+        if (savedInstanceState != null){
+            productNameArrayList = savedInstanceState.getStringArrayList("nazwy");
+            productCaloriesArrayList = savedInstanceState.getStringArrayList("kalorie");
+
+            running = savedInstanceState.getBoolean("running");
+            wasRunning = savedInstanceState.getBoolean("wasRunning");
+        }
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getIncomingIntent();
         format = new DecimalFormat("#.#");
@@ -50,6 +67,34 @@ public class ComposingDishesActivity extends AppCompatActivity {
         initViews();
         initRecyclerView();
         sumAndViewMacros();
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState){
+        super.onSaveInstanceState(savedInstanceState);
+
+        savedInstanceState.putStringArrayList("nazwy", productNameArrayList);
+        savedInstanceState.putStringArrayList("kalorie", productCaloriesArrayList);
+
+        savedInstanceState.putBoolean("running", running);
+        savedInstanceState.putBoolean("wasRunning", wasRunning);
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        if (wasRunning){
+            running = true;
+        }
+        Toast.makeText(this, "onResume", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        wasRunning = running;
+        Toast.makeText(this, "pauza", Toast.LENGTH_SHORT).show();
+
     }
 
     private void buttonRemoveItem(int position) {

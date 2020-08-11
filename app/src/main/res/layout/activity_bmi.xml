@@ -1,25 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
         android:gravity="center"
         android:orientation="vertical"
         tools:context=".BmiActivity">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="25dp"
-            android:text="BMI CALCULATOR"
-            android:textAllCaps="true"
-            android:textSize="26sp"
-            android:textStyle="bold" />
+        <!--        <TextView-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginVertical="25dp"-->
+        <!--            android:text="BMI CALCULATOR"-->
+        <!--            android:textAllCaps="true"-->
+        <!--            android:textSize="26sp"-->
+        <!--            android:textStyle="bold" />-->
 
         <TextView
             android:layout_width="match_parent"
@@ -33,13 +35,14 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="50dp"
             android:layout_marginVertical="10dp"
+            android:background="@drawable/edit_background"
             android:inputType="numberDecimal"
-            android:background="@drawable/edit_background" />
+            android:paddingLeft="10dp" />
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_marginHorizontal="50dp"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="50dp"
             android:text="Weight in Kg" />
 
         <EditText
@@ -48,106 +51,228 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="50dp"
             android:layout_marginVertical="12dp"
+            android:background="@drawable/edit_background"
             android:inputType="numberDecimal"
-            android:background="@drawable/edit_background" />
+            android:paddingLeft="10dp" />
 
         <Button
-            android:onClick="buttonCalculateBMI"
             android:id="@+id/buttonCalculateBMI"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Calculate"
             android:layout_marginHorizontal="50dp"
-            android:background="@drawable/button_background"/>
+            android:background="@drawable/button_background"
+            android:onClick="buttonCalculateBMI"
+            android:text="Calculate" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
             android:text="Your Result"
-            android:textSize="40sp"
-            android:textColor="#000"/>
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textSize="40sp" />
 
         <TextView
-            android:text="\n"
             android:id="@+id/textViewResultBMI"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="\n"
             android:textAlignment="center"
-            android:textSize="40sp"
-            android:textColor="#000"/>
+            android:textColor="#000"
+            android:textSize="40sp" />
 
         <TableLayout
             android:id="@+id/tableBMI"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="20dp"
             android:layout_marginHorizontal="10dp"
-            android:background="#f1f1f1"
-            android:collapseColumns="1,2">
-            <TableRow>
-                <TextView
-                    android:textSize="20dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Clasification BMI"/>
-            </TableRow>
+            android:layout_marginVertical="20dp"
+            android:background="#f1f1f1">
+
             <TableRow>
 
                 <TextView
-                    android:textSize="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Wygłodzenie: &lt; 16" />
+                    android:text="CLASIFICATION BMI"
+                    android:textColor="@color/Green"
+                    android:textSize="20dp" />
             </TableRow>
+
             <TableRow>
+
                 <TextView
-                    android:textSize="20dp"
+                    android:id="@+id/textView_starvation"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Znaczna niedowaga: 16 - 17"/>
+                    android:background="@drawable/cell_shape_composhing_dishes"
+                    android:text="Starvation: "
+                    android:textColor="@color/DarkOrange"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/textView_starvationNumbers"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cell_shape_composhing_dishes"
+                    android:gravity="center"
+                    android:text="&lt; 16"
+                    android:textColor="@color/DarkOrange"
+                    android:textSize="20dp" />
             </TableRow>
+
             <TableRow>
+
                 <TextView
-                    android:textSize="20dp"
+                    android:id="@+id/textView_significantlyUnderweight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/cell_shape_composhing_dishes"
+                    android:text="Significantly underweight:    "
+                    android:textColor="@color/Orange"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/textView_significantlyUnderweightNumbers"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Niedowaga: 17 - 18.5"/>
+                    android:background="@drawable/cell_shape_composhing_dishes"
+                    android:gravity="center"
+                    android:text="16 - 17"
+                    android:textColor="@color/Orange"
+                    android:textSize="20dp" />
             </TableRow>
+
             <TableRow>
+
                 <TextView
-                    android:textSize="20dp"
+                    android:id="@+id/textView_underweight"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="W normie: 18.5 - 25"/>
+                    android:background="@drawable/cell_shape_composhing_dishes"
+                    android:text="Underweight: "
+                    android:textColor="@color/LightOrange"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/textView_underweightNumbers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cell_shape_composhing_dishes"
+                    android:gravity="center"
+                    android:text="17 - 18.5"
+                    android:textColor="@color/LightOrange"
+                    android:textSize="20dp" />
             </TableRow>
+
             <TableRow>
+
                 <TextView
-                    android:textSize="20dp"
+                    android:id="@+id/textView_normal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nadwaga: 25 - 30"/>
+                    android:background="@drawable/cell_shape_composhing_dishes"
+                    android:text="Normal: "
+                    android:textColor="@color/Green"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/textView_normalNumbers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cell_shape_composhing_dishes"
+                    android:gravity="center"
+                    android:text="18.5 - 25"
+                    android:textColor="@color/Green"
+                    android:textSize="20dp" />
             </TableRow>
+
             <TableRow>
+
                 <TextView
-                    android:textSize="20dp"
+                    android:id="@+id/textView_overweight"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Otyłość klasy 1: 30 - 35"/>
+                    android:background="@drawable/cell_shape_composhing_dishes"
+                    android:text="Overweight: "
+                    android:textColor="@color/LightOrange"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/textView_overweightNumbers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cell_shape_composhing_dishes"
+                    android:gravity="center"
+                    android:text="25 - 30"
+                    android:textColor="@color/LightOrange"
+                    android:textSize="20dp" />
             </TableRow>
+
             <TableRow>
+
                 <TextView
-                    android:textSize="20dp"
+                    android:id="@+id/textView_class1obesity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Otyłość klasy 2: 35 - 40"/>
+                    android:background="@drawable/cell_shape_composhing_dishes"
+                    android:text="Class 1 obesity: "
+                    android:textColor="@color/Orange"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/textView_class1obesityNumbers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cell_shape_composhing_dishes"
+                    android:gravity="center"
+                    android:text="30 - 35"
+                    android:textColor="@color/Orange"
+                    android:textSize="20dp" />
             </TableRow>
+
             <TableRow>
+
                 <TextView
-                    android:textSize="20dp"
+                    android:id="@+id/textView_class2obesity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Otyłość klasy 3: &gt; 40"/>
+                    android:background="@drawable/cell_shape_composhing_dishes"
+                    android:text="Class 2 obesity: "
+                    android:textColor="@color/DarkOrange"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/textView_class2obesityNumbers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cell_shape_composhing_dishes"
+                    android:gravity="center"
+                    android:text="35 - 40"
+                    android:textColor="@color/DarkOrange"
+                    android:textSize="20dp" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/textView_class3obesity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cell_shape_composhing_dishes"
+                    android:text="Class 3 obesity: "
+                    android:textColor="@color/VeryDarkOrange"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/textView_class3obesityNumbers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cell_shape_composhing_dishes"
+                    android:gravity="center"
+                    android:text="&gt; 40"
+                    android:textColor="@color/VeryDarkOrange"
+                    android:textSize="20dp" />
             </TableRow>
         </TableLayout>
 

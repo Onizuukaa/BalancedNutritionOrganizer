@@ -12,14 +12,25 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".DailyMealsActivity"></activity>
-        <activity android:name=".YourDishesActivity" />
-        <activity android:name=".ComposingDishesActivity"
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".BmiActivity" />
+        <activity
+            android:name=".YourDishesActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ComposingDishesActivity"
+
+
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".BmiActivity"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".AdvancedInformationAboutProductActivity" />
-        <activity android:name=".FruitsListActivity" />
-        <activity android:name=".VegetablesListActivity" />
-        <activity android:name=".ProductTableActivity" />
+        <activity android:name=".FruitsListActivity"
+            android:parentActivityName=".ProductTableActivity"/>
+        <activity android:name=".VegetablesListActivity"
+            android:parentActivityName=".ProductTableActivity"/>
+        <activity
+            android:name=".ProductTableActivity"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
