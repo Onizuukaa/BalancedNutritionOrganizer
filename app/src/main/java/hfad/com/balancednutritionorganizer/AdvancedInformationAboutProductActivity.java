@@ -46,7 +46,6 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
     }
 
     public void OpenComposhingDishesActivity(View view) {
-
     }
 
     @Override

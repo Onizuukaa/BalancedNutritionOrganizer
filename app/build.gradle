@@ -42,4 +42,6 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     //external database
     implementation 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
+    //Gson niżej do zapisywania danych w aktywności
+    implementation 'com.google.code.gson:gson:2.8.6'
 }

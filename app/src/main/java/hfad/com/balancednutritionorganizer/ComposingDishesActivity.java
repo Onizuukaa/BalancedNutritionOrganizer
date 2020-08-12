@@ -9,6 +9,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +17,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
@@ -33,9 +38,8 @@ public class ComposingDishesActivity extends AppCompatActivity {
     Button button_removeItem, button_removeAllItems;
     RecyclerViewAdapterComposhingDishes adapter;
     //Czy apka działała?
-    private boolean running;
-    private boolean wasRunning;
-
+//    private boolean running;
+//    private boolean wasRunning;
 
     private ArrayList<String> productNameArrayList = new ArrayList<>();
     private ArrayList<String> productCaloriesArrayList = new ArrayList<>();
@@ -46,19 +50,21 @@ public class ComposingDishesActivity extends AppCompatActivity {
     private ArrayList<String> productSaturatedFatsArrayList = new ArrayList<>();
     private ArrayList<String> productProteinArrayList = new ArrayList<>();
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_composing_dishes);
         Toast.makeText(this, "onCreate", Toast.LENGTH_SHORT).show();
-        if (savedInstanceState != null){
-            productNameArrayList = savedInstanceState.getStringArrayList("nazwy");
-            productCaloriesArrayList = savedInstanceState.getStringArrayList("kalorie");
 
-            running = savedInstanceState.getBoolean("running");
-            wasRunning = savedInstanceState.getBoolean("wasRunning");
-        }
+//        loadData();
+
+//        if (savedInstanceState != null){
+//            productNameArrayList = savedInstanceState.getStringArrayList("nazwy");
+//            productCaloriesArrayList = savedInstanceState.getStringArrayList("kalorie");
+//
+//            running = savedInstanceState.getBoolean("running");
+//            wasRunning = savedInstanceState.getBoolean("wasRunning");
+//        }
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getIncomingIntent();
         format = new DecimalFormat("#.#");
@@ -69,33 +75,54 @@ public class ComposingDishesActivity extends AppCompatActivity {
         sumAndViewMacros();
     }
 
-    @Override
-    public void onSaveInstanceState(Bundle savedInstanceState){
-        super.onSaveInstanceState(savedInstanceState);
+//    private void saveData(){
+//        SharedPreferences sharedPreferences = getSharedPreferences("shared preferences", MODE_PRIVATE);
+//        SharedPreferences.Editor editor = sharedPreferences.edit();
+//        Gson gson = new Gson();
+//        String json = gson.toJson(productNameArrayList);
+//        editor.putString("task list", json);
+//
+//        editor.apply();
+//    }
+//    private void loadData(){
+//        SharedPreferences sharedPreferences = getSharedPreferences("shared preferences", MODE_PRIVATE);
+//        Gson gson = new Gson();
+//        String json = sharedPreferences.getString("task list", null);
+//        Type type = new TypeToken<ArrayList<String>>() {
+//        }.getType();
+//        productNameArrayList = gson.fromJson(json, type);
+//
+//        if (productNameArrayList == null) {
+//            productNameArrayList = new ArrayList<>();
+//        }
+//    }
 
-        savedInstanceState.putStringArrayList("nazwy", productNameArrayList);
-        savedInstanceState.putStringArrayList("kalorie", productCaloriesArrayList);
+//    @Override
+//    public void onSaveInstanceState(Bundle savedInstanceState){
+//        super.onSaveInstanceState(savedInstanceState);
+//
+//        savedInstanceState.putStringArrayList("nazwy", productNameArrayList);
+//        savedInstanceState.putStringArrayList("kalorie", productCaloriesArrayList);
+//
+//        savedInstanceState.putBoolean("running", running);
+//        savedInstanceState.putBoolean("wasRunning", wasRunning);
+//    }
 
-        savedInstanceState.putBoolean("running", running);
-        savedInstanceState.putBoolean("wasRunning", wasRunning);
-    }
+//    @Override
+//    protected void onResume(){
+//        super.onResume();
+//        if (wasRunning){
+//            running = true;
+//        }
+//        Toast.makeText(this, "onResume", Toast.LENGTH_SHORT).show();
+//    }
 
-    @Override
-    protected void onResume(){
-        super.onResume();
-        if (wasRunning){
-            running = true;
-        }
-        Toast.makeText(this, "onResume", Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    protected void onPause(){
-        super.onPause();
-        wasRunning = running;
-        Toast.makeText(this, "pauza", Toast.LENGTH_SHORT).show();
-
-    }
+//    @Override
+//    protected void onPause(){
+//        super.onPause();
+//        wasRunning = running;
+//        Toast.makeText(this, "pauza", Toast.LENGTH_SHORT).show();
+//    }
 
     private void buttonRemoveItem(int position) {
         if (position >= productNameArrayList.size()) {
@@ -119,6 +146,7 @@ public class ComposingDishesActivity extends AppCompatActivity {
             proteinSum = 0.0;
 
             sumAndViewMacros();
+            //saveData();
         }
         if (productNameArrayList.size() == 0){
             textViewNoData.setVisibility(View.VISIBLE);
