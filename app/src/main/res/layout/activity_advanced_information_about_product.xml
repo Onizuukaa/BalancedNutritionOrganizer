@@ -271,7 +271,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/buttonOpenComposhingDishesActivity"
             android:text="Open Composhing Dishes"
-            android:onClick="OpenComposhingDishesActivity"/>
+            android:onClick="add"/>
     <!--    <ImageView-->
     <!--        android:id="@+id/obrazek"-->
     <!--        android:layout_width="wrap_content"-->

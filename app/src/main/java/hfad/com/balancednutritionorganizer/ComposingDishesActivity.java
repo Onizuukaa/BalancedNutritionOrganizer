@@ -2,6 +2,7 @@ package hfad.com.balancednutritionorganizer;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -10,6 +11,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -28,6 +31,11 @@ import static java.lang.Double.parseDouble;
 
 public class ComposingDishesActivity extends AppCompatActivity {
 
+    RecyclerView recyclerView;
+    private SQLiteDatabase mDatabase;
+    private GroceryAdapter mAdapter;
+
+//
     String imageUrl;
     TextView textViewComposhingDishesKcal, textViewComposhingDishesCarbohydrates, textViewComposhingDishesGram,
             textViewComposhingDishesSugar, textViewComposhingDishesFats, textViewComposhingDishesSaturatedFats,
@@ -37,9 +45,6 @@ public class ComposingDishesActivity extends AppCompatActivity {
     EditText editText_removeItem;
     Button button_removeItem, button_removeAllItems;
     RecyclerViewAdapterComposhingDishes adapter;
-    //Czy apka działała?
-//    private boolean running;
-//    private boolean wasRunning;
 
     private ArrayList<String> productNameArrayList = new ArrayList<>();
     private ArrayList<String> productCaloriesArrayList = new ArrayList<>();
@@ -54,75 +59,40 @@ public class ComposingDishesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_composing_dishes);
-        Toast.makeText(this, "onCreate", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "onCreate", Toast.LENGTH_SHORT).show();
 
-//        loadData();
+        GroceryDBHelper dbHelper = new GroceryDBHelper(this);
+        mDatabase = dbHelper.getWritableDatabase();
 
-//        if (savedInstanceState != null){
-//            productNameArrayList = savedInstanceState.getStringArrayList("nazwy");
-//            productCaloriesArrayList = savedInstanceState.getStringArrayList("kalorie");
-//
-//            running = savedInstanceState.getBoolean("running");
-//            wasRunning = savedInstanceState.getBoolean("wasRunning");
-//        }
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getIncomingIntent();
+        //getIncomingIntent();
         format = new DecimalFormat("#.#");
         format.setDecimalSeparatorAlwaysShown(false);
 
         initViews();
         initRecyclerView();
-        sumAndViewMacros();
+        //sumAndViewMacros();
+
+        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0,
+                ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+            @Override
+            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
+                removeItem((long) viewHolder.itemView.getTag());
+            }
+        }).attachToRecyclerView(recyclerView);
+
     }
 
-//    private void saveData(){
-//        SharedPreferences sharedPreferences = getSharedPreferences("shared preferences", MODE_PRIVATE);
-//        SharedPreferences.Editor editor = sharedPreferences.edit();
-//        Gson gson = new Gson();
-//        String json = gson.toJson(productNameArrayList);
-//        editor.putString("task list", json);
-//
-//        editor.apply();
-//    }
-//    private void loadData(){
-//        SharedPreferences sharedPreferences = getSharedPreferences("shared preferences", MODE_PRIVATE);
-//        Gson gson = new Gson();
-//        String json = sharedPreferences.getString("task list", null);
-//        Type type = new TypeToken<ArrayList<String>>() {
-//        }.getType();
-//        productNameArrayList = gson.fromJson(json, type);
-//
-//        if (productNameArrayList == null) {
-//            productNameArrayList = new ArrayList<>();
-//        }
-//    }
-
-//    @Override
-//    public void onSaveInstanceState(Bundle savedInstanceState){
-//        super.onSaveInstanceState(savedInstanceState);
-//
-//        savedInstanceState.putStringArrayList("nazwy", productNameArrayList);
-//        savedInstanceState.putStringArrayList("kalorie", productCaloriesArrayList);
-//
-//        savedInstanceState.putBoolean("running", running);
-//        savedInstanceState.putBoolean("wasRunning", wasRunning);
-//    }
-
-//    @Override
-//    protected void onResume(){
-//        super.onResume();
-//        if (wasRunning){
-//            running = true;
-//        }
-//        Toast.makeText(this, "onResume", Toast.LENGTH_SHORT).show();
-//    }
-
-//    @Override
-//    protected void onPause(){
-//        super.onPause();
-//        wasRunning = running;
-//        Toast.makeText(this, "pauza", Toast.LENGTH_SHORT).show();
-//    }
+    private void removeItem(long id) {
+        mDatabase.delete(GroceryContract.GroceryEntry.TABLE_NAME,
+                GroceryContract.GroceryEntry._ID + "=" + id, null);
+        mAdapter.swapCursor(getAllItems());
+    }
 
     private void buttonRemoveItem(int position) {
         if (position >= productNameArrayList.size()) {
@@ -154,14 +124,28 @@ public class ComposingDishesActivity extends AppCompatActivity {
     }
 
     private void initRecyclerView() {
-        RecyclerView recyclerView = findViewById(R.id.composingDishesRecyclerView);
-        adapter = new RecyclerViewAdapterComposhingDishes(productNameArrayList, productCaloriesArrayList);
-        recyclerView.setAdapter(adapter);
+        recyclerView = findViewById(R.id.composingDishesRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        if (productNameArrayList.isEmpty()) {
-            textViewNoData.setVisibility(View.VISIBLE);
-        }
+        //adapter = new RecyclerViewAdapterComposhingDishes(productNameArrayList, productCaloriesArrayList);
+        mAdapter = new GroceryAdapter(this, getAllItems());
+        recyclerView.setAdapter(mAdapter);
+
+//        if (productNameArrayList.isEmpty()) {
+//            textViewNoData.setVisibility(View.VISIBLE);
+//        }
+    }
+
+    private Cursor getAllItems() {
+        return mDatabase.query(
+                GroceryContract.GroceryEntry.TABLE_NAME,
+                null,
+                null,
+                null,
+                null,
+                null,
+                GroceryContract.GroceryEntry.COLUMN_TIMESTAMP + " DESC"
+        );
     }
 
     private void getIncomingIntent() {
@@ -257,8 +241,8 @@ public class ComposingDishesActivity extends AppCompatActivity {
         textViewComposhingDishesFats = (TextView) findViewById(R.id.textViewComposhingDishesFats);
         textViewComposhingDishesSaturatedFats = (TextView) findViewById(R.id.textViewComposhingDishesSaturatedFats);
         textViewComposhingDishesProtein = (TextView) findViewById(R.id.textViewComposhingDishesProtein);
-        textViewNoData = (TextView) findViewById(R.id.textViewNoData);
-        textViewNoData.setVisibility(View.INVISIBLE);
+        //textViewNoData = (TextView) findViewById(R.id.textViewNoData);
+        //textViewNoData.setVisibility(View.INVISIBLE);
         editText_removeItem = (EditText) findViewById(R.id.editText_removeItem);
         button_removeItem = (Button) findViewById(R.id.button_removeItem);
         button_removeAllItems = (Button) findViewById(R.id.buttonResetIngredients);

@@ -4,8 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -26,6 +28,9 @@ import static java.lang.Double.parseDouble;
 import static java.lang.Integer.parseInt;
 
 public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
+    //
+    private SQLiteDatabase mDatabase;
+    //
     public double caloriesInOneGramProduct, carbohydratesInOneGramProduct, sugarInOneGramProduct, FatsInOneGramProduct,
             saturatedFatsInOneGramProduct, proteinInOneGramProduct, theNumberOfGramsEnteredByTheUser;
     public TextView textViewResultForCustomValueCalories, textViewResultForCustomValueCarbohydratesAndSugar,
@@ -38,11 +43,33 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_advanced_information_about_product);
+
+        //
+        GroceryDBHelper dbHelper = new GroceryDBHelper(this);
+        mDatabase = dbHelper.getWritableDatabase();
+
+        String name = "cytryna";
+        ContentValues cv = new ContentValues();
+        cv.put(GroceryContract.GroceryEntry.COLUMN_NAME, name);
+        cv.put(GroceryContract.GroceryEntry.COLUMN_AMOUNT, 3);
+
+        mDatabase.insert(GroceryContract.GroceryEntry.TABLE_NAME, null, cv);
+        //
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         format = new DecimalFormat("#.#");
         format.setDecimalSeparatorAlwaysShown(false);
         getIncomingIntent();
         initViews();
+    }
+
+    public void add(View view){
+        String name = "buraki";
+        ContentValues cv = new ContentValues();
+        cv.put(GroceryContract.GroceryEntry.COLUMN_NAME, name);
+        cv.put(GroceryContract.GroceryEntry.COLUMN_AMOUNT, 12);
+
+        mDatabase.insert(GroceryContract.GroceryEntry.TABLE_NAME, null, cv);
     }
 
     public void OpenComposhingDishesActivity(View view) {
@@ -161,7 +188,8 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
         productProteinFor100Gram.setText(format.format(parseDouble(productProtein)));
         productProteinFor200Gram.setText(format.format(parseDouble(productProtein) * 2));
     }
-    private void initViews(){
+
+    private void initViews() {
         editTextCustomNutritionalValues = (EditText) findViewById(R.id.editTextCustomNutritionalValues);
         editTextCustomNutritionalValues.requestFocus();
 

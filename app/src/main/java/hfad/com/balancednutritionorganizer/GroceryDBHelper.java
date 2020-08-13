@@ -3,6 +3,7 @@ package hfad.com.balancednutritionorganizer;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
 import hfad.com.balancednutritionorganizer.GroceryContract.*;
 
 import androidx.annotation.Nullable;
@@ -17,14 +18,14 @@ public class GroceryDBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-final String SQL_CREATE_GROCERYLIST_TABLE = "CREATE TABLE " +
-        GroceryEntry.TABLE_NAME + " (" +
-        GroceryEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-        GroceryEntry.COLUMN_NAME + " TEXT NOT NULL, " +
-        GroceryEntry.COLUMN_AMOUNT + " INTEGER NOT NULL, " +
-        GroceryEntry.COLUMN_TIMESTAMP + " TIMESTAMP DEFAULT CURRENT_TIMESTAMP" +
-        ");";
-db.execSQL(SQL_CREATE_GROCERYLIST_TABLE);
+        final String SQL_CREATE_GROCERYLIST_TABLE = "CREATE TABLE " +
+                GroceryEntry.TABLE_NAME + " (" +
+                GroceryEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                GroceryEntry.COLUMN_NAME + " TEXT NOT NULL, " +
+                GroceryEntry.COLUMN_AMOUNT + " INTEGER NOT NULL, " +
+                GroceryEntry.COLUMN_TIMESTAMP + " TIMESTAMP DEFAULT CURRENT_TIMESTAMP" +
+                ");";
+        db.execSQL(SQL_CREATE_GROCERYLIST_TABLE);
     }
 
     @Override
