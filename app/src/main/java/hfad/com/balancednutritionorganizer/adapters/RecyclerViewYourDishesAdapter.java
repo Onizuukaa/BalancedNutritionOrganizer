@@ -1,4 +1,4 @@
-package hfad.com.balancednutritionorganizer;
+package hfad.com.balancednutritionorganizer.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,15 +12,17 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+import hfad.com.balancednutritionorganizer.R;
+
 import static java.lang.Double.parseDouble;
 
-public class RecyclerViewAdapterYourDishes extends RecyclerView.Adapter<RecyclerViewAdapterYourDishes.ViewHolder>{
+public class RecyclerViewYourDishesAdapter extends RecyclerView.Adapter<RecyclerViewYourDishesAdapter.ViewHolder>{
 
     private ArrayList<String> mProductNames;
     private ArrayList<String> mProductCalories;
     private Context mContext;
 
-    public RecyclerViewAdapterYourDishes(Context mContext, ArrayList<String> mProductNames, ArrayList<String> mProductCalories) {
+    public RecyclerViewYourDishesAdapter(Context mContext, ArrayList<String> mProductNames, ArrayList<String> mProductCalories) {
 
         this.mProductNames = mProductNames;
         this.mProductCalories = mProductCalories;
@@ -29,14 +31,14 @@ public class RecyclerViewAdapterYourDishes extends RecyclerView.Adapter<Recycler
 
     @NonNull
     @Override
-    public RecyclerViewAdapterYourDishes.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RecyclerViewYourDishesAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.scheme_your_dishes, parent, false);
-        RecyclerViewAdapterYourDishes.ViewHolder holder = new RecyclerViewAdapterYourDishes.ViewHolder(view);
+        RecyclerViewYourDishesAdapter.ViewHolder holder = new RecyclerViewYourDishesAdapter.ViewHolder(view);
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerViewAdapterYourDishes.ViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull RecyclerViewYourDishesAdapter.ViewHolder holder, final int position) {
 
         holder.productName.setText(mProductNames.get(position));
 

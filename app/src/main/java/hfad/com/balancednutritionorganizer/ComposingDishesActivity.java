@@ -1,16 +1,10 @@
 package hfad.com.balancednutritionorganizer;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
-import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -20,22 +14,22 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-import static java.lang.Double.parseDouble;
+import hfad.com.balancednutritionorganizer.adapters.GroceryAdapter;
+import hfad.com.balancednutritionorganizer.adapters.RecyclerViewComposhingDishesAdapter;
+
+import static java.lang.Integer.parseInt;
 
 public class ComposingDishesActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     private SQLiteDatabase mDatabase;
     private GroceryAdapter mAdapter;
+    Cursor cursor;
 
-//
+    //
     String imageUrl;
     TextView textViewComposhingDishesKcal, textViewComposhingDishesCarbohydrates, textViewComposhingDishesGram,
             textViewComposhingDishesSugar, textViewComposhingDishesFats, textViewComposhingDishesSaturatedFats,
@@ -44,7 +38,7 @@ public class ComposingDishesActivity extends AppCompatActivity {
     DecimalFormat format;
     EditText editText_removeItem;
     Button button_removeItem, button_removeAllItems;
-    RecyclerViewAdapterComposhingDishes adapter;
+    RecyclerViewComposhingDishesAdapter adapter;
 
     private ArrayList<String> productNameArrayList = new ArrayList<>();
     private ArrayList<String> productCaloriesArrayList = new ArrayList<>();
@@ -54,6 +48,8 @@ public class ComposingDishesActivity extends AppCompatActivity {
     private ArrayList<String> productFatsArrayList = new ArrayList<>();
     private ArrayList<String> productSaturatedFatsArrayList = new ArrayList<>();
     private ArrayList<String> productProteinArrayList = new ArrayList<>();
+
+    int amount1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +67,7 @@ public class ComposingDishesActivity extends AppCompatActivity {
 
         initViews();
         initRecyclerView();
-        //sumAndViewMacros();
+        sumAndViewMacros();
 
         new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0,
                 ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
@@ -92,6 +88,13 @@ public class ComposingDishesActivity extends AppCompatActivity {
         mDatabase.delete(GroceryContract.GroceryEntry.TABLE_NAME,
                 GroceryContract.GroceryEntry._ID + "=" + id, null);
         mAdapter.swapCursor(getAllItems());
+
+        cursor = getAllItems();
+        amount1 = 0;
+        while (cursor.moveToNext()) {
+            amount1 += cursor.getInt(2);
+        }
+        textViewComposhingDishesKcal.setText(amount1 + "\nKCAL");
     }
 
     private void buttonRemoveItem(int position) {
@@ -115,10 +118,10 @@ public class ComposingDishesActivity extends AppCompatActivity {
             saturatedFatsSum = 0.0;
             proteinSum = 0.0;
 
-            sumAndViewMacros();
+            //sumAndViewMacros();
             //saveData();
         }
-        if (productNameArrayList.size() == 0){
+        if (productNameArrayList.size() == 0) {
             textViewNoData.setVisibility(View.VISIBLE);
         }
     }
@@ -161,23 +164,38 @@ public class ComposingDishesActivity extends AppCompatActivity {
     }
 
     private void sumAndViewMacros() {
-        for (int i = 0; i < productCaloriesArrayList.size(); i++) {
-            caloriesSum += parseDouble(productCaloriesArrayList.get(i));
-            carbohydratesSum += parseDouble(productCarbohydratesArrayList.get(i));
-            gramSum += parseDouble(productGramArrayList.get(i));
-            sugarSum += parseDouble(productSugarArrayList.get(i));
-            fatsSum += parseDouble(productFatsArrayList.get(i));
-            saturatedFatsSum += parseDouble(productSaturatedFatsArrayList.get(i));
-            proteinSum += parseDouble(productProteinArrayList.get(i));
-        }
 
-        textViewComposhingDishesKcal.setText(format.format(caloriesSum) + "\nKCAL");
-        textViewComposhingDishesCarbohydrates.setText(format.format(carbohydratesSum) + "g\ncarbo");
-        textViewComposhingDishesGram.setText(format.format(gramSum) + "g\nweight");
-        textViewComposhingDishesSugar.setText(format.format(sugarSum) + "g\nsugar");
-        textViewComposhingDishesFats.setText(format.format(fatsSum) + "g\nfats");
-        textViewComposhingDishesSaturatedFats.setText(format.format(saturatedFatsSum) + "g\nsaturated fats");
-        textViewComposhingDishesProtein.setText(format.format(proteinSum) + "g\nprotein");
+        cursor = getAllItems();
+
+        while (cursor.moveToNext()) {
+           amount1 += cursor.getInt(2);
+        }
+        textViewComposhingDishesKcal.setText(amount1 + "\nKCAL");
+
+//        for (int i = 0; i < productCaloriesArrayList.size(); i++) {
+//            caloriesSum += parseDouble(productCaloriesArrayList.get(i));
+//            carbohydratesSum += parseDouble(productCarbohydratesArrayList.get(i));
+//            gramSum += parseDouble(productGramArrayList.get(i));
+//            sugarSum += parseDouble(productSugarArrayList.get(i));
+//            fatsSum += parseDouble(productFatsArrayList.get(i));
+//            saturatedFatsSum += parseDouble(productSaturatedFatsArrayList.get(i));
+//            proteinSum += parseDouble(productProteinArrayList.get(i));
+//        }
+
+
+        //int amount = getAllItems().getInt(getAllItems().getColumnIndex(GroceryContract.GroceryEntry.COLUMN_AMOUNT));
+
+//        String amount2 = getAllItems().getString(1);
+//        String amount3 = getAllItems().getString(2);
+
+
+        // textViewComposhingDishesKcal.setText(format.format(caloriesSum) + "\nKCAL");
+//        textViewComposhingDishesCarbohydrates.setText(format.format(carbohydratesSum) + "g\ncarbo");
+//        textViewComposhingDishesGram.setText(format.format(gramSum) + "g\nweight");
+//        textViewComposhingDishesSugar.setText(format.format(sugarSum) + "g\nsugar");
+//        textViewComposhingDishesFats.setText(format.format(fatsSum) + "g\nfats");
+//        textViewComposhingDishesSaturatedFats.setText(format.format(saturatedFatsSum) + "g\nsaturated fats");
+//        textViewComposhingDishesProtein.setText(format.format(proteinSum) + "g\nprotein");
     }
 
     public void buttonClearAllArrayList(View view) {
@@ -198,8 +216,8 @@ public class ComposingDishesActivity extends AppCompatActivity {
 //        productSaturatedFatsArrayList.clear();
 //        productProteinArrayList.clear();
 
-        adapter.notifyItemRangeRemoved(0,productNameArrayList.size());
-        
+        adapter.notifyItemRangeRemoved(0, productNameArrayList.size());
+
 
         caloriesSum = 0.0;
         carbohydratesSum = 0.0;
@@ -213,7 +231,7 @@ public class ComposingDishesActivity extends AppCompatActivity {
         textViewNoData.setVisibility(View.VISIBLE);
     }
 
-    public void buttonSendDish(View view){
+    public void buttonSendDish(View view) {
 //        Intent intent = new Intent("INTENT_fromComposhingDishesActivity").putExtra("product_name", productName);
 //        LocalBroadcastManager.getInstance(ComposingDishesActivity.this).sendBroadcast(intent);
 //        intent.putExtra("product_image", imageUrl);
@@ -233,7 +251,7 @@ public class ComposingDishesActivity extends AppCompatActivity {
 //        theNumberOfGramsEnteredByTheUser = 0;
     }
 
-    private void initViews(){
+    private void initViews() {
         textViewComposhingDishesKcal = (TextView) findViewById(R.id.textViewComposhingDishesKcal);
         textViewComposhingDishesCarbohydrates = (TextView) findViewById(R.id.textViewComposhingDishesCarbohydrates);
         textViewComposhingDishesGram = (TextView) findViewById(R.id.textViewComposhingDishesGram);
@@ -250,7 +268,7 @@ public class ComposingDishesActivity extends AppCompatActivity {
         button_removeItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int position = Integer.parseInt(editText_removeItem.getText().toString());
+                int position = parseInt(editText_removeItem.getText().toString());
                 buttonRemoveItem(position);
             }
         });

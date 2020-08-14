@@ -1,4 +1,4 @@
-package hfad.com.balancednutritionorganizer;
+package hfad.com.balancednutritionorganizer.adapters;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -9,6 +9,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import hfad.com.balancednutritionorganizer.GroceryContract;
+import hfad.com.balancednutritionorganizer.R;
 
 public class GroceryAdapter extends RecyclerView.Adapter<GroceryAdapter.GroceryViewHolder> {
     private Context mContext;
@@ -48,7 +51,8 @@ public class GroceryAdapter extends RecyclerView.Adapter<GroceryAdapter.GroceryV
         long id = mCursor.getLong(mCursor.getColumnIndex(GroceryContract.GroceryEntry._ID));
 
         holder.nameText.setText(name);
-        holder.countText.setText(String.valueOf(amount));
+        //holder.countText.setText(String.valueOf(amount));
+        holder.countText.setText(amount + " KCAL");
         holder.itemView.setTag(id);
     }
 

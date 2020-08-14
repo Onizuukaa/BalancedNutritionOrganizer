@@ -8,9 +8,11 @@ import android.os.Bundle;
 
 import java.util.ArrayList;
 
+import hfad.com.balancednutritionorganizer.adapters.RecyclerViewYourDishesAdapter;
+
 public class YourDishesActivity extends AppCompatActivity {
 
-    RecyclerViewAdapterYourDishes adapter;
+    RecyclerViewYourDishesAdapter adapter;
     private ArrayList<String> productNameArrayList = new ArrayList<>();
     private ArrayList<String> productCaloriesArrayList = new ArrayList<>();
     private ArrayList<String> productGramArrayList = new ArrayList<>();
@@ -30,7 +32,7 @@ public class YourDishesActivity extends AppCompatActivity {
 
     private void initRecyclerView() {
         RecyclerView recyclerView = findViewById(R.id.yourDishesRecyclerView);
-        adapter = new RecyclerViewAdapterYourDishes(this, productNameArrayList, productCaloriesArrayList);
+        adapter = new RecyclerViewYourDishesAdapter(this, productNameArrayList, productCaloriesArrayList);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }

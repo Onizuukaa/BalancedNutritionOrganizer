@@ -9,6 +9,8 @@ import android.os.Bundle;
 
 import java.util.ArrayList;
 
+import hfad.com.balancednutritionorganizer.adapters.RecyclerViewSpecificProductListAdapter;
+
 public class FruitsListActivity extends AppCompatActivity {
     DatabaseAccess databaseAccess;
     Cursor cursorForFruits;
@@ -54,7 +56,7 @@ public class FruitsListActivity extends AppCompatActivity {
 
     private void initRecyclerView() {
         RecyclerView recyclerView = findViewById(R.id.fruitsRecyclerView);
-        RecyclerViewAdapterSpecificProductList adapter = new RecyclerViewAdapterSpecificProductList(this, mProductImage, mProductNames, mProductCalories, mProductCarbohydrates,
+        RecyclerViewSpecificProductListAdapter adapter = new RecyclerViewSpecificProductListAdapter(this, mProductImage, mProductNames, mProductCalories, mProductCarbohydrates,
                 mProductSugar, mProductFats, mProductSaturatedFats, mProductProtein);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

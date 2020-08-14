@@ -48,12 +48,12 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
         GroceryDBHelper dbHelper = new GroceryDBHelper(this);
         mDatabase = dbHelper.getWritableDatabase();
 
-        String name = "cytryna";
-        ContentValues cv = new ContentValues();
-        cv.put(GroceryContract.GroceryEntry.COLUMN_NAME, name);
-        cv.put(GroceryContract.GroceryEntry.COLUMN_AMOUNT, 3);
-
-        mDatabase.insert(GroceryContract.GroceryEntry.TABLE_NAME, null, cv);
+//        String name = "cytryna";
+//        ContentValues cv = new ContentValues();
+//        cv.put(GroceryContract.GroceryEntry.COLUMN_NAME, name);
+//        cv.put(GroceryContract.GroceryEntry.COLUMN_AMOUNT, 3);
+//
+//        mDatabase.insert(GroceryContract.GroceryEntry.TABLE_NAME, null, cv);
         //
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -95,7 +95,6 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-
 
     public void button_SendInformationAboutCurrentProductConfiguration(View view) {
 

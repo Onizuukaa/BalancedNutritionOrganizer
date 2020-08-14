@@ -1,4 +1,4 @@
-package hfad.com.balancednutritionorganizer;
+package hfad.com.balancednutritionorganizer.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,14 +11,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+import hfad.com.balancednutritionorganizer.R;
+
 import static java.lang.Double.parseDouble;
 
 
-public class RecyclerViewAdapterComposhingDishes extends RecyclerView.Adapter<RecyclerViewAdapterComposhingDishes.ViewHolder> {
+public class RecyclerViewComposhingDishesAdapter extends RecyclerView.Adapter<RecyclerViewComposhingDishesAdapter.ViewHolder> {
     private ArrayList<String> mProductNames;
     private ArrayList<String> mProductCalories;
 
-    public RecyclerViewAdapterComposhingDishes(ArrayList<String> mProductNames, ArrayList<String> mProductCalories) {
+    public RecyclerViewComposhingDishesAdapter(ArrayList<String> mProductNames, ArrayList<String> mProductCalories) {
         this.mProductNames = mProductNames;
         this.mProductCalories = mProductCalories;
     }

@@ -1,4 +1,4 @@
-package hfad.com.balancednutritionorganizer;
+package hfad.com.balancednutritionorganizer.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -16,8 +16,10 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import hfad.com.balancednutritionorganizer.AdvancedInformationAboutProductActivity;
+import hfad.com.balancednutritionorganizer.R;
 
-public class RecyclerViewAdapterSpecificProductList extends RecyclerView.Adapter<RecyclerViewAdapterSpecificProductList.ViewHolder> {
+public class RecyclerViewSpecificProductListAdapter extends RecyclerView.Adapter<RecyclerViewSpecificProductListAdapter.ViewHolder> {
     private ArrayList<String> mProductNames;
     private ArrayList<String> mProductCalories;
     private ArrayList<String> mProductImages;
@@ -28,7 +30,7 @@ public class RecyclerViewAdapterSpecificProductList extends RecyclerView.Adapter
     private ArrayList<String> mProductProtein;
     private Context mContext;
 
-    public RecyclerViewAdapterSpecificProductList(Context mContext, ArrayList<String> mProductImages, ArrayList<String> mProductNames, ArrayList<String> mProductCalories,
+    public RecyclerViewSpecificProductListAdapter(Context mContext, ArrayList<String> mProductImages, ArrayList<String> mProductNames, ArrayList<String> mProductCalories,
                                                   ArrayList<String> mProductCarbohydrates, ArrayList<String> mProductSugar, ArrayList<String> mProductFats,
                                                   ArrayList<String> mProductSaturatedFats, ArrayList<String> mProductProtein) {
         this.mProductImages = mProductImages;
