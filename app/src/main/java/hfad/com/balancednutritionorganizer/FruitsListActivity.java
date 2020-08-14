@@ -10,6 +10,7 @@ import android.os.Bundle;
 import java.util.ArrayList;
 
 import hfad.com.balancednutritionorganizer.adapters.RecyclerViewSpecificProductListAdapter;
+import hfad.com.balancednutritionorganizer.database_things.DatabaseAccess;
 
 public class FruitsListActivity extends AppCompatActivity {
     DatabaseAccess databaseAccess;

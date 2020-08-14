@@ -19,6 +19,8 @@ import java.util.ArrayList;
 
 import hfad.com.balancednutritionorganizer.adapters.GroceryAdapter;
 import hfad.com.balancednutritionorganizer.adapters.RecyclerViewComposhingDishesAdapter;
+import hfad.com.balancednutritionorganizer.database_things.GroceryContract;
+import hfad.com.balancednutritionorganizer.database_things.GroceryDBHelper;
 
 import static java.lang.Integer.parseInt;
 

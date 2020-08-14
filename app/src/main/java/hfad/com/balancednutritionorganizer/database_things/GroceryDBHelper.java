@@ -1,10 +1,10 @@
-package hfad.com.balancednutritionorganizer;
+package hfad.com.balancednutritionorganizer.database_things;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import hfad.com.balancednutritionorganizer.GroceryContract.*;
+import hfad.com.balancednutritionorganizer.database_things.GroceryContract.*;
 
 import androidx.annotation.Nullable;
 

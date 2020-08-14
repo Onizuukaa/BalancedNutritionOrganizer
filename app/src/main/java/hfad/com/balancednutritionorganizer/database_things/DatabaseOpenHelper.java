@@ -1,4 +1,4 @@
-package hfad.com.balancednutritionorganizer;
+package hfad.com.balancednutritionorganizer.database_things;
 
 import android.content.Context;
 

@@ -5,24 +5,23 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import android.content.ContentValues;
-import android.content.Context;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.DecimalFormat;
-import java.util.ArrayList;
+
+import hfad.com.balancednutritionorganizer.database_things.GroceryContract;
+import hfad.com.balancednutritionorganizer.database_things.GroceryDBHelper;
 
 import static java.lang.Double.parseDouble;
 import static java.lang.Integer.parseInt;
@@ -107,6 +106,14 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
         }
 
         if (theNumberOfGramsEnteredByTheUser != 0) {
+
+            String name = "buraki";
+            ContentValues cv = new ContentValues();
+            cv.put(GroceryContract.GroceryEntry.COLUMN_NAME, productName);
+            cv.put(GroceryContract.GroceryEntry.COLUMN_AMOUNT, caloriesInOneGramProduct * theNumberOfGramsEnteredByTheUser);
+
+            mDatabase.insert(GroceryContract.GroceryEntry.TABLE_NAME, null, cv);
+            //
             Intent intent = new Intent("INTENT_NAME").putExtra("product_name", productName);
             LocalBroadcastManager.getInstance(AdvancedInformationAboutProductActivity.this).sendBroadcast(intent);
             intent.putExtra("product_image", imageUrl);
@@ -121,6 +128,7 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
             intent.putExtra("product_saturatedFats", saturatedFatsInOneGramProduct * theNumberOfGramsEnteredByTheUser + "");
             intent.putExtra("product_protein", proteinInOneGramProduct * theNumberOfGramsEnteredByTheUser + "");
             intent.putExtra("product_gram", theNumberOfGramsEnteredByTheUserString + "");
+
             Toast.makeText(this, "The data has been sent", Toast.LENGTH_SHORT).show();
             //Kod poniżej żeby zapobiec crashowi w momencie wciśnięcia przycisku po usunięciu wpisanej wartości ale bez wychodzenia z aktywności
             theNumberOfGramsEnteredByTheUser = 0;

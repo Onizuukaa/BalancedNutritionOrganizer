@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import hfad.com.balancednutritionorganizer.GroceryContract;
+import hfad.com.balancednutritionorganizer.database_things.GroceryContract;
 import hfad.com.balancednutritionorganizer.R;
 
 public class GroceryAdapter extends RecyclerView.Adapter<GroceryAdapter.GroceryViewHolder> {
