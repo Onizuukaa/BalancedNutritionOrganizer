@@ -18,12 +18,14 @@
         <TableRow>
 
             <ImageView
+                android:onClick="imageView_openBmiActivity"
                 android:id="@+id/imageViewBmiActivity"
                 android:layout_width="183dp"
                 android:layout_height="120dp"
                 app:srcCompat="@drawable/bmi" />
 
             <ImageView
+                android:onClick="imageView_openProductTableActivity"
                 android:id="@+id/imageViewProductTable"
                 android:layout_width="193dp"
                 android:layout_height="122dp"
@@ -55,7 +57,7 @@
                 android:layout_width="183dp"
                 android:layout_height="105dp"
                 android:layout_marginTop="20dp"
-                android:onClick="openYourDish"
+                android:onClick="imageView_openYourDish"
                 app:srcCompat="@drawable/your_dishes" />
 
             <ImageView
@@ -63,7 +65,7 @@
                 android:layout_width="150dp"
                 android:layout_height="107dp"
                 android:layout_marginTop="20dp"
-                android:onClick="openDailyMeals"
+                android:onClick="imageView_openDailyMeals"
                 app:srcCompat="@drawable/daily_meals" />
         </TableRow>
 
@@ -91,7 +93,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
-                android:onClick="buttonOpenComposeTheDish"
+                android:onClick="imageView_OpenComposeTheDish"
                 app:srcCompat="@drawable/preparation" />
         </TableRow>
 
@@ -165,6 +167,7 @@
             android:gravity="center">
 
             <Button
+                android:onClick="button_addWater"
                 android:id="@+id/buttonAddWater"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"

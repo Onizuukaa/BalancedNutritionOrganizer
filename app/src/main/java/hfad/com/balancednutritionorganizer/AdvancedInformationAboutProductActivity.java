@@ -27,9 +27,8 @@ import static java.lang.Double.parseDouble;
 import static java.lang.Integer.parseInt;
 
 public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
-    //
+
     private SQLiteDatabase mDatabase;
-    //
     public double caloriesInOneGramProduct, carbohydratesInOneGramProduct, sugarInOneGramProduct, FatsInOneGramProduct,
             saturatedFatsInOneGramProduct, proteinInOneGramProduct, theNumberOfGramsEnteredByTheUser;
     public TextView textViewResultForCustomValueCalories, textViewResultForCustomValueCarbohydratesAndSugar,
@@ -43,17 +42,8 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_advanced_information_about_product);
 
-        //
         GroceryDBHelper dbHelper = new GroceryDBHelper(this);
         mDatabase = dbHelper.getWritableDatabase();
-
-//        String name = "cytryna";
-//        ContentValues cv = new ContentValues();
-//        cv.put(GroceryContract.GroceryEntry.COLUMN_NAME, name);
-//        cv.put(GroceryContract.GroceryEntry.COLUMN_AMOUNT, 3);
-//
-//        mDatabase.insert(GroceryContract.GroceryEntry.TABLE_NAME, null, cv);
-        //
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         format = new DecimalFormat("#.#");
@@ -62,16 +52,9 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
         initViews();
     }
 
-    public void add(View view){
-        String name = "buraki";
-        ContentValues cv = new ContentValues();
-        cv.put(GroceryContract.GroceryEntry.COLUMN_NAME, name);
-        cv.put(GroceryContract.GroceryEntry.COLUMN_AMOUNT, 12);
-
-        mDatabase.insert(GroceryContract.GroceryEntry.TABLE_NAME, null, cv);
-    }
-
-    public void OpenComposhingDishesActivity(View view) {
+    public void button_openComposhingDishesActivity(View view) {
+        Intent intent = new Intent(this, ComposingDishesActivity.class);
+        startActivity(intent);
     }
 
     @Override
@@ -87,7 +70,7 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
             case R.id.item1:
                 Intent intent = new Intent(this, MainActivity.class);
                 //Zapobiega odnowieniu MainActivity
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+//                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
                 return true;
             default:
@@ -107,27 +90,16 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
 
         if (theNumberOfGramsEnteredByTheUser != 0) {
 
-            String name = "buraki";
             ContentValues cv = new ContentValues();
             cv.put(GroceryContract.GroceryEntry.COLUMN_NAME, productName);
             cv.put(GroceryContract.GroceryEntry.COLUMN_AMOUNT, caloriesInOneGramProduct * theNumberOfGramsEnteredByTheUser);
-
+            cv.put(GroceryContract.GroceryEntry.COLUMN_CARBO, carbohydratesInOneGramProduct * theNumberOfGramsEnteredByTheUser);
+            cv.put(GroceryContract.GroceryEntry.COLUMN_SUGAR, sugarInOneGramProduct * theNumberOfGramsEnteredByTheUser);
+            cv.put(GroceryContract.GroceryEntry.COLUMN_FATS, FatsInOneGramProduct * theNumberOfGramsEnteredByTheUser);
+            cv.put(GroceryContract.GroceryEntry.COLUMN_SATURATEDFATS, saturatedFatsInOneGramProduct * theNumberOfGramsEnteredByTheUser);
+            cv.put(GroceryContract.GroceryEntry.COLUMN_PROTEIN, proteinInOneGramProduct * theNumberOfGramsEnteredByTheUser);
+            cv.put(GroceryContract.GroceryEntry.COLUMN_WEIGHT, theNumberOfGramsEnteredByTheUserString);
             mDatabase.insert(GroceryContract.GroceryEntry.TABLE_NAME, null, cv);
-            //
-            Intent intent = new Intent("INTENT_NAME").putExtra("product_name", productName);
-            LocalBroadcastManager.getInstance(AdvancedInformationAboutProductActivity.this).sendBroadcast(intent);
-            intent.putExtra("product_image", imageUrl);
-
-            //To niżej crashowało, dziwne :O // przez to crashuje :O
-            //intent.putExtra("product_calories", String.format("%.1f", caloriesInOneGramProduct * theNumberOfGramsEnteredByTheUser)+"");
-            intent.putExtra("product_calories", caloriesInOneGramProduct * theNumberOfGramsEnteredByTheUser + "");
-
-            intent.putExtra("product_carbohydrates", carbohydratesInOneGramProduct * theNumberOfGramsEnteredByTheUser + "");
-            intent.putExtra("product_sugar", sugarInOneGramProduct * theNumberOfGramsEnteredByTheUser + "");
-            intent.putExtra("product_fats", FatsInOneGramProduct * theNumberOfGramsEnteredByTheUser + "");
-            intent.putExtra("product_saturatedFats", saturatedFatsInOneGramProduct * theNumberOfGramsEnteredByTheUser + "");
-            intent.putExtra("product_protein", proteinInOneGramProduct * theNumberOfGramsEnteredByTheUser + "");
-            intent.putExtra("product_gram", theNumberOfGramsEnteredByTheUserString + "");
 
             Toast.makeText(this, "The data has been sent", Toast.LENGTH_SHORT).show();
             //Kod poniżej żeby zapobiec crashowi w momencie wciśnięcia przycisku po usunięciu wpisanej wartości ale bez wychodzenia z aktywności

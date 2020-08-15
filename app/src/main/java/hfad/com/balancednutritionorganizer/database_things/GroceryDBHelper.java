@@ -22,7 +22,13 @@ public class GroceryDBHelper extends SQLiteOpenHelper {
                 GroceryEntry.TABLE_NAME + " (" +
                 GroceryEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 GroceryEntry.COLUMN_NAME + " TEXT NOT NULL, " +
-                GroceryEntry.COLUMN_AMOUNT + " INTEGER NOT NULL, " +
+                GroceryEntry.COLUMN_AMOUNT + " DOUBLE NOT NULL, " +
+                GroceryEntry.COLUMN_CARBO + " DOUBLE NOT NULL, " +
+                GroceryEntry.COLUMN_SUGAR + " DOUBLE NOT NULL, " +
+                GroceryEntry.COLUMN_FATS + " DOUBLE NOT NULL, " +
+                GroceryEntry.COLUMN_SATURATEDFATS + " DOUBLE NOT NULL, " +
+                GroceryEntry.COLUMN_PROTEIN + " DOUBLE NOT NULL, " +
+                GroceryEntry.COLUMN_WEIGHT + " DOUBLE NOT NULL, " +
                 GroceryEntry.COLUMN_TIMESTAMP + " TIMESTAMP DEFAULT CURRENT_TIMESTAMP" +
                 ");";
         db.execSQL(SQL_CREATE_GROCERYLIST_TABLE);

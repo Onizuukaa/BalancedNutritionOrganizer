@@ -33,6 +33,7 @@ public class GroceryAdapter extends RecyclerView.Adapter<GroceryAdapter.GroceryV
             countText = itemView.findViewById(R.id.textViewHowManyGramProduct);
         }
     }
+
     @NonNull
     @Override
     public GroceryViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

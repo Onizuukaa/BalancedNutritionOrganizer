@@ -27,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="50dp"
-            android:text="Height in Cm" />
+            android:text="Height in cm" />
 
         <EditText
             android:id="@+id/editTextInsertHeight"
@@ -43,7 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="50dp"
-            android:text="Weight in Kg" />
+            android:text="Weight in kg" />
 
         <EditText
             android:id="@+id/editTextInsertWeight"
