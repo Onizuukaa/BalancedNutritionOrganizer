@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -26,10 +27,13 @@ import static java.lang.Integer.parseInt;
 
 public class ComposingDishesActivity extends AppCompatActivity {
 
+    SQLiteDatabase db;
+
     RecyclerView recyclerView;
     private SQLiteDatabase mDatabase;
     private GroceryAdapter mAdapter;
     Cursor cursor;
+    GroceryDBHelper obiekt;
 
     TextView textViewComposhingDishesKcal, textViewComposhingDishesCarbohydrates, textViewComposhingDishesGram,
             textViewComposhingDishesSugar, textViewComposhingDishesFats, textViewComposhingDishesSaturatedFats,
@@ -77,7 +81,6 @@ public class ComposingDishesActivity extends AppCompatActivity {
                 removeItem((long) viewHolder.itemView.getTag());
             }
         }).attachToRecyclerView(recyclerView);
-
     }
 
     private void removeItem(long id) {
@@ -206,7 +209,56 @@ public class ComposingDishesActivity extends AppCompatActivity {
         showOrHideNoDataTextView();
     }
 
-    public void buttonSendDish(View view) {
+    public void button_AddDish(View view) {
+        // Tutaj chcę dodać tabelkę do bazy danych grocerylist.db
+
+
+        lala2();
+
+    }
+
+    public void lala2(){
+
+        final String SQL_CREATE_GROCERYLIST_TABLE = "CREATE TABLE " +
+                GroceryContract.GroceryEntry2.TABLE_NAME + " (" +
+                GroceryContract.GroceryEntry2._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                GroceryContract.GroceryEntry2.COLUMN_NAME + " TEXT NOT NULL, " +
+                GroceryContract.GroceryEntry2.COLUMN_AMOUNT + " DOUBLE NOT NULL, " +
+                GroceryContract.GroceryEntry2.COLUMN_CARBO + " DOUBLE NOT NULL, " +
+                GroceryContract.GroceryEntry2.COLUMN_SUGAR + " DOUBLE NOT NULL, " +
+                GroceryContract.GroceryEntry2.COLUMN_FATS + " DOUBLE NOT NULL, " +
+                GroceryContract.GroceryEntry2.COLUMN_SATURATEDFATS + " DOUBLE NOT NULL, " +
+                GroceryContract.GroceryEntry2.COLUMN_PROTEIN + " DOUBLE NOT NULL, " +
+                GroceryContract.GroceryEntry2.COLUMN_WEIGHT + " DOUBLE NOT NULL, " +
+                GroceryContract.GroceryEntry2.COLUMN_TIMESTAMP + " TIMESTAMP DEFAULT CURRENT_TIMESTAMP" +
+                ");";
+        db.execSQL(SQL_CREATE_GROCERYLIST_TABLE);
+
+        ContentValues cv = new ContentValues();
+        while (cursor.moveToNext()) {
+            cv.put(GroceryContract.GroceryEntry2.COLUMN_NAME, cursor.getString(1));
+            cv.put(GroceryContract.GroceryEntry2.COLUMN_AMOUNT, cursor.getDouble(2));
+            cv.put(GroceryContract.GroceryEntry2.COLUMN_CARBO, cursor.getDouble(3));
+            cv.put(GroceryContract.GroceryEntry2.COLUMN_SUGAR, cursor.getDouble(4));
+            cv.put(GroceryContract.GroceryEntry2.COLUMN_FATS, cursor.getDouble(5));
+            cv.put(GroceryContract.GroceryEntry2.COLUMN_SATURATEDFATS, cursor.getDouble(6));
+            cv.put(GroceryContract.GroceryEntry2.COLUMN_PROTEIN, cursor.getDouble(7));
+            cv.put(GroceryContract.GroceryEntry2.COLUMN_WEIGHT, cursor.getDouble(8));
+            mDatabase.insert(GroceryContract.GroceryEntry2.TABLE_NAME, null, cv);
+        }
+        lala();
+    }
+
+    public Cursor lala() {
+        return mDatabase.query(
+                GroceryContract.GroceryEntry2.TABLE_NAME,
+                null,
+                null,
+                null,
+                null,
+                null,
+                GroceryContract.GroceryEntry2.COLUMN_TIMESTAMP + " DESC"
+        );
     }
 
     private void initViews() {
@@ -232,7 +284,7 @@ public class ComposingDishesActivity extends AppCompatActivity {
         });
     }
 
-    private void showOrHideNoDataTextView(){
+    private void showOrHideNoDataTextView() {
         if (getAllItems().getCount() == 0)
             textViewNoData.setVisibility(View.VISIBLE);
         else

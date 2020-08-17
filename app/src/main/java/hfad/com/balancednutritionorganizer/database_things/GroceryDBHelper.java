@@ -38,5 +38,6 @@ public class GroceryDBHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + GroceryEntry.TABLE_NAME);
         onCreate(db);
+
     }
 }
