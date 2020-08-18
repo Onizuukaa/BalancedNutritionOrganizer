@@ -60,9 +60,6 @@ public class RecyclerViewSpecificProductListAdapter extends RecyclerView.Adapter
             @Override
             public void onClick(View v) {
 
-                // To działa
-                System.out.println("WYNIK " + currentItem.getProductName());
-
                 Intent intent = new Intent(mContext, AdvancedInformationAboutProductActivity.class);
                 intent.putExtra("product_name", currentItem.getProductName());
                 intent.putExtra("product_calories", currentItem.getProductCalories());
