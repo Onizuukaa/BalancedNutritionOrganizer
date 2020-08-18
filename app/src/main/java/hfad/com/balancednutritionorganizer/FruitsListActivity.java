@@ -6,6 +6,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.database.Cursor;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.widget.EditText;
 
 import java.util.ArrayList;
 
@@ -15,15 +18,8 @@ import hfad.com.balancednutritionorganizer.database_things.DatabaseAccess;
 public class FruitsListActivity extends AppCompatActivity {
     DatabaseAccess databaseAccess;
     Cursor cursorForFruits;
-
-    private ArrayList<String> mProductNames = new ArrayList<>();
-    private ArrayList<String> mProductCalories = new ArrayList<>();
-    private ArrayList<String> mProductImage = new ArrayList<>();
-    private ArrayList<String> mProductCarbohydrates = new ArrayList<>();
-    private ArrayList<String> mProductSugar = new ArrayList<>();
-    private ArrayList<String> mProductFats = new ArrayList<>();
-    private ArrayList<String> mProductSaturatedFats = new ArrayList<>();
-    private ArrayList<String> mProductProtein = new ArrayList<>();
+private RecyclerViewSpecificProductListAdapter adapter;
+private ArrayList<ReturnItem> mExampleList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,32 +30,54 @@ public class FruitsListActivity extends AppCompatActivity {
         databaseAccess = DatabaseAccess.getInstance(getApplicationContext());
         databaseAccess.open();
         cursorForFruits = databaseAccess.getAllDataFromTableFruits();
+        EditText editText = findViewById(R.id.editText_fruitsSearchItem);
+        editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                filter(s.toString());
+            }
+        });
 
         createExampleList();
     }
 
     public void createExampleList() {
+        mExampleList = new ArrayList<>();
+
         while (cursorForFruits.moveToNext()) {
-            mProductNames.add(cursorForFruits.getString(0));
-            mProductImage.add(cursorForFruits.getString(1));
-            mProductCalories.add(cursorForFruits.getString(2));
-            mProductCarbohydrates.add(cursorForFruits.getString(3));
-            mProductSugar.add(cursorForFruits.getString(4));
-            mProductFats.add(cursorForFruits.getString(5));
-            mProductSaturatedFats.add(cursorForFruits.getString(6));
-            mProductProtein.add(cursorForFruits.getString(7));
+            mExampleList.add(new ReturnItem(cursorForFruits.getString(0), cursorForFruits.getString(1),
+                    cursorForFruits.getString(2), cursorForFruits.getString(3),
+                    cursorForFruits.getString(4), cursorForFruits.getString(5),
+                    cursorForFruits.getString(6), cursorForFruits.getString(7)));
         }
         cursorForFruits.close();
         databaseAccess.close();
-
         initRecyclerView();
     }
 
     private void initRecyclerView() {
         RecyclerView recyclerView = findViewById(R.id.fruitsRecyclerView);
-        RecyclerViewSpecificProductListAdapter adapter = new RecyclerViewSpecificProductListAdapter(this, mProductImage, mProductNames, mProductCalories, mProductCarbohydrates,
-                mProductSugar, mProductFats, mProductSaturatedFats, mProductProtein);
+        adapter = new RecyclerViewSpecificProductListAdapter(this, mExampleList);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+    }
+    private void filter(String text) {
+        ArrayList<ReturnItem> filteredList = new ArrayList<>();
+        for (ReturnItem item : mExampleList) {
+            if (item.getProductName().toLowerCase().contains(text.toLowerCase())) {
+                filteredList.add(item);
+            }
+        }
+        adapter.filterList(filteredList);
     }
 }

@@ -42,18 +42,6 @@ public class ComposingDishesActivity extends AppCompatActivity {
     Button button_removeItem, button_removeAllItems;
     RecyclerViewComposhingDishesAdapter adapter;
 
-    private ArrayList<String> productNameArrayList = new ArrayList<>();
-    private ArrayList<String> productCaloriesArrayList = new ArrayList<>();
-    private ArrayList<String> productCarbohydratesArrayList = new ArrayList<>();
-    private ArrayList<String> productSugarArrayList = new ArrayList<>();
-    private ArrayList<String> productFatsArrayList = new ArrayList<>();
-    private ArrayList<String> productSaturatedFatsArrayList = new ArrayList<>();
-    private ArrayList<String> productProteinArrayList = new ArrayList<>();
-
-    private ArrayList<ExampleItem> mExampleList;
-
-    private ArrayList<String> productGramArrayList = new ArrayList<>();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -133,22 +121,11 @@ public class ComposingDishesActivity extends AppCompatActivity {
 
             sumAndViewMacros();
 
-//            productNameArrayList.remove(position);
-//            productCaloriesArrayList.remove(position);
-//            productCarbohydratesArrayList.remove(position);
-//            productSugarArrayList.remove(position);
-//            productFatsArrayList.remove(position);
+            //Pozostałości kodu, zostawiłem dla notifyRemoved(position) bo nie wiem co to robi.
 //            productSaturatedFatsArrayList.remove(position);
 //            productProteinArrayList.remove(position);
 //            adapter.notifyItemRemoved(position);
 
-//            caloriesSum = 0.0;
-//            carbohydratesSum = 0.0;
-//            gramSum = 0.0;
-//            sugarSum = 0.0;
-//            fatsSum = 0.0;
-//            saturatedFatsSum = 0.0;
-//            proteinSum = 0.0;
         }
         showOrHideNoDataTextView();
     }
@@ -212,10 +189,7 @@ public class ComposingDishesActivity extends AppCompatActivity {
                 GroceryContract.GroceryEntry._ID + ">" + 0, null);
         mAdapter.swapCursor(getAllItems());
 
-
         sumAndViewMacros();
-//        textViewNoData.setVisibility(View.VISIBLE);
-
         showOrHideNoDataTextView();
     }
 

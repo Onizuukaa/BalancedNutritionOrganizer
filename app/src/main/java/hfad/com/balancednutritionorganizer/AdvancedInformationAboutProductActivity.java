@@ -109,14 +109,18 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
     }
 
     private void getIncomingIntent() {
+//        if (getIntent().hasExtra("product_name") && getIntent().hasExtra("product_calories")
+//                && getIntent().hasExtra("product_image") && getIntent().hasExtra("product_carbohydrates")
+//                && getIntent().hasExtra("product_fats") && getIntent().hasExtra("product_saturatedfats")
+//                && getIntent().hasExtra("product_protein")) {
         if (getIntent().hasExtra("product_name") && getIntent().hasExtra("product_calories")
-                && getIntent().hasExtra("product_image") && getIntent().hasExtra("product_carbohydrates")
+                && getIntent().hasExtra("product_carbohydrates")
                 && getIntent().hasExtra("product_fats") && getIntent().hasExtra("product_saturatedfats")
                 && getIntent().hasExtra("product_protein")) {
 
             productName = getIntent().getStringExtra("product_name");
             String productCaloriesFor100Gram = getIntent().getStringExtra("product_calories");
-            imageUrl = getIntent().getStringExtra("product_image"); // Obrazek
+            //imageUrl = getIntent().getStringExtra("product_image"); // Obrazek
             String productCarbohydratesFor100Gram = getIntent().getStringExtra("product_carbohydrates");
             String productSugarFor100Gram = getIntent().getStringExtra("product_sugar");
             String productFatsFor100Gram = getIntent().getStringExtra("product_fats");

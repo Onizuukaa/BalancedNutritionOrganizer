@@ -1,7 +1,8 @@
 package hfad.com.balancednutritionorganizer;
 
-public class ExampleItem {
+public class ReturnItem {
     private String productName;
+    private String productImage;
     private String productCalories;
     private String productCarbohydrates;
     private String productSugar;
@@ -9,9 +10,10 @@ public class ExampleItem {
     private String productSaturatedFats;
     private String productProtein;
 
-    public ExampleItem(String productName, String productCalories, String productCarbohydrates, String productSugar,
-                       String productFats, String productSaturatedFats, String productProtein) {
+    public ReturnItem(String productName, String productImage, String productCalories, String productCarbohydrates, String productSugar,
+                      String productFats, String productSaturatedFats, String productProtein) {
         this.productName = productName;
+        this.productImage = productImage;
         this.productCalories = productCalories;
         this.productCarbohydrates = productCarbohydrates;
         this.productSugar = productSugar;
@@ -22,6 +24,10 @@ public class ExampleItem {
 
     public String getProductName() {
         return productName;
+    }
+
+    public String getProductImage() {
+        return productImage;
     }
 
     public String getProductCalories() {

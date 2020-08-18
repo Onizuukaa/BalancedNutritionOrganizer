@@ -17,30 +17,16 @@ import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import hfad.com.balancednutritionorganizer.AdvancedInformationAboutProductActivity;
+import hfad.com.balancednutritionorganizer.ReturnItem;
 import hfad.com.balancednutritionorganizer.R;
 
 public class RecyclerViewSpecificProductListAdapter extends RecyclerView.Adapter<RecyclerViewSpecificProductListAdapter.ViewHolder> {
-    private ArrayList<String> mProductNames;
-    private ArrayList<String> mProductCalories;
-    private ArrayList<String> mProductImages;
-    private ArrayList<String> mProductCarbohydrates;
-    private ArrayList<String> mProductSugar;
-    private ArrayList<String> mProductFats;
-    private ArrayList<String> mProductSaturatedFats;
-    private ArrayList<String> mProductProtein;
+
+    private ArrayList<ReturnItem> mExampleList;
     private Context mContext;
 
-    public RecyclerViewSpecificProductListAdapter(Context mContext, ArrayList<String> mProductImages, ArrayList<String> mProductNames, ArrayList<String> mProductCalories,
-                                                  ArrayList<String> mProductCarbohydrates, ArrayList<String> mProductSugar, ArrayList<String> mProductFats,
-                                                  ArrayList<String> mProductSaturatedFats, ArrayList<String> mProductProtein) {
-        this.mProductImages = mProductImages;
-        this.mProductNames = mProductNames;
-        this.mProductCalories = mProductCalories;
-        this.mProductCarbohydrates = mProductCarbohydrates;
-        this.mProductSugar = mProductSugar;
-        this.mProductFats = mProductFats;
-        this.mProductSaturatedFats = mProductSaturatedFats;
-        this.mProductProtein = mProductProtein;
+    public RecyclerViewSpecificProductListAdapter(Context mContext, ArrayList<ReturnItem> exampleList) {
+        this.mExampleList = exampleList;
         this.mContext = mContext;
     }
 
@@ -55,32 +41,37 @@ public class RecyclerViewSpecificProductListAdapter extends RecyclerView.Adapter
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
 
+        final ReturnItem currentItem = mExampleList.get(position);
+
         Glide.with(mContext)
                 .asBitmap()
-                .load(mProductImages.get(position))
+                .load(currentItem.getProductImage())
                 .into(holder.productImage);
 
-        holder.productName.setText(mProductNames.get(position));
-        holder.productCalories.setText(mProductCalories.get(position));
-        holder.productCarbohydrates.setText(mProductCarbohydrates.get(position));
-        holder.productSugar.setText(mProductSugar.get(position));
-        holder.productFats.setText(mProductFats.get(position));
-        holder.productSaturatedFats.setText(mProductSaturatedFats.get(position));
-        holder.productProtein.setText(mProductProtein.get(position));
+        holder.productName.setText(currentItem.getProductName());
+        holder.productCalories.setText(currentItem.getProductCalories());
+        holder.productCarbohydrates.setText(currentItem.getProductCarbohydrates());
+        holder.productSugar.setText(currentItem.getProductSugar());
+        holder.productFats.setText(currentItem.getProductFats());
+        holder.productSaturatedFats.setText(currentItem.getProductSaturatedFats());
+        holder.productProtein.setText(currentItem.getProductProtein());
 
         holder.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                // To działa
+                System.out.println("WYNIK " + currentItem.getProductName());
+
                 Intent intent = new Intent(mContext, AdvancedInformationAboutProductActivity.class);
-                intent.putExtra("product_name", mProductNames.get(position));
-                intent.putExtra("product_calories", mProductCalories.get(position));
-                intent.putExtra("product_image", mProductImages.get(position));
-                intent.putExtra("product_carbohydrates", mProductCarbohydrates.get(position));
-                intent.putExtra("product_sugar", mProductSugar.get(position));
-                intent.putExtra("product_fats", mProductFats.get(position));
-                intent.putExtra("product_saturatedfats", mProductSaturatedFats.get(position));
-                intent.putExtra("product_protein", mProductProtein.get(position));
+                intent.putExtra("product_name", currentItem.getProductName());
+                intent.putExtra("product_calories", currentItem.getProductCalories());
+                //intent.putExtra("product_image", mProductImages.get(position));
+                intent.putExtra("product_carbohydrates", currentItem.getProductCarbohydrates());
+                intent.putExtra("product_sugar", currentItem.getProductSugar());
+                intent.putExtra("product_fats", currentItem.getProductFats());
+                intent.putExtra("product_saturatedfats", currentItem.getProductSaturatedFats());
+                intent.putExtra("product_protein", currentItem.getProductProtein());
                 mContext.startActivity(intent);
             }
         });
@@ -88,7 +79,7 @@ public class RecyclerViewSpecificProductListAdapter extends RecyclerView.Adapter
 
     @Override
     public int getItemCount() {
-        return mProductNames.size();
+        return mExampleList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -109,5 +100,9 @@ public class RecyclerViewSpecificProductListAdapter extends RecyclerView.Adapter
             productProtein = itemView.findViewById(R.id.textViewProductProteinFor100Gram);
             parentLayout = itemView.findViewById(R.id.schemeSpecificProductList);
         }
+    }
+    public void filterList(ArrayList<ReturnItem> filteredList) {
+        mExampleList = filteredList;
+        notifyDataSetChanged();
     }
 }

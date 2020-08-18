@@ -6,7 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".FruitsListActivity">
 
+    <EditText
+        android:id="@+id/editText_fruitsSearchItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"/>
+
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@id/editText_fruitsSearchItem"
         android:id="@+id/fruitsRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

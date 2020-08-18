@@ -6,6 +6,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.database.Cursor;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.widget.EditText;
 
 import java.util.ArrayList;
 
@@ -15,15 +18,8 @@ import hfad.com.balancednutritionorganizer.database_things.DatabaseAccess;
 public class VegetablesListActivity extends AppCompatActivity {
     DatabaseAccess databaseAccess;
     Cursor cursorForVegetables;
-
-    private ArrayList<String> mProductNames = new ArrayList<>();
-    private ArrayList<String> mProductCalories = new ArrayList<>();
-    private ArrayList<String> mProductImage = new ArrayList<>();
-    private ArrayList<String> mProductCarbohydrates = new ArrayList<>();
-    private ArrayList<String> mProductSugar = new ArrayList<>();
-    private ArrayList<String> mProductFats = new ArrayList<>();
-    private ArrayList<String> mProductSaturatedFats = new ArrayList<>();
-    private ArrayList<String> mProductProtein = new ArrayList<>();
+    private RecyclerViewSpecificProductListAdapter adapter;
+    private ArrayList<ReturnItem> mExampleList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,33 +30,56 @@ public class VegetablesListActivity extends AppCompatActivity {
         databaseAccess = DatabaseAccess.getInstance(getApplicationContext());
         databaseAccess.open();
         cursorForVegetables = databaseAccess.getAllDataFromTableVegetables();
+        EditText editText = findViewById(R.id.editText_vegetablesSearchItem);
+        editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                filter(s.toString());
+            }
+        });
 
         createExampleList();
+
     }
 
     public void createExampleList() {
+        mExampleList = new ArrayList<>();
 
         while (cursorForVegetables.moveToNext()) {
-            mProductNames.add(cursorForVegetables.getString(0));
-            mProductImage.add(cursorForVegetables.getString(1));
-            mProductCalories.add(cursorForVegetables.getString(2));
-            mProductCarbohydrates.add(cursorForVegetables.getString(3));
-            mProductSugar.add(cursorForVegetables.getString(4));
-            mProductFats.add(cursorForVegetables.getString(5));
-            mProductSaturatedFats.add(cursorForVegetables.getString(6));
-            mProductProtein.add(cursorForVegetables.getString(7));
+            mExampleList.add(new ReturnItem(cursorForVegetables.getString(0), cursorForVegetables.getString(1),
+                    cursorForVegetables.getString(2), cursorForVegetables.getString(3),
+                    cursorForVegetables.getString(4), cursorForVegetables.getString(5),
+                    cursorForVegetables.getString(6), cursorForVegetables.getString(7)));
         }
         cursorForVegetables.close();
         databaseAccess.close();
-
         initRecyclerView();
     }
 
     private void initRecyclerView() {
         RecyclerView recyclerView = findViewById(R.id.vegetablesRecyclerView);
-        RecyclerViewSpecificProductListAdapter adapter = new RecyclerViewSpecificProductListAdapter(this, mProductImage, mProductNames, mProductCalories, mProductCarbohydrates,
-                mProductSugar, mProductFats, mProductSaturatedFats, mProductProtein);
+        adapter = new RecyclerViewSpecificProductListAdapter(this, mExampleList);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+    }
+
+    private void filter(String text) {
+        ArrayList<ReturnItem> filteredList = new ArrayList<>();
+        for (ReturnItem item : mExampleList) {
+            if (item.getProductName().toLowerCase().contains(text.toLowerCase())) {
+                filteredList.add(item);
+            }
+        }
+        adapter.filterList(filteredList);
     }
 }
