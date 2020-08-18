@@ -26,7 +26,6 @@ import hfad.com.balancednutritionorganizer.database_things.GroceryDBHelper;
 import static java.lang.Integer.parseInt;
 
 public class ComposingDishesActivity extends AppCompatActivity {
-
     SQLiteDatabase db;
 
     RecyclerView recyclerView;
@@ -45,12 +44,15 @@ public class ComposingDishesActivity extends AppCompatActivity {
 
     private ArrayList<String> productNameArrayList = new ArrayList<>();
     private ArrayList<String> productCaloriesArrayList = new ArrayList<>();
-    private ArrayList<String> productGramArrayList = new ArrayList<>();
     private ArrayList<String> productCarbohydratesArrayList = new ArrayList<>();
     private ArrayList<String> productSugarArrayList = new ArrayList<>();
     private ArrayList<String> productFatsArrayList = new ArrayList<>();
     private ArrayList<String> productSaturatedFatsArrayList = new ArrayList<>();
     private ArrayList<String> productProteinArrayList = new ArrayList<>();
+
+    private ArrayList<ExampleItem> mExampleList;
+
+    private ArrayList<String> productGramArrayList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -117,25 +119,36 @@ public class ComposingDishesActivity extends AppCompatActivity {
     }
 
     private void buttonRemoveItem(int position) {
-        if (position >= productNameArrayList.size()) {
+        //if (position >= productNameArrayList.size()) {
+        if (position >= cursor.getCount() || position == -1) {
             Toast.makeText(this, "No item with this index", Toast.LENGTH_SHORT).show();
         } else {
-            productNameArrayList.remove(position);
-            productCaloriesArrayList.remove(position);
-            productCarbohydratesArrayList.remove(position);
-            productSugarArrayList.remove(position);
-            productFatsArrayList.remove(position);
-            productSaturatedFatsArrayList.remove(position);
-            productProteinArrayList.remove(position);
-            adapter.notifyItemRemoved(position);
+            cursor.moveToPosition(position);
+             int productPosition = cursor.getInt(0);
 
-            caloriesSum = 0.0;
-            carbohydratesSum = 0.0;
-            gramSum = 0.0;
-            sugarSum = 0.0;
-            fatsSum = 0.0;
-            saturatedFatsSum = 0.0;
-            proteinSum = 0.0;
+            mDatabase.delete(GroceryContract.GroceryEntry.TABLE_NAME,
+                    GroceryContract.GroceryEntry._ID + "=" + productPosition, null);
+            mAdapter.swapCursor(getAllItems());
+
+
+            sumAndViewMacros();
+
+//            productNameArrayList.remove(position);
+//            productCaloriesArrayList.remove(position);
+//            productCarbohydratesArrayList.remove(position);
+//            productSugarArrayList.remove(position);
+//            productFatsArrayList.remove(position);
+//            productSaturatedFatsArrayList.remove(position);
+//            productProteinArrayList.remove(position);
+//            adapter.notifyItemRemoved(position);
+
+//            caloriesSum = 0.0;
+//            carbohydratesSum = 0.0;
+//            gramSum = 0.0;
+//            sugarSum = 0.0;
+//            fatsSum = 0.0;
+//            saturatedFatsSum = 0.0;
+//            proteinSum = 0.0;
         }
         showOrHideNoDataTextView();
     }
@@ -158,7 +171,8 @@ public class ComposingDishesActivity extends AppCompatActivity {
                 null,
                 null,
                 null,
-                GroceryContract.GroceryEntry.COLUMN_TIMESTAMP + " DESC"
+                //GroceryContract.GroceryEntry.COLUMN_TIMESTAMP + " DESC"
+                null
         );
     }
 
@@ -195,7 +209,7 @@ public class ComposingDishesActivity extends AppCompatActivity {
     public void button_ClearProductTable(View view) {
 
         mDatabase.delete(GroceryContract.GroceryEntry.TABLE_NAME,
-                GroceryContract.GroceryEntry._ID + ">" + 1, null);
+                GroceryContract.GroceryEntry._ID + ">" + 0, null);
         mAdapter.swapCursor(getAllItems());
 
 
@@ -273,7 +287,7 @@ public class ComposingDishesActivity extends AppCompatActivity {
         button_removeItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int position = parseInt(editText_removeItem.getText().toString());
+                int position = parseInt(editText_removeItem.getText().toString()) - 1;
                 buttonRemoveItem(position);
             }
         });

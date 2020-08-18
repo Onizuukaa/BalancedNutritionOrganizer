@@ -51,7 +51,7 @@ public class GroceryAdapter extends RecyclerView.Adapter<GroceryAdapter.GroceryV
         int amount = mCursor.getInt(mCursor.getColumnIndex(GroceryContract.GroceryEntry.COLUMN_AMOUNT));
         long id = mCursor.getLong(mCursor.getColumnIndex(GroceryContract.GroceryEntry._ID));
 
-        holder.nameText.setText(position + ".  " + name);
+        holder.nameText.setText(position+1 + ".  " + name);
         //holder.countText.setText(String.valueOf(amount));
         holder.countText.setText(amount + " KCAL");
         holder.itemView.setTag(id);

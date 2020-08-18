@@ -130,7 +130,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
             android:inputType="number"
-            android:text="0" />
+            android:text="1" />
 
         <Button
             android:id="@+id/button_removeItem"
