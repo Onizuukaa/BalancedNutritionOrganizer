@@ -2,7 +2,6 @@ package hfad.com.balancednutritionorganizer;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import android.content.ContentValues;
 import android.content.Intent;
@@ -60,7 +59,7 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.example_menu, menu);
+        inflater.inflate(R.menu.home_menu, menu);
         return true;
     }
 

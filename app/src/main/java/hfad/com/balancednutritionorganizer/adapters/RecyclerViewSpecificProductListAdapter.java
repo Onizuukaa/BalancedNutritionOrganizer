@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -20,13 +22,15 @@ import hfad.com.balancednutritionorganizer.AdvancedInformationAboutProductActivi
 import hfad.com.balancednutritionorganizer.ReturnItem;
 import hfad.com.balancednutritionorganizer.R;
 
-public class RecyclerViewSpecificProductListAdapter extends RecyclerView.Adapter<RecyclerViewSpecificProductListAdapter.ViewHolder> {
+public class RecyclerViewSpecificProductListAdapter extends RecyclerView.Adapter<RecyclerViewSpecificProductListAdapter.ViewHolder> implements Filterable {
 
-    private ArrayList<ReturnItem> mExampleList;
+    private ArrayList<ReturnItem> exampleList;
+    private ArrayList<ReturnItem> exampleListFull;
     private Context mContext;
 
     public RecyclerViewSpecificProductListAdapter(Context mContext, ArrayList<ReturnItem> exampleList) {
-        this.mExampleList = exampleList;
+        this.exampleList = exampleList;
+        exampleListFull = new ArrayList<>(exampleList);
         this.mContext = mContext;
     }
 
@@ -41,7 +45,7 @@ public class RecyclerViewSpecificProductListAdapter extends RecyclerView.Adapter
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
 
-        final ReturnItem currentItem = mExampleList.get(position);
+        final ReturnItem currentItem = exampleList.get(position);
 
         Glide.with(mContext)
                 .asBitmap()
@@ -76,7 +80,7 @@ public class RecyclerViewSpecificProductListAdapter extends RecyclerView.Adapter
 
     @Override
     public int getItemCount() {
-        return mExampleList.size();
+        return exampleList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -99,7 +103,42 @@ public class RecyclerViewSpecificProductListAdapter extends RecyclerView.Adapter
         }
     }
     public void filterList(ArrayList<ReturnItem> filteredList) {
-        mExampleList = filteredList;
+        exampleList = filteredList;
         notifyDataSetChanged();
     }
+
+    @Override
+    public Filter getFilter() {
+        return exampleFilter;
+    }
+    private Filter exampleFilter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            ArrayList<ReturnItem> filteredList = new ArrayList<>();
+
+            if (constraint == null || constraint.length() == 0) {
+                filteredList.addAll(exampleListFull);
+            } else {
+                String filterPattern = constraint.toString().toLowerCase().trim();
+
+                for (ReturnItem item : exampleListFull) {
+                    if (item.getProductName().toLowerCase().contains(filterPattern)) {
+                        filteredList.add(item);
+                    }
+                }
+
+            }
+            FilterResults results = new FilterResults();
+            results.values = filteredList;
+
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            exampleList.clear();
+            exampleList.addAll((ArrayList) results.values);
+            notifyDataSetChanged();
+        }
+    };
 }
