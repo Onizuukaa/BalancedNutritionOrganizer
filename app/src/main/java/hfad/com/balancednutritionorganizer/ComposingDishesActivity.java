@@ -33,7 +33,6 @@ public class ComposingDishesActivity extends AppCompatActivity {
     private SQLiteDatabase mDatabase;
     private GroceryAdapter mAdapter;
     Cursor cursor;
-    GroceryDBHelper obiekt;
 
     TextView textViewComposhingDishesKcal, textViewComposhingDishesCarbohydrates, textViewComposhingDishesGram,
             textViewComposhingDishesSugar, textViewComposhingDishesFats, textViewComposhingDishesSaturatedFats,
@@ -137,9 +136,6 @@ public class ComposingDishesActivity extends AppCompatActivity {
             fatsSum = 0.0;
             saturatedFatsSum = 0.0;
             proteinSum = 0.0;
-
-            //sumAndViewMacros();
-
         }
         showOrHideNoDataTextView();
     }
@@ -211,7 +207,6 @@ public class ComposingDishesActivity extends AppCompatActivity {
 
     public void button_AddDish(View view) {
         // Tutaj chcę dodać tabelkę do bazy danych grocerylist.db
-
 
         lala2();
 
