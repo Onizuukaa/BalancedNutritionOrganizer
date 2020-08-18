@@ -3,6 +3,7 @@ package hfad.com.balancednutritionorganizer;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActionBar;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
@@ -44,12 +45,18 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
         GroceryDBHelper dbHelper = new GroceryDBHelper(this);
         mDatabase = dbHelper.getWritableDatabase();
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+       getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+
         format = new DecimalFormat("#.#");
         format.setDecimalSeparatorAlwaysShown(false);
         getIncomingIntent();
         initViews();
     }
+
+
+
 
     public void button_openComposhingDishesActivity(View view) {
         Intent intent = new Intent(this, ComposingDishesActivity.class);
@@ -71,7 +78,9 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
                 //Zapobiega odnowieniu MainActivity
 //                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
-                return true;
+            case android.R.id.home:
+                onBackPressed();
+                finish();
             default:
                 return super.onOptionsItemSelected(item);
         }
