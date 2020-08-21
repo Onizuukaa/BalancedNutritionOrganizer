@@ -45,8 +45,7 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
         GroceryDBHelper dbHelper = new GroceryDBHelper(this);
         mDatabase = dbHelper.getWritableDatabase();
 
-       getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
         format = new DecimalFormat("#.#");
@@ -54,8 +53,6 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
         getIncomingIntent();
         initViews();
     }
-
-
 
 
     public void button_openComposhingDishesActivity(View view) {

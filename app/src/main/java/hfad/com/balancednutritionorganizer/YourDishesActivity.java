@@ -42,9 +42,11 @@ public class YourDishesActivity extends AppCompatActivity {
         cursor = object.lala();
         test();
     }
-public void test(){
-textView.setText(cursor.getDouble(2) + "");
-}
+
+    public void test() {
+        textView.setText(cursor.getDouble(2) + "");
+    }
+
     private void initRecyclerView() {
         RecyclerView recyclerView = findViewById(R.id.yourDishesRecyclerView);
         adapter = new RecyclerViewYourDishesAdapter(this, productNameArrayList, productCaloriesArrayList);

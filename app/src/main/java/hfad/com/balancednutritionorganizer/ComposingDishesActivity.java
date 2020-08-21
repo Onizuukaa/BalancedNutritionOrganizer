@@ -26,7 +26,7 @@ import hfad.com.balancednutritionorganizer.database_things.GroceryDBHelper;
 import static java.lang.Integer.parseInt;
 
 public class ComposingDishesActivity extends AppCompatActivity {
-    SQLiteDatabase db;
+    //SQLiteDatabase db;
 
     RecyclerView recyclerView;
     private SQLiteDatabase mDatabase;
@@ -107,7 +107,6 @@ public class ComposingDishesActivity extends AppCompatActivity {
     }
 
     private void buttonRemoveItem(int position) {
-        //if (position >= productNameArrayList.size()) {
         if (position >= cursor.getCount() || position == -1) {
             Toast.makeText(this, "No item with this index", Toast.LENGTH_SHORT).show();
         } else {
@@ -118,9 +117,7 @@ public class ComposingDishesActivity extends AppCompatActivity {
                     GroceryContract.GroceryEntry._ID + "=" + productPosition, null);
             mAdapter.swapCursor(getAllItems());
 
-
             sumAndViewMacros();
-
             //Pozostałości kodu, zostawiłem dla notifyRemoved(position) bo nie wiem co to robi.
 //            productSaturatedFatsArrayList.remove(position);
 //            productProteinArrayList.remove(position);
@@ -202,7 +199,9 @@ public class ComposingDishesActivity extends AppCompatActivity {
 
     public void lala2(){
 
-        final String SQL_CREATE_GROCERYLIST_TABLE = "CREATE TABLE " +
+       // mDatabase.update("CREATE TABLE IF NOT EXITS" + )
+
+        final String SQL_CREATE_GROCERYLIST_TABLE2 = "CREATE TABLE " +
                 GroceryContract.GroceryEntry2.TABLE_NAME + " (" +
                 GroceryContract.GroceryEntry2._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 GroceryContract.GroceryEntry2.COLUMN_NAME + " TEXT NOT NULL, " +
@@ -215,7 +214,7 @@ public class ComposingDishesActivity extends AppCompatActivity {
                 GroceryContract.GroceryEntry2.COLUMN_WEIGHT + " DOUBLE NOT NULL, " +
                 GroceryContract.GroceryEntry2.COLUMN_TIMESTAMP + " TIMESTAMP DEFAULT CURRENT_TIMESTAMP" +
                 ");";
-        db.execSQL(SQL_CREATE_GROCERYLIST_TABLE);
+        mDatabase.execSQL(SQL_CREATE_GROCERYLIST_TABLE2);
 
         ContentValues cv = new ContentValues();
         while (cursor.moveToNext()) {
