@@ -47,13 +47,11 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
         format = new DecimalFormat("#.#");
         format.setDecimalSeparatorAlwaysShown(false);
         getIncomingIntent();
         initViews();
     }
-
 
     public void button_openComposhingDishesActivity(View view) {
         Intent intent = new Intent(this, ComposingDishesActivity.class);
