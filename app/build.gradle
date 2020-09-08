@@ -31,10 +31,10 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     // Powyżej startowe implementacje.
 
-    //Do czego służy tutejsze cardview?
+    // CardView służy do wyświetlania widoków w ładnych kartach
     implementation 'androidx.cardview:cardview:1.0.0'
 
-    // To mi umożliwia używanie po prostu widoku RecyclerView - jeszcze się rozeznam
+    // RecyclerView umożliwia przewijanie zawartości
     implementation 'androidx.recyclerview:recyclerview:1.2.0-alpha05'
 
     //glide - to chyba dla okrągłego obrazka, chyba obydwie niżej

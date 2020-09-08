@@ -85,14 +85,16 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
 
         if (editTextCustomNutritionalValues.length() == 0) {
             Toast.makeText(this, "No data to send", Toast.LENGTH_SHORT).show();
+            theNumberOfGramsEnteredByTheUser = 0;
         }
 
-        if (editTextCustomNutritionalValues.getText().toString().contains("0")) {
+        //if (editTextCustomNutritionalValues.getText().toString().contains("0")) {
+        if (editTextCustomNutritionalValues.getText().toString().equals("0")) {
             Toast.makeText(this, "0 will not be sent", Toast.LENGTH_SHORT).show();
         }
 
         if (theNumberOfGramsEnteredByTheUser != 0) {
-
+            System.out.println("wysłane dane: "+theNumberOfGramsEnteredByTheUser);
             ContentValues cv = new ContentValues();
             cv.put(GroceryContract.GroceryEntry.COLUMN_NAME, productName);
             cv.put(GroceryContract.GroceryEntry.COLUMN_AMOUNT, caloriesInOneGramProduct * theNumberOfGramsEnteredByTheUser);
