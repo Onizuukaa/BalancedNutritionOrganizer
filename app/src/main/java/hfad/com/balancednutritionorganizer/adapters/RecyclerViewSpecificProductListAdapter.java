@@ -2,6 +2,9 @@ package hfad.com.balancednutritionorganizer.adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +17,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.RequestOptions;
+import com.bumptech.glide.request.target.DrawableImageViewTarget;
 
 import java.util.ArrayList;
 
@@ -46,10 +52,12 @@ public class RecyclerViewSpecificProductListAdapter extends RecyclerView.Adapter
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
 
         final ReturnItem currentItem = exampleList.get(position);
-
+        
         Glide.with(mContext)
                 .asBitmap()
+                //.asGif()
                 .load(currentItem.getProductImage())
+                //.load(R.raw.giphy)
                 .into(holder.productImage);
 
         holder.productName.setText(currentItem.getProductName());

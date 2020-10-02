@@ -55,7 +55,89 @@
 
 
         </TableRow>
-    </TableLayout>
 
+        <TableRow>
+
+            <ImageView
+                android:onClick="openVegetablesListActivity"
+                android:id="@+id/imageViewMeatTable"
+                android:layout_width="198dp"
+                android:layout_height="105dp"
+                app:srcCompat="@drawable/meat" />
+
+            <ImageView
+                android:onClick="openFruitsListActivity"
+                android:id="@+id/imageViewFishTable"
+                android:layout_width="189dp"
+                android:layout_height="105dp"
+                app:srcCompat="@drawable/fish" />
+
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Meat"
+                android:textColor="@android:color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Fish"
+                android:textColor="@android:color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+
+        </TableRow>
+
+        <TableRow>
+
+            <ImageView
+                android:onClick="openVegetablesListActivity"
+                android:id="@+id/imageViewSweetsTable"
+                android:layout_width="198dp"
+                android:layout_height="105dp"
+                app:srcCompat="@drawable/sweets" />
+
+            <ImageView
+                android:onClick="openFruitsListActivity"
+                android:id="@+id/imageViewDrinksTable"
+                android:layout_width="189dp"
+                android:layout_height="105dp"
+                app:srcCompat="@drawable/drinks" />
+            
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Sweets"
+                android:textColor="@android:color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Drinks"
+                android:textColor="@android:color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+    </TableLayout>
 
 </LinearLayout>
