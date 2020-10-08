@@ -11,23 +11,45 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".InfoActivity"></activity>
-        <activity android:name=".DailyMealsActivity" />
         <activity
-            android:name=".YourDishesActivity"
+            android:name=".productsList.DrinksListActivity"
+            android:parentActivityName=".ProductTableActivity" />
+        <activity
+            android:name=".productsList.SweetsListActivity"
+            android:parentActivityName=".ProductTableActivity" />
+        <activity
+            android:name=".productsList.MeatListActivity"
+            android:parentActivityName=".ProductTableActivity" />
+        <activity
+            android:name=".productsList.FishListActivity"
+            android:parentActivityName=".ProductTableActivity" />
+        <activity
+            android:name=".productsList.DairyListActivity"
+            android:parentActivityName=".ProductTableActivity" />
+        <activity
+            android:name=".productsList.GrainProductsListActivity"
+            android:parentActivityName=".ProductTableActivity" />
+        <activity
+            android:name=".HealthyInfoActivity"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".ComposingDishesActivity"
+            android:name=".ComposedDailyMealsActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ComposedMealsActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ComposeMealActivity"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".BmiActivity"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".AdvancedInformationAboutProductActivity" />
         <activity
-            android:name=".FruitsListActivity"
+            android:name=".productsList.FruitsListActivity"
             android:parentActivityName=".ProductTableActivity" />
         <activity
-            android:name=".VegetablesListActivity"
+            android:name=".productsList.VegetablesListActivity"
             android:parentActivityName=".ProductTableActivity" />
         <activity
             android:name=".ProductTableActivity"

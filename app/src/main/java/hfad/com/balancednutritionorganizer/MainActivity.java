@@ -9,11 +9,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     ProgressBar progressBarWater;
@@ -28,12 +25,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void imageView_openYourDish(View view) {
-        Intent intent = new Intent(this, YourDishesActivity.class);
+        Intent intent = new Intent(this, ComposedMealsActivity.class);
         startActivity(intent);
     }
 
     public void imageView_openDailyMeals(View view) {
-        Intent intent = new Intent(this, DailyMealsActivity.class);
+        Intent intent = new Intent(this, ComposedDailyMealsActivity.class);
         startActivity(intent);
     }
 
@@ -55,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void imageView_OpenComposeTheDish(View view) {
-        Intent intent = new Intent(this, ComposingDishesActivity.class);
+        Intent intent = new Intent(this, ComposeMealActivity.class);
         startActivity(intent);
     }
 
@@ -82,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_heartInfo:
-                Intent intent = new Intent(this, InfoActivity.class);
+                Intent intent = new Intent(this, HealthyInfoActivity.class);
                 startActivity(intent);
             default:
                 return super.onOptionsItemSelected(item);

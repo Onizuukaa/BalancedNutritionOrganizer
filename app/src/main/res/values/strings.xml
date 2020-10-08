@@ -1,11 +1,60 @@
 <resources>
     <string name="app_name">Balanced Nutrition Organizer</string>
+    <string name="db_name">productsDatabase</string>
+    <string name="Calculate_Your_BMI">Calculate your BMI</string>
+    <string name="Food_Table">Food Table</string>
+    <string name="Composed_Meals">Composed Meals</string>
+    <string name="Composed_Daily_Meals">Composed Daily Meals</string>
+    <string name="Compose_The_Meal">Compose The Meal</string>
+    <string name="Goal_2500ml">Goal 2500ml</string>
+    <string name="ADD_250ML_WATER">ADD 250ML WATER</string>
+    <string name="RESET_WATER">RESET WATER</string>
+    <string name="Height_in_cm">Height in cm</string>
+    <string name="Weight_in_kg">Weight in kg</string>
+    <string name="Your_Result">Your Result</string>
+    <string name="CLASIFICATION_BMI">CLASIFICATION BMI</string>
+    <string name="Significantly_underweight">"Significantly underweight:   "</string>
+    <string name="Underweight">Underweight:</string>
+    <string name="Normal">Normal:</string>
+    <string name="Overweight">Overweight:</string>
+    <string name="Class_obesity_1">Class obesity 1:</string>
+    <string name="Class_obesity_2">Class obesity 2:</string>
+    <string name="Class_obesity_3">Class obesity 3:</string>
+    <string name="Calculate">Calculate</string>
+    <string name="Starvation">Starvation:</string>
+    <string name="BMI_CALCULATOR">BMI CALCULATOR</string>
+    <string name="Starvation2">Starvation</string>
+    <string name="Significantly_underweight2">Significantly underweight</string>
+    <string name="Underweight2">Underweight</string>
+    <string name="Normal2">Normal</string>
+    <string name="Overweight2">Overweight</string>
+    <string name="Class_obesity_1_2">Class obesity 1</string>
+    <string name="Class_obesity_2_2">Class obesity 2</string>
+    <string name="Class_obesity_3_2">Class obesity 3</string>
+    <string name="Products_Table">Products Table</string>
+    <string name="Vegetables">Vegetables</string>
+    <string name="Fruits">Fruits</string>
+    <string name="Grain_Products">Grain Products</string>
+    <string name="Dairy">Dairy</string>
+    <string name="Fish">Fish</string>
+    <string name="Meat">Meat</string>
+    <string name="Sweets">Sweets</string>
+    <string name="Drinks">Drinks</string>
+    <string name="Send_The_Macronutrients">Send The Macronutrients</string>
+    <string name="Reset">Reset</string>
+    <string name="Add_Meal">Add Meal</string>
+    <string name="Remove_Product">Remove Product</string>
+    <string name="Meal_Name">Meal Name</string>
+    <string name="Open_Compose_The_Meal">Open Compose The Meal</string>
+    <string name="No_data">No data. Data will be here after add from Product Table > specific kind of product > product > Send The Macronutrients</string>
+    <string name="No_data_to_send">No data to send</string>
+    <string name="zero_will_not_be_sent">0 will not be sent</string>
+    <string name="Macronutrients_has_been_sent">Macronutrients has been sent</string>
+    <string name="No_product_with_this_index">No product with this index</string>
 
-    <string name="wyglodzenie">Wygłodzenie 16</string>
-
-    <string-array name="numbers">
-        <item>100</item>
-        <item>1000</item>
-        <item>Własna</item>
-    </string-array>
+    <!--    <string-array name="numbers">-->
+    <!--        <item>100</item>-->
+    <!--        <item>1000</item>-->
+    <!--        <item>Własna</item>-->
+    <!--    </string-array>-->
 </resources>

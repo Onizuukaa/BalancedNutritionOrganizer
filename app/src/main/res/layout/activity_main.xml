@@ -29,7 +29,8 @@
                 android:id="@+id/imageViewProductTable"
                 android:layout_width="193dp"
                 android:layout_height="122dp"
-                app:srcCompat="@drawable/product_table" />
+                app:srcCompat="@drawable/food_table"
+                android:paddingHorizontal="5dp"/>
         </TableRow>
 
         <TableRow>
@@ -38,7 +39,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Calculate your BMI"
+                android:text="@string/Calculate_Your_BMI"
                 android:textSize="20dp" />
 
             <TextView
@@ -46,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/imageViewProductTable"
                 android:gravity="center"
-                android:text="Product Table"
+                android:text="@string/Food_Table"
                 android:textSize="20dp" />
         </TableRow>
 
@@ -58,7 +59,7 @@
                 android:layout_height="105dp"
                 android:layout_marginTop="20dp"
                 android:onClick="imageView_openYourDish"
-                app:srcCompat="@drawable/your_dishes" />
+                app:srcCompat="@drawable/composhed_meals" />
 
             <ImageView
                 android:id="@+id/imageViewDailyMeals"
@@ -66,7 +67,7 @@
                 android:layout_height="107dp"
                 android:layout_marginTop="20dp"
                 android:onClick="imageView_openDailyMeals"
-                app:srcCompat="@drawable/daily_meals" />
+                app:srcCompat="@drawable/composed_daily_meals" />
         </TableRow>
 
         <TableRow android:layout_marginBottom="15dp">
@@ -75,14 +76,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Your dishes"
+                android:text="@string/Composed_Meals"
                 android:textSize="20dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Daily Meals"
+                android:text="@string/Composed_Daily_Meals"
                 android:textSize="20dp" />
         </TableRow>
 
@@ -94,7 +95,7 @@
                 android:layout_height="100dp"
                 android:layout_weight="1"
                 android:onClick="imageView_OpenComposeTheDish"
-                app:srcCompat="@drawable/preparation" />
+                app:srcCompat="@drawable/compose_the_meal" />
         </TableRow>
 
         <TableRow android:layout_width="match_parent">
@@ -104,7 +105,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Compose the dish"
+                android:text="@string/Compose_The_Meal"
                 android:textSize="20dp" />
         </TableRow>
 
@@ -152,7 +153,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Goal 2500ml"
+                android:text="@string/Goal_2500ml"
                 android:textSize="20dp" />
 
         </TableRow>
@@ -173,7 +174,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
                 android:background="@drawable/button_background"
-                android:text="Add 250ml water" />
+                android:text="@string/ADD_250ML_WATER" />
 
             <Button
                 android:id="@+id/buttonResetWater"
@@ -181,7 +182,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/button_background"
                 android:onClick="resetWater"
-                android:text="Reset water" />
+                android:text="@string/RESET_WATER" />
         </TableRow>
     </TableLayout>
 

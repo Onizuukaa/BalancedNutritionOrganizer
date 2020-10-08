@@ -46,4 +46,34 @@ public class DatabaseAccess {
         cursor = db.rawQuery("select * from fruitsValues", null);
         return cursor;
     }
+
+    public Cursor getAllDataFromTableGrainProducts() {
+        cursor = db.rawQuery("select * from grainProductsValues", null);
+        return cursor;
+    }
+
+    public Cursor getAllDataFromTableDairy() {
+        cursor = db.rawQuery("select * from dairyValues", null);
+        return cursor;
+    }
+
+    public Cursor getAllDataFromTableFish() {
+        cursor = db.rawQuery("select * from fishValues", null);
+        return cursor;
+    }
+
+    public Cursor getAllDataFromTableMeat() {
+        cursor = db.rawQuery("select * from meatValues", null);
+        return cursor;
+    }
+
+    public Cursor getAllDataFromTableSweets() {
+        cursor = db.rawQuery("select * from sweetsValues", null);
+        return cursor;
+    }
+
+    public Cursor getAllDataFromTableDrinks() {
+        cursor = db.rawQuery("select * from drinksValues", null);
+        return cursor;
+    }
 }

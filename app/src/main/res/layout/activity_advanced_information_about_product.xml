@@ -264,13 +264,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="button_SendInformationAboutCurrentProductConfiguration"
-        android:text="Send the current configuration" />
+        android:text="@string/Send_The_Macronutrients" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/buttonOpenComposhingDishesActivity"
-            android:text="Open Composhing Dishes"
+            android:text="@string/Open_Compose_The_Meal"
             android:onClick="button_openComposhingDishesActivity"/>
     <!--    <ImageView-->
     <!--        android:id="@+id/obrazek"-->

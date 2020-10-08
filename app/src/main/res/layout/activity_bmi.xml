@@ -27,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="50dp"
-            android:text="Height in cm" />
+            android:text="@string/Height_in_cm" />
 
         <EditText
             android:id="@+id/editTextInsertHeight"
@@ -43,7 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="50dp"
-            android:text="Weight in kg" />
+            android:text="@string/Weight_in_kg" />
 
         <EditText
             android:id="@+id/editTextInsertWeight"
@@ -62,12 +62,12 @@
             android:layout_marginHorizontal="50dp"
             android:background="@drawable/button_background"
             android:onClick="buttonCalculateBMI"
-            android:text="Calculate" />
+            android:text="@string/Calculate" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Your Result"
+            android:text="@string/Your_Result"
             android:textAlignment="center"
             android:textColor="#000"
             android:textSize="40sp" />
@@ -94,7 +94,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="CLASIFICATION BMI"
+                    android:text="@string/CLASIFICATION_BMI"
                     android:textColor="@color/Green"
                     android:textSize="20dp" />
             </TableRow>
@@ -106,7 +106,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/cell_shape_composhing_dishes"
-                    android:text="Starvation: "
+                    android:text="@string/Starvation"
                     android:textColor="@color/DarkOrange"
                     android:textSize="20dp" />
 
@@ -128,7 +128,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@drawable/cell_shape_composhing_dishes"
-                    android:text="Significantly underweight:    "
+                    android:text="@string/Significantly_underweight"
                     android:textColor="@color/Orange"
                     android:textSize="20dp" />
 
@@ -150,7 +150,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/cell_shape_composhing_dishes"
-                    android:text="Underweight: "
+                    android:text="@string/Underweight"
                     android:textColor="@color/LightOrange"
                     android:textSize="20dp" />
 
@@ -160,7 +160,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/cell_shape_composhing_dishes"
                     android:gravity="center"
-                    android:text="17 - 18.5"
+                    android:text=">17 - 18.5"
                     android:textColor="@color/LightOrange"
                     android:textSize="20dp" />
             </TableRow>
@@ -172,7 +172,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/cell_shape_composhing_dishes"
-                    android:text="Normal: "
+                    android:text="@string/Normal"
                     android:textColor="@color/Green"
                     android:textSize="20dp" />
 
@@ -182,7 +182,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/cell_shape_composhing_dishes"
                     android:gravity="center"
-                    android:text="18.5 - 25"
+                    android:text=">18.5 - 25"
                     android:textColor="@color/Green"
                     android:textSize="20dp" />
             </TableRow>
@@ -194,7 +194,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/cell_shape_composhing_dishes"
-                    android:text="Overweight: "
+                    android:text="@string/Overweight"
                     android:textColor="@color/LightOrange"
                     android:textSize="20dp" />
 
@@ -204,7 +204,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/cell_shape_composhing_dishes"
                     android:gravity="center"
-                    android:text="25 - 30"
+                    android:text=">25 - 30"
                     android:textColor="@color/LightOrange"
                     android:textSize="20dp" />
             </TableRow>
@@ -216,7 +216,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/cell_shape_composhing_dishes"
-                    android:text="Class obesity 1: "
+                    android:text="@string/Class_obesity_1"
                     android:textColor="@color/Orange"
                     android:textSize="20dp" />
 
@@ -226,7 +226,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/cell_shape_composhing_dishes"
                     android:gravity="center"
-                    android:text="30 - 35"
+                    android:text=">30 - 35"
                     android:textColor="@color/Orange"
                     android:textSize="20dp" />
             </TableRow>
@@ -238,7 +238,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/cell_shape_composhing_dishes"
-                    android:text="Class obesity 2: "
+                    android:text="@string/Class_obesity_2"
                     android:textColor="@color/DarkOrange"
                     android:textSize="20dp" />
 
@@ -248,7 +248,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/cell_shape_composhing_dishes"
                     android:gravity="center"
-                    android:text="35 - 40"
+                    android:text=">35 - 40"
                     android:textColor="@color/DarkOrange"
                     android:textSize="20dp" />
             </TableRow>
@@ -260,7 +260,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/cell_shape_composhing_dishes"
-                    android:text="Class obesity 3: "
+                    android:text="@string/Class_obesity_3"
                     android:textColor="@color/VeryDarkOrange"
                     android:textSize="20dp" />
 

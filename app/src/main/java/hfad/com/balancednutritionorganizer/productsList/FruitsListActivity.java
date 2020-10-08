@@ -1,4 +1,4 @@
-package hfad.com.balancednutritionorganizer;
+package hfad.com.balancednutritionorganizer.productsList;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
@@ -18,6 +18,8 @@ import android.widget.EditText;
 
 import java.util.ArrayList;
 
+import hfad.com.balancednutritionorganizer.R;
+import hfad.com.balancednutritionorganizer.ReturnItem;
 import hfad.com.balancednutritionorganizer.adapters.RecyclerViewSpecificProductListAdapter;
 import hfad.com.balancednutritionorganizer.database_things.DatabaseAccess;
 
@@ -31,7 +33,7 @@ public class FruitsListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fruits_list);
-        setTitle("Fruits");
+        setTitle(R.string.Fruits);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         databaseAccess = DatabaseAccess.getInstance(getApplicationContext());
         databaseAccess.open();

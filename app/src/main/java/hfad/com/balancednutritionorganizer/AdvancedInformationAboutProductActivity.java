@@ -3,7 +3,6 @@ package hfad.com.balancednutritionorganizer;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ActionBar;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
@@ -54,7 +53,7 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
     }
 
     public void button_openComposhingDishesActivity(View view) {
-        Intent intent = new Intent(this, ComposingDishesActivity.class);
+        Intent intent = new Intent(this, ComposeMealActivity.class);
         startActivity(intent);
     }
 
@@ -84,13 +83,13 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
     public void button_SendInformationAboutCurrentProductConfiguration(View view) {
 
         if (editTextCustomNutritionalValues.length() == 0) {
-            Toast.makeText(this, "No data to send", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.No_data_to_send, Toast.LENGTH_SHORT).show();
             theNumberOfGramsEnteredByTheUser = 0;
         }
 
         //if (editTextCustomNutritionalValues.getText().toString().contains("0")) {
         if (editTextCustomNutritionalValues.getText().toString().equals("0")) {
-            Toast.makeText(this, "0 will not be sent", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.zero_will_not_be_sent, Toast.LENGTH_SHORT).show();
         }
 
         if (theNumberOfGramsEnteredByTheUser != 0) {
@@ -106,7 +105,7 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
             cv.put(GroceryContract.GroceryEntry.COLUMN_WEIGHT, theNumberOfGramsEnteredByTheUserString);
             mDatabase.insert(GroceryContract.GroceryEntry.TABLE_NAME, null, cv);
 
-            Toast.makeText(this, "The data has been sent", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.Macronutrients_has_been_sent, Toast.LENGTH_SHORT).show();
             //Kod poniżej żeby zapobiec crashowi w momencie wciśnięcia przycisku po usunięciu wpisanej wartości ale bez wychodzenia z aktywności
             theNumberOfGramsEnteredByTheUser = 0;
         }

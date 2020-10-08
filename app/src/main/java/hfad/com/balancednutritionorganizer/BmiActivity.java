@@ -21,7 +21,7 @@ public class BmiActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bmi);
-        setTitle("BMI CALCULATOR");
+        setTitle(R.string.BMI_CALCULATOR);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         initViews();
     }
@@ -58,42 +58,42 @@ public class BmiActivity extends AppCompatActivity {
 
     private void displayBMI(float bmi) {
         if (bmi < 16) {
-            textViewResultBMI.setText("Starvation \n" + String.format("%.1f", bmi));
+            textViewResultBMI.setText(getString(R.string.Starvation2) + "\n" + String.format("%.1f", bmi));
             textView_starvation.setTypeface(null, Typeface.BOLD);
             textView_starvationNumbers.setTypeface(null, Typeface.BOLD);
         }
         if (bmi >= 16 && bmi <= 17) {
-            textViewResultBMI.setText("Significantly underweight \n" + String.format("%.1f", bmi));
+            textViewResultBMI.setText(getString(R.string.Significantly_underweight2) + "\n" + String.format("%.1f", bmi));
             textView_significantlyUnderweight.setTypeface(null, Typeface.BOLD);
             textView_significantlyUnderweightNumbers.setTypeface(null, Typeface.BOLD);
         }
         if (bmi > 17 && bmi <= 18.5) {
-            textViewResultBMI.setText("Underweight \n" + String.format("%.1f", bmi));
+            textViewResultBMI.setText(getString(R.string.Underweight2) + "\n" + String.format("%.1f", bmi));
             textView_underweight.setTypeface(null, Typeface.BOLD);
             textView_underweightNumbers.setTypeface(null, Typeface.BOLD);
         }
         if (bmi > 18.5 && bmi <= 25) {
-            textViewResultBMI.setText("Normal \n" + String.format("%.1f", bmi));
+            textViewResultBMI.setText(getString(R.string.Normal2) + "\n" + String.format("%.1f", bmi));
             textView_normal.setTypeface(null, Typeface.BOLD);
             textView_normalNumbers.setTypeface(null, Typeface.BOLD);
         }
         if (bmi > 25 && bmi <= 30) {
-            textViewResultBMI.setText("Overweight \n" + String.format("%.1f", bmi));
+            textViewResultBMI.setText(getString(R.string.Overweight2) + "\n" + String.format("%.1f", bmi));
             textView_overweight.setTypeface(null, Typeface.BOLD);
             textView_overweightNumbers.setTypeface(null, Typeface.BOLD);
         }
         if (bmi > 30 && bmi <= 35) {
-            textViewResultBMI.setText("Class 1 obesity \n" + String.format("%.1f", bmi));
+            textViewResultBMI.setText(getString(R.string.Class_obesity_1_2) + "\n" + String.format("%.1f", bmi));
             textView_class1obesity.setTypeface(null, Typeface.BOLD);
             textView_class1obesityNumbers.setTypeface(null, Typeface.BOLD);
         }
         if (bmi > 35 && bmi <= 40) {
-            textViewResultBMI.setText("Class 2 obesity \n" + String.format("%.1f", bmi));
+            textViewResultBMI.setText(getString(R.string.Class_obesity_2_2) + "\n" + String.format("%.1f", bmi));
             textView_class2obesity.setTypeface(null, Typeface.BOLD);
             textView_class2obesityNumbers.setTypeface(null, Typeface.BOLD);
         }
         if (bmi > 40) {
-            textViewResultBMI.setText("Class 3 obesity \n" + String.format("%.1f", bmi));
+            textViewResultBMI.setText(getString(R.string.Class_obesity_3_2) + "\n" + String.format("%.1f", bmi));
             textView_class3obesity.setTypeface(null, Typeface.BOLD);
             textView_class3obesityNumbers.setTypeface(null, Typeface.BOLD);
         }

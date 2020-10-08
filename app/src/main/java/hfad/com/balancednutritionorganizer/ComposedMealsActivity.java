@@ -1,19 +1,16 @@
 package hfad.com.balancednutritionorganizer;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.database.Cursor;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
 import hfad.com.balancednutritionorganizer.adapters.RecyclerViewYourDishesAdapter;
 
-public class YourDishesActivity extends AppCompatActivity {
+public class ComposedMealsActivity extends AppCompatActivity {
 
     RecyclerViewYourDishesAdapter adapter;
     private ArrayList<String> productNameArrayList = new ArrayList<>();
@@ -28,29 +25,29 @@ public class YourDishesActivity extends AppCompatActivity {
     private ArrayList<String> mProductImage = new ArrayList<>();
 
     TextView textView;
-    ComposingDishesActivity object;
+    ComposeMealActivity object;
     Cursor cursor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_your_dishes);
+        setContentView(R.layout.activity_composed_meals);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        textView = findViewById(R.id.test);
-        object = new ComposingDishesActivity();
-        cursor = object.lala();
-        test();
+        //textView = findViewById(R.id.test);
+        //object = new ComposingDishesActivity();
+       // cursor = object.lala();
+        //test();
     }
 
     public void test() {
         textView.setText(cursor.getDouble(2) + "");
     }
 
-    private void initRecyclerView() {
-        RecyclerView recyclerView = findViewById(R.id.yourDishesRecyclerView);
-        adapter = new RecyclerViewYourDishesAdapter(this, productNameArrayList, productCaloriesArrayList);
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-    }
+//    private void initRecyclerView() {
+//        RecyclerView recyclerView = findViewById(R.id.yourDishesRecyclerView);
+//        adapter = new RecyclerViewYourDishesAdapter(this, productNameArrayList, productCaloriesArrayList);
+//        recyclerView.setAdapter(adapter);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+//    }
 }
