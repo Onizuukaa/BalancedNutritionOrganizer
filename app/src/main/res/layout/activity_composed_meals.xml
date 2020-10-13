@@ -1,46 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ComposedMealsActivity">
 
-<!--    <androidx.recyclerview.widget.RecyclerView-->
-<!--        android:id="@+id/yourDishesRecyclerView"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:background="@android:color/darker_gray"-->
-<!--        android:padding="4dp"-->
-<!--        android:scrollbars="vertical" />-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/yourDishesRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/darker_gray"
+        android:padding="4dp"
+        android:scrollbars="vertical" />
+
+
+<!--    <ImageView-->
+<!--        android:layout_width="182dp"-->
+<!--        android:layout_height="298dp"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginStart="118dp"-->
+<!--        android:layout_marginTop="100dp"-->
+<!--        android:layout_marginEnd="111dp"-->
+<!--        android:layout_marginBottom="32dp"-->
+<!--        app:srcCompat="@drawable/work_in_progress" />-->
 
 <!--    <TextView-->
-<!--        android:id="@+id/test"-->
+<!--        android:textStyle="bold"-->
 <!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content"-->
-<!--        android:text="aaa"-->
-<!--        android:onClick="test"/>-->
-
-    <ImageView
-        android:layout_width="182dp"
-        android:layout_height="298dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="118dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="111dp"
-        android:layout_marginBottom="32dp"
-        app:srcCompat="@drawable/work_in_progress" />
-
-    <TextView
-        android:textStyle="bold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="327dp"
-        android:text="Here will you have your composed food recipes" />
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginTop="327dp"-->
+<!--        android:text="Here will you have your composed food recipes" />-->
 
 </RelativeLayout>

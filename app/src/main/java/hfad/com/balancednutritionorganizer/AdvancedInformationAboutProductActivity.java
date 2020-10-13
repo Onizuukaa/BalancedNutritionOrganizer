@@ -93,6 +93,7 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
         }
 
         if (theNumberOfGramsEnteredByTheUser != 0) {
+            String wlasnaNazwaTabeli = "testowa";
             System.out.println("wysłane dane: "+theNumberOfGramsEnteredByTheUser);
             ContentValues cv = new ContentValues();
             cv.put(GroceryContract.GroceryEntry.COLUMN_NAME, productName);
@@ -104,6 +105,7 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
             cv.put(GroceryContract.GroceryEntry.COLUMN_PROTEIN, proteinInOneGramProduct * theNumberOfGramsEnteredByTheUser);
             cv.put(GroceryContract.GroceryEntry.COLUMN_WEIGHT, theNumberOfGramsEnteredByTheUserString);
             mDatabase.insert(GroceryContract.GroceryEntry.TABLE_NAME, null, cv);
+            //mDatabase.insert(wlasnaNazwaTabeli, null, cv);
 
             Toast.makeText(this, R.string.Macronutrients_has_been_sent, Toast.LENGTH_SHORT).show();
             //Kod poniżej żeby zapobiec crashowi w momencie wciśnięcia przycisku po usunięciu wpisanej wartości ale bez wychodzenia z aktywności

@@ -16,11 +16,11 @@ import hfad.com.balancednutritionorganizer.R;
 import static java.lang.Double.parseDouble;
 
 
-public class RecyclerViewComposhingDishesAdapter extends RecyclerView.Adapter<RecyclerViewComposhingDishesAdapter.ViewHolder> {
+public class RecyclerViewComposeMealAdapter extends RecyclerView.Adapter<RecyclerViewComposeMealAdapter.ViewHolder> {
     private ArrayList<String> mProductNames;
     private ArrayList<String> mProductCalories;
 
-    public RecyclerViewComposhingDishesAdapter(ArrayList<String> mProductNames, ArrayList<String> mProductCalories) {
+    public RecyclerViewComposeMealAdapter(ArrayList<String> mProductNames, ArrayList<String> mProductCalories) {
         this.mProductNames = mProductNames;
         this.mProductCalories = mProductCalories;
     }
@@ -28,7 +28,7 @@ public class RecyclerViewComposhingDishesAdapter extends RecyclerView.Adapter<Re
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.scheme_composing_dishes, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.scheme_compose_meals, parent, false);
         ViewHolder holder = new ViewHolder(view);
         return holder;
     }

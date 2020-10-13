@@ -11,6 +11,11 @@ import androidx.annotation.Nullable;
 public class GroceryDBHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "grocerylist.db";
     public static final int DATABASE_VERSION = 1;
+    //public static final int DATABASE_VERSION = BuildConfig.VERSION_CODE;
+
+//    public GroceryDBHelper(@Nullable Context context, int version) {
+//        super(context, DATABASE_NAME, null, version);
+//    }
 
     public GroceryDBHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -36,8 +41,20 @@ public class GroceryDBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS " + GroceryEntry.TABLE_NAME);
-        onCreate(db);
+//        switch(oldVersion) {
+//            case 1:
+//                db.execSQL("DROP TABLE IF EXISTS " + GroceryEntry.TABLE_NAME);
+//                onCreate(db);
+//                break;
+//        }
+
+            db.execSQL("DROP TABLE IF EXISTS " + GroceryEntry.TABLE_NAME);
+            onCreate(db);
+
+
+//        if ( oldVersion == DATABASE_VERSION ){
+//            DATABASE_VERSION++;
+//        }
 
     }
 }

@@ -32,7 +32,7 @@ public class RecyclerViewYourDishesAdapter extends RecyclerView.Adapter<Recycler
     @NonNull
     @Override
     public RecyclerViewYourDishesAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.scheme_your_dishes, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.scheme_composed_meals, parent, false);
         RecyclerViewYourDishesAdapter.ViewHolder holder = new RecyclerViewYourDishesAdapter.ViewHolder(view);
         return holder;
     }

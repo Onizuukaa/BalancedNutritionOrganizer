@@ -18,7 +18,7 @@ import android.widget.Toast;
 import java.text.DecimalFormat;
 
 import hfad.com.balancednutritionorganizer.adapters.GroceryAdapter;
-import hfad.com.balancednutritionorganizer.adapters.RecyclerViewComposhingDishesAdapter;
+import hfad.com.balancednutritionorganizer.adapters.RecyclerViewComposeMealAdapter;
 import hfad.com.balancednutritionorganizer.database_things.GroceryContract;
 import hfad.com.balancednutritionorganizer.database_things.GroceryDBHelper;
 
@@ -39,7 +39,7 @@ public class ComposeMealActivity extends AppCompatActivity {
     DecimalFormat format;
     EditText editText_removeItem;
     Button button_removeItem, button_removeAllItems;
-    RecyclerViewComposhingDishesAdapter adapter;
+    RecyclerViewComposeMealAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -187,6 +187,10 @@ public class ComposeMealActivity extends AppCompatActivity {
 
         sumAndViewMacros();
         showOrHideNoDataTextView();
+    }
+
+    public void button_AddMeal(View view) {
+        //W tym miejscu ma być kod, który wyśle do bazy produkty wraz z nazwą posiłku
     }
 
     public void button_AddDish(View view) {

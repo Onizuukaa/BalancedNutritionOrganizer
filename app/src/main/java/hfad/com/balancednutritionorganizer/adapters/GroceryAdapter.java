@@ -38,7 +38,7 @@ public class GroceryAdapter extends RecyclerView.Adapter<GroceryAdapter.GroceryV
     @Override
     public GroceryViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(mContext);
-        View view = inflater.inflate(R.layout.scheme_composing_dishes, parent, false);
+        View view = inflater.inflate(R.layout.scheme_compose_meals, parent, false);
         return new GroceryViewHolder(view);
     }
 

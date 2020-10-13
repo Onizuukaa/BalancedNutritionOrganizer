@@ -18,7 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/editTextDishName"
-        android:onClick="button_AddDish"
+        android:onClick="button_AddMeal"
         android:text="@string/Add_Meal" />
 
     <Button
