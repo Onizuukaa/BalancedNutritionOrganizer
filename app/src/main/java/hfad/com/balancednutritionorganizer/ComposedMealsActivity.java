@@ -5,16 +5,22 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
 import hfad.com.balancednutritionorganizer.adapters.RecyclerViewComposedMealsAdapter;
+import hfad.com.balancednutritionorganizer.database_things.ComposedMealsColumns;
+import hfad.com.balancednutritionorganizer.database_things.ComposedMealsDBHelper;
 
 public class ComposedMealsActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     RecyclerViewComposedMealsAdapter adapter;
+    Cursor cursor;
+    private SQLiteDatabase mDatabaseComposedMeals;
+
     private ArrayList<String> productNameArrayList = new ArrayList<>();
     private ArrayList<String> productCaloriesArrayList = new ArrayList<>();
     private ArrayList<String> productGramArrayList = new ArrayList<>();
@@ -28,20 +34,32 @@ public class ComposedMealsActivity extends AppCompatActivity {
 
     TextView textView;
     ComposeMealActivity object;
-    Cursor cursor;
-    Double testowa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_composed_meals);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-testowa = 33.3;
+
         //textView = findViewById(R.id.test);
         //object = new ComposingDishesActivity();
        // cursor = object.lala();
         //test();
+        ComposedMealsDBHelper dbHelperComposedMeals = new ComposedMealsDBHelper(this);
+        mDatabaseComposedMeals = dbHelperComposedMeals.getWritableDatabase();
         initRecyclerView();
+    }
+
+    private Cursor getAllItems() {
+        return mDatabaseComposedMeals.query(
+                ComposedMealsColumns.ComposedMealsColumnsEntry.TABLE_NAME,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+        );
     }
 
     public void test() {
@@ -50,11 +68,12 @@ testowa = 33.3;
 
     private void initRecyclerView() {
         recyclerView = findViewById(R.id.composedMealsRecyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         //adapter = new RecyclerViewComposedMealsAdapter(this, productNameArrayList, productCaloriesArrayList);
-        adapter = new RecyclerViewComposedMealsAdapter(this, productNameArrayList, productCaloriesArrayList);
+        adapter = new RecyclerViewComposedMealsAdapter(this, getAllItems());
 
         recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
 
         //recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }

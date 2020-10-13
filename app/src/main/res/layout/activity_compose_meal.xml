@@ -6,7 +6,7 @@
     tools:context=".ComposeMealActivity">
 
     <EditText
-        android:id="@+id/editTextDishName"
+        android:id="@+id/editTextMealName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -17,7 +17,7 @@
         android:id="@+id/buttonAddDish"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/editTextDishName"
+        android:layout_toRightOf="@id/editTextMealName"
         android:onClick="button_AddMeal"
         android:text="@string/Add_Meal" />
 
@@ -25,7 +25,7 @@
         android:id="@+id/buttonResetIngredients"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toLeftOf="@id/editTextDishName"
+        android:layout_toLeftOf="@id/editTextMealName"
         android:onClick="button_ClearProductTable"
         android:text="@string/Reset" />
 

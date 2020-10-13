@@ -59,7 +59,7 @@ public class RecyclerViewComposeMealAdapter extends RecyclerView.Adapter<Recycle
             super(itemView);
             productName = itemView.findViewById(R.id.textViewProductLeft);
             productCalories = itemView.findViewById(R.id.textViewHowManyGramProduct);
-            parentLayout = itemView.findViewById(R.id.gridLayoutYourDishes);
+            parentLayout = itemView.findViewById(R.id.gridLayoutComposedMeals);
         }
     }
 }

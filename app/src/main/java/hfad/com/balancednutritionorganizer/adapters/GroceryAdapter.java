@@ -47,14 +47,14 @@ public class GroceryAdapter extends RecyclerView.Adapter<GroceryAdapter.GroceryV
         if (!mCursor.moveToPosition(position)) {
             return;
         }
+        long id = mCursor.getLong(mCursor.getColumnIndex(GroceryContract.GroceryEntry._ID));
         String name = mCursor.getString(mCursor.getColumnIndex(GroceryContract.GroceryEntry.COLUMN_NAME));
         int amount = mCursor.getInt(mCursor.getColumnIndex(GroceryContract.GroceryEntry.COLUMN_AMOUNT));
-        long id = mCursor.getLong(mCursor.getColumnIndex(GroceryContract.GroceryEntry._ID));
 
+        holder.itemView.setTag(id);
         holder.nameText.setText(position+1 + ".  " + name);
         //holder.countText.setText(String.valueOf(amount));
         holder.countText.setText(amount + " KCAL");
-        holder.itemView.setTag(id);
     }
 
     @Override
@@ -73,5 +73,4 @@ public class GroceryAdapter extends RecyclerView.Adapter<GroceryAdapter.GroceryV
             notifyDataSetChanged();
         }
     }
-
 }
