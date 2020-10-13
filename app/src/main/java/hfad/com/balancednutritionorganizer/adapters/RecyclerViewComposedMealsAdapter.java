@@ -14,16 +14,13 @@ import java.util.ArrayList;
 
 import hfad.com.balancednutritionorganizer.R;
 
-import static java.lang.Double.parseDouble;
-
-public class RecyclerViewYourDishesAdapter extends RecyclerView.Adapter<RecyclerViewYourDishesAdapter.ViewHolder>{
+public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<RecyclerViewComposedMealsAdapter.ViewHolder>{
 
     private ArrayList<String> mProductNames;
     private ArrayList<String> mProductCalories;
     private Context mContext;
 
-    public RecyclerViewYourDishesAdapter(Context mContext, ArrayList<String> mProductNames, ArrayList<String> mProductCalories) {
-
+    public RecyclerViewComposedMealsAdapter(Context mContext, ArrayList<String> mProductNames, ArrayList<String> mProductCalories) {
         this.mProductNames = mProductNames;
         this.mProductCalories = mProductCalories;
         this.mContext = mContext;
@@ -31,18 +28,20 @@ public class RecyclerViewYourDishesAdapter extends RecyclerView.Adapter<Recycler
 
     @NonNull
     @Override
-    public RecyclerViewYourDishesAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RecyclerViewComposedMealsAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.scheme_composed_meals, parent, false);
-        RecyclerViewYourDishesAdapter.ViewHolder holder = new RecyclerViewYourDishesAdapter.ViewHolder(view);
+        RecyclerViewComposedMealsAdapter.ViewHolder holder = new RecyclerViewComposedMealsAdapter.ViewHolder(view);
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerViewYourDishesAdapter.ViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull RecyclerViewComposedMealsAdapter.ViewHolder holder, final int position) {
 
-        holder.productName.setText(mProductNames.get(position));
+        //holder.productName.setText(mProductNames.get(position));
 
-        double productCaloriesDouble = parseDouble(mProductCalories.get(position));
+        //double productCaloriesDouble = parseDouble(mProductCalories.get(position));
+        double productCaloriesDouble = 55.5;
+
         String productCaloriesString = String.format("%.1f", productCaloriesDouble);
         holder.productCalories.setText(productCaloriesString + " KCAL");
 
@@ -51,7 +50,8 @@ public class RecyclerViewYourDishesAdapter extends RecyclerView.Adapter<Recycler
 
     @Override
     public int getItemCount() {
-        return mProductNames.size();
+        //return mProductNames.size();
+        return 3;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -61,9 +61,9 @@ public class RecyclerViewYourDishesAdapter extends RecyclerView.Adapter<Recycler
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            productName = itemView.findViewById(R.id.textViewProductLeft);
-            productCalories = itemView.findViewById(R.id.textViewHowManyGramProduct);
-            parentLayout = itemView.findViewById(R.id.sendedProduct);
+            //productName = itemView.findViewById(R.id.textViewProductLeft);
+            productCalories = itemView.findViewById(R.id.textViewYourDishesKcal);
+            parentLayout = itemView.findViewById(R.id.scheme_composed_meals);
         }
     }
 }

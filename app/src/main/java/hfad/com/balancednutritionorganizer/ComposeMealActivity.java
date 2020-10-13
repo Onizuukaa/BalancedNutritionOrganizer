@@ -129,8 +129,8 @@ public class ComposeMealActivity extends AppCompatActivity {
     private void initRecyclerView() {
         recyclerView = findViewById(R.id.composingDishesRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
         mAdapter = new GroceryAdapter(this, getAllItems());
+
         recyclerView.setAdapter(mAdapter);
 
         showOrHideNoDataTextView();
@@ -191,6 +191,7 @@ public class ComposeMealActivity extends AppCompatActivity {
 
     public void button_AddMeal(View view) {
         //W tym miejscu ma być kod, który wyśle do bazy produkty wraz z nazwą posiłku
+
     }
 
     public void button_AddDish(View view) {
