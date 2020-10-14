@@ -36,7 +36,7 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
 
         public TextView textViewComposedMealsName, textViewComposedMealsKcal, textViewComposedMealsGram,
                 textViewComposedMealsCarbohydrates, textViewComposedMealsFats, textViewComposedMealsProtein,
-                textViewComposedMealsSugar, textViewComposedMealsSaturatedFats;
+                textViewComposedMealsSugar, textViewComposedMealsSaturatedFats, textViewProductsIncludedComposedMeal;
         //CardView parentLayout;
 
         public RecyclerViewComposedMealsViewHolder(@NonNull View itemView) {
@@ -49,6 +49,7 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
             textViewComposedMealsProtein = itemView.findViewById(R.id.textViewComposedMealsProtein);
             textViewComposedMealsSugar = itemView.findViewById(R.id.textViewComposedMealsSugar);
             textViewComposedMealsSaturatedFats = itemView.findViewById(R.id.textViewComposedMealsSaturatedFats);
+            textViewProductsIncludedComposedMeal = itemView.findViewById(R.id.textViewProductsIncludedComposedMeal);
             //parentLayout = itemView.findViewById(R.id.scheme_composed_meals);
         }
     }
@@ -80,6 +81,7 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
         String mealProtein = mCursor.getString(mCursor.getColumnIndex(ComposedMealsColumns.ComposedMealsColumnsEntry.COLUMN_PROTEIN));
         String mealSugar = mCursor.getString(mCursor.getColumnIndex(ComposedMealsColumns.ComposedMealsColumnsEntry.COLUMN_SUGAR));
         String mealSaturatedFats = mCursor.getString(mCursor.getColumnIndex(ComposedMealsColumns.ComposedMealsColumnsEntry.COLUMN_SATURATEDFATS));
+        String productsIncludedComposedMeal = mCursor.getString(mCursor.getColumnIndex(ComposedMealsColumns.ComposedMealsColumnsEntry.COLUMN_PRODUCTSINCLUDED));
 
         holder.itemView.setTag(id);
         holder.textViewComposedMealsName.setText(position+1 + ".  " + mealName);
@@ -90,6 +92,7 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
         holder.textViewComposedMealsProtein.setText(mealProtein + "g\nprotein");
         holder.textViewComposedMealsSugar.setText(mealSugar + "g\nsugar");
         holder.textViewComposedMealsSaturatedFats.setText(mealSaturatedFats + "g\nsaturated fats");
+        holder.textViewProductsIncludedComposedMeal.setText(productsIncludedComposedMeal);
 
         //holder.productName.setText(mProductNames.get(position));
 

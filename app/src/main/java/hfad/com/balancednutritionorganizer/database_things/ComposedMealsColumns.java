@@ -16,7 +16,7 @@ public class ComposedMealsColumns {
         public static final String COLUMN_PROTEIN = "protein";
         public static final String COLUMN_FATS = "fats";
         public static final String COLUMN_SATURATEDFATS = "saturatedFats";
-
+        public static final String COLUMN_PRODUCTSINCLUDED = "productsIncluded";
     }
 
 }

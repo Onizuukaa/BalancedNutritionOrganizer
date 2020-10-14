@@ -28,7 +28,8 @@ public class ComposedMealsDBHelper extends SQLiteOpenHelper {
                 ComposedMealsColumnsEntry.COLUMN_SUGAR + " DOUBLE NOT NULL, " +
                 ComposedMealsColumnsEntry.COLUMN_PROTEIN + " DOUBLE NOT NULL, " +
                 ComposedMealsColumnsEntry.COLUMN_FATS + " DOUBLE NOT NULL, " +
-                ComposedMealsColumnsEntry.COLUMN_SATURATEDFATS + " DOUBLE NOT NULL" +
+                ComposedMealsColumnsEntry.COLUMN_SATURATEDFATS + " DOUBLE NOT NULL, " +
+                ComposedMealsColumnsEntry.COLUMN_PRODUCTSINCLUDED + " TEXT NOT NULL " +
                 ");";
         db.execSQL(SQL_CREATE_COMPOSEDMEALS_TABLE);
     }
