@@ -5,35 +5,35 @@
     android:layout_height="match_parent"
     tools:context=".ComposedMealsActivity">
 
+    <LinearLayout
+        android:id="@+id/linearLayoutComposedMealActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editText_removeItem_ComposedMeals"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/button_removeItem_ComposedMeals"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Remove Meal" />
+
+    </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/composedMealsRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayoutComposedMealActivity"
         android:background="@android:color/darker_gray"
         android:padding="4dp"
         android:scrollbars="vertical" />
-
-
-<!--    <ImageView-->
-<!--        android:layout_width="182dp"-->
-<!--        android:layout_height="298dp"-->
-<!--        android:layout_alignParentStart="true"-->
-<!--        android:layout_alignParentTop="true"-->
-<!--        android:layout_alignParentEnd="true"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_marginStart="118dp"-->
-<!--        android:layout_marginTop="100dp"-->
-<!--        android:layout_marginEnd="111dp"-->
-<!--        android:layout_marginBottom="32dp"-->
-<!--        app:srcCompat="@drawable/work_in_progress" />-->
-
-<!--    <TextView-->
-<!--        android:textStyle="bold"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_alignParentTop="true"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_marginTop="327dp"-->
-<!--        android:text="Here will you have your composed food recipes" />-->
 
 </RelativeLayout>

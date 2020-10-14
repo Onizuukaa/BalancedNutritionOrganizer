@@ -37,7 +37,7 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
         public TextView textViewComposedMealsName, textViewComposedMealsKcal, textViewComposedMealsGram,
                 textViewComposedMealsCarbohydrates, textViewComposedMealsFats, textViewComposedMealsProtein,
                 textViewComposedMealsSugar, textViewComposedMealsSaturatedFats;
-        CardView parentLayout;
+        //CardView parentLayout;
 
         public RecyclerViewComposedMealsViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -49,7 +49,7 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
             textViewComposedMealsProtein = itemView.findViewById(R.id.textViewComposedMealsProtein);
             textViewComposedMealsSugar = itemView.findViewById(R.id.textViewComposedMealsSugar);
             textViewComposedMealsSaturatedFats = itemView.findViewById(R.id.textViewComposedMealsSaturatedFats);
-            parentLayout = itemView.findViewById(R.id.scheme_composed_meals);
+            //parentLayout = itemView.findViewById(R.id.scheme_composed_meals);
         }
     }
 
@@ -70,6 +70,8 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
             return;
         }
 
+        long id = mCursor.getLong(mCursor.getColumnIndex(ComposedMealsColumns.ComposedMealsColumnsEntry._ID));
+
         String mealName = mCursor.getString(mCursor.getColumnIndex(ComposedMealsColumns.ComposedMealsColumnsEntry.COLUMN_MEALNAME));
         String mealKcal = mCursor.getString(mCursor.getColumnIndex(ComposedMealsColumns.ComposedMealsColumnsEntry.COLUMN_CALORIES));
         String mealGram = mCursor.getString(mCursor.getColumnIndex(ComposedMealsColumns.ComposedMealsColumnsEntry.COLUMN_WEIGHT));
@@ -79,8 +81,8 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
         String mealSugar = mCursor.getString(mCursor.getColumnIndex(ComposedMealsColumns.ComposedMealsColumnsEntry.COLUMN_SUGAR));
         String mealSaturatedFats = mCursor.getString(mCursor.getColumnIndex(ComposedMealsColumns.ComposedMealsColumnsEntry.COLUMN_SATURATEDFATS));
 
-        holder.textViewComposedMealsName.setText(mealName);
-
+        holder.itemView.setTag(id);
+        holder.textViewComposedMealsName.setText(position+1 + ".  " + mealName);
         holder.textViewComposedMealsKcal.setText(mealKcal + "\ncalories");
         holder.textViewComposedMealsGram.setText(mealGram + "g\nweight");
         holder.textViewComposedMealsCarbohydrates.setText(mealCarbohydrates + "g\ncarbohydrates");
