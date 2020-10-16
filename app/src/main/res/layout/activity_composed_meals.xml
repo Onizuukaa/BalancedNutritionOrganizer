@@ -36,4 +36,14 @@
         android:padding="4dp"
         android:scrollbars="vertical" />
 
+    <TextView
+        android:id="@+id/textViewNoDataComposed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayoutComposedMealActivity"
+        android:background="#FAFAFA"
+        android:gravity="center"
+        android:text="@string/No_data_ComposedMeals"
+        android:textSize="30dp" />
+
 </RelativeLayout>

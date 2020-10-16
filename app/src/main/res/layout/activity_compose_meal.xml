@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+        android:maxLength="22"
         android:text="@string/Meal_Name" />
 
     <Button
@@ -149,14 +150,14 @@
         android:text="@string/No_data"
         android:textSize="30dp" />
 
-<!--    <TextView-->
-<!--        android:id="@+id/textViewUltraTest"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_below="@+id/textViewNoData"-->
-<!--        android:layout_margin="10dp"-->
-<!--        android:text="1. Apple | calories 52 | carbo 14g | sugar 10g | fats 0.2g | saturatedfats 0g | protein 0.3g | weight 100g-->
-<!--                    \n2. Pear | calories 114 | carbo 30g | sugar 20g | fats 0.2g | saturatedfats 0g | protein 0.8g | weight 200g-->
-<!--                    \n3. Smoked Mackerel | calories 666 | carbo 0g | sugar 0g | fats 46.5g | saturatedfats 11.64g | protein 62.1g | weight 300g" />-->
+    <!--    <TextView-->
+    <!--        android:id="@+id/textViewUltraTest"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_below="@+id/textViewNoData"-->
+    <!--        android:layout_margin="10dp"-->
+    <!--        android:text="1. Apple | calories 52 | carbo 14g | sugar 10g | fats 0.2g | saturatedfats 0g | protein 0.3g | weight 100g-->
+    <!--                    \n2. Pear | calories 114 | carbo 30g | sugar 20g | fats 0.2g | saturatedfats 0g | protein 0.8g | weight 200g-->
+    <!--                    \n3. Smoked Mackerel | calories 666 | carbo 0g | sugar 0g | fats 46.5g | saturatedfats 11.64g | protein 62.1g | weight 300g" />-->
 
 </RelativeLayout>

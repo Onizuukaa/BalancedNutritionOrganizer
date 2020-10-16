@@ -13,22 +13,20 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-
 import hfad.com.balancednutritionorganizer.adapters.RecyclerViewComposedMealsAdapter;
 import hfad.com.balancednutritionorganizer.database_things.ComposedMealsColumns;
 import hfad.com.balancednutritionorganizer.database_things.ComposedMealsDBHelper;
 
 import static java.lang.Integer.parseInt;
 
-public class ComposedMealsActivity extends AppCompatActivity {
+public class ComposedMealsActivity extends AppCompatActivity implements BottomSheetDialog.BottomSheetListener {
     RecyclerView recyclerView;
     private SQLiteDatabase mDatabaseComposedMeals;
     private RecyclerViewComposedMealsAdapter adapter;
     Cursor cursor;
-
     Button button_removeMeal;
     EditText editText_removeMeal;
+    TextView textViewNoDataComposed;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +46,10 @@ public class ComposedMealsActivity extends AppCompatActivity {
                 button_removeMeal(position);
             }
         });
+        textViewNoDataComposed = findViewById(R.id.textViewNoDataComposed);
+
         cursor = getAllItems();
+        showOrHideNoDataTextView();
     }
 
     private Cursor getAllItems() {
@@ -81,6 +82,18 @@ public class ComposedMealsActivity extends AppCompatActivity {
                     ComposedMealsColumns.ComposedMealsColumnsEntry._ID + "=" + productPosition, null);
             adapter.swapCursor(getAllItems());
         }
-        cursor = getAllItems();
+        //cursor = getAllItems();
+        showOrHideNoDataTextView();
+    }
+
+    @Override
+    public void onButtonClicked(String text) {
+    }
+
+    private void showOrHideNoDataTextView() {
+        if (getAllItems().getCount() == 0)
+            textViewNoDataComposed.setVisibility(View.VISIBLE);
+        else
+            textViewNoDataComposed.setVisibility(View.INVISIBLE);
     }
 }

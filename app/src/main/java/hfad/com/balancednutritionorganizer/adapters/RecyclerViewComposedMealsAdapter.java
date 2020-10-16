@@ -2,6 +2,7 @@ package hfad.com.balancednutritionorganizer.adapters;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,15 +14,20 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+import hfad.com.balancednutritionorganizer.BottomSheetDialog;
+import hfad.com.balancednutritionorganizer.ComposedMealsActivity;
 import hfad.com.balancednutritionorganizer.R;
 import hfad.com.balancednutritionorganizer.database_things.ComposedMealsColumns;
 
-public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<RecyclerViewComposedMealsAdapter.RecyclerViewComposedMealsViewHolder>{
+public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<RecyclerViewComposedMealsAdapter.RecyclerViewComposedMealsViewHolder> implements BottomSheetDialog.BottomSheetListener {
 
-    private ArrayList<String> mProductNames;
-    private ArrayList<String> mProductCalories;
+    //private ArrayList<BottomSheetDialogArrayList> bottomSheetDialogArrayList = new ArrayList<>();
+    private ArrayList<String> dzialajno = new ArrayList<>();
     private Context mContext;
     private Cursor mCursor;
+    Bundle bundleWithMacros;
+
+    String aaa;
 
     //public RecyclerViewComposedMealsAdapter(Context mContext, ArrayList<String> mProductNames, ArrayList<String> mProductCalories) {
     public RecyclerViewComposedMealsAdapter(Context context, Cursor cursor) {
@@ -32,12 +38,17 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
         mCursor = cursor;
     }
 
+    @Override
+    public void onButtonClicked(String text) {
+
+    }
+
     public class RecyclerViewComposedMealsViewHolder extends RecyclerView.ViewHolder {
 
         public TextView textViewComposedMealsName, textViewComposedMealsKcal, textViewComposedMealsGram,
                 textViewComposedMealsCarbohydrates, textViewComposedMealsFats, textViewComposedMealsProtein,
                 textViewComposedMealsSugar, textViewComposedMealsSaturatedFats, textViewProductsIncludedComposedMeal;
-        //CardView parentLayout;
+        CardView parentLayout;
 
         public RecyclerViewComposedMealsViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -50,7 +61,7 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
             textViewComposedMealsSugar = itemView.findViewById(R.id.textViewComposedMealsSugar);
             textViewComposedMealsSaturatedFats = itemView.findViewById(R.id.textViewComposedMealsSaturatedFats);
             textViewProductsIncludedComposedMeal = itemView.findViewById(R.id.textViewProductsIncludedComposedMeal);
-            //parentLayout = itemView.findViewById(R.id.scheme_composed_meals);
+            parentLayout = itemView.findViewById(R.id.scheme_composed_meals);
         }
     }
 
@@ -67,6 +78,7 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewComposedMealsViewHolder holder, final int position) {
+
         if (!mCursor.moveToPosition(position)) {
             return;
         }
@@ -83,8 +95,10 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
         String mealSaturatedFats = mCursor.getString(mCursor.getColumnIndex(ComposedMealsColumns.ComposedMealsColumnsEntry.COLUMN_SATURATEDFATS));
         String productsIncludedComposedMeal = mCursor.getString(mCursor.getColumnIndex(ComposedMealsColumns.ComposedMealsColumnsEntry.COLUMN_PRODUCTSINCLUDED));
 
+//aaa = productsIncludedComposedMeal;
+
         holder.itemView.setTag(id);
-        holder.textViewComposedMealsName.setText(position+1 + ".  " + mealName);
+        holder.textViewComposedMealsName.setText(position + 1 + ".  " + mealName);
         holder.textViewComposedMealsKcal.setText(mealKcal + "\ncalories");
         holder.textViewComposedMealsGram.setText(mealGram + "g\nweight");
         holder.textViewComposedMealsCarbohydrates.setText(mealCarbohydrates + "g\ncarbohydrates");
@@ -92,17 +106,42 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
         holder.textViewComposedMealsProtein.setText(mealProtein + "g\nprotein");
         holder.textViewComposedMealsSugar.setText(mealSugar + "g\nsugar");
         holder.textViewComposedMealsSaturatedFats.setText(mealSaturatedFats + "g\nsaturated fats");
-        holder.textViewProductsIncludedComposedMeal.setText(productsIncludedComposedMeal);
+        holder.textViewProductsIncludedComposedMeal.setText(productsIncludedComposedMeal + "");
 
-        //holder.productName.setText(mProductNames.get(position));
+        //bottomSheetDialogArrayList.add(new BottomSheetDialogArrayList(productsIncludedComposedMeal));
+        dzialajno.add(productsIncludedComposedMeal);
 
-        //double productCaloriesDouble = parseDouble(mProductCalories.get(position));
-        double productCaloriesDouble = 55.5;
+        bundleWithMacros = new Bundle();
 
-        String productCaloriesString = String.format("%.1f", productCaloriesDouble);
-        //holder.productCalories.setText(productCaloriesString + " KCAL");
+        //System.out.println(dzialajno.get(0) + " CZY DZIAŁA?");
+        bundleWithMacros.putStringArrayList("key", dzialajno);
 
-        //holder.productCalories.setText(mProductCalories.get(position) + " KCAL");
+        //bottomSheetDialogArrayList.get(position)
+
+//        aaa = " | "+ mealName + " | calories " + mealKcal
+//                + " | carbo " + mealCarbohydrates + "g | "
+//                + " | sugar " + mealSugar + "g | "
+//                + " | fats " + mealFats + "g | "
+//                + " | saturated fats " + mealSaturatedFats + "g | "
+//                + " | protein " + mealProtein + "g | "
+//                + " | weight " + mealGram + "g | \n";
+
+
+        holder.parentLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                BottomSheetDialog bottomSheet = new BottomSheetDialog();
+                //bottomSheet.show(getSupportFragmentManager(), "exampleBottomSheet");
+                bottomSheet.show(((ComposedMealsActivity) mContext).getSupportFragmentManager(), bottomSheet.getTag());
+                bundleWithMacros.putInt("key2", position);
+
+                bottomSheet.setArguments(bundleWithMacros);
+
+                //BottomSheetDialogArrayList currentItem = new BottomSheetDialogArrayList();
+
+
+            }
+        });
     }
 
     @Override
@@ -119,7 +158,7 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
 
         mCursor = newCursor;
 
-        if (newCursor != null){
+        if (newCursor != null) {
             notifyDataSetChanged();
         }
     }
