@@ -7,4 +7,9 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="mScrollBar">
+        <item name="android:scrollbarSize">10dp</item>
+        <item name="android:scrollbarThumbVertical">@color/colorPrimaryDark</item>
+    </style>
+
 </resources>
