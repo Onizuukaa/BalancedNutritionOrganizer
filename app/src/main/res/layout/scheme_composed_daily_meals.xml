@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scheme_composed_daily_meals"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/textViewProductsIncludedComposedMeal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:visibility="gone" />
+
+    <GridLayout
+        android:id="@+id/gridLayoutComposedMeals"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="#5597B5"
+        android:columnCount="2"
+        android:rowCount="6">
+
+        <TextView
+            android:singleLine="false"
+            android:maxEms="25"
+            android:id="@+id/textViewComposedMealsName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_columnWeight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"
+            android:text="paaaaaaaa \n sassa"
+            android:textStyle="bold" />
+
+        <TextView
+            android:maxEms="20"
+            android:id="@+id/textViewComposedMealsKcal"
+            android:layout_rowWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_columnWeight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="kcal 52 | carbo 14g | sugar 10g | fats 0.2g | saturatedfats 0g | protein 0.3g | weight 100g" />
+
+        <TextView
+            android:id="@+id/textViewComposedMealsGram"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="Ogórkowa" />
+
+        <TextView
+            android:id="@+id/textViewComposedMealsCarbohydrates"
+            android:layout_rowWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_columnWeight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="34g \ncarbohydrates" />
+
+        <TextView
+            android:id="@+id/textViewComposedMealsProtein"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="Pomidorowa" />
+
+        <TextView
+            android:id="@+id/textViewComposedMealsSugar"
+            android:layout_rowWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_columnWeight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="21g \nsugar" />
+
+        <TextView
+            android:id="@+id/textViewComposedMealsSaturatedFats"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="Wodzionka" />
+
+        <TextView
+            android:layout_columnSpan="1"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="11g \nsaturatedFats" />
+
+        <TextView
+            android:layout_rowWeight="1"
+
+            android:layout_columnWeight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="Flaki" />
+
+        <TextView
+            android:layout_columnSpan="1"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="11g \nsaturatedFats" />
+
+        <TextView
+            android:layout_rowWeight="1"
+
+            android:layout_columnWeight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="Barszcz" />
+
+        <TextView
+            android:layout_columnSpan="1"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="11g \nsaturatedFats" />
+
+    </GridLayout>
+
+</androidx.cardview.widget.CardView>

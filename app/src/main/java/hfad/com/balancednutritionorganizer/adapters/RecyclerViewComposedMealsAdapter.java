@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,23 +19,18 @@ import java.util.ArrayList;
 import hfad.com.balancednutritionorganizer.BottomSheetDialog;
 import hfad.com.balancednutritionorganizer.ComposedMealsActivity;
 import hfad.com.balancednutritionorganizer.R;
+import hfad.com.balancednutritionorganizer.ReturnItem;
 import hfad.com.balancednutritionorganizer.database_things.ComposedMealsColumns;
 
-public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<RecyclerViewComposedMealsAdapter.RecyclerViewComposedMealsViewHolder> implements BottomSheetDialog.BottomSheetListener {
+public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<RecyclerViewComposedMealsAdapter.RecyclerViewComposedMealsViewHolder> implements BottomSheetDialog.BottomSheetListener, Filterable {
 
-    //private ArrayList<BottomSheetDialogArrayList> bottomSheetDialogArrayList = new ArrayList<>();
-    private ArrayList<String> dzialajno = new ArrayList<>();
+    private ArrayList<String> arrayListProductIncluded = new ArrayList<>();
+    private ArrayList<String> arrayListNameMealForSearch = new ArrayList<>();
     private Context mContext;
     private Cursor mCursor;
     Bundle bundleWithMacros;
 
-    String aaa;
-
-    //public RecyclerViewComposedMealsAdapter(Context mContext, ArrayList<String> mProductNames, ArrayList<String> mProductCalories) {
     public RecyclerViewComposedMealsAdapter(Context context, Cursor cursor) {
-        //this.mProductNames = mProductNames;
-        //this.mProductCalories = mProductCalories;
-        //this.mContext = mContext;
         mContext = context;
         mCursor = cursor;
     }
@@ -70,9 +67,6 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
     public RecyclerViewComposedMealsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(mContext); //dodałem bo w GroceryAdapter, tym nowszym, tak jest.
         View view = inflater.inflate(R.layout.scheme_composed_meals, parent, false);
-        //View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.scheme_composed_meals, parent, false);
-        //RecyclerViewComposedMealsAdapter.ViewHolder holder = new RecyclerViewComposedMealsAdapter.ViewHolder(view);
-        //return holder;
         return new RecyclerViewComposedMealsViewHolder(view);
     }
 
@@ -95,8 +89,6 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
         String mealSaturatedFats = mCursor.getString(mCursor.getColumnIndex(ComposedMealsColumns.ComposedMealsColumnsEntry.COLUMN_SATURATEDFATS));
         String productsIncludedComposedMeal = mCursor.getString(mCursor.getColumnIndex(ComposedMealsColumns.ComposedMealsColumnsEntry.COLUMN_PRODUCTSINCLUDED));
 
-//aaa = productsIncludedComposedMeal;
-
         holder.itemView.setTag(id);
         holder.textViewComposedMealsName.setText(position + 1 + ".  " + mealName);
         holder.textViewComposedMealsKcal.setText(mealKcal + "\ncalories");
@@ -109,45 +101,28 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
         holder.textViewProductsIncludedComposedMeal.setText(productsIncludedComposedMeal + "");
 
         //bottomSheetDialogArrayList.add(new BottomSheetDialogArrayList(productsIncludedComposedMeal));
-        dzialajno.add(productsIncludedComposedMeal);
+        arrayListProductIncluded.add(productsIncludedComposedMeal);
 
         bundleWithMacros = new Bundle();
 
         //System.out.println(dzialajno.get(0) + " CZY DZIAŁA?");
-        bundleWithMacros.putStringArrayList("key", dzialajno);
+        bundleWithMacros.putStringArrayList("key", arrayListProductIncluded);
 
         //bottomSheetDialogArrayList.get(position)
-
-//        aaa = " | "+ mealName + " | calories " + mealKcal
-//                + " | carbo " + mealCarbohydrates + "g | "
-//                + " | sugar " + mealSugar + "g | "
-//                + " | fats " + mealFats + "g | "
-//                + " | saturated fats " + mealSaturatedFats + "g | "
-//                + " | protein " + mealProtein + "g | "
-//                + " | weight " + mealGram + "g | \n";
-
 
         holder.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 BottomSheetDialog bottomSheet = new BottomSheetDialog();
-                //bottomSheet.show(getSupportFragmentManager(), "exampleBottomSheet");
                 bottomSheet.show(((ComposedMealsActivity) mContext).getSupportFragmentManager(), bottomSheet.getTag());
                 bundleWithMacros.putInt("key2", position);
-
                 bottomSheet.setArguments(bundleWithMacros);
-
-                //BottomSheetDialogArrayList currentItem = new BottomSheetDialogArrayList();
-
-
             }
         });
     }
 
     @Override
     public int getItemCount() {
-        //return mProductNames.size();
-        //return 3;
         return mCursor.getCount();
     }
 
@@ -162,4 +137,40 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
             notifyDataSetChanged();
         }
     }
+
+    @Override
+    public Filter getFilter() {
+        return exampleFilter;
+    }
+
+    private Filter exampleFilter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            ArrayList<String> filteredList = new ArrayList<>();
+
+            if (constraint == null || constraint.length() == 0) {
+                filteredList.addAll(arrayListNameMealForSearch);
+            } else {
+                String filterPattern = constraint.toString().toLowerCase().trim();
+
+                for (String item : arrayListNameMealForSearch) {
+                    if (item.toLowerCase().contains(filterPattern)) {
+                        filteredList.add(item);
+                    }
+                }
+
+            }
+            FilterResults results = new FilterResults();
+            results.values = filteredList;
+
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+           // exampleList.clear();
+           // exampleList.addAll((ArrayList) results.values);
+            notifyDataSetChanged();
+        }
+    };
 }
