@@ -5,7 +5,7 @@
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/textViewProductsIncludedComposedMeal"
+        android:id="@+id/textViewProductsIncludedComposedDailyMeal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=""
@@ -22,32 +22,30 @@
         android:rowCount="6">
 
         <TextView
-            android:singleLine="false"
-            android:maxEms="25"
-            android:id="@+id/textViewComposedMealsName"
-            android:layout_width="wrap_content"
+            android:id="@+id/textViewComposedDailyMealsName"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
             android:layout_columnSpan="1"
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
-            android:text="paaaaaaaa \n sassa"
+            android:text="Poniedziałek"
             android:textStyle="bold" />
 
         <TextView
-            android:maxEms="20"
-            android:id="@+id/textViewComposedMealsKcal"
+            android:id="@+id/textViewComposedDailyMealsKcal_Sum"
             android:layout_rowWeight="1"
             android:layout_columnSpan="1"
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
+            android:maxEms="20"
             android:padding="2dp"
             android:text="kcal 52 | carbo 14g | sugar 10g | fats 0.2g | saturatedfats 0g | protein 0.3g | weight 100g" />
 
         <TextView
-            android:id="@+id/textViewComposedMealsGram"
+            android:id="@+id/textViewComposedDailyMealsFirstProduct"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
@@ -56,17 +54,18 @@
             android:text="Ogórkowa" />
 
         <TextView
-            android:id="@+id/textViewComposedMealsCarbohydrates"
+            android:id="@+id/textViewComposedDailyMealsKcal_FirstProduct_Sum"
             android:layout_rowWeight="1"
             android:layout_columnSpan="1"
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
+            android:maxEms="20"
             android:padding="2dp"
-            android:text="34g \ncarbohydrates" />
+            android:text="kcal 52 | carbo 14g | sugar 10g | fats 0.2g | saturatedfats 0g | protein 0.3g | weight 100g" />
 
         <TextView
-            android:id="@+id/textViewComposedMealsProtein"
+            android:id="@+id/textViewComposedDailyMealsSecondProduct"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
@@ -75,17 +74,18 @@
             android:text="Pomidorowa" />
 
         <TextView
-            android:id="@+id/textViewComposedMealsSugar"
+            android:id="@+id/textViewComposedDailyMealsKcal_SecondProduct_Sum"
             android:layout_rowWeight="1"
             android:layout_columnSpan="1"
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
+            android:maxEms="20"
             android:padding="2dp"
-            android:text="21g \nsugar" />
+            android:text="kcal 52 | carbo 14g | sugar 10g | fats 0.2g | saturatedfats 0g | protein 0.3g | weight 100g" />
 
         <TextView
-            android:id="@+id/textViewComposedMealsSaturatedFats"
+            android:id="@+id/textViewComposedDailyMealsThirdProduct"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
@@ -94,17 +94,19 @@
             android:text="Wodzionka" />
 
         <TextView
-            android:layout_columnSpan="1"
+            android:id="@+id/textViewComposedDailyMealsKcal_ThirdProduct_Sum"
             android:layout_rowWeight="1"
+            android:layout_columnSpan="1"
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
+            android:maxEms="20"
             android:padding="2dp"
-            android:text="11g \nsaturatedFats" />
+            android:text="kcal 52 | carbo 14g | sugar 10g | fats 0.2g | saturatedfats 0g | protein 0.3g | weight 100g" />
 
         <TextView
+            android:id="@+id/textViewComposedDailyMealsFourthProduct"
             android:layout_rowWeight="1"
-
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
@@ -112,17 +114,19 @@
             android:text="Flaki" />
 
         <TextView
-            android:layout_columnSpan="1"
+            android:id="@+id/textViewComposedDailyMealsKcal_FourthProduct_Sum"
             android:layout_rowWeight="1"
+            android:layout_columnSpan="1"
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
+            android:maxEms="20"
             android:padding="2dp"
-            android:text="11g \nsaturatedFats" />
+            android:text="kcal 52 | carbo 14g | sugar 10g | fats 0.2g | saturatedfats 0g | protein 0.3g | weight 100g" />
 
         <TextView
+            android:id="@+id/textViewComposedDailyMealsFifthProduct"
             android:layout_rowWeight="1"
-
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
@@ -130,13 +134,15 @@
             android:text="Barszcz" />
 
         <TextView
-            android:layout_columnSpan="1"
+            android:id="@+id/textViewComposedDailyMealsKcal_FifthProduct_Sum"
             android:layout_rowWeight="1"
+            android:layout_columnSpan="1"
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
+            android:maxEms="20"
             android:padding="2dp"
-            android:text="11g \nsaturatedFats" />
+            android:text="kcal 52 | carbo 14g | sugar 10g | fats 0.2g | saturatedfats 0g | protein 0.3g | weight 100g" />
 
     </GridLayout>
 
