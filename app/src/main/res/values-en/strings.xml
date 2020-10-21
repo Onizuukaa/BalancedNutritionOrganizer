@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Balanced Nutrition Organizer</string>
     <string name="db_name">productsDatabase_EN.db</string>
     <string name="Calculate_Your_BMI">Calculate your BMI</string>
     <string name="Food_Table">Food Table</string>
@@ -53,4 +52,5 @@
     <string name="Macronutrients_has_been_sent">Macronutrients has been sent</string>
     <string name="No_product_with_this_index">No product with this index</string>
     <string name="No_data_ComposedMeals">No Composed Meals. Meals will be here after add from \"Compose The Meal\"</string>
+    <string name="app_name">Balanced Nutrition Organizer</string>
 </resources>

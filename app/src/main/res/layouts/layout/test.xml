@@ -12,25 +12,25 @@
     <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+
         android:gravity="center">
 
         <TableRow>
 
             <ImageView
-                android:onClick="imageView_openBmiActivity"
-                android:id="@+id/imageViewBmiActivity"
-                android:layout_width="183dp"
-                android:layout_height="120dp"
-                app:srcCompat="@drawable/bmi" />
-
-            <ImageView
-                android:onClick="imageView_openProductTableActivity"
                 android:id="@+id/imageViewProductTable"
                 android:layout_width="193dp"
                 android:layout_height="122dp"
-                app:srcCompat="@drawable/food_table"
-                android:paddingHorizontal="5dp"/>
+                android:onClick="imageView_openProductTableActivity"
+                app:srcCompat="@drawable/food_table" />
+
+            <ImageView
+                android:id="@+id/imageViewComposeTheDish"
+                android:layout_width="193dp"
+                android:layout_height="122dp"
+                android:onClick="imageView_OpenComposeTheDish"
+                app:srcCompat="@drawable/compose_the_meal" />
+
         </TableRow>
 
         <TableRow>
@@ -38,38 +38,41 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/Calculate_Your_BMI"
-                android:textSize="20dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/imageViewProductTable"
                 android:gravity="center"
                 android:text="@string/Food_Table"
                 android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/Compose_The_Meal"
+                android:textSize="20dp" />
+
         </TableRow>
 
-        <TableRow>
+        <TableRow android:layout_marginTop="20dp">
 
             <ImageView
                 android:id="@+id/imageViewYourDishes"
-                android:layout_width="183dp"
-                android:layout_height="105dp"
-                android:layout_marginTop="20dp"
+                android:layout_width="193dp"
+                android:layout_height="122dp"
                 android:onClick="imageView_openYourDish"
                 app:srcCompat="@drawable/composhed_meals" />
 
             <ImageView
                 android:id="@+id/imageViewDailyMeals"
-                android:layout_width="150dp"
-                android:layout_height="107dp"
-                android:layout_marginTop="20dp"
+                android:layout_width="193dp"
+                android:layout_height="122dp"
                 android:onClick="imageView_openDailyMeals"
                 app:srcCompat="@drawable/composed_daily_meals" />
         </TableRow>
 
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
         <TableRow android:layout_marginBottom="15dp">
 
             <TextView
@@ -80,32 +83,11 @@
                 android:textSize="20dp" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/Composed_Daily_Meals"
-                android:textSize="20dp" />
-        </TableRow>
-
-        <TableRow>
-
-            <ImageView
-                android:id="@+id/imageViewComposeTheDish"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:onClick="imageView_OpenComposeTheDish"
-                app:srcCompat="@drawable/compose_the_meal" />
-        </TableRow>
-
-        <TableRow android:layout_width="match_parent">
-
-            <TextView
+                android:layout_marginLeft="25dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:gravity="center"
-                android:text="@string/Compose_The_Meal"
+                android:text="Composed Day Meal"
                 android:textSize="20dp" />
         </TableRow>
 
@@ -168,12 +150,12 @@
             android:gravity="center">
 
             <Button
-                android:onClick="button_addWater"
                 android:id="@+id/buttonAddWater"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
                 android:background="@drawable/button_background"
+                android:onClick="button_addWater"
                 android:text="@string/ADD_250ML_WATER" />
 
             <Button

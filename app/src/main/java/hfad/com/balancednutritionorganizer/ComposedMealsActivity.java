@@ -29,9 +29,11 @@ public class ComposedMealsActivity extends AppCompatActivity implements BottomSh
     private SQLiteDatabase mDatabaseComposedMeals;
     private RecyclerViewComposedMealsAdapter adapter;
     Cursor cursor;
-    Button button_removeMeal;
+    Button button_removeMeal, button_addMealsToDailyMenu;
     EditText editText_removeMeal;
     TextView textViewNoDataComposed;
+
+    String test = "ccc";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +57,21 @@ public class ComposedMealsActivity extends AppCompatActivity implements BottomSh
 
         cursor = getAllItems();
         showOrHideNoDataTextView();
+        button_addMealsToDailyMenu = findViewById(R.id.button_addMealsToDailyMenu);
+        button_addMealsToDailyMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(ComposedMealsActivity.this, "test", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    public interface testMetodyInterface{
+        void testMetody(String test);
+
+    }
+    public void testMetody(){
+        Toast.makeText(ComposedMealsActivity.this, "test", Toast.LENGTH_SHORT).show();
     }
 
     private Cursor getAllItems() {

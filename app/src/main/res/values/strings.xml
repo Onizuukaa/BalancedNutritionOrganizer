@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">Balanced Nutrition Organizer</string>
     <string name="db_name">productsDatabase</string>
     <string name="Calculate_Your_BMI">Calculate your BMI</string>
     <string name="Food_Table">Food Table</string>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Balanced Nutrition Organizer</string>
     <string name="db_name">productsDatabase_PL.db</string>
     <string name="Calculate_Your_BMI">Oblicz swoje BMI</string>
     <string name="Food_Table">Tabela Żywności</string>
@@ -53,4 +52,5 @@
     <string name="Macronutrients_has_been_sent">Makroskładniki zostały wysłane</string>
     <string name="No_product_with_this_index">Brak produktu o takim indeksie</string>
     <string name="No_data_ComposedMeals">Brak skomponowanych posiłków. Posiłki pojawią się tutaj po dodaniu ich w \"Skomponuj Posiłek\"</string>
+    <string name="app_name">Balanced Nutrition Organizer</string>
 </resources>

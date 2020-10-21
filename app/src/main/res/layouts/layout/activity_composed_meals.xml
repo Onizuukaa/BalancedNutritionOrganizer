@@ -26,12 +26,34 @@
             android:text="1" />
 
         <TextView
-            android:layout_marginLeft="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
+            android:layout_marginLeft="5dp"
+            android:text="Click on table for more information"
             android:textSize="16dp"
-            android:text="Click on table for more information"/>
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutComposedMealActivity_AddToDB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayoutComposedMealActivity"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button_addMealsToDailyMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add meals to daily menu" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select meals which do you want add to Daily Meals"
+            android:textStyle="bold"/>
 
     </LinearLayout>
 
@@ -39,7 +61,7 @@
         android:id="@+id/composedMealsRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/linearLayoutComposedMealActivity"
+        android:layout_below="@+id/linearLayoutComposedMealActivity_AddToDB"
         android:background="@android:color/darker_gray"
         android:padding="4dp"
         android:scrollbars="vertical" />
@@ -48,7 +70,7 @@
         android:id="@+id/textViewNoDataComposed"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/linearLayoutComposedMealActivity"
+        android:layout_below="@+id/linearLayoutComposedMealActivity_AddToDB"
         android:background="#FAFAFA"
         android:gravity="center"
         android:text="@string/No_data_ComposedMeals"

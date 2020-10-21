@@ -8,25 +8,29 @@
     tools:context=".HealthyInfoActivity">
 
     <TextView
+        android:shape="rectangle"
         android:layout_width="match_parent"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:background="@android:color/holo_green_light"
-        android:text="Here are healthy information about food! Choose what you want to know."
+        android:background="@drawable/rounded_corner"
+        android:text="Here are healthy information about food! Choose what do you want to know."
         android:textSize="20sp" />
 
     <TextView
+        android:id="@+id/textView_InfoCalories"
+        android:onClick="openInfoAboutCalories"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        android:background="@android:color/holo_orange_dark"
+        android:background="@drawable/rounded_corner"
         android:gravity="center"
         android:text="Information about Calories"
         android:textSize="30sp"
         android:textStyle="bold" />
 
     <TextView
+        android:onClick="openInfoAboutCarbohydrates"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
@@ -37,6 +41,7 @@
         android:textStyle="bold" />
 
     <TextView
+        android:onClick="openInfoAboutProtein"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
@@ -47,6 +52,7 @@
         android:textStyle="bold" />
 
     <TextView
+        android:onClick="openInfoAboutFats"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"

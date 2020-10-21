@@ -6,9 +6,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -22,13 +24,15 @@ import hfad.com.balancednutritionorganizer.R;
 import hfad.com.balancednutritionorganizer.ReturnItem;
 import hfad.com.balancednutritionorganizer.database_things.ComposedMealsColumns;
 
-public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<RecyclerViewComposedMealsAdapter.RecyclerViewComposedMealsViewHolder> implements BottomSheetDialog.BottomSheetListener, Filterable {
+public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<RecyclerViewComposedMealsAdapter.RecyclerViewComposedMealsViewHolder> implements BottomSheetDialog.BottomSheetListener, Filterable, ComposedMealsActivity.testMetodyInterface {
 
     private ArrayList<String> arrayListProductIncluded = new ArrayList<>();
+    private ArrayList<String> arrayListNameMealForSearch_BeforeFilter = new ArrayList<>();
     private ArrayList<String> arrayListNameMealForSearch = new ArrayList<>();
     private Context mContext;
     private Cursor mCursor;
     Bundle bundleWithMacros;
+    public String odebraneZAktywnosci;
 
     public RecyclerViewComposedMealsAdapter(Context context, Cursor cursor) {
         mContext = context;
@@ -40,12 +44,19 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
 
     }
 
+    @Override
+    public void testMetody(String test) {
+        odebraneZAktywnosci = test;
+        System.out.println(odebraneZAktywnosci + "DZIALA CZY NIE");
+    }
+
     public class RecyclerViewComposedMealsViewHolder extends RecyclerView.ViewHolder {
 
         public TextView textViewComposedMealsName, textViewComposedMealsKcal, textViewComposedMealsGram,
                 textViewComposedMealsCarbohydrates, textViewComposedMealsFats, textViewComposedMealsProtein,
                 textViewComposedMealsSugar, textViewComposedMealsSaturatedFats, textViewProductsIncludedComposedMeal;
         CardView parentLayout;
+        CheckBox checkBox_ComposedMeals;
 
         public RecyclerViewComposedMealsViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -59,6 +70,7 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
             textViewComposedMealsSaturatedFats = itemView.findViewById(R.id.textViewComposedMealsSaturatedFats);
             textViewProductsIncludedComposedMeal = itemView.findViewById(R.id.textViewProductsIncludedComposedMeal);
             parentLayout = itemView.findViewById(R.id.scheme_composed_meals);
+            checkBox_ComposedMeals = itemView.findViewById(R.id.checkBox_composedMeals);
         }
     }
 
@@ -71,7 +83,7 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerViewComposedMealsViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull final RecyclerViewComposedMealsViewHolder holder, final int position) {
 
         if (!mCursor.moveToPosition(position)) {
             return;
@@ -100,6 +112,18 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
         holder.textViewComposedMealsSaturatedFats.setText(mealSaturatedFats + "g\nsaturated fats");
         holder.textViewProductsIncludedComposedMeal.setText(productsIncludedComposedMeal + "");
 
+
+        arrayListNameMealForSearch_BeforeFilter.add(mealName);
+        arrayListNameMealForSearch_BeforeFilter.add(mealKcal);
+        arrayListNameMealForSearch_BeforeFilter.add(mealGram);
+        arrayListNameMealForSearch_BeforeFilter.add(mealCarbohydrates);
+        arrayListNameMealForSearch_BeforeFilter.add(mealFats);
+        arrayListNameMealForSearch_BeforeFilter.add(mealProtein);
+        arrayListNameMealForSearch_BeforeFilter.add(mealSugar);
+        arrayListNameMealForSearch_BeforeFilter.add(mealSaturatedFats);
+        arrayListNameMealForSearch_BeforeFilter.add(productsIncludedComposedMeal);
+
+
         //bottomSheetDialogArrayList.add(new BottomSheetDialogArrayList(productsIncludedComposedMeal));
         arrayListProductIncluded.add(productsIncludedComposedMeal);
 
@@ -117,6 +141,22 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
                 bottomSheet.show(((ComposedMealsActivity) mContext).getSupportFragmentManager(), bottomSheet.getTag());
                 bundleWithMacros.putInt("key2", position);
                 bottomSheet.setArguments(bundleWithMacros);
+            }
+        });
+
+        ComposedMealsActivity obiekt = new ComposedMealsActivity();
+
+
+        holder.checkBox_ComposedMeals.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//               if( holder.checkBox_ComposedMeals.isChecked() ) {
+//                   String test = "test 2";
+//               }
+                Toast.makeText(mContext, odebraneZAktywnosci, Toast.LENGTH_SHORT).show();
+//                String test = "test 3";
+//                ComposedMealsActivity obiekt = new ComposedMealsActivity();
+//                obiekt.test();
             }
         });
     }
@@ -149,11 +189,11 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
             ArrayList<String> filteredList = new ArrayList<>();
 
             if (constraint == null || constraint.length() == 0) {
-                filteredList.addAll(arrayListNameMealForSearch);
+                filteredList.addAll(arrayListNameMealForSearch_BeforeFilter);
             } else {
                 String filterPattern = constraint.toString().toLowerCase().trim();
 
-                for (String item : arrayListNameMealForSearch) {
+                for (String item : arrayListNameMealForSearch_BeforeFilter) {
                     if (item.toLowerCase().contains(filterPattern)) {
                         filteredList.add(item);
                     }
@@ -168,8 +208,8 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
 
         @Override
         protected void publishResults(CharSequence constraint, FilterResults results) {
-           // exampleList.clear();
-           // exampleList.addAll((ArrayList) results.values);
+            // exampleList.clear();
+            // exampleList.addAll((ArrayList) results.values);
             notifyDataSetChanged();
         }
     };
