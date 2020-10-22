@@ -40,13 +40,13 @@
     <string name="Meat">Mięso</string>
     <string name="Sweets">Słodycze</string>
     <string name="Drinks">Napoje</string>
-    <string name="Send_The_Macronutrients">Wyślij makroskładniki</string>
+    <string name="Send_The_Macronutrients">Wyślij makroskładniki do komponowania posiłku</string>
     <string name="Open_Compose_The_Meal">Otwórz komponowanie posiłku</string>
-    <string name="Reset">Zresetuj</string>
+    <string name="Reset">Reset</string>
     <string name="Add_Meal">Dodaj Posiłek</string>
     <string name="Remove_Product">Usuń Produkt</string>
     <string name="Meal_Name">Nazwa Posiłku</string>
-    <string name="No_data">Brak danych. Dane pojawią się tutaj po dodaniu ich z Tabela Produktów > Konkretny rodzaj produktu > produkt > Wyślij Makroskładniki</string>
+    <string name="No_data">Brak danych.\nDane pojawią się tutaj po dodaniu ich z Tabela Produktów > Konkretny rodzaj produktu > produkt > Wyślij Makroskładniki</string>
     <string name="No_data_to_send">Brak danych do wysłania</string>
     <string name="zero_will_not_be_sent">0 nie będzie wysłane</string>
     <string name="Macronutrients_has_been_sent">Makroskładniki zostały wysłane</string>

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/action_heartInfo"
+        android:id="@+id/action_healthyInfo"
         android:icon="@drawable/ic_heart"
         android:title="Health info"
         app:showAsAction="ifRoom" />

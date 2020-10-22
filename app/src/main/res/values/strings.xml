@@ -39,18 +39,19 @@
     <string name="Meat">Meat</string>
     <string name="Sweets">Sweets</string>
     <string name="Drinks">Drinks</string>
-    <string name="Send_The_Macronutrients">Send The Macronutrients</string>
+    <string name="Send_The_Macronutrients">Send the macronutrients for compose the meal</string>
     <string name="Reset">Reset</string>
     <string name="Add_Meal">Add Meal</string>
     <string name="Remove_Product">Remove Product</string>
     <string name="Meal_Name">Meal Name</string>
     <string name="Open_Compose_The_Meal">Open Compose The Meal</string>
-    <string name="No_data">No data. Data will be here after add from Product Table > specific kind of product > product > Send The Macronutrients</string>
+    <string name="No_data">No data.\nData will be here after add from Product Table > specific kind of product > product > Send The Macronutrients</string>
     <string name="No_data_to_send">No data to send</string>
     <string name="zero_will_not_be_sent">0 will not be sent</string>
     <string name="Macronutrients_has_been_sent">Macronutrients has been sent</string>
     <string name="No_product_with_this_index">No product with this index</string>
     <string name="No_data_ComposedMeals">No Composed Meals. Meals will be here after add from \"Compose The Meal\"</string>
+    <string name="app_name">Balanced Nutrition Organizer</string>
 
     <!--    <string-array name="numbers">-->
     <!--        <item>100</item>-->

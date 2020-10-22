@@ -11,6 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".AddCustomProductActivity"></activity>
+        <activity android:name=".productsList.CustomProductListActivity" />
         <activity
             android:name=".productsList.DrinksListActivity"
             android:parentActivityName=".ProductTableActivity" />
@@ -62,13 +64,5 @@
             </intent-filter>
         </activity>
     </application>
-
-<!--    <supports-screens-->
-<!--        android:resizeable="true"-->
-<!--        android:smallScreens="true"-->
-<!--        android:normalScreens="true"-->
-<!--        android:largeScreens="true"-->
-<!--        android:anyDensity="true"-->
-<!--        />-->
 
 </manifest>

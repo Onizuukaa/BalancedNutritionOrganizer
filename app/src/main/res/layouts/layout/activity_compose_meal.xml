@@ -5,30 +5,34 @@
     android:layout_height="match_parent"
     tools:context=".ComposeMealActivity">
 
-    <EditText
-        android:id="@+id/editTextMealName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:maxLength="22"
-        android:text="@string/Meal_Name" />
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/buttonAddDish"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/editTextMealName"
-        android:onClick="button_AddMeal"
-        android:text="@string/Add_Meal" />
+        <Button
+            android:id="@+id/buttonResetIngredients"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="button_ClearProductTable"
+            android:text="@string/Reset" />
 
-    <Button
-        android:id="@+id/buttonResetIngredients"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toLeftOf="@id/editTextMealName"
-        android:onClick="button_ClearProductTable"
-        android:text="@string/Reset" />
+        <EditText
+            android:id="@+id/editTextMealName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLength="22"
+            android:text="@string/Meal_Name" />
+
+        <Button
+            android:id="@+id/buttonAddDish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="button_AddMeal"
+            android:text="@string/Add_Meal" />
+
+    </LinearLayout>
 
     <GridLayout
         android:id="@+id/gridLayoutComposhingDishes"
@@ -36,7 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:layout_marginBottom="15dp"
-        android:background="@android:color/holo_purple"
+        android:background="#5597B5"
         android:columnCount="3"
         android:rowCount="3">
 

@@ -1,11 +1,16 @@
 package hfad.com.balancednutritionorganizer;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 
+import hfad.com.balancednutritionorganizer.productsList.CustomProductListActivity;
 import hfad.com.balancednutritionorganizer.productsList.DairyListActivity;
 import hfad.com.balancednutritionorganizer.productsList.DrinksListActivity;
 import hfad.com.balancednutritionorganizer.productsList.FishListActivity;
@@ -63,5 +68,28 @@ public class ProductTableActivity extends AppCompatActivity {
     public void openDrinksListActivity(View view) {
         Intent intent = new Intent(this, DrinksListActivity.class);
         startActivity(intent);
+    }
+
+    public void openCustomProductsActivity(View view) {
+        Intent intent = new Intent(this, CustomProductListActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.add_custom_product_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_addCustomProduct:
+                Intent intent = new Intent(this, AddCustomProductActivity.class);
+                startActivity(intent);
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

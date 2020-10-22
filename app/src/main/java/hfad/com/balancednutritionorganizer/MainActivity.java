@@ -71,14 +71,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.info_menu, menu);
+        inflater.inflate(R.menu.healthy_info_menu, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.action_heartInfo:
+            case R.id.action_healthyInfo:
                 Intent intent = new Intent(this, HealthyInfoActivity.class);
                 startActivity(intent);
             default:

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".AddCustomProductActivity">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="10">
+
+        <TextView
+            android:gravity="center"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Product Name" />
+
+        <EditText
+            android:gravity="center"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pomidor" />
+
+        <TextView
+            android:gravity="center"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calories" />
+
+        <EditText
+            android:gravity="center"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="120" />
+
+        <TextView
+            android:gravity="center"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Carbohydrates" />
+
+        <EditText
+            android:gravity="center"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="39" />
+
+        <TextView
+            android:gravity="center"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sugar" />
+
+        <EditText
+            android:gravity="center"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="11" />
+
+        <TextView
+            android:gravity="center"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fats" />
+
+        <EditText
+            android:gravity="center"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="7" />
+
+        <TextView
+            android:gravity="center"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Saturated Fats" />
+
+        <EditText
+            android:gravity="center"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3" />
+
+        <TextView
+            android:gravity="center"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Protein" />
+
+        <EditText
+            android:gravity="center"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="22" />
+
+        <TextView
+            android:gravity="center"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Image" />
+
+        <ImageButton
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:src="@drawable/image_custom" />
+
+        <Button
+            android:layout_columnSpan="2"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add" />
+
+    </GridLayout>
+
+</LinearLayout>
