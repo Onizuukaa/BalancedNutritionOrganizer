@@ -7,6 +7,16 @@
     android:orientation="vertical"
     tools:context=".AddCustomProductActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="center"
+        android:text="Please add macronutrients for 100 gram"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -14,136 +24,146 @@
         android:rowCount="10">
 
         <TextView
-            android:gravity="center"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:gravity="center"
             android:text="Product Name" />
 
         <EditText
-            android:gravity="center"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
+            android:id="@+id/customProductName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:gravity="center"
             android:text="Pomidor" />
 
         <TextView
-            android:gravity="center"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:gravity="center"
             android:text="Calories" />
 
         <EditText
-            android:gravity="center"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
+            android:id="@+id/customProductCalories"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:gravity="center"
             android:text="120" />
 
         <TextView
-            android:gravity="center"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:gravity="center"
             android:text="Carbohydrates" />
 
         <EditText
-            android:gravity="center"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
+            android:id="@+id/customProductCarbohydrates"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:gravity="center"
             android:text="39" />
 
         <TextView
-            android:gravity="center"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:gravity="center"
             android:text="Sugar" />
 
         <EditText
-            android:gravity="center"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
+            android:id="@+id/customProductSugar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:gravity="center"
             android:text="11" />
 
         <TextView
-            android:gravity="center"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:gravity="center"
             android:text="Fats" />
 
         <EditText
-            android:gravity="center"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
+            android:id="@+id/customProductFats"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:gravity="center"
             android:text="7" />
 
         <TextView
-            android:gravity="center"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:gravity="center"
             android:text="Saturated Fats" />
 
         <EditText
-            android:gravity="center"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
+            android:id="@+id/customProductSaturatedFats"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:gravity="center"
             android:text="3" />
 
         <TextView
-            android:gravity="center"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:gravity="center"
             android:text="Protein" />
 
         <EditText
-            android:gravity="center"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
+            android:id="@+id/customProductProtein"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:gravity="center"
             android:text="22" />
 
-        <TextView
-            android:gravity="center"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
+        <ImageView
+            android:id="@+id/customProductImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Image" />
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:gravity="center"
+            app:srcCompat="@mipmap/ic_launcher" />
 
         <ImageButton
+            android:id="@+id/imageButtonCustomProduct"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:src="@drawable/image_custom" />
 
         <Button
-            android:layout_columnSpan="2"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
+            android:onClick="addCustomProduct"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnSpan="2"
+            android:layout_columnWeight="1"
             android:text="Add" />
 
     </GridLayout>

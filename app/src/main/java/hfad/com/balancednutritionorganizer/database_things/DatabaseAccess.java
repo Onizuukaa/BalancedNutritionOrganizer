@@ -76,4 +76,6 @@ public class DatabaseAccess {
         cursor = db.rawQuery("select * from drinksValues", null);
         return cursor;
     }
+
+
 }

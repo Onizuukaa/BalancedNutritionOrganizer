@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="20dp"
+    android:layout_marginTop="10dp"
     android:gravity="top|center"
     android:orientation="vertical"
     tools:context=".ProductTableActivity">
@@ -20,14 +20,14 @@
                 android:onClick="openVegetablesListActivity"
                 android:id="@+id/imageViewVegetablesTable"
                 android:layout_width="198dp"
-                android:layout_height="105dp"
+                android:layout_height="95dp"
                 app:srcCompat="@drawable/vegetables" />
 
             <ImageView
                 android:onClick="openFruitsListActivity"
                 android:id="@+id/imageViewFruitsTable"
                 android:layout_width="189dp"
-                android:layout_height="105dp"
+                android:layout_height="95dp"
                 app:srcCompat="@drawable/fruits" />
 
         </TableRow>
@@ -60,14 +60,14 @@
                 android:onClick="openGrainProductsListActivity"
                 android:id="@+id/imageViewGrainProductsTable"
                 android:layout_width="198dp"
-                android:layout_height="105dp"
+                android:layout_height="95dp"
                 app:srcCompat="@drawable/grain_products" />
 
             <ImageView
                 android:onClick="openDairyListActivity"
                 android:id="@+id/imageViewDairyTable"
                 android:layout_width="189dp"
-                android:layout_height="105dp"
+                android:layout_height="95dp"
                 app:srcCompat="@drawable/dairy" />
             
         </TableRow>
@@ -100,14 +100,14 @@
                 android:onClick="openFishListActivity"
                 android:id="@+id/imageViewFishTable"
                 android:layout_width="189dp"
-                android:layout_height="105dp"
+                android:layout_height="95dp"
                 app:srcCompat="@drawable/grilled_fish" />
 
             <ImageView
                 android:onClick="openMeatListActivity"
                 android:id="@+id/imageViewMeatTable"
                 android:layout_width="198dp"
-                android:layout_height="105dp"
+                android:layout_height="95dp"
                 app:srcCompat="@drawable/meat" />
 
         </TableRow>
@@ -140,14 +140,14 @@
                 android:onClick="openSweetsListActivity"
                 android:id="@+id/imageViewSweetsTable"
                 android:layout_width="198dp"
-                android:layout_height="105dp"
+                android:layout_height="95dp"
                 app:srcCompat="@drawable/sweets" />
 
             <ImageView
                 android:onClick="openDrinksListActivity"
                 android:id="@+id/imageViewDrinksTable"
                 android:layout_width="189dp"
-                android:layout_height="105dp"
+                android:layout_height="95dp"
                 app:srcCompat="@drawable/drinks" />
 
         </TableRow>
@@ -174,15 +174,14 @@
 
         </TableRow>
 
-        <TableRow>
+        <TableRow android:gravity="center">
 
             <ImageView
                 android:onClick="openCustomProductsActivity"
                 android:id="@+id/imageViewCustomProductsTable"
                 android:layout_width="189dp"
-                android:layout_height="105dp"
-                app:srcCompat="@drawable/anvil"
-                />
+                android:layout_height="95dp"
+                app:srcCompat="@drawable/anvil" />
 
         </TableRow>
 
