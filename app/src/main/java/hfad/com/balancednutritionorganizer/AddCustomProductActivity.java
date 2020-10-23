@@ -57,10 +57,6 @@ public class AddCustomProductActivity extends AppCompatActivity {
         cv.put(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productSaturatedFats, customProductSaturatedFats.getText().toString());
         cv.put(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productProtein, customProductProtein.getText().toString());
 
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        //friendInfo.getImage_bmp().compress(Bitmap.CompressFormat.PNG, 100,out);
-        cv.put("avatar_img", out.toByteArray());
-
         databaseCustomProduct.insert(CustomProductsColumns.CustomProductsColumnsEntry.TABLE_NAME, null, cv);
 
         Toast.makeText(this, "Meal added", Toast.LENGTH_SHORT).show();
