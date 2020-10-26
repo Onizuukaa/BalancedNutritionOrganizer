@@ -29,6 +29,7 @@ public class ComposedMealsActivity extends AppCompatActivity implements BottomSh
     private SQLiteDatabase mDatabaseComposedMeals;
     private RecyclerViewComposedMealsAdapter adapter;
     Cursor cursor;
+
     Button button_addMealsToDailyMenu;
     EditText editText_removeMeal;
     TextView textViewNoDataComposed;
@@ -57,11 +58,12 @@ public class ComposedMealsActivity extends AppCompatActivity implements BottomSh
         });
     }
 
-    public interface testMetodyInterface{
+    public interface testMetodyInterface {
         void testMetody(String test);
 
     }
-    public void testMetody(){
+
+    public void testMetody() {
         Toast.makeText(ComposedMealsActivity.this, "test", Toast.LENGTH_SHORT).show();
     }
 
@@ -84,8 +86,8 @@ public class ComposedMealsActivity extends AppCompatActivity implements BottomSh
         recyclerView.setAdapter(adapter);
     }
 
-    public void button_removeMeal(View view){
-        int position = parseInt(editText_removeMeal.getText().toString()) -1;
+    public void button_removeMeal(View view) {
+        int position = parseInt(editText_removeMeal.getText().toString()) - 1;
         if (position >= cursor.getCount() || position == -1) {
             Toast.makeText(this, "No product with this index", Toast.LENGTH_SHORT).show();
         } else {

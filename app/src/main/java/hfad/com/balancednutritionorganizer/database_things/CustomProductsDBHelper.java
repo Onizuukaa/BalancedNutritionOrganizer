@@ -20,6 +20,7 @@ public class CustomProductsDBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db){
         final String SQL_CREATE_CUSTOMPRODUCTS_TABLE = "CREATE TABLE " +
                 CustomProductsColumns.CustomProductsColumnsEntry.TABLE_NAME + " (" +
+                CustomProductsColumns.CustomProductsColumnsEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productName + " TEXT NOT NULL, " +
                 CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productImage + " Uri NOT NULL, " +
                 CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productCalories + " DOUBLE NOT NULL, " +
@@ -27,8 +28,8 @@ public class CustomProductsDBHelper extends SQLiteOpenHelper {
                 CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productSugar + " DOUBLE NOT NULL, " +
                 CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productFats + " DOUBLE NOT NULL, " +
                 CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productSaturatedFats + " DOUBLE NOT NULL, " +
-                CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productProtein + " DOUBLE NOT NULL, " +
-                CustomProductsColumns.CustomProductsColumnsEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT " +
+                CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productProtein + " DOUBLE NOT NULL " +
+
                 ");";
         db.execSQL(SQL_CREATE_CUSTOMPRODUCTS_TABLE);
     }

@@ -5,7 +5,30 @@
     android:layout_height="match_parent"
     tools:context=".productsList.CustomProductListActivity">
 
+    <LinearLayout
+        android:id="@+id/linearLayoutCustomProductActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:onClick="button_removeCustomProduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Remove Meal" />
+
+        <EditText
+            android:id="@+id/editText_removeItem_CustomProduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:text="1" />
+
+    </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@id/linearLayoutCustomProductActivity"
         android:id="@+id/customProductsRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

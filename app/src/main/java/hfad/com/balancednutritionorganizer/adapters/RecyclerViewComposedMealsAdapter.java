@@ -102,6 +102,7 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
         String productsIncludedComposedMeal = mCursor.getString(mCursor.getColumnIndex(ComposedMealsColumns.ComposedMealsColumnsEntry.COLUMN_PRODUCTSINCLUDED));
 
         holder.itemView.setTag(id);
+
         holder.textViewComposedMealsName.setText(position + 1 + ".  " + mealName);
         holder.textViewComposedMealsKcal.setText(mealKcal + "\ncalories");
         holder.textViewComposedMealsGram.setText(mealGram + "g\nweight");
