@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".AddCustomProductActivity">
 
@@ -142,28 +142,30 @@
             android:gravity="center"
             android:text="22" />
 
-        <ImageView
-            android:id="@+id/customProductImage"
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:text="Chose an Image to upload.\nPlease don't select to big image\nbecause it can run slower." />
+
+        <ImageView
+            android:id="@+id/customProductImage"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:gravity="center"
             app:srcCompat="@mipmap/ic_launcher" />
 
-        <ImageButton
-            android:id="@+id/imageButtonCustomProduct"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:src="@drawable/image_custom" />
-
         <Button
-            android:onClick="addCustomProduct"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
             android:layout_columnSpan="2"
             android:layout_columnWeight="1"
+            android:onClick="addCustomProduct"
             android:text="Add" />
 
     </GridLayout>

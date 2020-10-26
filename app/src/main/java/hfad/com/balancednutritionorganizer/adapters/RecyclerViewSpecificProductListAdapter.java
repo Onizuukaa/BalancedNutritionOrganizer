@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +25,7 @@ import com.bumptech.glide.request.target.DrawableImageViewTarget;
 import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import hfad.com.balancednutritionorganizer.AddCustomProductActivity;
 import hfad.com.balancednutritionorganizer.AdvancedInformationAboutProductActivity;
 import hfad.com.balancednutritionorganizer.ReturnItem;
 import hfad.com.balancednutritionorganizer.R;
@@ -52,10 +54,13 @@ public class RecyclerViewSpecificProductListAdapter extends RecyclerView.Adapter
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
 
         final ReturnItem currentItem = exampleList.get(position);
-        
+        String aaa = "content://com.android.providers.media.documents/document/image%3A22878";
+        Uri image = Uri.parse(aaa);
+
         Glide.with(mContext)
                 .asBitmap()
                 //.asGif()
+                //.load(currentItem.getProductImage())
                 .load(currentItem.getProductImage())
                 //.load(R.raw.giphy)
                 .into(holder.productImage);

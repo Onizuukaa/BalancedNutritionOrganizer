@@ -21,6 +21,7 @@ public class CustomProductsDBHelper extends SQLiteOpenHelper {
         final String SQL_CREATE_CUSTOMPRODUCTS_TABLE = "CREATE TABLE " +
                 CustomProductsColumns.CustomProductsColumnsEntry.TABLE_NAME + " (" +
                 CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productName + " TEXT NOT NULL, " +
+                CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productImage + " Uri NOT NULL, " +
                 CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productCalories + " DOUBLE NOT NULL, " +
                 CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productCarbohydrates + " DOUBLE NOT NULL, " +
                 CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productSugar + " DOUBLE NOT NULL, " +

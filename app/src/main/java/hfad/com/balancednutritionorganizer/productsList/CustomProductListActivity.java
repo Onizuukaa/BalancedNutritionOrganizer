@@ -52,10 +52,10 @@ public class CustomProductListActivity extends AppCompatActivity {
 //        }
 
         while (cursorForCustomProducts.moveToNext()) {
-            mExampleList.add(new ReturnItem(cursorForCustomProducts.getString(0), test,
-                    cursorForCustomProducts.getString(1), cursorForCustomProducts.getString(2),
-                    cursorForCustomProducts.getString(3), cursorForCustomProducts.getString(4),
-                    cursorForCustomProducts.getString(5), cursorForCustomProducts.getString(6)));
+            mExampleList.add(new ReturnItem(cursorForCustomProducts.getString(0), cursorForCustomProducts.getString(1),
+                    cursorForCustomProducts.getString(2), cursorForCustomProducts.getString(3),
+                    cursorForCustomProducts.getString(4), cursorForCustomProducts.getString(5),
+                    cursorForCustomProducts.getString(6), cursorForCustomProducts.getString(7)));
         }
 
         cursorForCustomProducts.close();

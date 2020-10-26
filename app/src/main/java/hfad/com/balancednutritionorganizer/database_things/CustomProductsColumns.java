@@ -16,6 +16,8 @@ public class CustomProductsColumns {
         public static final String COLUMN_productFats = "productFats";
         public static final String COLUMN_productSaturatedFats = "productSaturatedFats";
         public static final String COLUMN_productProtein = "productProtein";
-        //public static final String COLUMN_productImage = "productImage";
+        public static final String COLUMN_productImage = "productImage";
+
+
     }
 }

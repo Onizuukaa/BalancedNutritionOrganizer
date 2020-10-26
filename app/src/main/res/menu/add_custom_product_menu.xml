@@ -2,10 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-<item
-    android:id="@+id/action_addCustomProduct"
-    android:icon="@drawable/ic_add_custom_product"
-    android:title="Add custom product"
-    app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_addCustomProduct"
+        android:title="+ Add product"
+        app:showAsAction="ifRoom" />
 
 </menu>
