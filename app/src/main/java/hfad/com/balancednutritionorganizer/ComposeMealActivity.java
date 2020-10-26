@@ -19,9 +19,9 @@ import java.text.DecimalFormat;
 
 import hfad.com.balancednutritionorganizer.adapters.RecyclerViewComposeMealAdapter;
 import hfad.com.balancednutritionorganizer.database_things.ComposedMealsDBHelper;
-import hfad.com.balancednutritionorganizer.database_things.GroceryContract;
+import hfad.com.balancednutritionorganizer.database_things.ComposeMealColumns;
 import hfad.com.balancednutritionorganizer.database_things.ComposedMealsColumns;
-import hfad.com.balancednutritionorganizer.database_things.GroceryDBHelper;
+import hfad.com.balancednutritionorganizer.database_things.ComposeMealDBHelper;
 
 import static java.lang.Integer.parseInt;
 
@@ -46,7 +46,7 @@ public class ComposeMealActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_compose_meal);
 
-        GroceryDBHelper dbHelper = new GroceryDBHelper(this);
+        ComposeMealDBHelper dbHelper = new ComposeMealDBHelper(this);
         ComposedMealsDBHelper dbHelperComposedMeals = new ComposedMealsDBHelper(this);
         mDatabase = dbHelper.getWritableDatabase();
         mDatabaseComposedMeals = dbHelperComposedMeals.getWritableDatabase();
@@ -74,8 +74,8 @@ public class ComposeMealActivity extends AppCompatActivity {
     }
 
     private void removeItemSwiped(long id) {
-        mDatabase.delete(GroceryContract.GroceryEntry.TABLE_NAME,
-                GroceryContract.GroceryEntry._ID + "=" + id, null);
+        mDatabase.delete(ComposeMealColumns.GroceryEntry.TABLE_NAME,
+                ComposeMealColumns.GroceryEntry._ID + "=" + id, null);
         mAdapter.swapCursor(getAllItems());
 
         cursor = getAllItems();
@@ -114,8 +114,8 @@ public class ComposeMealActivity extends AppCompatActivity {
             cursor.moveToPosition(position);
              int productPosition = cursor.getInt(0);
 
-            mDatabase.delete(GroceryContract.GroceryEntry.TABLE_NAME,
-                    GroceryContract.GroceryEntry._ID + "=" + productPosition, null);
+            mDatabase.delete(ComposeMealColumns.GroceryEntry.TABLE_NAME,
+                    ComposeMealColumns.GroceryEntry._ID + "=" + productPosition, null);
             mAdapter.swapCursor(getAllItems());
 
             sumAndViewMacros();
@@ -140,7 +140,7 @@ public class ComposeMealActivity extends AppCompatActivity {
 
     private Cursor getAllItems() {
         return mDatabase.query(
-                GroceryContract.GroceryEntry.TABLE_NAME,
+                ComposeMealColumns.GroceryEntry.TABLE_NAME,
                 null,
                 null,
                 null,
@@ -183,8 +183,8 @@ public class ComposeMealActivity extends AppCompatActivity {
 
     public void button_ClearProductTable(View view) {
 
-        mDatabase.delete(GroceryContract.GroceryEntry.TABLE_NAME,
-                GroceryContract.GroceryEntry._ID + ">" + 0, null);
+        mDatabase.delete(ComposeMealColumns.GroceryEntry.TABLE_NAME,
+                ComposeMealColumns.GroceryEntry._ID + ">" + 0, null);
         mAdapter.swapCursor(getAllItems());
 
         sumAndViewMacros();

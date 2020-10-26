@@ -29,11 +29,9 @@ public class ComposedMealsActivity extends AppCompatActivity implements BottomSh
     private SQLiteDatabase mDatabaseComposedMeals;
     private RecyclerViewComposedMealsAdapter adapter;
     Cursor cursor;
-    Button button_removeMeal, button_addMealsToDailyMenu;
+    Button button_addMealsToDailyMenu;
     EditText editText_removeMeal;
     TextView textViewNoDataComposed;
-
-    String test = "ccc";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,15 +42,8 @@ public class ComposedMealsActivity extends AppCompatActivity implements BottomSh
         ComposedMealsDBHelper dbHelperComposedMeals = new ComposedMealsDBHelper(this);
         mDatabaseComposedMeals = dbHelperComposedMeals.getWritableDatabase();
         initRecyclerView();
+
         editText_removeMeal = findViewById(R.id.editText_removeItem_ComposedMeals);
-        button_removeMeal = findViewById(R.id.button_removeItem_ComposedMeals);
-        button_removeMeal.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int position = parseInt(editText_removeMeal.getText().toString()) -1;
-                button_removeMeal(position);
-            }
-        });
         textViewNoDataComposed = findViewById(R.id.textViewNoDataComposed);
 
         cursor = getAllItems();
@@ -93,7 +84,8 @@ public class ComposedMealsActivity extends AppCompatActivity implements BottomSh
         recyclerView.setAdapter(adapter);
     }
 
-    public void button_removeMeal(int position){
+    public void button_removeMeal(View view){
+        int position = parseInt(editText_removeMeal.getText().toString()) -1;
         if (position >= cursor.getCount() || position == -1) {
             Toast.makeText(this, "No product with this index", Toast.LENGTH_SHORT).show();
         } else {

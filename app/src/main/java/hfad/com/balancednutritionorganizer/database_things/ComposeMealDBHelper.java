@@ -4,11 +4,11 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import hfad.com.balancednutritionorganizer.database_things.GroceryContract.*;
+import hfad.com.balancednutritionorganizer.database_things.ComposeMealColumns.*;
 
 import androidx.annotation.Nullable;
 
-public class GroceryDBHelper extends SQLiteOpenHelper {
+public class ComposeMealDBHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "grocerylist.db";
     public static final int DATABASE_VERSION = 1;
     //public static final int DATABASE_VERSION = BuildConfig.VERSION_CODE;
@@ -17,7 +17,7 @@ public class GroceryDBHelper extends SQLiteOpenHelper {
 //        super(context, DATABASE_NAME, null, version);
 //    }
 
-    public GroceryDBHelper(@Nullable Context context) {
+    public ComposeMealDBHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 

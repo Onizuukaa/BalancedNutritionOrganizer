@@ -54,15 +54,11 @@ public class RecyclerViewSpecificProductListAdapter extends RecyclerView.Adapter
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
 
         final ReturnItem currentItem = exampleList.get(position);
-        String aaa = "content://com.android.providers.media.documents/document/image%3A22878";
-        Uri image = Uri.parse(aaa);
+
 
         Glide.with(mContext)
                 .asBitmap()
-                //.asGif()
-                //.load(currentItem.getProductImage())
                 .load(currentItem.getProductImage())
-                //.load(R.raw.giphy)
                 .into(holder.productImage);
 
         holder.productName.setText(currentItem.getProductName());

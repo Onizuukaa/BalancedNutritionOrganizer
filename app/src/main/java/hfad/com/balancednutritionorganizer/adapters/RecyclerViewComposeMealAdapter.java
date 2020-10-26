@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import hfad.com.balancednutritionorganizer.database_things.GroceryContract;
+import hfad.com.balancednutritionorganizer.database_things.ComposeMealColumns;
 import hfad.com.balancednutritionorganizer.R;
 
 public class RecyclerViewComposeMealAdapter extends RecyclerView.Adapter<RecyclerViewComposeMealAdapter.GroceryViewHolder> {
@@ -47,9 +47,9 @@ public class RecyclerViewComposeMealAdapter extends RecyclerView.Adapter<Recycle
         if (!mCursor.moveToPosition(position)) {
             return;
         }
-        long id = mCursor.getLong(mCursor.getColumnIndex(GroceryContract.GroceryEntry._ID));
-        String name = mCursor.getString(mCursor.getColumnIndex(GroceryContract.GroceryEntry.COLUMN_NAME));
-        int amount = mCursor.getInt(mCursor.getColumnIndex(GroceryContract.GroceryEntry.COLUMN_AMOUNT));
+        long id = mCursor.getLong(mCursor.getColumnIndex(ComposeMealColumns.GroceryEntry._ID));
+        String name = mCursor.getString(mCursor.getColumnIndex(ComposeMealColumns.GroceryEntry.COLUMN_NAME));
+        int amount = mCursor.getInt(mCursor.getColumnIndex(ComposeMealColumns.GroceryEntry.COLUMN_AMOUNT));
 
         holder.itemView.setTag(id);
         holder.nameText.setText(position+1 + ".  " + name);

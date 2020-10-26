@@ -23,12 +23,10 @@ import hfad.com.balancednutritionorganizer.database_things.CustomProductsDBHelpe
 import hfad.com.balancednutritionorganizer.database_things.DatabaseAccess;
 
 public class CustomProductListActivity extends AppCompatActivity {
-    DatabaseAccess databaseAccess;
     Cursor cursorForCustomProducts;
     private SQLiteDatabase customProductsDatabase;
     private RecyclerViewSpecificProductListAdapter adapter;
     private ArrayList<ReturnItem> mExampleList;
-    String test;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,19 +35,11 @@ public class CustomProductListActivity extends AppCompatActivity {
         CustomProductsDBHelper dbHelperCustomProducts = new CustomProductsDBHelper(this);
         customProductsDatabase = dbHelperCustomProducts.getWritableDatabase();
         cursorForCustomProducts = getAllItems();
-        test = "https://firebasestorage.googleapis.com/v0/b/nutritionbalancedorganizer.appspot.com/o/soya_milk.jpeg?alt=media&token=b8895708-0dea-45b3-a053-bc275f2bb4ab";
         createExampleList();
     }
 
     public void createExampleList() {
         mExampleList = new ArrayList<>();
-
-//        while (cursorForCustomProducts.moveToNext()) {
-//            mExampleList.add(new ReturnItem(cursorForCustomProducts.getString(0), cursorForCustomProducts.getString(1),
-//                    cursorForCustomProducts.getString(2), cursorForCustomProducts.getString(3),
-//                    cursorForCustomProducts.getString(4), cursorForCustomProducts.getString(5),
-//                    cursorForCustomProducts.getString(6), cursorForCustomProducts.getString(7)));
-//        }
 
         while (cursorForCustomProducts.moveToNext()) {
             mExampleList.add(new ReturnItem(cursorForCustomProducts.getString(0), cursorForCustomProducts.getString(1),
@@ -58,8 +48,6 @@ public class CustomProductListActivity extends AppCompatActivity {
                     cursorForCustomProducts.getString(6), cursorForCustomProducts.getString(7)));
         }
 
-        cursorForCustomProducts.close();
-        //databaseAccess.close();
         cursorForCustomProducts.close();
         initRecyclerView();
     }

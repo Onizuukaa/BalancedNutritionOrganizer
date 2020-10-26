@@ -19,8 +19,8 @@ import android.widget.Toast;
 
 import java.text.DecimalFormat;
 
-import hfad.com.balancednutritionorganizer.database_things.GroceryContract;
-import hfad.com.balancednutritionorganizer.database_things.GroceryDBHelper;
+import hfad.com.balancednutritionorganizer.database_things.ComposeMealColumns;
+import hfad.com.balancednutritionorganizer.database_things.ComposeMealDBHelper;
 
 import static java.lang.Double.parseDouble;
 import static java.lang.Integer.parseInt;
@@ -41,7 +41,7 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_advanced_information_about_product);
 
-        GroceryDBHelper dbHelper = new GroceryDBHelper(this);
+        ComposeMealDBHelper dbHelper = new ComposeMealDBHelper(this);
         mDatabase = dbHelper.getWritableDatabase();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -96,15 +96,15 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
             String wlasnaNazwaTabeli = "testowa";
             System.out.println("wysłane dane: "+theNumberOfGramsEnteredByTheUser);
             ContentValues cv = new ContentValues();
-            cv.put(GroceryContract.GroceryEntry.COLUMN_NAME, productName);
-            cv.put(GroceryContract.GroceryEntry.COLUMN_AMOUNT, caloriesInOneGramProduct * theNumberOfGramsEnteredByTheUser);
-            cv.put(GroceryContract.GroceryEntry.COLUMN_CARBO, carbohydratesInOneGramProduct * theNumberOfGramsEnteredByTheUser);
-            cv.put(GroceryContract.GroceryEntry.COLUMN_SUGAR, sugarInOneGramProduct * theNumberOfGramsEnteredByTheUser);
-            cv.put(GroceryContract.GroceryEntry.COLUMN_FATS, FatsInOneGramProduct * theNumberOfGramsEnteredByTheUser);
-            cv.put(GroceryContract.GroceryEntry.COLUMN_SATURATEDFATS, saturatedFatsInOneGramProduct * theNumberOfGramsEnteredByTheUser);
-            cv.put(GroceryContract.GroceryEntry.COLUMN_PROTEIN, proteinInOneGramProduct * theNumberOfGramsEnteredByTheUser);
-            cv.put(GroceryContract.GroceryEntry.COLUMN_WEIGHT, theNumberOfGramsEnteredByTheUserString);
-            mDatabase.insert(GroceryContract.GroceryEntry.TABLE_NAME, null, cv);
+            cv.put(ComposeMealColumns.GroceryEntry.COLUMN_NAME, productName);
+            cv.put(ComposeMealColumns.GroceryEntry.COLUMN_AMOUNT, caloriesInOneGramProduct * theNumberOfGramsEnteredByTheUser);
+            cv.put(ComposeMealColumns.GroceryEntry.COLUMN_CARBO, carbohydratesInOneGramProduct * theNumberOfGramsEnteredByTheUser);
+            cv.put(ComposeMealColumns.GroceryEntry.COLUMN_SUGAR, sugarInOneGramProduct * theNumberOfGramsEnteredByTheUser);
+            cv.put(ComposeMealColumns.GroceryEntry.COLUMN_FATS, FatsInOneGramProduct * theNumberOfGramsEnteredByTheUser);
+            cv.put(ComposeMealColumns.GroceryEntry.COLUMN_SATURATEDFATS, saturatedFatsInOneGramProduct * theNumberOfGramsEnteredByTheUser);
+            cv.put(ComposeMealColumns.GroceryEntry.COLUMN_PROTEIN, proteinInOneGramProduct * theNumberOfGramsEnteredByTheUser);
+            cv.put(ComposeMealColumns.GroceryEntry.COLUMN_WEIGHT, theNumberOfGramsEnteredByTheUserString);
+            mDatabase.insert(ComposeMealColumns.GroceryEntry.TABLE_NAME, null, cv);
             //mDatabase.insert(wlasnaNazwaTabeli, null, cv);
 
             Toast.makeText(this, R.string.Macronutrients_has_been_sent, Toast.LENGTH_SHORT).show();

@@ -10,14 +10,12 @@ public class CustomProductsColumns {
         public static final String TABLE_NAME = "customProducts";
         public static final String COLUMN_productName = "productName";
         public static final String COLUMN_productCalories = "productCalories";
-
         public static final String COLUMN_productCarbohydrates = "productCarbohydrates";
         public static final String COLUMN_productSugar = "productSugar";
         public static final String COLUMN_productFats = "productFats";
         public static final String COLUMN_productSaturatedFats = "productSaturatedFats";
         public static final String COLUMN_productProtein = "productProtein";
         public static final String COLUMN_productImage = "productImage";
-
 
     }
 }
