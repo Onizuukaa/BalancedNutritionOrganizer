@@ -148,7 +148,7 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_gravity="center"
-            android:text="Chose an Image to upload.\nPlease don't select to big image\nbecause it can run slower." />
+            android:text="Chose an Image to upload" />
 
         <ImageView
             android:id="@+id/customProductImage"
