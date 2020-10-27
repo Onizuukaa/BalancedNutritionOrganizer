@@ -55,6 +55,7 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:gravity="center"
+            android:inputType="numberDecimal"
             android:text="120" />
 
         <TextView
@@ -72,6 +73,7 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:gravity="center"
+            android:inputType="numberDecimal"
             android:text="39" />
 
         <TextView
@@ -89,6 +91,7 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:gravity="center"
+            android:inputType="numberDecimal"
             android:text="11" />
 
         <TextView
@@ -106,6 +109,7 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:gravity="center"
+            android:inputType="numberDecimal"
             android:text="7" />
 
         <TextView
@@ -123,6 +127,7 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:gravity="center"
+            android:inputType="numberDecimal"
             android:text="3" />
 
         <TextView
@@ -140,6 +145,7 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:gravity="center"
+            android:inputType="numberDecimal"
             android:text="22" />
 
         <TextView

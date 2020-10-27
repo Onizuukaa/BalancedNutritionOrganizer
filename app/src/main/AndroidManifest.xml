@@ -14,7 +14,9 @@
         <activity
             android:name=".AddCustomProductActivity"
             android:parentActivityName=".ProductTableActivity" />
-        <activity android:name=".productsList.CustomProductListActivity" />
+        <activity
+            android:name=".productsList.CustomProductListActivity"
+            android:parentActivityName=".ProductTableActivity" />
         <activity
             android:name=".productsList.DrinksListActivity"
             android:parentActivityName=".ProductTableActivity" />

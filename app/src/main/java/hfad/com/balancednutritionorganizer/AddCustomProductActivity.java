@@ -71,18 +71,26 @@ public class AddCustomProductActivity extends AppCompatActivity {
 
     public void addCustomProduct(View view) {
 
-        ContentValues cv = new ContentValues();
-        cv.put(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productName, customProductName.getText().toString());
-        cv.put(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productImage, imageData.toString());
-        cv.put(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productCalories, customProductCalories.getText().toString());
-        cv.put(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productCarbohydrates, customProductCarbohydrates.getText().toString());
-        cv.put(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productSugar, customProductSugar.getText().toString());
-        cv.put(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productFats, customProductFats.getText().toString());
-        cv.put(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productSaturatedFats, customProductSaturatedFats.getText().toString());
-        cv.put(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productProtein, customProductProtein.getText().toString());
-        databaseCustomProduct.insert(CustomProductsColumns.CustomProductsColumnsEntry.TABLE_NAME, null, cv);
-        Toast.makeText(this, "Meal added", Toast.LENGTH_SHORT).show();
+        if (customProductName.getText().toString().length() != 0 && imageData != null && customProductCalories.getText().toString().length() != 0
+                && customProductCarbohydrates.getText().toString().length() != 0 && customProductSugar.getText().toString().length() != 0
+                && customProductFats.getText().toString().length() != 0 && customProductSaturatedFats.getText().toString().length() != 0
+                && customProductProtein.getText().toString().length() != 0) {
 
+            ContentValues cv = new ContentValues();
+            cv.put(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productName, customProductName.getText().toString());
+            cv.put(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productImage, imageData.toString());
+            cv.put(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productCalories, customProductCalories.getText().toString());
+            cv.put(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productCarbohydrates, customProductCarbohydrates.getText().toString());
+            cv.put(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productSugar, customProductSugar.getText().toString());
+            cv.put(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productFats, customProductFats.getText().toString());
+            cv.put(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productSaturatedFats, customProductSaturatedFats.getText().toString());
+            cv.put(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productProtein, customProductProtein.getText().toString());
+            databaseCustomProduct.insert(CustomProductsColumns.CustomProductsColumnsEntry.TABLE_NAME, null, cv);
+            Toast.makeText(this, "Meal added", Toast.LENGTH_SHORT).show();
+
+        } else {
+            Toast.makeText(this, "No all information provided", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override

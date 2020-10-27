@@ -51,6 +51,7 @@
     <string name="zero_will_not_be_sent">0 nie będzie wysłane</string>
     <string name="Macronutrients_has_been_sent">Makroskładniki zostały wysłane</string>
     <string name="No_product_with_this_index">Brak produktu o takim indeksie</string>
-    <string name="No_data_ComposedMeals">Brak skomponowanych posiłków. Posiłki pojawią się tutaj po dodaniu ich w \"Skomponuj Posiłek\"</string>
+    <string name="No_data_ComposedMeals">Brak skomponowanych posiłków.\nPosiłki pojawią się tutaj po dodaniu ich w \"Skomponuj Posiłek\"</string>
     <string name="app_name">Balanced Nutrition Organizer</string>
+    <string name="No_data_CustomProducts">Brak własnych produktów.\nWłasne produkty pojawią się tutaj po dodaniu ich z Tabela Żywności > + DODAJ PRODUKT</string>
 </resources>

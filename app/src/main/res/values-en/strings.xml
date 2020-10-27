@@ -51,6 +51,7 @@
     <string name="zero_will_not_be_sent">0 will not be sent</string>
     <string name="Macronutrients_has_been_sent">Macronutrients has been sent</string>
     <string name="No_product_with_this_index">No product with this index</string>
-    <string name="No_data_ComposedMeals">No Composed Meals. Meals will be here after add from \"Compose The Meal\"</string>
+    <string name="No_data_ComposedMeals">No Composed Meals.\nMeals will be here after add from \"Compose The Meal\"</string>
     <string name="app_name">Balanced Nutrition Organizer</string>
+    <string name="No_data_CustomProducts">No custom products.\nCustom products will be here after add from Product Table > + ADD PRODUCT</string>
 </resources>

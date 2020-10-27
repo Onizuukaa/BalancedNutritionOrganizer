@@ -29,7 +29,6 @@ public class CustomProductsDBHelper extends SQLiteOpenHelper {
                 CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productFats + " DOUBLE NOT NULL, " +
                 CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productSaturatedFats + " DOUBLE NOT NULL, " +
                 CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productProtein + " DOUBLE NOT NULL " +
-
                 ");";
         db.execSQL(SQL_CREATE_CUSTOMPRODUCTS_TABLE);
     }

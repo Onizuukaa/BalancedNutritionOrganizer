@@ -34,13 +34,24 @@ import hfad.com.balancednutritionorganizer.database_things.CustomProductsColumns
 
 public class RecyclerViewCustomProductAdapter extends RecyclerView.Adapter<RecyclerViewCustomProductAdapter.RecyclerViewCustomProductViewHolder> {
 
+    private ArrayList<ReturnItem> customProductArrayList;
     private Context mContext;
     private Cursor mCursor;
     String productName, productCalories, productCarbohydrates, productSugar, productFats, productSaturatedFats, productProtein, productImage;
+    Bundle bundleWithMacros;
 
     public RecyclerViewCustomProductAdapter(Context context, Cursor cursor) {
         mContext = context;
         mCursor = cursor;
+
+        customProductArrayList = new ArrayList<>();
+
+        while (mCursor.moveToNext()) {
+            customProductArrayList.add(new ReturnItem(mCursor.getString(1), mCursor.getString(2),
+                    mCursor.getString(3), mCursor.getString(4),
+                    mCursor.getString(5), mCursor.getString(6),
+                    mCursor.getString(7), mCursor.getString(8)));
+        }
     }
 
     public class RecyclerViewCustomProductViewHolder extends RecyclerView.ViewHolder {
@@ -61,82 +72,106 @@ public class RecyclerViewCustomProductAdapter extends RecyclerView.Adapter<Recyc
             productSaturatedFats = itemView.findViewById(R.id.textViewProductSaturatedFatsFor100Gram);
             productProtein = itemView.findViewById(R.id.textViewProductProteinFor100Gram);
             parentLayout = itemView.findViewById(R.id.schemeSpecificProductList);
+
         }
     }
 
-        @NonNull
-        @Override
-        public RecyclerViewCustomProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            LayoutInflater inflater = LayoutInflater.from(mContext);
-            View view = inflater.inflate(R.layout.scheme_specific_product_list, parent, false);
-            return new RecyclerViewCustomProductViewHolder(view);
+    @NonNull
+    @Override
+    public RecyclerViewCustomProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        LayoutInflater inflater = LayoutInflater.from(mContext);
+        View view = inflater.inflate(R.layout.scheme_specific_product_list, parent, false);
+        return new RecyclerViewCustomProductViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull final RecyclerViewCustomProductViewHolder holder, final int position) {
+
+
+        final ReturnItem currentItem = customProductArrayList.get(position);
+
+        if (!mCursor.moveToPosition(position)) {
+            return;
         }
+        long id = mCursor.getLong(mCursor.getColumnIndex(CustomProductsColumns.CustomProductsColumnsEntry._ID));
 
-        @Override
-        public void onBindViewHolder(@NonNull final RecyclerViewCustomProductViewHolder holder, final int position) {
-            if (!mCursor.moveToPosition(position)) {
-                return;
-            }
+//        productName = mCursor.getString(mCursor.getColumnIndex(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productName));
+//        productCalories = mCursor.getString(mCursor.getColumnIndex(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productCalories));
+//        productCarbohydrates = mCursor.getString(mCursor.getColumnIndex(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productCarbohydrates));
+//        productSugar = mCursor.getString(mCursor.getColumnIndex(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productSugar));
+//        productFats = mCursor.getString(mCursor.getColumnIndex(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productFats));
+//        productSaturatedFats = mCursor.getString(mCursor.getColumnIndex(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productSaturatedFats));
+//        productProtein = mCursor.getString(mCursor.getColumnIndex(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productProtein));
+//        productImage = mCursor.getString(mCursor.getColumnIndex(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productImage));
 
-            long id = mCursor.getLong(mCursor.getColumnIndex(CustomProductsColumns.CustomProductsColumnsEntry._ID));
+        holder.itemView.setTag(id);
 
-            productName = mCursor.getString(mCursor.getColumnIndex(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productName));
 
-             productCalories = mCursor.getString(mCursor.getColumnIndex(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productCalories));
-            productCarbohydrates = mCursor.getString(mCursor.getColumnIndex(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productCarbohydrates));
-            productSugar = mCursor.getString(mCursor.getColumnIndex(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productSugar));
-            productFats = mCursor.getString(mCursor.getColumnIndex(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productFats));
-            productSaturatedFats = mCursor.getString(mCursor.getColumnIndex(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productSaturatedFats));
-            productProtein = mCursor.getString(mCursor.getColumnIndex(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productProtein));
-            productImage = mCursor.getString(mCursor.getColumnIndex(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productImage));
+        holder.productName.setText(position + 1 + ".  " + currentItem.getProductName());
 
-            holder.itemView.setTag(id);
+        Glide.with(mContext)
+                .asBitmap()
+                .load(currentItem.getProductImage())
+                .into(holder.productImage);
 
-            holder.productName.setText(position + 1 + ".  " + productName);
-            holder.productCalories.setText(productCalories);
+        holder.productCalories.setText(currentItem.getProductCalories());
+        holder.productCarbohydrates.setText(currentItem.getProductCarbohydrates());
+        holder.productSugar.setText(currentItem.getProductSugar());
+        holder.productFats.setText(currentItem.getProductFats());
+        holder.productSaturatedFats.setText(currentItem.getProductSaturatedFats());
+        holder.productProtein.setText(currentItem.getProductProtein());
 
-            Glide.with(mContext)
-                    .asBitmap()
-                    .load(productImage)
-                    .into(holder.productImage);
 
-            holder.productCarbohydrates.setText(productCarbohydrates);
-            holder.productSugar.setText(productSugar);
-            holder.productFats.setText(productFats);
-            holder.productSaturatedFats.setText(productSaturatedFats);
-            holder.productProtein.setText(productProtein);
+//        holder.productName.setText(position + 1 + ".  " + productName);
+//        holder.productCalories.setText(productCalories);
+//
+//        Glide.with(mContext)
+//                .asBitmap()
+//                .load(productImage)
+//                .into(holder.productImage);
+//
+//        holder.productCarbohydrates.setText(productCarbohydrates);
+//        holder.productSugar.setText(productSugar);
+//        holder.productFats.setText(productFats);
+//        holder.productSaturatedFats.setText(productSaturatedFats);
+//        holder.productProtein.setText(productProtein);
 
-            holder.parentLayout.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
+
+
+
+        //bundleWithMacros = new Bundle();
+        holder.parentLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                     Intent intent = new Intent(mContext, AdvancedInformationAboutProductActivity.class);
-                    intent.putExtra("product_name", productName);
-                    intent.putExtra("product_calories", productCalories);
+                    intent.putExtra("product_name", currentItem.getProductName());
+                    intent.putExtra("product_calories", currentItem.getProductCalories());
                     //intent.putExtra("product_image", mProductImages.get(position));
-                    intent.putExtra("product_carbohydrates", productCarbohydrates);
-                    intent.putExtra("product_sugar", productSugar);
-                    intent.putExtra("product_fats", productFats);
-                    intent.putExtra("product_saturatedfats", productSaturatedFats);
-                    intent.putExtra("product_protein", productProtein);
+                    intent.putExtra("product_carbohydrates", currentItem.getProductCarbohydrates());
+                    intent.putExtra("product_sugar", currentItem.getProductSugar());
+                    intent.putExtra("product_fats", currentItem.getProductFats());
+                    intent.putExtra("product_saturatedfats", currentItem.getProductSaturatedFats());
+                    intent.putExtra("product_protein", currentItem.getProductProtein());
                     mContext.startActivity(intent);
-                }
-            });
+            }
+        });
+    }
+
+    @Override
+    public int getItemCount() {
+        return mCursor.getCount();
+        //return customProductArrayList.size();
+    }
+
+    public void swapCursor(Cursor newCursor) {
+        if (mCursor != null) {
+            mCursor.close();
         }
 
-        @Override
-        public int getItemCount() {
-            return mCursor.getCount();
-        }
+        mCursor = newCursor;
 
-        public void swapCursor(Cursor newCursor) {
-            if (mCursor != null) {
-                mCursor.close();
-            }
-
-            mCursor = newCursor;
-
-            if (newCursor != null) {
-                notifyDataSetChanged();
-            }
+        if (newCursor != null) {
+            notifyDataSetChanged();
         }
     }
+}

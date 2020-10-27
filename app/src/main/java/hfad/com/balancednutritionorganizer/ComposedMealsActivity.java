@@ -87,19 +87,28 @@ public class ComposedMealsActivity extends AppCompatActivity implements BottomSh
     }
 
     public void button_removeMeal(View view) {
-        int position = parseInt(editText_removeMeal.getText().toString()) - 1;
-        if (position >= cursor.getCount() || position == -1) {
-            Toast.makeText(this, "No product with this index", Toast.LENGTH_SHORT).show();
-        } else {
-            cursor.moveToPosition(position);
-            int productPosition = cursor.getInt(0);
+        String positionString = editText_removeMeal.getText().toString();
+        int position;
 
-            mDatabaseComposedMeals.delete(ComposedMealsColumns.ComposedMealsColumnsEntry.TABLE_NAME,
-                    ComposedMealsColumns.ComposedMealsColumnsEntry._ID + "=" + productPosition, null);
-            adapter.swapCursor(getAllItems());
+        if (positionString.length() == 0) {
+            Toast.makeText(this, "No index provided", Toast.LENGTH_SHORT).show();
         }
-        //cursor = getAllItems();
-        showOrHideNoDataTextView();
+        if (positionString.length() != 0) {
+            position = parseInt(positionString) - 1;
+
+            if (position >= cursor.getCount() || position == -1) {
+                Toast.makeText(this, "No product with this index", Toast.LENGTH_SHORT).show();
+            } else {
+                cursor.moveToPosition(position);
+                int productPosition = cursor.getInt(0);
+
+                mDatabaseComposedMeals.delete(ComposedMealsColumns.ComposedMealsColumnsEntry.TABLE_NAME,
+                        ComposedMealsColumns.ComposedMealsColumnsEntry._ID + "=" + productPosition, null);
+                adapter.swapCursor(getAllItems());
+            }
+            cursor = getAllItems();
+            showOrHideNoDataTextView();
+        }
     }
 
     @Override

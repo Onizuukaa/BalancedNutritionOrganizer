@@ -7,8 +7,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import hfad.com.balancednutritionorganizer.R;
@@ -16,6 +19,7 @@ import hfad.com.balancednutritionorganizer.adapters.RecyclerViewCustomProductAda
 import hfad.com.balancednutritionorganizer.database_things.CustomProductsColumns;
 import hfad.com.balancednutritionorganizer.database_things.CustomProductsDBHelper;
 
+import static java.lang.Double.parseDouble;
 import static java.lang.Integer.parseInt;
 
 public class CustomProductListActivity extends AppCompatActivity {
@@ -26,13 +30,15 @@ public class CustomProductListActivity extends AppCompatActivity {
 
     //private ArrayList<ReturnItem> mExampleList;
     EditText editText_removeItem_CustomProduct;
+    TextView textViewNoData_customProducts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_custom_product_list);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         editText_removeItem_CustomProduct = findViewById(R.id.editText_removeItem_CustomProduct);
-
+        textViewNoData_customProducts = findViewById(R.id.textViewNoData_customProducts);
 
         CustomProductsDBHelper dbHelperCustomProducts = new CustomProductsDBHelper(this);
         customProductsDatabase = dbHelperCustomProducts.getWritableDatabase();
@@ -41,6 +47,7 @@ public class CustomProductListActivity extends AppCompatActivity {
         //createExampleList();
 
         cursor = getAllItems();
+        showOrHideNoDataTextView();
     }
 
 //    public void createExampleList() {
@@ -66,19 +73,28 @@ public class CustomProductListActivity extends AppCompatActivity {
     }
 
     public void button_removeCustomProduct(View view) {
+        String positionString = editText_removeItem_CustomProduct.getText().toString();
+        int position;
 
-        int position = parseInt(editText_removeItem_CustomProduct.getText().toString()) - 1;
-        if (position >= cursor.getCount() || position == -1) {
-            Toast.makeText(this, "No product with this index", Toast.LENGTH_SHORT).show();
-        } else {
-            cursor.moveToPosition(position);
-            int productPosition = cursor.getInt(0);
-
-            customProductsDatabase.delete(CustomProductsColumns.CustomProductsColumnsEntry.TABLE_NAME,
-                    CustomProductsColumns.CustomProductsColumnsEntry._ID + "=" + productPosition, null);
-            adapter.swapCursor(getAllItems());
+        if (positionString.length() == 0) {
+            Toast.makeText(this, "No index provided", Toast.LENGTH_SHORT).show();
         }
-        cursor = getAllItems();
+        if (positionString.length() != 0) {
+            position = parseInt(positionString) - 1;
+
+            if (position >= cursor.getCount() || position == -1) {
+                Toast.makeText(this, "No product with this index", Toast.LENGTH_SHORT).show();
+            } else {
+                cursor.moveToPosition(position);
+                int productPosition = cursor.getInt(0); //Pozycja kolumny z _id, które jest wyznacznikiem pozycji
+
+                customProductsDatabase.delete(CustomProductsColumns.CustomProductsColumnsEntry.TABLE_NAME,
+                        CustomProductsColumns.CustomProductsColumnsEntry._ID + "=" + productPosition, null);
+                adapter.swapCursor(getAllItems());
+            }
+            cursor = getAllItems();
+            showOrHideNoDataTextView();
+        }
     }
 
 //    @Override
@@ -117,4 +133,10 @@ public class CustomProductListActivity extends AppCompatActivity {
         );
     }
 
+    private void showOrHideNoDataTextView() {
+        if (getAllItems().getCount() == 0)
+            textViewNoData_customProducts.setVisibility(View.VISIBLE);
+        else
+            textViewNoData_customProducts.setVisibility(View.INVISIBLE);
+    }
 }

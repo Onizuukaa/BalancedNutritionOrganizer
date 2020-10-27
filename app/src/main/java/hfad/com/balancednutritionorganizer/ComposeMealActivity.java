@@ -38,8 +38,8 @@ public class ComposeMealActivity extends AppCompatActivity {
     double caloriesSum, carbohydratesSum, sugarSum, fatsSum, saturatedFatsSum, proteinSum, gramSum;
     DecimalFormat format;
     EditText editText_removeItem;
-    Button button_removeItem, button_removeAllItems;
-    String macrosForMeal ="";
+    Button button_removeAllItems;
+    String macrosForMeal = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,25 +107,34 @@ public class ComposeMealActivity extends AppCompatActivity {
         showOrHideNoDataTextView();
     }
 
-    private void buttonRemoveItem(int position) {
-        if (position >= cursor.getCount() || position == -1) {
-            Toast.makeText(this, R.string.No_product_with_this_index, Toast.LENGTH_SHORT).show();
-        } else {
-            cursor.moveToPosition(position);
-             int productPosition = cursor.getInt(0);
+    public void buttonRemoveItem(View view) {
+        String positionString = editText_removeItem.getText().toString();
+        int position;
 
-            mDatabase.delete(ComposeMealColumns.GroceryEntry.TABLE_NAME,
-                    ComposeMealColumns.GroceryEntry._ID + "=" + productPosition, null);
-            mAdapter.swapCursor(getAllItems());
+        if (positionString.length() == 0) {
+            Toast.makeText(this, "No index provided", Toast.LENGTH_SHORT).show();
+        }
+        if (positionString.length() != 0) {
+            position = parseInt(positionString) - 1;
 
-            sumAndViewMacros();
-            //Pozostałości kodu, zostawiłem dla notifyRemoved(position) bo nie wiem co to robi.
+            if (position >= cursor.getCount() || position == -1) {
+                Toast.makeText(this, R.string.No_product_with_this_index, Toast.LENGTH_SHORT).show();
+            } else {
+                cursor.moveToPosition(position);
+                int productPosition = cursor.getInt(0);
+
+                mDatabase.delete(ComposeMealColumns.GroceryEntry.TABLE_NAME,
+                        ComposeMealColumns.GroceryEntry._ID + "=" + productPosition, null);
+                mAdapter.swapCursor(getAllItems());
+
+                sumAndViewMacros();
+                //Pozostałości kodu, zostawiłem dla notifyRemoved(position) bo nie wiem co to robi.
 //            productSaturatedFatsArrayList.remove(position);
 //            productProteinArrayList.remove(position);
 //            adapter.notifyItemRemoved(position);
-
+            }
+            showOrHideNoDataTextView();
         }
-        showOrHideNoDataTextView();
     }
 
     private void initRecyclerView() {
@@ -195,10 +204,9 @@ public class ComposeMealActivity extends AppCompatActivity {
         //W tym miejscu ma być kod, który wyśle do bazy produkty wraz z nazwą posiłku - jednak może na początku inaczej
         cursor = getAllItems();
 
-        if (cursor.getCount() > 0)
-        {
+        if (cursor.getCount() > 0) {
             while (cursor.moveToNext()) {
-                macrosForMeal += "| "+ cursor.getString(1) + " | calories " + format.format(cursor.getDouble(2))
+                macrosForMeal += "| " + cursor.getString(1) + " | calories " + format.format(cursor.getDouble(2))
                         + " | carbo " + format.format(cursor.getDouble(3)) + "g | "
                         + " sugar " + format.format(cursor.getDouble(4)) + "g | "
                         + " fats " + format.format(cursor.getDouble(5)) + "g | "
@@ -223,7 +231,7 @@ public class ComposeMealActivity extends AppCompatActivity {
             mDatabaseComposedMeals.insert(ComposedMealsColumns.ComposedMealsColumnsEntry.TABLE_NAME, null, cv);
 
             Toast.makeText(this, "Meal added", Toast.LENGTH_SHORT).show();
-        }else{
+        } else {
             Toast.makeText(this, "First add products", Toast.LENGTH_SHORT).show();
         }
     }
@@ -239,16 +247,7 @@ public class ComposeMealActivity extends AppCompatActivity {
         textViewNoData = (TextView) findViewById(R.id.textViewNoData);
         textViewNoData.setVisibility(View.INVISIBLE);
         editText_removeItem = (EditText) findViewById(R.id.editText_removeItem);
-        button_removeItem = (Button) findViewById(R.id.button_removeItem);
         button_removeAllItems = (Button) findViewById(R.id.buttonResetIngredients);
-
-        button_removeItem.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int position = parseInt(editText_removeItem.getText().toString()) - 1;
-                buttonRemoveItem(position);
-            }
-        });
         editTextMealName = (EditText) findViewById(R.id.editTextMealName);
     }
 

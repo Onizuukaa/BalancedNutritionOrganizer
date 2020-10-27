@@ -56,12 +56,13 @@ public class RecyclerViewSpecificProductListAdapter extends RecyclerView.Adapter
         final ReturnItem currentItem = exampleList.get(position);
 
 
+        holder.productName.setText(currentItem.getProductName());
+
         Glide.with(mContext)
                 .asBitmap()
                 .load(currentItem.getProductImage())
                 .into(holder.productImage);
 
-        holder.productName.setText(currentItem.getProductName());
         holder.productCalories.setText(currentItem.getProductCalories());
         holder.productCarbohydrates.setText(currentItem.getProductCarbohydrates());
         holder.productSugar.setText(currentItem.getProductSugar());
