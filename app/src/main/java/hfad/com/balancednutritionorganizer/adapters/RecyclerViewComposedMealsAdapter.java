@@ -27,8 +27,10 @@ import hfad.com.balancednutritionorganizer.database_things.ComposedMealsColumns;
 public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<RecyclerViewComposedMealsAdapter.RecyclerViewComposedMealsViewHolder> implements BottomSheetDialog.BottomSheetListener, Filterable, ComposedMealsActivity.testMetodyInterface {
 
     private ArrayList<String> arrayListProductIncluded = new ArrayList<>();
-    private ArrayList<String> arrayListNameMealForSearch_BeforeFilter = new ArrayList<>();
+
+    private ArrayList<String> arrayListNameMealForSearch_BeforeFilter;
     private ArrayList<String> arrayListNameMealForSearch = new ArrayList<>();
+
     private Context mContext;
     private Cursor mCursor;
     Bundle bundleWithMacros;
@@ -37,6 +39,15 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
     public RecyclerViewComposedMealsAdapter(Context context, Cursor cursor) {
         mContext = context;
         mCursor = cursor;
+
+        arrayListNameMealForSearch_BeforeFilter = new ArrayList<>();
+
+//        while (mCursor.moveToNext()) {
+//            arrayListNameMealForSearch_BeforeFilter.add(new String(mCursor.getString(1), mCursor.getString(2),
+//                    mCursor.getString(3), mCursor.getString(4),
+//                    mCursor.getString(5), mCursor.getString(6),
+//                    mCursor.getString(7), mCursor.getString(8)));
+//        }
     }
 
     @Override
@@ -114,15 +125,15 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
         holder.textViewProductsIncludedComposedMeal.setText(productsIncludedComposedMeal + "");
 
 
-        arrayListNameMealForSearch_BeforeFilter.add(mealName);
-        arrayListNameMealForSearch_BeforeFilter.add(mealKcal);
-        arrayListNameMealForSearch_BeforeFilter.add(mealGram);
-        arrayListNameMealForSearch_BeforeFilter.add(mealCarbohydrates);
-        arrayListNameMealForSearch_BeforeFilter.add(mealFats);
-        arrayListNameMealForSearch_BeforeFilter.add(mealProtein);
-        arrayListNameMealForSearch_BeforeFilter.add(mealSugar);
-        arrayListNameMealForSearch_BeforeFilter.add(mealSaturatedFats);
-        arrayListNameMealForSearch_BeforeFilter.add(productsIncludedComposedMeal);
+//        arrayListNameMealForSearch_BeforeFilter.add(mealName);
+//        arrayListNameMealForSearch_BeforeFilter.add(mealKcal);
+//        arrayListNameMealForSearch_BeforeFilter.add(mealGram);
+//        arrayListNameMealForSearch_BeforeFilter.add(mealCarbohydrates);
+//        arrayListNameMealForSearch_BeforeFilter.add(mealFats);
+//        arrayListNameMealForSearch_BeforeFilter.add(mealProtein);
+//        arrayListNameMealForSearch_BeforeFilter.add(mealSugar);
+//        arrayListNameMealForSearch_BeforeFilter.add(mealSaturatedFats);
+//        arrayListNameMealForSearch_BeforeFilter.add(productsIncludedComposedMeal);
 
 
         //bottomSheetDialogArrayList.add(new BottomSheetDialogArrayList(productsIncludedComposedMeal));

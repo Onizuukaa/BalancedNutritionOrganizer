@@ -55,7 +55,6 @@ public class RecyclerViewSpecificProductListAdapter extends RecyclerView.Adapter
 
         final ReturnItem currentItem = exampleList.get(position);
 
-
         holder.productName.setText(currentItem.getProductName());
 
         Glide.with(mContext)
