@@ -17,17 +17,17 @@
         <TableRow>
 
             <ImageView
-                android:onClick="openVegetablesListActivity"
                 android:id="@+id/imageViewVegetablesTable"
                 android:layout_width="198dp"
                 android:layout_height="95dp"
+                android:onClick="openVegetablesListActivity"
                 app:srcCompat="@drawable/vegetables" />
 
             <ImageView
-                android:onClick="openFruitsListActivity"
                 android:id="@+id/imageViewFruitsTable"
                 android:layout_width="189dp"
                 android:layout_height="95dp"
+                android:onClick="openFruitsListActivity"
                 app:srcCompat="@drawable/fruits" />
 
         </TableRow>
@@ -57,19 +57,19 @@
         <TableRow>
 
             <ImageView
-                android:onClick="openGrainProductsListActivity"
                 android:id="@+id/imageViewGrainProductsTable"
                 android:layout_width="198dp"
                 android:layout_height="95dp"
+                android:onClick="openGrainProductsListActivity"
                 app:srcCompat="@drawable/grain_products" />
 
             <ImageView
-                android:onClick="openDairyListActivity"
                 android:id="@+id/imageViewDairyTable"
                 android:layout_width="189dp"
                 android:layout_height="95dp"
+                android:onClick="openDairyListActivity"
                 app:srcCompat="@drawable/dairy" />
-            
+
         </TableRow>
 
         <TableRow android:layout_marginBottom="5dp">
@@ -97,17 +97,17 @@
         <TableRow>
 
             <ImageView
-                android:onClick="openFishListActivity"
                 android:id="@+id/imageViewFishTable"
                 android:layout_width="189dp"
                 android:layout_height="95dp"
+                android:onClick="openFishListActivity"
                 app:srcCompat="@drawable/grilled_fish" />
 
             <ImageView
-                android:onClick="openMeatListActivity"
                 android:id="@+id/imageViewMeatTable"
                 android:layout_width="198dp"
                 android:layout_height="95dp"
+                android:onClick="openMeatListActivity"
                 app:srcCompat="@drawable/meat" />
 
         </TableRow>
@@ -137,17 +137,17 @@
         <TableRow>
 
             <ImageView
-                android:onClick="openSweetsListActivity"
                 android:id="@+id/imageViewSweetsTable"
                 android:layout_width="198dp"
                 android:layout_height="95dp"
+                android:onClick="openSweetsListActivity"
                 app:srcCompat="@drawable/sweets" />
 
             <ImageView
-                android:onClick="openDrinksListActivity"
                 android:id="@+id/imageViewDrinksTable"
                 android:layout_width="189dp"
                 android:layout_height="95dp"
+                android:onClick="openDrinksListActivity"
                 app:srcCompat="@drawable/drinks" />
 
         </TableRow>
@@ -174,15 +174,25 @@
 
         </TableRow>
 
-        <TableRow android:gravity="center">
+        <TableRow
+            android:layout_marginTop="5dp"
+            android:background="#B8B6B6"
+            android:gravity="center">
 
             <ImageView
-                android:onClick="openCustomProductsActivity"
                 android:id="@+id/imageViewCustomProductsTable"
                 android:layout_width="189dp"
-                android:layout_height="95dp"
-                app:srcCompat="@drawable/anvil" />
+                android:layout_height="75dp"
+                android:onClick="openCustomProductsActivity"
+                app:srcCompat="@drawable/custom_food" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Custom Food"
+                android:textColor="@android:color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
         </TableRow>
 
     </TableLayout>

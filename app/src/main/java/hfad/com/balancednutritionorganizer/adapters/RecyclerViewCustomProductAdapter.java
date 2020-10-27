@@ -31,9 +31,6 @@ public class RecyclerViewCustomProductAdapter extends RecyclerView.Adapter<Recyc
     private ArrayList<ReturnItem> customProductArrayListFull;
     private Context mContext;
     private Cursor mCursor;
-    String productName, productCalories, productCarbohydrates, productSugar, productFats, productSaturatedFats, productProtein, productImage;
-    Bundle bundleWithMacros;
-
     Boolean whatToReturn = false;
 
     public RecyclerViewCustomProductAdapter(Context context, Cursor cursor) {
@@ -198,7 +195,6 @@ public class RecyclerViewCustomProductAdapter extends RecyclerView.Adapter<Recyc
                         filteredList.add(item);
                     }
                 }
-
             }
             FilterResults results = new FilterResults();
             results.values = filteredList;
