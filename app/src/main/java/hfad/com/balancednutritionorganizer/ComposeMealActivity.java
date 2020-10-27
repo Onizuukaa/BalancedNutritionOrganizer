@@ -234,6 +234,7 @@ public class ComposeMealActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "First add products", Toast.LENGTH_SHORT).show();
         }
+        macrosForMeal = "";
     }
 
     private void initViews() {
