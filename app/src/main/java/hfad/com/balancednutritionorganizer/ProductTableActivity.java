@@ -26,7 +26,7 @@ public class ProductTableActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_table);
-        setTitle(R.string.Products_Table);
+        setTitle(R.string.Food_Table);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 

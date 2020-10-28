@@ -21,7 +21,7 @@ public class BmiActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bmi);
-        setTitle(R.string.BMI_CALCULATOR);
+        setTitle(R.string.Calculate_Your_BMI);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         initViews();
     }

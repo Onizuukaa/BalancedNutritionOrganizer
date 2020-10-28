@@ -16,11 +16,12 @@
             android:onClick="button_removeCustomProduct"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Remove Meal" />
+            android:text="@string/Remove_Product" />
 
         <EditText
             android:id="@+id/editText_removeItem_CustomProduct"
-            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:layout_width="30dp"
             android:layout_height="wrap_content"
             android:inputType="number"
             android:text="1" />
@@ -42,7 +43,7 @@
         android:layout_below="@id/linearLayoutCustomProductActivity"
         android:background="#FAFAFA"
         android:gravity="center"
-        android:text="@string/No_data_CustomProducts"
+        android:text="@string/No_data_CustomFood"
         android:textSize="30dp" />
 
 </RelativeLayout>

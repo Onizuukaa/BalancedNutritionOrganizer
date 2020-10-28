@@ -40,6 +40,7 @@ public class AddCustomProductActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_custom_product);
+        setTitle(R.string.Add_Food);
 
         CustomProductsDBHelper customProductDBHelper = new CustomProductsDBHelper(this);
         databaseCustomProduct = customProductDBHelper.getWritableDatabase();
@@ -86,10 +87,10 @@ public class AddCustomProductActivity extends AppCompatActivity {
             cv.put(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productSaturatedFats, customProductSaturatedFats.getText().toString());
             cv.put(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productProtein, customProductProtein.getText().toString());
             databaseCustomProduct.insert(CustomProductsColumns.CustomProductsColumnsEntry.TABLE_NAME, null, cv);
-            Toast.makeText(this, "Meal added", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.Food_added), Toast.LENGTH_SHORT).show();
 
         } else {
-            Toast.makeText(this, "No all information provided", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.No_all_information_provided), Toast.LENGTH_SHORT).show();
         }
     }
 

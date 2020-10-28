@@ -41,7 +41,9 @@ public class CustomProductListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_custom_product_list);
+        setTitle(R.string.Added_Food);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         editText_removeItem_CustomProduct = findViewById(R.id.editText_removeItem_CustomProduct);
         textViewNoData_customProducts = findViewById(R.id.textViewNoData_customProducts);
 

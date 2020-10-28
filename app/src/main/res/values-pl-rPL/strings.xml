@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="db_name">productsDatabase_PL.db</string>
-    <string name="Calculate_Your_BMI">Oblicz swoje BMI</string>
+    <string name="Calculate_Your_BMI">Kalkulator BMI</string>
     <string name="Food_Table">Tabela Żywności</string>
-    <string name="Composed_Meals">Ułożone Posiłki</string>
-    <string name="Composed_Daily_Meals">Ułożone dzienne posiłki</string>
-    <string name="Compose_The_Meal">Skomponuj Posiłek</string>
+    <string name="Composed_Meals">Ułożone\nPosiłki</string>
+    <string name="Composed_Daily_Meals">Ułożone\nDzienne Posiłki</string>
+    <string name="Compose_The_Meal">Układanie Posiłku</string>
     <string name="Goal_2500ml">Cel 2500ml</string>
     <string name="ADD_250ML_WATER">DODAJ 250ML WODY</string>
     <string name="RESET_WATER">ZRESETUJ WODĘ</string>
@@ -44,14 +44,33 @@
     <string name="Open_Compose_The_Meal">Otwórz komponowanie posiłku</string>
     <string name="Reset">Reset</string>
     <string name="Add_Meal">Dodaj Posiłek</string>
-    <string name="Remove_Product">Usuń Produkt</string>
+    <string name="Remove_Product">Usuń Żywność</string>
     <string name="Meal_Name">Nazwa Posiłku</string>
-    <string name="No_data">Brak danych.\nDane pojawią się tutaj po dodaniu ich z Tabela Produktów > Konkretny rodzaj produktu > produkt > Wyślij Makroskładniki</string>
+    <string name="No_data">Brak żywności.\nŻywność pojawi się tutaj po dodaniu jej z Tabeli Żywności</string>
     <string name="No_data_to_send">Brak danych do wysłania</string>
     <string name="zero_will_not_be_sent">0 nie będzie wysłane</string>
     <string name="Macronutrients_has_been_sent">Makroskładniki zostały wysłane</string>
     <string name="No_product_with_this_index">Brak produktu o takim indeksie</string>
     <string name="No_data_ComposedMeals">Brak skomponowanych posiłków.\nPosiłki pojawią się tutaj po dodaniu ich w \"Skomponuj Posiłek\"</string>
     <string name="app_name">Balanced Nutrition Organizer</string>
-    <string name="No_data_CustomProducts">Brak własnych produktów.\nWłasne produkty pojawią się tutaj po dodaniu ich z Tabela Żywności > + DODAJ PRODUKT</string>
+    <string name="No_data_CustomFood">Brak własnej żywności.\nWłasna żywność pojawi się tutaj po dodaniu jej z Tabela Żywności > + DODAJ ŻYWNOŚĆ</string>
+    <string name="Added_Food">Dodana żywność</string>
+    <string name="Add_Food">+ DODAJ ŻYWNOŚĆ</string>
+    <string name="REMOVE_MEAL">Usuń Posiłek</string>
+    <string name="ADD_MEALS_TO_DAILY_MENU">Dodaj posiłki do dziennego menu</string>
+    <string name="Click_on_table_for_more_information">Kliknij tabelę aby uzyskać informację o składzie posiłku</string>
+    <string name="Select_the_meals_you_want_to_add_to_the_daily_menu">Zaznacz posiłki, które chcesz dodać do dziennego menu</string>
+    <string name="Please_add_macronutrients_for_100_gram">Proszę dodaj makroskładniki dla 100 gram</string>
+    <string name="Food_Name">Nazwa żywności</string>
+    <string name="Calories">Kalorie</string>
+    <string name="Carbohydrates">Węglowodany</string>
+    <string name="Sugar">Cukier</string>
+    <string name="Fats">Tłuszcze</string>
+    <string name="Saturated_Fats">Tłuszcze nasycone</string>
+    <string name="Choose_an_image_to_upload">Wybierz obraz do przesłania</string>
+    <string name="Add">Dodaj</string>
+    <string name="Protein">Białko</string>
+    <string name="No_all_information_provided">Nie podano wszystkich danych</string>
+    <string name="Food_added">Dodano żywność</string>
+    <string name="Healthy_Info">Zdrowe informacje</string>
 </resources>

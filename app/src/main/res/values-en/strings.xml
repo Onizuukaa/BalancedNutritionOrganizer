@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="db_name">productsDatabase_EN.db</string>
-    <string name="Calculate_Your_BMI">Calculate your BMI</string>
+    <string name="Calculate_Your_BMI">BMI Calculator</string>
     <string name="Food_Table">Food Table</string>
-    <string name="Composed_Meals">Composed Meals</string>
-    <string name="Composed_Daily_Meals">Composed Daily Meals</string>
+    <string name="Composed_Meals">Composed\nMeals</string>
+    <string name="Composed_Daily_Meals">Composed\nDaily Meals</string>
     <string name="Compose_The_Meal">Compose The Meal</string>
     <string name="Goal_2500ml">Goal 2500ml</string>
     <string name="ADD_250ML_WATER">ADD 250ML WATER</string>
@@ -43,15 +43,34 @@
     <string name="Send_The_Macronutrients">Send the macronutrients for compose the meal</string>
     <string name="Reset">Reset</string>
     <string name="Add_Meal">Add Meal</string>
-    <string name="Remove_Product">Remove Product</string>
+    <string name="Remove_Product">Remove Food</string>
     <string name="Meal_Name">Meal Name</string>
     <string name="Open_Compose_The_Meal">Open Compose The Meal</string>
-    <string name="No_data">No data.\nData will be here after add from Product Table > specific kind of product > product > Send The Macronutrients</string>
+    <string name="No_data">No Food.\nFood will be here after add from Food Table</string>
     <string name="No_data_to_send">No data to send</string>
     <string name="zero_will_not_be_sent">0 will not be sent</string>
     <string name="Macronutrients_has_been_sent">Macronutrients has been sent</string>
     <string name="No_product_with_this_index">No product with this index</string>
     <string name="No_data_ComposedMeals">No Composed Meals.\nMeals will be here after add from \"Compose The Meal\"</string>
     <string name="app_name">Balanced Nutrition Organizer</string>
-    <string name="No_data_CustomProducts">No custom products.\nCustom products will be here after add from Product Table > + ADD PRODUCT</string>
+    <string name="No_data_CustomFood">No custom food.\nCustom food will be here after add from Food Table > + ADD FOOD</string>
+    <string name="Added_Food">Added Food</string>
+    <string name="Add_Food">+ ADD FOOD</string>
+    <string name="REMOVE_MEAL">Remove Meal</string>
+    <string name="ADD_MEALS_TO_DAILY_MENU">Add Meals To Daily Menu</string>
+    <string name="Click_on_table_for_more_information">Click the table to get information about the composition of the meal</string>
+    <string name="Select_the_meals_you_want_to_add_to_the_daily_menu">Select the meals you want to add to the daily menu</string>
+    <string name="Please_add_macronutrients_for_100_gram">Please add macronutrients for 100 gram</string>
+    <string name="Food_Name">Food Name</string>
+    <string name="Calories">Calories</string>
+    <string name="Carbohydrates">Carbohydrates</string>
+    <string name="Sugar">Sugar</string>
+    <string name="Fats">Fats</string>
+    <string name="Saturated_Fats">Saturated Fats</string>
+    <string name="Choose_an_image_to_upload">Choose an image to upload</string>
+    <string name="Add">Add</string>
+    <string name="Protein">Protein</string>
+    <string name="No_all_information_provided">No all information provided</string>
+    <string name="Food_added">Food added</string>
+    <string name="Healthy_Info">Healthy Info</string>
 </resources>

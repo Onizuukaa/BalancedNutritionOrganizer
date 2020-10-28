@@ -14,6 +14,7 @@ public class HealthyInfoActivity extends AppCompatActivity implements HealthyInf
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_healthy_info);
+        setTitle(R.string.Healthy_Info);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         newBundle = new Bundle();
     }

@@ -16,11 +16,12 @@
             android:onClick="button_removeMeal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Remove Meal" />
+            android:text="@string/REMOVE_MEAL" />
 
         <EditText
+            android:gravity="center"
             android:id="@+id/editText_removeItem_ComposedMeals"
-            android:layout_width="wrap_content"
+            android:layout_width="30dp"
             android:layout_height="wrap_content"
             android:inputType="number"
             android:text="1" />
@@ -29,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:text="Click on table for more information"
+            android:text="@string/Click_on_table_for_more_information"
             android:textSize="16dp"
             android:textStyle="bold" />
 
@@ -47,12 +48,12 @@
             android:id="@+id/button_addMealsToDailyMenu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add meals to daily menu" />
+            android:text="@string/ADD_MEALS_TO_DAILY_MENU" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Select meals which do you want add to Daily Meals"
+            android:text="@string/Select_the_meals_you_want_to_add_to_the_daily_menu"
             android:textStyle="bold"/>
 
     </LinearLayout>

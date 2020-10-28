@@ -13,7 +13,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="5dp"
         android:gravity="center"
-        android:text="Please add macronutrients for 100 gram"
+        android:text="@string/Please_add_macronutrients_for_100_gram"
         android:textSize="20sp"
         android:textStyle="bold" />
 
@@ -29,7 +29,7 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:gravity="center"
-            android:text="Product Name" />
+            android:text="@string/Food_Name" />
 
         <EditText
             android:id="@+id/customProductName"
@@ -46,7 +46,7 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:gravity="center"
-            android:text="Calories" />
+            android:text="@string/Calories" />
 
         <EditText
             android:id="@+id/customProductCalories"
@@ -64,7 +64,7 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:gravity="center"
-            android:text="Carbohydrates" />
+            android:text="@string/Carbohydrates" />
 
         <EditText
             android:id="@+id/customProductCarbohydrates"
@@ -82,7 +82,7 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:gravity="center"
-            android:text="Sugar" />
+            android:text="@string/Sugar" />
 
         <EditText
             android:id="@+id/customProductSugar"
@@ -100,7 +100,7 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:gravity="center"
-            android:text="Fats" />
+            android:text="@string/Fats" />
 
         <EditText
             android:id="@+id/customProductFats"
@@ -118,7 +118,7 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:gravity="center"
-            android:text="Saturated Fats" />
+            android:text="@string/Saturated_Fats" />
 
         <EditText
             android:id="@+id/customProductSaturatedFats"
@@ -136,7 +136,7 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:gravity="center"
-            android:text="Protein" />
+            android:text="@string/Protein" />
 
         <EditText
             android:id="@+id/customProductProtein"
@@ -154,7 +154,7 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_gravity="center"
-            android:text="Chose an Image to upload" />
+            android:text="@string/Choose_an_image_to_upload" />
 
         <ImageView
             android:id="@+id/customProductImage"
@@ -172,7 +172,7 @@
             android:layout_columnSpan="2"
             android:layout_columnWeight="1"
             android:onClick="addCustomProduct"
-            android:text="Add" />
+            android:text="@string/Add" />
 
     </GridLayout>
 

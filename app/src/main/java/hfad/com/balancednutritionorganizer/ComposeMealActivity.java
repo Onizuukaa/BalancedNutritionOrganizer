@@ -45,6 +45,7 @@ public class ComposeMealActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_compose_meal);
+        setTitle(R.string.Compose_The_Meal);
 
         ComposeMealDBHelper dbHelper = new ComposeMealDBHelper(this);
         ComposedMealsDBHelper dbHelperComposedMeals = new ComposedMealsDBHelper(this);

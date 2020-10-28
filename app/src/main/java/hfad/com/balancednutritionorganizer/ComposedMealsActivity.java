@@ -39,6 +39,7 @@ public class ComposedMealsActivity extends AppCompatActivity implements BottomSh
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_composed_meals);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setTitle(R.string.Composed_Meals);
 
         ComposedMealsDBHelper dbHelperComposedMeals = new ComposedMealsDBHelper(this);
         mDatabaseComposedMeals = dbHelperComposedMeals.getWritableDatabase();
