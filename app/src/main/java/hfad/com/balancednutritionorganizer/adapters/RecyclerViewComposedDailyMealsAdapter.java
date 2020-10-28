@@ -60,7 +60,7 @@ public class RecyclerViewComposedDailyMealsAdapter extends RecyclerView.Adapter<
     @Override
     public RecyclerViewComposedDailyMealsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.scheme_composed_daily_meals, parent, false);
+        View view = inflater.inflate(R.layout.scheme_composed_daily_meals_stare, parent, false);
         return new RecyclerViewComposedDailyMealsViewHolder(view);
     }
 

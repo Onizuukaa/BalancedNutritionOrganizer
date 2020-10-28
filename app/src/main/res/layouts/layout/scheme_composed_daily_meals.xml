@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/scheme_composed_daily_meals"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <TextView
@@ -18,15 +18,16 @@
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
         android:background="#5597B5"
-        android:columnCount="2"
-        android:rowCount="6">
+        android:columnCount="5"
+        android:rowCount="12">
 
         <TextView
+            android:textSize="12sp"
             android:id="@+id/textViewComposedDailyMealsName"
-            android:layout_width="50dp"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
-            android:layout_columnSpan="1"
+            android:layout_rowSpan="2"
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
@@ -34,115 +35,312 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textViewComposedDailyMealsKcal_Sum"
             android:layout_rowWeight="1"
-            android:layout_columnSpan="1"
+            android:layout_columnSpan="2"
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
             android:maxEms="20"
-            android:padding="2dp"
-            android:text="kcal 52 | carbo 14g | sugar 10g | fats 0.2g | saturatedfats 0g | protein 0.3g | weight 100g" />
+            android:paddingVertical="2dp"
+            android:text="KCAL 1993/1050G" />
 
         <TextView
-            android:id="@+id/textViewComposedDailyMealsFirstProduct"
             android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:background="@drawable/cell_shape"
-            android:gravity="center"
-            android:padding="2dp"
-            android:text="Ogórkowa" />
-
-        <TextView
-            android:id="@+id/textViewComposedDailyMealsKcal_FirstProduct_Sum"
-            android:layout_rowWeight="1"
-            android:layout_columnSpan="1"
+            android:layout_columnSpan="2"
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
             android:maxEms="20"
-            android:padding="2dp"
-            android:text="kcal 52 | carbo 14g | sugar 10g | fats 0.2g | saturatedfats 0g | protein 0.3g | weight 100g" />
+            android:paddingVertical="2dp"
+            android:text="carbo 42G | Sugar 3G" />
+
 
         <TextView
-            android:id="@+id/textViewComposedDailyMealsSecondProduct"
             android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:background="@drawable/cell_shape"
-            android:gravity="center"
-            android:padding="2dp"
-            android:text="Pomidorowa" />
-
-        <TextView
-            android:id="@+id/textViewComposedDailyMealsKcal_SecondProduct_Sum"
-            android:layout_rowWeight="1"
-            android:layout_columnSpan="1"
+            android:layout_columnSpan="2"
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
             android:maxEms="20"
-            android:padding="2dp"
-            android:text="kcal 52 | carbo 14g | sugar 10g | fats 0.2g | saturatedfats 0g | protein 0.3g | weight 100g" />
+            android:paddingVertical="2dp"
+            android:text="fats 8G | s. fats 4G" />
 
         <TextView
-            android:id="@+id/textViewComposedDailyMealsThirdProduct"
             android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:background="@drawable/cell_shape"
-            android:gravity="center"
-            android:padding="2dp"
-            android:text="Wodzionka" />
-
-        <TextView
-            android:id="@+id/textViewComposedDailyMealsKcal_ThirdProduct_Sum"
-            android:layout_rowWeight="1"
-            android:layout_columnSpan="1"
+            android:layout_columnSpan="2"
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
             android:maxEms="20"
-            android:padding="2dp"
-            android:text="kcal 52 | carbo 14g | sugar 10g | fats 0.2g | saturatedfats 0g | protein 0.3g | weight 100g" />
+            android:paddingVertical="2dp"
+            android:text="protein 0.3g" />
 
         <TextView
-            android:id="@+id/textViewComposedDailyMealsFourthProduct"
+            android:textSize="12sp"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
             android:layout_rowWeight="1"
+            android:layout_rowSpan="2"
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
-            android:padding="2dp"
-            android:text="Flaki" />
+            android:text="Pomidorowa"
+            android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textViewComposedDailyMealsKcal_FourthProduct_Sum"
             android:layout_rowWeight="1"
-            android:layout_columnSpan="1"
-            android:layout_columnWeight="1"
-            android:background="@drawable/cell_shape"
-            android:gravity="center"
-            android:maxEms="20"
-            android:padding="2dp"
-            android:text="kcal 52 | carbo 14g | sugar 10g | fats 0.2g | saturatedfats 0g | protein 0.3g | weight 100g" />
-
-        <TextView
-            android:id="@+id/textViewComposedDailyMealsFifthProduct"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:background="@drawable/cell_shape"
-            android:gravity="center"
-            android:padding="2dp"
-            android:text="Barszcz" />
-
-        <TextView
-            android:id="@+id/textViewComposedDailyMealsKcal_FifthProduct_Sum"
-            android:layout_rowWeight="1"
-            android:layout_columnSpan="1"
+            android:layout_columnSpan="2"
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
             android:maxEms="20"
-            android:padding="2dp"
-            android:text="kcal 52 | carbo 14g | sugar 10g | fats 0.2g | saturatedfats 0g | protein 0.3g | weight 100g" />
+            android:paddingVertical="2dp"
+            android:text="KCAL 1993/1050G" />
+
+        <TextView
+            android:layout_rowWeight="1"
+            android:layout_columnSpan="2"
+            android:layout_columnWeight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"
+            android:maxEms="20"
+            android:paddingVertical="2dp"
+            android:text="carbo 42G | Sugar 3G" />
+
+
+        <TextView
+            android:layout_rowWeight="1"
+            android:layout_columnSpan="2"
+            android:layout_columnWeight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"
+            android:maxEms="20"
+            android:paddingVertical="2dp"
+            android:text="fats 8G | s. fats 4G" />
+
+        <TextView
+            android:layout_rowWeight="1"
+            android:layout_columnSpan="2"
+            android:layout_columnWeight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"
+            android:maxEms="20"
+            android:paddingVertical="2dp"
+            android:text="protein 0.3g" />
+
+        <TextView
+            android:textSize="12sp"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_rowSpan="2"
+            android:layout_columnWeight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"
+            android:text="Ogórkowa"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_rowWeight="1"
+            android:layout_columnSpan="2"
+            android:layout_columnWeight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"
+            android:maxEms="20"
+            android:paddingVertical="2dp"
+            android:text="KCAL 1993/1050G" />
+
+        <TextView
+            android:layout_rowWeight="1"
+            android:layout_columnSpan="2"
+            android:layout_columnWeight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"
+            android:maxEms="20"
+            android:paddingVertical="2dp"
+            android:text="carbo 42G | Sugar 3G" />
+
+
+        <TextView
+            android:layout_rowWeight="1"
+            android:layout_columnSpan="2"
+            android:layout_columnWeight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"
+            android:maxEms="20"
+            android:paddingVertical="2dp"
+            android:text="fats 8G | s. fats 4G" />
+
+        <TextView
+            android:layout_rowWeight="1"
+            android:layout_columnSpan="2"
+            android:layout_columnWeight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"
+            android:maxEms="20"
+            android:paddingVertical="2dp"
+            android:text="protein 0.3g" />
+
+        <TextView
+            android:textSize="12sp"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_rowSpan="2"
+            android:layout_columnWeight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"
+            android:text="Wodzionka"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_rowWeight="1"
+            android:layout_columnSpan="2"
+            android:layout_columnWeight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"
+            android:maxEms="20"
+            android:paddingVertical="2dp"
+            android:text="KCAL 1993/1050G" />
+
+        <TextView
+            android:layout_rowWeight="1"
+            android:layout_columnSpan="2"
+            android:layout_columnWeight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"
+            android:maxEms="20"
+            android:paddingVertical="2dp"
+            android:text="carbo 42G | Sugar 3G" />
+
+
+        <TextView
+            android:layout_rowWeight="1"
+            android:layout_columnSpan="2"
+            android:layout_columnWeight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"
+            android:maxEms="20"
+            android:paddingVertical="2dp"
+            android:text="fats 8G | s. fats 4G" />
+
+        <TextView
+            android:layout_rowWeight="1"
+            android:layout_columnSpan="2"
+            android:layout_columnWeight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"
+            android:maxEms="20"
+            android:paddingVertical="2dp"
+            android:text="protein 0.3g" />
+
+        <TextView
+            android:textSize="12sp"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_rowSpan="2"
+            android:layout_columnWeight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"
+            android:text="Żurek"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_rowWeight="1"
+            android:layout_columnSpan="2"
+            android:layout_columnWeight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"
+            android:maxEms="20"
+            android:paddingVertical="2dp"
+            android:text="KCAL 1993/1050G" />
+
+        <TextView
+            android:layout_rowWeight="1"
+            android:layout_columnSpan="2"
+            android:layout_columnWeight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"
+            android:maxEms="20"
+            android:paddingVertical="2dp"
+            android:text="carbo 42G | Sugar 3G" />
+
+
+        <TextView
+            android:layout_rowWeight="1"
+            android:layout_columnSpan="2"
+            android:layout_columnWeight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"
+            android:maxEms="20"
+            android:paddingVertical="2dp"
+            android:text="fats 8G | s. fats 4G" />
+
+        <TextView
+            android:layout_rowWeight="1"
+            android:layout_columnSpan="2"
+            android:layout_columnWeight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"
+            android:maxEms="20"
+            android:paddingVertical="2dp"
+            android:text="protein 0.3g" />
+
+        <TextView
+            android:textSize="12sp"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_rowSpan="2"
+            android:layout_columnWeight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"
+            android:text="Barszcz biały"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_rowWeight="1"
+            android:layout_columnSpan="2"
+            android:layout_columnWeight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"
+            android:maxEms="20"
+            android:paddingVertical="2dp"
+            android:text="KCAL 1993/1050G" />
+
+        <TextView
+            android:layout_rowWeight="1"
+            android:layout_columnSpan="2"
+            android:layout_columnWeight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"
+            android:maxEms="20"
+            android:paddingVertical="2dp"
+            android:text="carbo 42G | Sugar 3G" />
+
+
+        <TextView
+            android:layout_rowWeight="1"
+            android:layout_columnSpan="2"
+            android:layout_columnWeight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"
+            android:maxEms="20"
+            android:paddingVertical="2dp"
+            android:text="fats 8G | s. fats 4G" />
+
+        <TextView
+            android:layout_rowWeight="1"
+            android:layout_columnSpan="2"
+            android:layout_columnWeight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"
+            android:maxEms="20"
+            android:paddingVertical="2dp"
+            android:text="protein 0.3g" />
+
+
 
     </GridLayout>
 
