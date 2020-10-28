@@ -33,7 +33,6 @@
             android:text="@string/Click_on_table_for_more_information"
             android:textSize="16dp"
             android:textStyle="bold" />
-
     </LinearLayout>
 
     <LinearLayout
@@ -58,11 +57,27 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/linearLayoutComposedMealActivity_AddToDB_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayoutComposedMealActivity_AddToDB"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Daily meal name"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/composedMealsRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/linearLayoutComposedMealActivity_AddToDB"
+        android:layout_below="@+id/linearLayoutComposedMealActivity_AddToDB_2"
         android:background="@android:color/darker_gray"
         android:padding="4dp"
         android:scrollbars="vertical" />
@@ -71,7 +86,7 @@
         android:id="@+id/textViewNoDataComposed"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/linearLayoutComposedMealActivity_AddToDB"
+        android:layout_below="@+id/linearLayoutComposedMealActivity_AddToDB_2"
         android:background="#FAFAFA"
         android:gravity="center"
         android:text="@string/No_data_ComposedMeals"
