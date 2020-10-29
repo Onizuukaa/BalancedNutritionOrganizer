@@ -66,6 +66,7 @@
         android:orientation="horizontal">
 
         <EditText
+            android:id="@+id/editText_dailyMealName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="Daily meal name"
