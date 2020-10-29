@@ -72,18 +72,18 @@ public class RecyclerViewComposedDailyMealsAdapter extends RecyclerView.Adapter<
 
         long id = cursor.getLong(cursor.getColumnIndex(ComposedDailyMealsColumns.ComposedDailyMealsColumnsEntry._ID));
 
-        String nameComposedDailyMeals = cursor.getString(cursor.getColumnIndex(ComposedDailyMealsColumns.ComposedDailyMealsColumnsEntry.COLUMN_nameComposedDailyMeals));
-        String nameComposedDailyMeals_KCAL_SUM = cursor.getString(cursor.getColumnIndex(ComposedDailyMealsColumns.ComposedDailyMealsColumnsEntry.COLUMN_nameComposedDailyMeals_KCAL_SUM));
-        String nameFirstProduct = cursor.getString(cursor.getColumnIndex(ComposedDailyMealsColumns.ComposedDailyMealsColumnsEntry.COLUMN_nameFirstProduct));
-        String nameSecondProduct = cursor.getString(cursor.getColumnIndex(ComposedDailyMealsColumns.ComposedDailyMealsColumnsEntry.COLUMN_nameSecondProduct));
-        String nameThirdProduct = cursor.getString(cursor.getColumnIndex(ComposedDailyMealsColumns.ComposedDailyMealsColumnsEntry.COLUMN_nameThirdProduct));
-        String nameFourthProduct = cursor.getString(cursor.getColumnIndex(ComposedDailyMealsColumns.ComposedDailyMealsColumnsEntry.COLUMN_nameFourthProduct));
-        String nameFifthProduct = cursor.getString(cursor.getColumnIndex(ComposedDailyMealsColumns.ComposedDailyMealsColumnsEntry.COLUMN_nameFifthProduct));
-        String macrosFirstProductsKcalWeight = cursor.getString(cursor.getColumnIndex(ComposedDailyMealsColumns.ComposedDailyMealsColumnsEntry.COLUMN_macrosFirstProductsKcalWeight));
-        String macrosSecondProductsKcalWeight = cursor.getString(cursor.getColumnIndex(ComposedDailyMealsColumns.ComposedDailyMealsColumnsEntry.COLUMN_macrosSecondProductsKcalWeight));
-        String macrosThirdProductsKcalWeight = cursor.getString(cursor.getColumnIndex(ComposedDailyMealsColumns.ComposedDailyMealsColumnsEntry.COLUMN_macrosThirdProductsKcalWeight));
-        String macrosFourthProductsKcalWeight = cursor.getString(cursor.getColumnIndex(ComposedDailyMealsColumns.ComposedDailyMealsColumnsEntry.COLUMN_macrosFourthProductsKcalWeight));
-        String macrosFifthProductsKcalWeight = cursor.getString(cursor.getColumnIndex(ComposedDailyMealsColumns.ComposedDailyMealsColumnsEntry.COLUMN_macrosFifthProductsKcalWeight));
+        String nameComposedDailyMeals = cursor.getString(cursor.getColumnIndex(ComposedDailyMealsColumns.ComposedDailyMealsColumnsEntry.COLUMN_composedDailyMeals_Name));
+        String nameComposedDailyMeals_KCAL_SUM = cursor.getString(cursor.getColumnIndex(ComposedDailyMealsColumns.ComposedDailyMealsColumnsEntry.COLUMN_ComposedDailyMeals_KCAL_SUM));
+        String nameFirstProduct = cursor.getString(cursor.getColumnIndex(ComposedDailyMealsColumns.ComposedDailyMealsColumnsEntry.COLUMN_FirstProduct_NAME));
+        String nameSecondProduct = cursor.getString(cursor.getColumnIndex(ComposedDailyMealsColumns.ComposedDailyMealsColumnsEntry.COLUMN_SecondProduct_NAME));
+        String nameThirdProduct = cursor.getString(cursor.getColumnIndex(ComposedDailyMealsColumns.ComposedDailyMealsColumnsEntry.COLUMN_ThirdProduct_NAME));
+        String nameFourthProduct = cursor.getString(cursor.getColumnIndex(ComposedDailyMealsColumns.ComposedDailyMealsColumnsEntry.COLUMN_FourthProduct_NAME));
+        String nameFifthProduct = cursor.getString(cursor.getColumnIndex(ComposedDailyMealsColumns.ComposedDailyMealsColumnsEntry.COLUMN_FifthProduct_NAME));
+//        String macrosFirstProductsKcalWeight = cursor.getString(cursor.getColumnIndex(ComposedDailyMealsColumns.ComposedDailyMealsColumnsEntry.COLUMN_macrosFirstProductsKcalWeight));
+//        String macrosSecondProductsKcalWeight = cursor.getString(cursor.getColumnIndex(ComposedDailyMealsColumns.ComposedDailyMealsColumnsEntry.COLUMN_macrosSecondProductsKcalWeight));
+//        String macrosThirdProductsKcalWeight = cursor.getString(cursor.getColumnIndex(ComposedDailyMealsColumns.ComposedDailyMealsColumnsEntry.COLUMN_macrosThirdProductsKcalWeight));
+//        String macrosFourthProductsKcalWeight = cursor.getString(cursor.getColumnIndex(ComposedDailyMealsColumns.ComposedDailyMealsColumnsEntry.COLUMN_macrosFourthProductsKcalWeight));
+//        String macrosFifthProductsKcalWeight = cursor.getString(cursor.getColumnIndex(ComposedDailyMealsColumns.ComposedDailyMealsColumnsEntry.COLUMN_macrosFifthProductsKcalWeight));
         String productsIncludedFirstProduct = cursor.getString(cursor.getColumnIndex(ComposedDailyMealsColumns.ComposedDailyMealsColumnsEntry.COLUMN_productsIncludedFirstProduct));
         String productsIncludedSecondProduct = cursor.getString(cursor.getColumnIndex(ComposedDailyMealsColumns.ComposedDailyMealsColumnsEntry.COLUMN_productsIncludedSecondProduct));
         String productsIncludedThirdProduct = cursor.getString(cursor.getColumnIndex(ComposedDailyMealsColumns.ComposedDailyMealsColumnsEntry.COLUMN_productsIncludedThirdProduct));

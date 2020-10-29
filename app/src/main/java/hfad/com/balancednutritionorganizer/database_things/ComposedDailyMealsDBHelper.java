@@ -21,18 +21,63 @@ public class ComposedDailyMealsDBHelper extends SQLiteOpenHelper {
         final String SQL_CREATE_COMPOSEDDAILYMEALS_TABLE = "CREATE TABLE " +
                 ComposedDailyMealsColumnsEntry.TABLE_NAME + " (" +
                 ComposedDailyMealsColumnsEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                ComposedDailyMealsColumnsEntry.COLUMN_nameComposedDailyMeals + " TEXT NOT NULL, " +
-                ComposedDailyMealsColumnsEntry.COLUMN_nameComposedDailyMeals_KCAL_SUM + " TEXT NOT NULL, " +
-                ComposedDailyMealsColumnsEntry.COLUMN_nameFirstProduct + " TEXT NOT NULL, " +
-                ComposedDailyMealsColumnsEntry.COLUMN_nameSecondProduct + " TEXT NOT NULL, " +
-                ComposedDailyMealsColumnsEntry.COLUMN_nameThirdProduct + " TEXT NOT NULL, " +
-                ComposedDailyMealsColumnsEntry.COLUMN_nameFourthProduct + " TEXT NOT NULL, " +
-                ComposedDailyMealsColumnsEntry.COLUMN_nameFifthProduct + " TEXT NOT NULL, " +
-                ComposedDailyMealsColumnsEntry.COLUMN_macrosFirstProductsKcalWeight + " TEXT NOT NULL, " +
-                ComposedDailyMealsColumnsEntry.COLUMN_macrosSecondProductsKcalWeight + " TEXT NOT NULL, " +
-                ComposedDailyMealsColumnsEntry.COLUMN_macrosThirdProductsKcalWeight + " TEXT NOT NULL, " +
-                ComposedDailyMealsColumnsEntry.COLUMN_macrosFourthProductsKcalWeight + " TEXT NOT NULL, " +
-                ComposedDailyMealsColumnsEntry.COLUMN_macrosFifthProductsKcalWeight + " TEXT NOT NULL, " +
+                ComposedDailyMealsColumnsEntry.COLUMN_composedDailyMeals_Name + " TEXT NOT NULL, " +
+                ComposedDailyMealsColumnsEntry.COLUMN_ComposedDailyMeals_KCAL_SUM + " TEXT NOT NULL, " +
+                ComposedDailyMealsColumnsEntry.COLUMN_ComposedDailyMeals_WEIGHT_SUM + " TEXT NOT NULL, " +
+                ComposedDailyMealsColumnsEntry.COLUMN_ComposedDailyMeals_CARBOHYDRATES_SUM + " TEXT NOT NULL, " +
+                ComposedDailyMealsColumnsEntry.COLUMN_ComposedDailyMeals_SUGAR_SUM + " TEXT NOT NULL, " +
+                ComposedDailyMealsColumnsEntry.COLUMN_ComposedDailyMeals_FATS_SUM + " TEXT NOT NULL, " +
+                ComposedDailyMealsColumnsEntry.COLUMN_ComposedDailyMeals_saturatedFATS_SUM + " TEXT NOT NULL, " +
+                ComposedDailyMealsColumnsEntry.COLUMN_ComposedDailyMeals_PROTEIN_SUM + " TEXT NOT NULL, " +
+
+                ComposedDailyMealsColumnsEntry.COLUMN_FirstProduct_NAME + " TEXT NOT NULL, " +
+                ComposedDailyMealsColumnsEntry.COLUMN_SecondProduct_NAME + " TEXT NOT NULL, " +
+                ComposedDailyMealsColumnsEntry.COLUMN_ThirdProduct_NAME + " TEXT NOT NULL, " +
+                ComposedDailyMealsColumnsEntry.COLUMN_FourthProduct_NAME + " TEXT NOT NULL, " +
+                ComposedDailyMealsColumnsEntry.COLUMN_FifthProduct_NAME + " TEXT NOT NULL, " +
+
+                ComposedDailyMealsColumnsEntry.COLUMN_FirstProduct_KCAL + " TEXT NOT NULL, " +
+                ComposedDailyMealsColumnsEntry.COLUMN_SecondProduct_KCAL + " TEXT NOT NULL, " +
+                ComposedDailyMealsColumnsEntry.COLUMN_ThirdProduct_KCAL + " TEXT NOT NULL, " +
+                ComposedDailyMealsColumnsEntry.COLUMN_FourthProduct_KCAL + " TEXT NOT NULL, " +
+                ComposedDailyMealsColumnsEntry.COLUMN_FifthProduct_KCAL + " TEXT NOT NULL, " +
+
+                ComposedDailyMealsColumnsEntry.COLUMN_FirstProduct_WEIGHT + " TEXT NOT NULL, " +
+                ComposedDailyMealsColumnsEntry.COLUMN_SecondProduct_WEIGHT + " TEXT NOT NULL, " +
+                ComposedDailyMealsColumnsEntry.COLUMN_ThirdProduct_WEIGHT + " TEXT NOT NULL, " +
+                ComposedDailyMealsColumnsEntry.COLUMN_FourthProduct_WEIGHT + " TEXT NOT NULL, " +
+                ComposedDailyMealsColumnsEntry.COLUMN_FifthProduct_WEIGHT + " TEXT NOT NULL, " +
+
+                ComposedDailyMealsColumnsEntry.COLUMN_FirstProduct_CARBOHYDRATES + " TEXT NOT NULL, " +
+                ComposedDailyMealsColumnsEntry.COLUMN_SecondProduct_CARBOHYDRATES + " TEXT NOT NULL, " +
+                ComposedDailyMealsColumnsEntry.COLUMN_ThirdProduct_CARBOHYDRATES + " TEXT NOT NULL, " +
+                ComposedDailyMealsColumnsEntry.COLUMN_FourthProduct_CARBOHYDRATES + " TEXT NOT NULL, " +
+                ComposedDailyMealsColumnsEntry.COLUMN_FifthProduct_CARBOHYDRATES + " TEXT NOT NULL, " +
+
+                ComposedDailyMealsColumnsEntry.COLUMN_FirstProduct_SUGAR + " TEXT NOT NULL, " +
+                ComposedDailyMealsColumnsEntry.COLUMN_SecondProduct_SUGAR + " TEXT NOT NULL, " +
+                ComposedDailyMealsColumnsEntry.COLUMN_ThirdProduct_SUGAR + " TEXT NOT NULL, " +
+                ComposedDailyMealsColumnsEntry.COLUMN_FourthProduct_SUGAR + " TEXT NOT NULL, " +
+                ComposedDailyMealsColumnsEntry.COLUMN_FifthProduct_SUGAR + " TEXT NOT NULL, " +
+
+                ComposedDailyMealsColumnsEntry.COLUMN_FirstProduct_FATS + " TEXT NOT NULL, " +
+                ComposedDailyMealsColumnsEntry.COLUMN_SecondProduct_FATS + " TEXT NOT NULL, " +
+                ComposedDailyMealsColumnsEntry.COLUMN_ThirdProduct_FATS + " TEXT NOT NULL, " +
+                ComposedDailyMealsColumnsEntry.COLUMN_FourthProduct_FATS + " TEXT NOT NULL, " +
+                ComposedDailyMealsColumnsEntry.COLUMN_FifthProduct_FATS + " TEXT NOT NULL, " +
+
+                ComposedDailyMealsColumnsEntry.COLUMN_FirstProduct_saturatedFATS + " TEXT NOT NULL, " +
+                ComposedDailyMealsColumnsEntry.COLUMN_SecondProduct_saturatedFATS + " TEXT NOT NULL, " +
+                ComposedDailyMealsColumnsEntry.COLUMN_ThirdProduct_saturatedFATS + " TEXT NOT NULL, " +
+                ComposedDailyMealsColumnsEntry.COLUMN_FourthProduct_saturatedFATS + " TEXT NOT NULL, " +
+                ComposedDailyMealsColumnsEntry.COLUMN_FifthProduct_saturatedFATS + " TEXT NOT NULL, " +
+
+                ComposedDailyMealsColumnsEntry.COLUMN_FirstProduct_PROTEIN + " TEXT NOT NULL, " +
+                ComposedDailyMealsColumnsEntry.COLUMN_SecondProduct_PROTEIN + " TEXT NOT NULL, " +
+                ComposedDailyMealsColumnsEntry.COLUMN_ThirdProduct_PROTEIN + " TEXT NOT NULL, " +
+                ComposedDailyMealsColumnsEntry.COLUMN_FourthProduct_PROTEIN + " TEXT NOT NULL, " +
+                ComposedDailyMealsColumnsEntry.COLUMN_FifthProduct_PROTEIN + " TEXT NOT NULL, " +
+
                 ComposedDailyMealsColumnsEntry.COLUMN_productsIncludedFirstProduct + " TEXT NOT NULL, " +
                 ComposedDailyMealsColumnsEntry.COLUMN_productsIncludedSecondProduct + " TEXT NOT NULL, " +
                 ComposedDailyMealsColumnsEntry.COLUMN_productsIncludedThirdProduct + " TEXT NOT NULL, " +

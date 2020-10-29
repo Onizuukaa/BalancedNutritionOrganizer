@@ -24,6 +24,7 @@ import hfad.com.balancednutritionorganizer.adapters.RecyclerViewComposedMealsAda
 import hfad.com.balancednutritionorganizer.database_things.ComposedMealsColumns;
 import hfad.com.balancednutritionorganizer.database_things.ComposedMealsDBHelper;
 
+import static java.lang.Double.parseDouble;
 import static java.lang.Integer.parseInt;
 
 public class ComposedMealsActivity extends AppCompatActivity implements BottomSheetDialog.BottomSheetListener {
@@ -31,7 +32,7 @@ public class ComposedMealsActivity extends AppCompatActivity implements BottomSh
     private SQLiteDatabase mDatabaseComposedMeals;
     private RecyclerViewComposedMealsAdapter adapter;
     Cursor cursor;
-
+    String a;
     Button button_addMealsToDailyMenu;
     EditText editText_removeMeal;
     TextView textViewNoDataComposed;
@@ -56,21 +57,35 @@ public class ComposedMealsActivity extends AppCompatActivity implements BottomSh
         button_addMealsToDailyMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 List<ReturnItemComposedMeals> selectedMeals = adapter.getSelectedMeals();
-                StringBuilder composedMealsNames = new StringBuilder();
 
+
+
+
+
+
+                StringBuilder composedMealsNames = new StringBuilder();
+                StringBuilder composedMealsCalories = new StringBuilder();
+                double sum = 0.0;
                 for (int i = 0; i < selectedMeals.size(); i++) {
                     if (i == 0) {
-                        composedMealsNames.append(selectedMeals.get(i).getProductName());
+                        //sum+= parseInt(selectedMeals.get(i).getProductCalories());
+                        //composedMealsNames.append(selectedMeals.get(i).getProductName());
+                        composedMealsCalories.append(selectedMeals.get(i).getProductCalories());
+
+                    a = String.valueOf(selectedMeals.get(i).getProductCalories());
+                    sum += parseDouble(a);
+                       //sum += parseInt(composedMealsCalories.append(selectedMeals.get(i).getProductCalories()))   ;
                     } else {
-                        composedMealsNames.append("\n").append(selectedMeals.get(i).getProductName());
+                        //composedMealsNames.append("\n").append(selectedMeals.get(i).getProductName());
+                        composedMealsCalories.append("\n").append(selectedMeals.get(i).getProductCalories());
+                        a = String.valueOf(selectedMeals.get(i).getProductCalories());
+                        sum+=parseDouble(a);
                     }
                 }
-                Toast.makeText(ComposedMealsActivity.this, composedMealsNames.toString(), Toast.LENGTH_SHORT).show();
-
-
-//                Toast.makeText(ComposedMealsActivity.this, "test", Toast.LENGTH_SHORT).show();
+               //Toast.makeText(ComposedMealsActivity.this, composedMealsNames.toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(ComposedMealsActivity.this, composedMealsCalories.toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(ComposedMealsActivity.this, sum+"", Toast.LENGTH_SHORT).show();
             }
         });
     }
