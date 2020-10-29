@@ -18,6 +18,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.List;
+
 import hfad.com.balancednutritionorganizer.adapters.RecyclerViewComposedMealsAdapter;
 import hfad.com.balancednutritionorganizer.database_things.ComposedMealsColumns;
 import hfad.com.balancednutritionorganizer.database_things.ComposedMealsDBHelper;
@@ -54,7 +56,21 @@ public class ComposedMealsActivity extends AppCompatActivity implements BottomSh
         button_addMealsToDailyMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(ComposedMealsActivity.this, "test", Toast.LENGTH_SHORT).show();
+
+                List<ReturnItemComposedMeals> selectedMeals = adapter.getSelectedMeals();
+                StringBuilder composedMealsNames = new StringBuilder();
+
+                for (int i = 0; i < selectedMeals.size(); i++) {
+                    if (i == 0) {
+                        composedMealsNames.append(selectedMeals.get(i).getProductName());
+                    } else {
+                        composedMealsNames.append("\n").append(selectedMeals.get(i).getProductName());
+                    }
+                }
+                Toast.makeText(ComposedMealsActivity.this, composedMealsNames.toString(), Toast.LENGTH_SHORT).show();
+
+
+//                Toast.makeText(ComposedMealsActivity.this, "test", Toast.LENGTH_SHORT).show();
             }
         });
     }

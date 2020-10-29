@@ -10,6 +10,15 @@ public class ReturnItemComposedMeals {
     private String productSaturatedFats;
     private String productProtein;
     private String productMacros;
+    Boolean isSelected = false;
+
+    public Boolean getSelected() {
+        return isSelected;
+    }
+
+    public void setSelected(Boolean selected) {
+        isSelected = selected;
+    }
 
     public ReturnItemComposedMeals(String productName, String productCalories, String productWeight, String productCarbohydrates, String productSugar,
                                    String productProtein, String productFats, String productSaturatedFats, String productMacros) {

@@ -17,6 +17,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import hfad.com.balancednutritionorganizer.BottomSheetDialog;
 import hfad.com.balancednutritionorganizer.ComposedMealsActivity;
@@ -93,7 +94,14 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
     public RecyclerViewComposedMealsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(mContext); //dodałem bo w GroceryAdapter, tym nowszym, tak jest.
         View view = inflater.inflate(R.layout.scheme_composed_meals, parent, false);
-        return new RecyclerViewComposedMealsViewHolder(view);
+//        return new RecyclerViewComposedMealsViewHolder(view);
+        return new RecyclerViewComposedMealsViewHolder(
+                LayoutInflater.from(parent.getContext()).inflate(
+                        R.layout.scheme_composed_meals,
+                        parent,
+                        false
+                )
+        );
     }
 
     @Override
@@ -107,27 +115,8 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
 
         long id = mCursor.getLong(mCursor.getColumnIndex(ComposedMealsColumns.ComposedMealsColumnsEntry._ID));
 
-//        String mealName = mCursor.getString(mCursor.getColumnIndex(ComposedMealsColumns.ComposedMealsColumnsEntry.COLUMN_MEALNAME));
-//        String mealKcal = mCursor.getString(mCursor.getColumnIndex(ComposedMealsColumns.ComposedMealsColumnsEntry.COLUMN_CALORIES));
-//        String mealGram = mCursor.getString(mCursor.getColumnIndex(ComposedMealsColumns.ComposedMealsColumnsEntry.COLUMN_WEIGHT));
-//        String mealCarbohydrates = mCursor.getString(mCursor.getColumnIndex(ComposedMealsColumns.ComposedMealsColumnsEntry.COLUMN_CARBO));
-//        String mealFats = mCursor.getString(mCursor.getColumnIndex(ComposedMealsColumns.ComposedMealsColumnsEntry.COLUMN_FATS));
-//        String mealProtein = mCursor.getString(mCursor.getColumnIndex(ComposedMealsColumns.ComposedMealsColumnsEntry.COLUMN_PROTEIN));
-//        String mealSugar = mCursor.getString(mCursor.getColumnIndex(ComposedMealsColumns.ComposedMealsColumnsEntry.COLUMN_SUGAR));
-//        String mealSaturatedFats = mCursor.getString(mCursor.getColumnIndex(ComposedMealsColumns.ComposedMealsColumnsEntry.COLUMN_SATURATEDFATS));
-//        String productsIncludedComposedMeal = mCursor.getString(mCursor.getColumnIndex(ComposedMealsColumns.ComposedMealsColumnsEntry.COLUMN_PRODUCTSINCLUDED));
-
         holder.itemView.setTag(id);
 
-//        holder.textViewComposedMealsName.setText(position + 1 + ".  " + mealName);
-//        holder.textViewComposedMealsKcal.setText(mealKcal + "\ncalories");
-//        holder.textViewComposedMealsGram.setText(mealGram + "g\nweight");
-//        holder.textViewComposedMealsCarbohydrates.setText(mealCarbohydrates + "g\ncarbohydrates");
-//        holder.textViewComposedMealsFats.setText(mealFats + "g\nfats");
-//        holder.textViewComposedMealsProtein.setText(mealProtein + "g\nprotein");
-//        holder.textViewComposedMealsSugar.setText(mealSugar + "g\nsugar");
-//        holder.textViewComposedMealsSaturatedFats.setText(mealSaturatedFats + "g\nsaturated fats");
-//        holder.textViewProductsIncludedComposedMeal.setText(productsIncludedComposedMeal + "");
 
         holder.textViewComposedMealsName.setText(position + 1 + ".  " + currentItem.getProductName());
         holder.textViewComposedMealsKcal.setText(currentItem.getProductCalories() + "\ncalories");
@@ -139,27 +128,12 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
         holder.textViewComposedMealsSaturatedFats.setText(currentItem.getProductSaturatedFats() + "g\nsaturated fats");
         holder.textViewProductsIncludedComposedMeal.setText(currentItem.getProductMacros() + "");
 
-//        arrayListNameMealForSearch_BeforeFilter.add(mealName);
-//        arrayListNameMealForSearch_BeforeFilter.add(mealKcal);
-//        arrayListNameMealForSearch_BeforeFilter.add(mealGram);
-//        arrayListNameMealForSearch_BeforeFilter.add(mealCarbohydrates);
-//        arrayListNameMealForSearch_BeforeFilter.add(mealFats);
-//        arrayListNameMealForSearch_BeforeFilter.add(mealProtein);
-//        arrayListNameMealForSearch_BeforeFilter.add(mealSugar);
-//        arrayListNameMealForSearch_BeforeFilter.add(mealSaturatedFats);
-//        arrayListNameMealForSearch_BeforeFilter.add(productsIncludedComposedMeal);
 
-
-        //bottomSheetDialogArrayList.add(new BottomSheetDialogArrayList(productsIncludedComposedMeal));
-        //arrayListProductIncluded.add(productsIncludedComposedMeal);
         arrayListProductIncluded.add(currentItem.getProductMacros());
 
         bundleWithMacros = new Bundle();
 
-        //System.out.println(dzialajno.get(0) + " CZY DZIAŁA?");
         bundleWithMacros.putStringArrayList("key", arrayListProductIncluded);
-
-        //bottomSheetDialogArrayList.get(position)
 
         holder.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -171,16 +145,29 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
             }
         });
 
-        ComposedMealsActivity obiekt = new ComposedMealsActivity();
-
 
         holder.checkBox_ComposedMeals.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                if (currentItem.getSelected()) {
+                    //holder.imageSelected.setVisibility(View.GONE);
+                                                 //holder.checkBox_ComposedMeals.setChecked(false);
+                    currentItem.setSelected(false);
+//                    if (getSelectedTvShows().size() == 0) {
+//                        tvShowsListener.onTvShowAction(false);
+//                    }
+                } else {
+                    //holder.imageSelected.setVisibility(View.VISIBLE);
+                                      //holder.checkBox_ComposedMeals.setChecked(true);
+                    currentItem.setSelected(true);
+                    //tvShowsListener.onTvShowAction(true);
+                }
 //               if( holder.checkBox_ComposedMeals.isChecked() ) {
 //                   String test = "test 2";
 //               }
-                Toast.makeText(mContext, odebraneZAktywnosci, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(mContext, odebraneZAktywnosci, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(mContext, "Kliknięto linijkę", Toast.LENGTH_SHORT).show();
 //                String test = "test 3";
 //                ComposedMealsActivity obiekt = new ComposedMealsActivity();
 //                obiekt.test();
@@ -195,6 +182,16 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
         }else{
             return mCursor.getCount();
         }
+    }
+
+    public List<ReturnItemComposedMeals> getSelectedMeals() {
+        List<ReturnItemComposedMeals> selectedTvShows = new ArrayList<>();
+        for (ReturnItemComposedMeals returnItemComposedMeals : arrayListNameMealForSearch) {
+            if (returnItemComposedMeals.getSelected()) {
+                selectedTvShows.add(returnItemComposedMeals);
+            }
+        }
+        return selectedTvShows;
     }
 
     public void swapCursor(Cursor newCursor) {
