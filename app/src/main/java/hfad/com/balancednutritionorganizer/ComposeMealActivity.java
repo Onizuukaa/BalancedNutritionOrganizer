@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 
 import hfad.com.balancednutritionorganizer.adapters.RecyclerViewComposeMealAdapter;
 import hfad.com.balancednutritionorganizer.database_things.ComposedMealsDBHelper;
@@ -35,11 +36,13 @@ public class ComposeMealActivity extends AppCompatActivity {
             textViewComposeMealSugar, textViewComposeMealFats, textViewComposeMealSaturatedFats,
             textViewComposeMealProtein, textViewNoData;
     EditText editTextMealName;
-    double caloriesSum, carbohydratesSum, sugarSum, fatsSum, saturatedFatsSum, proteinSum, gramSum;
+    double caloriesSum = 0.0, carbohydratesSum = 0.0, sugarSum = 0.0, fatsSum = 0.0, saturatedFatsSum = 0.0,
+            proteinSum = 0.0, gramSum = 0.0;
     DecimalFormat format;
     EditText editText_removeItem;
     Button button_removeAllItems;
     String macrosForMeal = "";
+    DecimalFormatSymbols symbols = DecimalFormatSymbols.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +56,13 @@ public class ComposeMealActivity extends AppCompatActivity {
         mDatabaseComposedMeals = dbHelperComposedMeals.getWritableDatabase();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        format = new DecimalFormat("#.#");
+//        format.setDecimalSeparatorAlwaysShown(false);
+
+        symbols.setDecimalSeparator('.');
         format = new DecimalFormat("#.#");
+        format.setDecimalFormatSymbols(symbols);
+        format.setMaximumFractionDigits(2);
         format.setDecimalSeparatorAlwaysShown(false);
 
         initViews();
@@ -80,13 +89,13 @@ public class ComposeMealActivity extends AppCompatActivity {
         mAdapter.swapCursor(getAllItems());
 
         cursor = getAllItems();
-        caloriesSum = 0;
-        carbohydratesSum = 0;
-        sugarSum = 0;
-        fatsSum = 0;
-        saturatedFatsSum = 0;
-        proteinSum = 0;
-        gramSum = 0;
+        caloriesSum = 0.0;
+        carbohydratesSum = 0.0;
+        sugarSum = 0.0;
+        fatsSum = 0.0;
+        saturatedFatsSum = 0.0;
+        proteinSum = 0.0;
+        gramSum = 0.0;
 
         while (cursor.moveToNext()) {
             caloriesSum += cursor.getDouble(2);

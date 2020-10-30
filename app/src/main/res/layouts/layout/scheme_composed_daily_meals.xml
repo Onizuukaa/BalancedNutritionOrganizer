@@ -5,14 +5,42 @@
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/textViewProductsIncludedComposedDailyMeal"
+        android:id="@+id/textViewProductsIncludedComposedDailyMeal_FirstProduct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/textViewProductsIncludedComposedDailyMeal_SecondProduct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/textViewProductsIncludedComposedDailyMeal_ThirdProduct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/textViewProductsIncludedComposedDailyMeal_FourthProduct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/textViewProductsIncludedComposedDailyMeal_FifthProduct"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=""
         android:visibility="gone" />
 
     <GridLayout
-        android:id="@+id/gridLayoutComposedMeals"
+        android:id="@+id/gridLayoutComposedDailyMeals"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
@@ -35,6 +63,7 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/textViewComposedDailyMeals_KCAL_WEIGHT_SUM"
             android:layout_rowWeight="1"
             android:layout_columnSpan="2"
             android:layout_columnWeight="1"
@@ -45,6 +74,7 @@
             android:text="KCAL 1993/1050G" />
 
         <TextView
+            android:id="@+id/textViewComposedDailyMeals_CARBO_SUGAR_SUM"
             android:layout_rowWeight="1"
             android:layout_columnSpan="2"
             android:layout_columnWeight="1"
@@ -56,6 +86,7 @@
 
 
         <TextView
+            android:id="@+id/textViewComposedDailyMeals_FATS_sFATS_SUM"
             android:layout_rowWeight="1"
             android:layout_columnSpan="2"
             android:layout_columnWeight="1"
@@ -66,6 +97,7 @@
             android:text="fats 8G | s. fats 4G" />
 
         <TextView
+            android:id="@+id/textViewComposedDailyMeals_PROTEIN_SUM"
             android:layout_rowWeight="1"
             android:layout_columnSpan="2"
             android:layout_columnWeight="1"
@@ -76,6 +108,7 @@
             android:text="protein 0.3g" />
 
         <TextView
+            android:id="@+id/textViewComposedDailyMealsName_FirstProduct"
             android:textSize="12sp"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
@@ -88,6 +121,7 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/textViewComposedDailyMeals_KCAL_WEIGHT_FirstProduct"
             android:layout_rowWeight="1"
             android:layout_columnSpan="2"
             android:layout_columnWeight="1"
@@ -98,6 +132,7 @@
             android:text="KCAL 1993/1050G" />
 
         <TextView
+            android:id="@+id/textViewComposedDailyMeals_CARBO_SUGAR_FirstProduct"
             android:layout_rowWeight="1"
             android:layout_columnSpan="2"
             android:layout_columnWeight="1"
@@ -109,6 +144,7 @@
 
 
         <TextView
+            android:id="@+id/textViewComposedDailyMeals_FATS_sFats_FirstProduct"
             android:layout_rowWeight="1"
             android:layout_columnSpan="2"
             android:layout_columnWeight="1"
@@ -119,6 +155,7 @@
             android:text="fats 8G | s. fats 4G" />
 
         <TextView
+            android:id="@+id/textViewComposedDailyMeals_PROTEIN_FirstProduct"
             android:layout_rowWeight="1"
             android:layout_columnSpan="2"
             android:layout_columnWeight="1"
@@ -129,6 +166,7 @@
             android:text="protein 0.3g" />
 
         <TextView
+            android:id="@+id/textViewComposedDailyMealsName_SecondProduct"
             android:textSize="12sp"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
@@ -141,6 +179,7 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/textViewComposedDailyMeals_KCAL_WEIGHT_SecondProduct"
             android:layout_rowWeight="1"
             android:layout_columnSpan="2"
             android:layout_columnWeight="1"
@@ -151,6 +190,7 @@
             android:text="KCAL 1993/1050G" />
 
         <TextView
+            android:id="@+id/textViewComposedDailyMeals_CARBO_SUGAR_SecondProduct"
             android:layout_rowWeight="1"
             android:layout_columnSpan="2"
             android:layout_columnWeight="1"
@@ -162,6 +202,7 @@
 
 
         <TextView
+            android:id="@+id/textViewComposedDailyMeals_FATS_sFats_SecondProduct"
             android:layout_rowWeight="1"
             android:layout_columnSpan="2"
             android:layout_columnWeight="1"
@@ -172,6 +213,7 @@
             android:text="fats 8G | s. fats 4G" />
 
         <TextView
+            android:id="@+id/textViewComposedDailyMeals_PROTEIN_SecondProduct"
             android:layout_rowWeight="1"
             android:layout_columnSpan="2"
             android:layout_columnWeight="1"
@@ -182,6 +224,7 @@
             android:text="protein 0.3g" />
 
         <TextView
+            android:id="@+id/textViewComposedDailyMealsName_ThirdProduct"
             android:textSize="12sp"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
@@ -194,6 +237,7 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/textViewComposedDailyMeals_KCAL_WEIGHT_ThirdProduct"
             android:layout_rowWeight="1"
             android:layout_columnSpan="2"
             android:layout_columnWeight="1"
@@ -204,6 +248,7 @@
             android:text="KCAL 1993/1050G" />
 
         <TextView
+            android:id="@+id/textViewComposedDailyMeals_CARBO_SUGAR_ThirdProduct"
             android:layout_rowWeight="1"
             android:layout_columnSpan="2"
             android:layout_columnWeight="1"
@@ -215,6 +260,7 @@
 
 
         <TextView
+            android:id="@+id/textViewComposedDailyMeals_FATS_sFats_ThirdProduct"
             android:layout_rowWeight="1"
             android:layout_columnSpan="2"
             android:layout_columnWeight="1"
@@ -225,6 +271,7 @@
             android:text="fats 8G | s. fats 4G" />
 
         <TextView
+            android:id="@+id/textViewComposedDailyMeals_PROTEIN_ThirdProduct"
             android:layout_rowWeight="1"
             android:layout_columnSpan="2"
             android:layout_columnWeight="1"
@@ -235,6 +282,7 @@
             android:text="protein 0.3g" />
 
         <TextView
+            android:id="@+id/textViewComposedDailyMealsName_FourthProduct"
             android:textSize="12sp"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
@@ -247,6 +295,7 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/textViewComposedDailyMeals_KCAL_WEIGHT_FourthProduct"
             android:layout_rowWeight="1"
             android:layout_columnSpan="2"
             android:layout_columnWeight="1"
@@ -257,6 +306,7 @@
             android:text="KCAL 1993/1050G" />
 
         <TextView
+            android:id="@+id/textViewComposedDailyMeals_CARBO_SUGAR_FourthProduct"
             android:layout_rowWeight="1"
             android:layout_columnSpan="2"
             android:layout_columnWeight="1"
@@ -268,6 +318,7 @@
 
 
         <TextView
+            android:id="@+id/textViewComposedDailyMeals_FATS_sFats_FourthProduct"
             android:layout_rowWeight="1"
             android:layout_columnSpan="2"
             android:layout_columnWeight="1"
@@ -278,6 +329,7 @@
             android:text="fats 8G | s. fats 4G" />
 
         <TextView
+            android:id="@+id/textViewComposedDailyMeals_PROTEIN_FourthProduct"
             android:layout_rowWeight="1"
             android:layout_columnSpan="2"
             android:layout_columnWeight="1"
@@ -288,6 +340,7 @@
             android:text="protein 0.3g" />
 
         <TextView
+            android:id="@+id/textViewComposedDailyMealsName_FifthProduct"
             android:textSize="12sp"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
@@ -300,6 +353,7 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/textViewComposedDailyMeals_KCAL_WEIGHT_FifthProduct"
             android:layout_rowWeight="1"
             android:layout_columnSpan="2"
             android:layout_columnWeight="1"
@@ -310,6 +364,7 @@
             android:text="KCAL 1993/1050G" />
 
         <TextView
+            android:id="@+id/textViewComposedDailyMeals_CARBO_SUGAR_FifthProduct"
             android:layout_rowWeight="1"
             android:layout_columnSpan="2"
             android:layout_columnWeight="1"
@@ -321,6 +376,7 @@
 
 
         <TextView
+            android:id="@+id/textViewComposedDailyMeals_FATS_sFats_FifthProduct"
             android:layout_rowWeight="1"
             android:layout_columnSpan="2"
             android:layout_columnWeight="1"
@@ -331,6 +387,7 @@
             android:text="fats 8G | s. fats 4G" />
 
         <TextView
+            android:id="@+id/textViewComposedDailyMeals_PROTEIN_FifthProduct"
             android:layout_rowWeight="1"
             android:layout_columnSpan="2"
             android:layout_columnWeight="1"
@@ -339,8 +396,6 @@
             android:maxEms="20"
             android:paddingVertical="2dp"
             android:text="protein 0.3g" />
-
-
 
     </GridLayout>
 

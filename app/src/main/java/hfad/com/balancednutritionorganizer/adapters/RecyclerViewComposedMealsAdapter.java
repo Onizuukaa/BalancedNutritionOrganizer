@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,6 +26,8 @@ import hfad.com.balancednutritionorganizer.R;
 import hfad.com.balancednutritionorganizer.ReturnItem;
 import hfad.com.balancednutritionorganizer.ReturnItemComposedMeals;
 import hfad.com.balancednutritionorganizer.database_things.ComposedMealsColumns;
+
+import static java.lang.Double.parseDouble;
 
 public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<RecyclerViewComposedMealsAdapter.RecyclerViewComposedMealsViewHolder> implements BottomSheetDialog.BottomSheetListener, Filterable, ComposedMealsActivity.testMetodyInterface {
 
@@ -38,6 +41,8 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
     Bundle bundleWithMacros;
     public String odebraneZAktywnosci;
     Boolean whatToReturn = false;
+
+    DecimalFormat format;
 
     public RecyclerViewComposedMealsAdapter(Context context, Cursor cursor) {
         mContext = context;
@@ -117,6 +122,12 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
 
         holder.itemView.setTag(id);
 
+        format = new DecimalFormat("#.#");
+        format.setDecimalSeparatorAlwaysShown(false);
+
+//        double test = parseDouble(currentItem.getProductSugar());
+//        String test2 = format.format(test);
+//        System.out.println("DAWID: " + test2 );
 
         holder.textViewComposedMealsName.setText(position + 1 + ".  " + currentItem.getProductName());
         holder.textViewComposedMealsKcal.setText(currentItem.getProductCalories() + "\ncalories");
@@ -124,7 +135,11 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
         holder.textViewComposedMealsCarbohydrates.setText(currentItem.getProductCarbohydrates() + "g\ncarbohydrates");
         holder.textViewComposedMealsFats.setText(currentItem.getProductFats() + "g\nfats");
         holder.textViewComposedMealsProtein.setText(currentItem.getProductProtein() + "g\nprotein");
+
         holder.textViewComposedMealsSugar.setText(currentItem.getProductSugar() + "g\nsugar");
+        //holder.textViewComposedMealsSugar.setText(format.format(currentItem.getProductSugar()) + "g\nsugar");
+
+
         holder.textViewComposedMealsSaturatedFats.setText(currentItem.getProductSaturatedFats() + "g\nsaturated fats");
         holder.textViewProductsIncludedComposedMeal.setText(currentItem.getProductMacros() + "");
 

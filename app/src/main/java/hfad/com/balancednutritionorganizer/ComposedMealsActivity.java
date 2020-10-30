@@ -19,6 +19,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.List;
 
 import hfad.com.balancednutritionorganizer.adapters.RecyclerViewComposedMealsAdapter;
@@ -42,12 +44,21 @@ public class ComposedMealsActivity extends AppCompatActivity implements BottomSh
     TextView textViewNoDataComposed;
     String dailyMealName;
 
+    DecimalFormatSymbols symbols = DecimalFormatSymbols.getInstance();
+    DecimalFormat format;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_composed_meals);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setTitle(R.string.Composed_Meals);
+
+        symbols.setDecimalSeparator('.');
+        format = new DecimalFormat("#.#");
+        format.setDecimalFormatSymbols(symbols);
+        format.setMaximumFractionDigits(2);
+        format.setDecimalSeparatorAlwaysShown(false);
 
         ComposedMealsDBHelper dbHelperComposedMeals = new ComposedMealsDBHelper(this);
         ComposedDailyMealsDBHelper dbHelperComposedDailyMeals = new ComposedDailyMealsDBHelper(this);
@@ -75,7 +86,12 @@ public class ComposedMealsActivity extends AppCompatActivity implements BottomSh
 
                     //composedMealsNames.append(selectedMeals.get(i).getProductName());
                     //composedMealsCalories.append(selectedMeals.get(i).getProductWeight());
+
+                    //kcal_Sum += parseDouble(selectedMeals.get(i).getProductCalories());
+
                     kcal_Sum += parseDouble(selectedMeals.get(i).getProductCalories());
+
+
                     weight_Sum += parseDouble(selectedMeals.get(i).getProductWeight());
                     carbohydrates_Sum += parseDouble(selectedMeals.get(i).getProductCarbohydrates());
                     sugar_Sum += parseDouble(selectedMeals.get(i).getProductSugar());
@@ -99,7 +115,7 @@ public class ComposedMealsActivity extends AppCompatActivity implements BottomSh
                 cv.put(ComposedDailyMealsColumns.ComposedDailyMealsColumnsEntry.COLUMN_ComposedDailyMeals_KCAL_SUM, kcal_Sum);
                 cv.put(ComposedDailyMealsColumns.ComposedDailyMealsColumnsEntry.COLUMN_ComposedDailyMeals_WEIGHT_SUM, weight_Sum);
                 cv.put(ComposedDailyMealsColumns.ComposedDailyMealsColumnsEntry.COLUMN_ComposedDailyMeals_CARBOHYDRATES_SUM, carbohydrates_Sum);
-                cv.put(ComposedDailyMealsColumns.ComposedDailyMealsColumnsEntry.COLUMN_ComposedDailyMeals_SUGAR_SUM, sugar_Sum);
+                cv.put(ComposedDailyMealsColumns.ComposedDailyMealsColumnsEntry.COLUMN_ComposedDailyMeals_SUGAR_SUM, format.format(sugar_Sum));
                 cv.put(ComposedDailyMealsColumns.ComposedDailyMealsColumnsEntry.COLUMN_ComposedDailyMeals_FATS_SUM, fats_Sum);
                 cv.put(ComposedDailyMealsColumns.ComposedDailyMealsColumnsEntry.COLUMN_ComposedDailyMeals_saturatedFATS_SUM, saturatedFats_Sum);
                 cv.put(ComposedDailyMealsColumns.ComposedDailyMealsColumnsEntry.COLUMN_ComposedDailyMeals_PROTEIN_SUM, protein_Sum);

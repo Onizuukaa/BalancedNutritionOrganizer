@@ -73,4 +73,5 @@
     <string name="No_all_information_provided">Nie podano wszystkich danych</string>
     <string name="Food_added">Dodano żywność</string>
     <string name="Healthy_Info">Zdrowe informacje</string>
+    <string name="Click_the_name_of_product_to_get_information_about_his_composition">Kliknij nazwę produktu aby uzyskać informacje o jego składzie</string>
 </resources>
