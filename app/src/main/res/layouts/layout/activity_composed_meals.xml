@@ -13,18 +13,19 @@
         android:orientation="horizontal">
 
         <Button
-            android:onClick="button_removeMeal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="button_removeMeal"
             android:text="@string/REMOVE_MEAL" />
 
         <EditText
-            android:gravity="center"
             android:id="@+id/editText_removeItem_ComposedMeals"
             android:layout_width="30dp"
             android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="1"
             android:inputType="number"
-            android:hint="1" />
+            android:maxLength="2" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -53,7 +54,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Select_the_meals_you_want_to_add_to_the_daily_menu"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
     </LinearLayout>
 
@@ -66,11 +67,12 @@
         android:orientation="horizontal">
 
         <EditText
+            android:maxLength="21"
             android:id="@+id/editText_dailyMealName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="@string/Daily_meal_name"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
     </LinearLayout>
 

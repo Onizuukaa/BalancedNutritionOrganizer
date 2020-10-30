@@ -79,5 +79,6 @@
     <string name="Name_was_not_provided">Name was not provided</string>
     <string name="Please_select_5_meals">Please select 5 meals</string>
     <string name="Added_to_daily_meals">Added to daily meals</string>
+    <string name="REMOVE_DAILY_MEAL">REMOVE DAILY MEAL</string>
 
 </resources>

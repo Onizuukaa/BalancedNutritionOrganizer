@@ -80,4 +80,5 @@
     <string name="Name_was_not_provided">Nie podano nazwy</string>
     <string name="Please_select_5_meals">Proszę wybierz 5 posiłków</string>
     <string name="Added_to_daily_meals">Dodano do dziennych posiłków</string>
+    <string name="REMOVE_DAILY_MEAL">Usuń dzienny posiłek</string>
 </resources>

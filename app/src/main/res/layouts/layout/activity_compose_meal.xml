@@ -22,7 +22,7 @@
             android:id="@+id/editTextMealName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:maxLength="22"
+            android:maxLength="21"
             android:hint="@string/Meal_Name" />
 
         <Button
@@ -134,7 +134,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
             android:inputType="number"
-            android:maxLength="4"
+            android:maxLength="2"
             android:hint="1" />
 
         <Button
