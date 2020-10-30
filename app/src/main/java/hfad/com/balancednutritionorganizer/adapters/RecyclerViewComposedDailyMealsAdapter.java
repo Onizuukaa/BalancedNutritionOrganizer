@@ -5,6 +5,8 @@ import android.database.Cursor;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,9 +18,10 @@ import java.util.ArrayList;
 
 import hfad.com.balancednutritionorganizer.R;
 import hfad.com.balancednutritionorganizer.ReturnItemComposedDailyMeals;
+import hfad.com.balancednutritionorganizer.ReturnItemComposedMeals;
 import hfad.com.balancednutritionorganizer.database_things.ComposedDailyMealsColumns;
 
-public class RecyclerViewComposedDailyMealsAdapter extends RecyclerView.Adapter<RecyclerViewComposedDailyMealsAdapter.RecyclerViewComposedDailyMealsViewHolder> {
+public class RecyclerViewComposedDailyMealsAdapter extends RecyclerView.Adapter<RecyclerViewComposedDailyMealsAdapter.RecyclerViewComposedDailyMealsViewHolder> implements Filterable {
 
     private ArrayList<ReturnItemComposedDailyMeals> arrayListNameDailyMealForSearch;
     private ArrayList<ReturnItemComposedDailyMeals> arrayListNameDailyMealForSearchFull;
@@ -26,6 +29,7 @@ public class RecyclerViewComposedDailyMealsAdapter extends RecyclerView.Adapter<
     private Context mContext;
     private Cursor cursor;
     private ArrayList<String> arrayListForTable = new ArrayList<>();
+    Boolean whatToReturn = false;
 
     public RecyclerViewComposedDailyMealsAdapter(Context context, Cursor cursor) {
         mContext = context;
@@ -184,19 +188,58 @@ public class RecyclerViewComposedDailyMealsAdapter extends RecyclerView.Adapter<
 
     @Override
     public int getItemCount() {
-        return arrayListNameDailyMealForSearch.size();
-        //return cursor.getCount();
+        if (whatToReturn == true){
+            return arrayListNameDailyMealForSearch.size();
+        } else {
+            return cursor.getCount();
+        }
     }
 
     public void swapCursor(Cursor newCursor) {
-        if (cursor != null) {
-            cursor.close();
+        whatToReturn = false;
+        if (this.cursor != null) {
+            this.cursor.close();
         }
 
-        cursor = cursor;
+        this.cursor = newCursor;
 
         if (newCursor != null) {
             notifyDataSetChanged();
         }
     }
+
+    @Override
+    public Filter getFilter() {
+        return exampleFilter;
+    }
+    private Filter exampleFilter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            ArrayList<ReturnItemComposedDailyMeals> filteredList = new ArrayList<>();
+
+            if (constraint == null || constraint.length() == 0) {
+                filteredList.addAll(arrayListNameDailyMealForSearchFull);
+            } else {
+                String filterPattern = constraint.toString().toLowerCase().trim();
+
+                for (ReturnItemComposedDailyMeals item : arrayListNameDailyMealForSearchFull) {
+                    if (item.getComposedDailyMeals_Name().toLowerCase().contains(filterPattern)) {
+                        filteredList.add(item);
+                    }
+                }
+            }
+            FilterResults results = new FilterResults();
+            results.values = filteredList;
+
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            arrayListNameDailyMealForSearch.clear();
+            arrayListNameDailyMealForSearch.addAll((ArrayList) results.values);
+            whatToReturn = true;
+            notifyDataSetChanged();
+        }
+    };
 }

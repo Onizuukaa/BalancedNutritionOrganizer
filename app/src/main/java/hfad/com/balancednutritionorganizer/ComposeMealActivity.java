@@ -240,9 +240,9 @@ public class ComposeMealActivity extends AppCompatActivity {
             cv.put(ComposedMealsColumns.ComposedMealsColumnsEntry.COLUMN_PRODUCTSINCLUDED, macrosForMeal);
             mDatabaseComposedMeals.insert(ComposedMealsColumns.ComposedMealsColumnsEntry.TABLE_NAME, null, cv);
 
-            Toast.makeText(this, "Meal added", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.Food_added, Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(this, "First add products", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.First_add_food, Toast.LENGTH_SHORT).show();
         }
         macrosForMeal = "";
     }

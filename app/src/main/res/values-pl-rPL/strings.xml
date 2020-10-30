@@ -74,4 +74,10 @@
     <string name="Food_added">Dodano żywność</string>
     <string name="Healthy_Info">Zdrowe informacje</string>
     <string name="Click_the_name_of_product_to_get_information_about_his_composition">Kliknij nazwę produktu aby uzyskać informacje o jego składzie</string>
+    <string name="Meal_Added">Posiłek dodano</string>
+    <string name="First_add_food">Najpierw należy dodać żywność</string>
+    <string name="Daily_meal_name">Nazwa dziennego posiłku</string>
+    <string name="Name_was_not_provided">Nie podano nazwy</string>
+    <string name="Please_select_5_meals">Proszę wybierz 5 posiłków</string>
+    <string name="Added_to_daily_meals">Dodano do dziennych posiłków</string>
 </resources>

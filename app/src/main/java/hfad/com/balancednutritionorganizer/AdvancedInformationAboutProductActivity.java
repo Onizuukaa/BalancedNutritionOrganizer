@@ -18,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 
 import hfad.com.balancednutritionorganizer.database_things.ComposeMealColumns;
 import hfad.com.balancednutritionorganizer.database_things.ComposeMealDBHelper;
@@ -34,6 +35,7 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
             textViewResultForCustomValueFatsAndSaturatedFats, textViewResultForCustomValueProtein;
     public EditText editTextCustomNutritionalValues;
     String productName, imageUrl, theNumberOfGramsEnteredByTheUserString;
+    DecimalFormatSymbols symbols = DecimalFormatSymbols.getInstance();
     DecimalFormat format;
 
     @Override
@@ -45,9 +47,12 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
         mDatabase = dbHelper.getWritableDatabase();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+        symbols.setDecimalSeparator('.');
         format = new DecimalFormat("#.#");
+        format.setDecimalFormatSymbols(symbols);
+        format.setMaximumFractionDigits(1);
         format.setDecimalSeparatorAlwaysShown(false);
+
         getIncomingIntent();
         initViews();
     }

@@ -10,13 +10,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+
 import hfad.com.balancednutritionorganizer.database_things.ComposeMealColumns;
 import hfad.com.balancednutritionorganizer.R;
 
 public class RecyclerViewComposeMealAdapter extends RecyclerView.Adapter<RecyclerViewComposeMealAdapter.GroceryViewHolder> {
     private Context mContext;
     private Cursor mCursor;
-
+    DecimalFormatSymbols symbols = DecimalFormatSymbols.getInstance();
+    DecimalFormat format;
     public RecyclerViewComposeMealAdapter(Context context, Cursor cursor) {
         mContext = context;
         mCursor = cursor;
@@ -49,12 +53,18 @@ public class RecyclerViewComposeMealAdapter extends RecyclerView.Adapter<Recycle
         }
         long id = mCursor.getLong(mCursor.getColumnIndex(ComposeMealColumns.GroceryEntry._ID));
         String name = mCursor.getString(mCursor.getColumnIndex(ComposeMealColumns.GroceryEntry.COLUMN_NAME));
-        int amount = mCursor.getInt(mCursor.getColumnIndex(ComposeMealColumns.GroceryEntry.COLUMN_AMOUNT));
+        double amount = mCursor.getDouble(mCursor.getColumnIndex(ComposeMealColumns.GroceryEntry.COLUMN_AMOUNT));
+
+        symbols.setDecimalSeparator('.');
+        format = new DecimalFormat("#.#");
+        format.setDecimalFormatSymbols(symbols);
+        format.setMaximumFractionDigits(1);
+        format.setDecimalSeparatorAlwaysShown(false);
 
         holder.itemView.setTag(id);
         holder.nameText.setText(position+1 + ".  " + name);
         //holder.countText.setText(String.valueOf(amount));
-        holder.countText.setText(amount + " KCAL");
+        holder.countText.setText(format.format(amount) + " KCAL");
     }
 
     @Override
