@@ -62,7 +62,7 @@ public class ComposeMealActivity extends AppCompatActivity {
         symbols.setDecimalSeparator('.');
         format = new DecimalFormat("#.#");
         format.setDecimalFormatSymbols(symbols);
-        format.setMaximumFractionDigits(2);
+        format.setMaximumFractionDigits(1);
         format.setDecimalSeparatorAlwaysShown(false);
 
         initViews();
