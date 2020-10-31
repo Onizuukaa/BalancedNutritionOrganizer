@@ -81,4 +81,5 @@
     <string name="Please_select_5_meals">Proszę wybierz 5 posiłków</string>
     <string name="Added_to_daily_meals">Dodano do dziennych posiłków</string>
     <string name="REMOVE_DAILY_MEAL">Usuń dzienny posiłek</string>
+    <string name="No_data_Composed_Daily_Meals">Brak skomponowanych dziennych posiłków.\nDzienne posiłki pojawią się tutaj po dodaniu ich w \"Skomponowane Posiłki\"</string>
 </resources>

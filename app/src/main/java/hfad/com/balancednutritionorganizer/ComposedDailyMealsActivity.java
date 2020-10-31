@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.DecimalFormat;
@@ -32,6 +33,7 @@ public class ComposedDailyMealsActivity extends AppCompatActivity {
     private RecyclerViewComposedDailyMealsAdapter adapter;
     Cursor cursor;
     EditText editText_removeItem_ComposedDailyMeals;
+    TextView textViewNoDataDailyMealComposed;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,12 +42,14 @@ public class ComposedDailyMealsActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setTitle(R.string.Composed_Daily_Meals);
 
+        textViewNoDataDailyMealComposed = findViewById(R.id.textViewNoDataDailyMealComposed);
         editText_removeItem_ComposedDailyMeals = findViewById(R.id.editText_removeItem_ComposedDailyMeals);
         ComposedDailyMealsDBHelper dbHelperComposedDailyMeals = new ComposedDailyMealsDBHelper(this);
         mDatabaseComposedDailyMeals = dbHelperComposedDailyMeals.getWritableDatabase();
         initRecyclerView();
 
         cursor = getAllItems();
+        showOrHideNoDataTextView();
     }
 
     private void initRecyclerView() {
@@ -76,7 +80,7 @@ public class ComposedDailyMealsActivity extends AppCompatActivity {
                 adapter.swapCursor(getAllItems());
             }
             cursor = getAllItems();
-            //showOrHideNoDataTextView();
+            showOrHideNoDataTextView();
         }
     }
 
@@ -85,6 +89,13 @@ public class ComposedDailyMealsActivity extends AppCompatActivity {
                 ComposedDailyMealsColumns.ComposedDailyMealsColumnsEntry.TABLE_NAME,
                 null, null, null, null, null, null
         );
+    }
+
+    private void showOrHideNoDataTextView() {
+        if (getAllItems().getCount() == 0)
+            textViewNoDataDailyMealComposed.setVisibility(View.VISIBLE);
+        else
+            textViewNoDataDailyMealComposed.setVisibility(View.INVISIBLE);
     }
 
     @Override

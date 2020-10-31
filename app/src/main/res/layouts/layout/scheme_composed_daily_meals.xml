@@ -45,9 +45,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
-        android:background="#5597B5"
+
         android:columnCount="5"
         android:rowCount="12">
+<!--        android:background="#5597B5"-->
 
         <TextView
             android:textSize="12sp"
@@ -57,7 +58,7 @@
             android:layout_rowWeight="1"
             android:layout_rowSpan="2"
             android:layout_columnWeight="1"
-            android:background="@drawable/cell_shape"
+            android:background="@drawable/cell_shape_yellow"
             android:gravity="center"
             android:text="Poniedziałek"
             android:textStyle="bold" />
@@ -67,7 +68,7 @@
             android:layout_rowWeight="1"
             android:layout_columnSpan="2"
             android:layout_columnWeight="1"
-            android:background="@drawable/cell_shape"
+            android:background="@drawable/cell_shape_yellow"
             android:gravity="center"
             android:maxEms="20"
             android:paddingVertical="2dp"
@@ -78,7 +79,7 @@
             android:layout_rowWeight="1"
             android:layout_columnSpan="2"
             android:layout_columnWeight="1"
-            android:background="@drawable/cell_shape"
+            android:background="@drawable/cell_shape_yellow"
             android:gravity="center"
             android:maxEms="20"
             android:paddingVertical="2dp"
@@ -90,7 +91,7 @@
             android:layout_rowWeight="1"
             android:layout_columnSpan="2"
             android:layout_columnWeight="1"
-            android:background="@drawable/cell_shape"
+            android:background="@drawable/cell_shape_yellow"
             android:gravity="center"
             android:maxEms="20"
             android:paddingVertical="2dp"
@@ -101,7 +102,7 @@
             android:layout_rowWeight="1"
             android:layout_columnSpan="2"
             android:layout_columnWeight="1"
-            android:background="@drawable/cell_shape"
+            android:background="@drawable/cell_shape_yellow"
             android:gravity="center"
             android:maxEms="20"
             android:paddingVertical="2dp"
