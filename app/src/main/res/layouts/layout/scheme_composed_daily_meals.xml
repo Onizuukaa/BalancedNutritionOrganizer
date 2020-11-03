@@ -60,7 +60,7 @@
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape_yellow"
             android:gravity="center"
-            android:text="Poniedziałek"
+            android:text="Light Monday"
             android:textStyle="bold" />
 
         <TextView
@@ -70,9 +70,9 @@
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape_yellow"
             android:gravity="center"
-            android:maxEms="20"
+
             android:paddingVertical="2dp"
-            android:text="KCAL 1993/1050G" />
+            android:text="KCAL 18645.6/5981G" />
 
         <TextView
             android:id="@+id/textViewComposedDailyMeals_CARBO_SUGAR_SUM"
@@ -81,9 +81,9 @@
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape_yellow"
             android:gravity="center"
-            android:maxEms="20"
+
             android:paddingVertical="2dp"
-            android:text="carbo 42G | Sugar 3G" />
+            android:text="carbo 105.8G | Sugar 53.9G" />
 
 
         <TextView
@@ -93,9 +93,9 @@
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape_yellow"
             android:gravity="center"
-            android:maxEms="20"
+
             android:paddingVertical="2dp"
-            android:text="fats 8G | s. fats 4G" />
+            android:text="fats 1499.1G | s. fats 934.8G" />
 
         <TextView
             android:id="@+id/textViewComposedDailyMeals_PROTEIN_SUM"
@@ -104,9 +104,9 @@
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape_yellow"
             android:gravity="center"
-            android:maxEms="20"
+
             android:paddingVertical="2dp"
-            android:text="protein 0.3g" />
+            android:text="protein 1184.6g" />
 
         <TextView
             android:id="@+id/textViewComposedDailyMealsName_FirstProduct"
@@ -118,7 +118,7 @@
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
-            android:text="Pomidorowa"
+            android:text="Cucumber soup"
             android:textStyle="bold" />
 
         <TextView
@@ -128,7 +128,7 @@
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
-            android:maxEms="20"
+
             android:paddingVertical="2dp"
             android:text="KCAL 1993/1050G" />
 
@@ -139,7 +139,7 @@
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
-            android:maxEms="20"
+
             android:paddingVertical="2dp"
             android:text="carbo 42G | Sugar 3G" />
 
@@ -151,7 +151,7 @@
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
-            android:maxEms="20"
+
             android:paddingVertical="2dp"
             android:text="fats 8G | s. fats 4G" />
 
@@ -162,7 +162,7 @@
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
-            android:maxEms="20"
+
             android:paddingVertical="2dp"
             android:text="protein 0.3g" />
 
@@ -186,7 +186,7 @@
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
-            android:maxEms="20"
+
             android:paddingVertical="2dp"
             android:text="KCAL 1993/1050G" />
 
@@ -197,7 +197,7 @@
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
-            android:maxEms="20"
+
             android:paddingVertical="2dp"
             android:text="carbo 42G | Sugar 3G" />
 
@@ -209,7 +209,7 @@
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
-            android:maxEms="20"
+
             android:paddingVertical="2dp"
             android:text="fats 8G | s. fats 4G" />
 
@@ -220,7 +220,7 @@
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
-            android:maxEms="20"
+
             android:paddingVertical="2dp"
             android:text="protein 0.3g" />
 
@@ -244,7 +244,7 @@
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
-            android:maxEms="20"
+
             android:paddingVertical="2dp"
             android:text="KCAL 1993/1050G" />
 
@@ -255,7 +255,7 @@
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
-            android:maxEms="20"
+
             android:paddingVertical="2dp"
             android:text="carbo 42G | Sugar 3G" />
 
@@ -267,7 +267,7 @@
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
-            android:maxEms="20"
+
             android:paddingVertical="2dp"
             android:text="fats 8G | s. fats 4G" />
 
@@ -278,7 +278,7 @@
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
-            android:maxEms="20"
+
             android:paddingVertical="2dp"
             android:text="protein 0.3g" />
 
@@ -302,7 +302,7 @@
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
-            android:maxEms="20"
+
             android:paddingVertical="2dp"
             android:text="KCAL 1993/1050G" />
 
@@ -313,7 +313,7 @@
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
-            android:maxEms="20"
+
             android:paddingVertical="2dp"
             android:text="carbo 42G | Sugar 3G" />
 
@@ -325,7 +325,7 @@
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
-            android:maxEms="20"
+
             android:paddingVertical="2dp"
             android:text="fats 8G | s. fats 4G" />
 
@@ -336,7 +336,7 @@
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
-            android:maxEms="20"
+
             android:paddingVertical="2dp"
             android:text="protein 0.3g" />
 
@@ -360,7 +360,7 @@
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
-            android:maxEms="20"
+
             android:paddingVertical="2dp"
             android:text="KCAL 1993/1050G" />
 
@@ -371,7 +371,7 @@
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
-            android:maxEms="20"
+
             android:paddingVertical="2dp"
             android:text="carbo 42G | Sugar 3G" />
 
@@ -383,7 +383,7 @@
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
-            android:maxEms="20"
+
             android:paddingVertical="2dp"
             android:text="fats 8G | s. fats 4G" />
 
@@ -394,7 +394,7 @@
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
-            android:maxEms="20"
+
             android:paddingVertical="2dp"
             android:text="protein 0.3g" />
 

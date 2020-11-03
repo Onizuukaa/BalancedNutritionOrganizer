@@ -9,7 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:gravity="center"
         android:orientation="vertical"
         tools:context=".BmiActivity">
@@ -37,6 +37,7 @@
             android:layout_marginVertical="10dp"
             android:background="@drawable/edit_background"
             android:inputType="numberDecimal"
+            android:maxLength="5"
             android:paddingLeft="10dp" />
 
         <TextView
@@ -53,6 +54,7 @@
             android:layout_marginVertical="12dp"
             android:background="@drawable/edit_background"
             android:inputType="numberDecimal"
+            android:maxLength="5"
             android:paddingLeft="10dp" />
 
         <Button
@@ -73,14 +75,14 @@
             android:textSize="40sp" />
 
         <TextView
-            android:textStyle="bold"
             android:id="@+id/textViewResultBMI"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="\n"
             android:textAlignment="center"
             android:textColor="#000"
-            android:textSize="40sp" />
+            android:textSize="40sp"
+            android:textStyle="bold" />
 
         <TableLayout
             android:id="@+id/tableBMI"

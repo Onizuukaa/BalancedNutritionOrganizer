@@ -23,7 +23,7 @@
 
         <TextView
             android:id="@+id/textViewComposedMealsName"
-            android:layout_width="wrap_content"
+            android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
             android:layout_columnSpan="1"
@@ -105,7 +105,7 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
-            android:text="Include" />
+            android:text="@string/Include" />
 
     </GridLayout>
 

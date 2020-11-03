@@ -129,6 +129,9 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
 //        String test2 = format.format(test);
 //        System.out.println("DAWID: " + test2 );
 
+//int stalaPozycja = position;
+//System.out.println("Pozycja: " + stalaPozycja);
+
         holder.textViewComposedMealsName.setText(position + 1 + ".  " + currentItem.getProductName());
         holder.textViewComposedMealsKcal.setText(currentItem.getProductCalories() + "\ncalories");
         holder.textViewComposedMealsGram.setText(currentItem.getProductWeight() + "g\nweight");

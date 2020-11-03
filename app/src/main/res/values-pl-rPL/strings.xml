@@ -71,7 +71,7 @@
     <string name="Add">Dodaj</string>
     <string name="Protein">Białko</string>
     <string name="No_all_information_provided">Nie podano wszystkich danych</string>
-    <string name="Food_added">Dodano żywność</string>
+    <string name="Food_added">Dodano żywność do ułożonych posiłków</string>
     <string name="Healthy_Info">Zdrowe informacje</string>
     <string name="Click_the_name_of_product_to_get_information_about_his_composition">Kliknij nazwę produktu aby uzyskać informacje o jego składzie</string>
     <string name="Meal_Added">Posiłek dodano</string>
@@ -82,4 +82,6 @@
     <string name="Added_to_daily_meals">Dodano do dziennych posiłków</string>
     <string name="REMOVE_DAILY_MEAL">Usuń dzienny posiłek</string>
     <string name="No_data_Composed_Daily_Meals">Brak skomponowanych dziennych posiłków.\nDzienne posiłki pojawią się tutaj po dodaniu ich w \"Skomponowane Posiłki\"</string>
+    <string name="Include">Dołącz</string>
+    <string name="No_index_provided">Nie podano numeru</string>
 </resources>

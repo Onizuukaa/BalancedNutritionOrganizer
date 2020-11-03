@@ -70,7 +70,7 @@
     <string name="Add">Add</string>
     <string name="Protein">Protein</string>
     <string name="No_all_information_provided">No all information provided</string>
-    <string name="Food_added">Food added</string>
+    <string name="Food_added">Food added to Composed Meals</string>
     <string name="Healthy_Info">Healthy Info</string>
     <string name="Click_the_name_of_product_to_get_information_about_his_composition">Click the name of product to get information about his composition</string>
     <string name="Meal_Added">Meal Added</string>
@@ -81,5 +81,7 @@
     <string name="Added_to_daily_meals">Added to daily meals</string>
     <string name="REMOVE_DAILY_MEAL">REMOVE DAILY MEAL</string>
     <string name="No_data_Composed_Daily_Meals">No Composed Daily Meals.\nDaily Meals will be here after add from \"Composed Meals\"</string>
+    <string name="Include">Include</string>
+    <string name="No_index_provided">No index provided</string>
 
 </resources>
