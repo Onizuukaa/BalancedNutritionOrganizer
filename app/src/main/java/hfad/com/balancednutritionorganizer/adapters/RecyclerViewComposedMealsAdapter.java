@@ -132,7 +132,9 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
 //int stalaPozycja = position;
 //System.out.println("Pozycja: " + stalaPozycja);
 
-        holder.textViewComposedMealsName.setText(position + 1 + ".  " + currentItem.getProductName());
+        holder.textViewComposedMealsName.setText(mCursor.getPosition() + 1 + ".  " + currentItem.getProductName());
+        //holder.textViewComposedMealsName.setText(position + 1 + ".  " + currentItem.getProductName());
+
         holder.textViewComposedMealsKcal.setText(currentItem.getProductCalories() + "\ncalories");
         holder.textViewComposedMealsGram.setText(currentItem.getProductWeight() + "g\nweight");
         holder.textViewComposedMealsCarbohydrates.setText(currentItem.getProductCarbohydrates() + "g\ncarbohydrates");
@@ -170,14 +172,14 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
 
                 if (currentItem.getSelected()) {
                     //holder.imageSelected.setVisibility(View.GONE);
-                                                 //holder.checkBox_ComposedMeals.setChecked(false);
+                    //holder.checkBox_ComposedMeals.setChecked(false);
                     currentItem.setSelected(false);
 //                    if (getSelectedTvShows().size() == 0) {
 //                        tvShowsListener.onTvShowAction(false);
 //                    }
                 } else {
                     //holder.imageSelected.setVisibility(View.VISIBLE);
-                                      //holder.checkBox_ComposedMeals.setChecked(true);
+                    //holder.checkBox_ComposedMeals.setChecked(true);
                     currentItem.setSelected(true);
                     //tvShowsListener.onTvShowAction(true);
                 }
@@ -195,9 +197,9 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
 
     @Override
     public int getItemCount() {
-        if (whatToReturn == true){
+        if (whatToReturn == true) {
             return arrayListNameMealForSearch.size();
-        }else{
+        } else {
             return mCursor.getCount();
         }
     }
@@ -229,6 +231,7 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
     public Filter getFilter() {
         return exampleFilter;
     }
+
     private Filter exampleFilter = new Filter() {
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
