@@ -84,4 +84,12 @@
     <string name="Include">Include</string>
     <string name="No_index_provided">No index provided</string>
 
+    <string-array name="CPM">
+        <item>Brak aktywności</item>
+        <item>Niska aktywność</item>
+        <item>Średnia aktywność</item>
+        <item>Wysoka aktywność</item>
+        <item>Bardzo wysoka aktywność</item>
+    </string-array>
+
 </resources>

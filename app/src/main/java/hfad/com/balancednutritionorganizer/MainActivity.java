@@ -62,6 +62,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void imageView_OpenCompleteMetabolism(View view) {
+        Intent intent = new Intent(this, CompleteMetabolismActivity.class);
+        startActivity(intent);
+    }
+
     public void button_addWater(View view){
         progressBarWater.setProgress(glassOfWater);
         glassOfWater += 10;

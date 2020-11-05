@@ -88,6 +88,15 @@
         <TableRow>
 
             <ImageView
+                android:id="@+id/imageViewCPMActivity"
+                android:layout_width="193dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="imageView_OpenCompleteMetabolism"
+                app:srcCompat="@drawable/complete_metabolism" />
+
+            <ImageView
                 android:id="@+id/imageViewBmiActivity"
                 android:layout_width="193dp"
                 android:layout_height="100dp"
