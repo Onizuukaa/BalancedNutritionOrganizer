@@ -51,7 +51,7 @@ public class RecyclerViewComposedDailyMealsAdapter extends RecyclerView.Adapter<
                     cursor.getString(39), cursor.getString(40), cursor.getString(41), cursor.getString(42),
                     cursor.getString(43), cursor.getString(44), cursor.getString(45), cursor.getString(46),
                     cursor.getString(47), cursor.getString(48), cursor.getString(49), cursor.getString(50),
-                    cursor.getString(51), cursor.getString(52), cursor.getString(53)));
+                    cursor.getString(51), cursor.getString(52), cursor.getString(53), cursor.getPosition()));
 
         }
         arrayListNameDailyMealForSearchFull = new ArrayList<>(arrayListNameDailyMealForSearch);
@@ -142,7 +142,7 @@ public class RecyclerViewComposedDailyMealsAdapter extends RecyclerView.Adapter<
         long id = cursor.getLong(cursor.getColumnIndex(ComposedDailyMealsColumns.ComposedDailyMealsColumnsEntry._ID));
         holder.itemView.setTag(id);
 
-        holder.textViewComposedDailyMealsName.setText(position + 1 + ".  " + currentItem.getComposedDailyMeals_Name());
+        holder.textViewComposedDailyMealsName.setText(currentItem.getProductDailyMealsPosition() + 1 + ".  " + currentItem.getComposedDailyMeals_Name());
         holder.textViewComposedDailyMeals_KCAL_WEIGHT_SUM.setText("KCAL "+currentItem.getComposedDailyMeals_KCAL_SUM()+"/"+currentItem.getComposedDailyMeals_WEIGHT_SUM()+"G");
         holder.textViewComposedDailyMeals_CARBO_SUGAR_SUM.setText("carbo "+currentItem.getComposedDailyMeals_CARBOHYDRATES_SUM()+"G | sugar "+currentItem.getComposedDailyMeals_SUGAR_SUM()+"G");
         holder.textViewComposedDailyMeals_FATS_sFATS_SUM.setText("fats "+currentItem.getComposedDailyMeals_FATS_SUM()+"G | s. fats "+currentItem.getComposedDailyMeals_saturatedFATS_SUM()+"G");

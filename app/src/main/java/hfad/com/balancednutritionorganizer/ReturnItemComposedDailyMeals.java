@@ -63,6 +63,7 @@ public class ReturnItemComposedDailyMeals {
         private String productsIncludedThirdProduct;
         private String productsIncludedFourthProduct;
         private String productsIncludedFifthProduct;
+        private int productDailyMealsPosition;
 
         public ReturnItemComposedDailyMeals(String composedDailyMeals_Name, String composedDailyMeals_KCAL_SUM, String composedDailyMeals_WEIGHT_SUM, String composedDailyMeals_CARBOHYDRATES_SUM,
                                             String composedDailyMeals_SUGAR_SUM, String composedDailyMeals_FATS_SUM, String composedDailyMeals_saturatedFATS_SUM, String composedDailyMeals_PROTEIN_SUM,
@@ -75,7 +76,7 @@ public class ReturnItemComposedDailyMeals {
                                             String firstProduct_saturatedFATS, String secondProduct_saturatedFATS, String thirdProduct_saturatedFATS, String fourthProduct_saturatedFATS,
                                             String fifthProduct_saturatedFATS, String firstProduct_PROTEIN, String secondProduct_PROTEIN, String thirdProduct_PROTEIN, String fourthProduct_PROTEIN,
                                             String fifthProduct_PROTEIN, String productsIncludedFirstProduct, String productsIncludedSecondProduct, String productsIncludedThirdProduct,
-                                            String productsIncludedFourthProduct, String productsIncludedFifthProduct) {
+                                            String productsIncludedFourthProduct, String productsIncludedFifthProduct, int productDailyMealsPosition) {
 
                 this.composedDailyMeals_Name = composedDailyMeals_Name;
                 ComposedDailyMeals_KCAL_SUM = composedDailyMeals_KCAL_SUM;
@@ -130,6 +131,11 @@ public class ReturnItemComposedDailyMeals {
                 this.productsIncludedThirdProduct = productsIncludedThirdProduct;
                 this.productsIncludedFourthProduct = productsIncludedFourthProduct;
                 this.productsIncludedFifthProduct = productsIncludedFifthProduct;
+                this.productDailyMealsPosition = productDailyMealsPosition;
+        }
+
+        public int getProductDailyMealsPosition() {
+                return productDailyMealsPosition;
         }
 
         public String getComposedDailyMeals_Name() {

@@ -78,9 +78,12 @@ public class ComposedDailyMealsActivity extends AppCompatActivity {
                 mDatabaseComposedDailyMeals.delete(ComposedDailyMealsColumns.ComposedDailyMealsColumnsEntry.TABLE_NAME,
                         ComposedDailyMealsColumns.ComposedDailyMealsColumnsEntry._ID + "=" + productPosition, null);
                 adapter.swapCursor(getAllItems());
+                initRecyclerView();
+                cursor = getAllItems();
+                showOrHideNoDataTextView();
             }
-            cursor = getAllItems();
-            showOrHideNoDataTextView();
+//            cursor = getAllItems();
+//            showOrHideNoDataTextView();
         }
     }
 

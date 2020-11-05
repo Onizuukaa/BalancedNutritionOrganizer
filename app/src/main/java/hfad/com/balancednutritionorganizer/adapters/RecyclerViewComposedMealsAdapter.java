@@ -54,7 +54,7 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
             arrayListNameMealForSearch.add(new ReturnItemComposedMeals(mCursor.getString(1), mCursor.getString(2),
                     mCursor.getString(3), mCursor.getString(4),
                     mCursor.getString(5), mCursor.getString(6),
-                    mCursor.getString(7), mCursor.getString(8), mCursor.getString(9)));
+                    mCursor.getString(7), mCursor.getString(8), mCursor.getString(9), mCursor.getPosition()));
         }
         arrayListNameMealForSearchFull = new ArrayList<>(arrayListNameMealForSearch);
     }
@@ -132,7 +132,7 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
 //int stalaPozycja = position;
 //System.out.println("Pozycja: " + stalaPozycja);
 
-        holder.textViewComposedMealsName.setText(mCursor.getPosition() + 1 + ".  " + currentItem.getProductName());
+        holder.textViewComposedMealsName.setText(currentItem.getProductPosition() + 1 + ".  " + currentItem.getProductName());
         //holder.textViewComposedMealsName.setText(position + 1 + ".  " + currentItem.getProductName());
 
         holder.textViewComposedMealsKcal.setText(currentItem.getProductCalories() + "\ncalories");

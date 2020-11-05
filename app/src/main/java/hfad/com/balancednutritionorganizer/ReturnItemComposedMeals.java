@@ -11,6 +11,7 @@ public class ReturnItemComposedMeals {
     private String productProtein;
     private String productMacros;
     Boolean isSelected = false;
+    private int productPosition;
 
     public Boolean getSelected() {
         return isSelected;
@@ -21,7 +22,7 @@ public class ReturnItemComposedMeals {
     }
 
     public ReturnItemComposedMeals(String productName, String productCalories, String productWeight, String productCarbohydrates, String productSugar,
-                                   String productProtein, String productFats, String productSaturatedFats, String productMacros) {
+                                   String productProtein, String productFats, String productSaturatedFats, String productMacros, int productPosition) {
         this.productName = productName;
         this.productCalories = productCalories;
         this.productWeight = productWeight;
@@ -31,6 +32,11 @@ public class ReturnItemComposedMeals {
         this.productSaturatedFats = productSaturatedFats;
         this.productProtein = productProtein;
         this.productMacros = productMacros;
+        this.productPosition = productPosition;
+    }
+
+    public int getProductPosition() {
+        return productPosition;
     }
 
     public String getProductName() {
