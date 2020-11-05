@@ -17,7 +17,9 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Płeć" />
+            android:layout_marginRight="5dp"
+            android:text="@string/Gender"
+            android:textSize="20sp" />
 
         <RadioGroup
             android:id="@+id/radioGroupGender"
@@ -25,94 +27,109 @@
             android:layout_height="wrap_content">
 
             <RadioButton
-                android:checked="true"
                 android:id="@+id/radioButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Mężczyzna" />
+                android:checked="true"
+                android:text="@string/Male" />
 
             <RadioButton
                 android:id="@+id/radioButton2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Kobieta" />
+                android:text="@string/Female" />
 
         </RadioGroup>
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TableLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:columnCount="2"
+        android:rowCount="3">
 
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Wiek" />
+        <TableRow>
 
-        <EditText
-            android:id="@+id/editTextAge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="18-120 lat"
-            android:text="27"/>
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:text="@string/Age"
+                android:textSize="20sp" />
 
-    </LinearLayout>
+            <EditText
+                android:id="@+id/editTextAge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_background"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="18-120 lat"
+                android:inputType="textPersonName"
+                android:text="27" />
+        </TableRow>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
-        android:orientation="horizontal">
+        <TableRow>
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Wzrost" />
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:text="@string/Height"
+                android:textSize="20sp" />
 
-        <EditText
-            android:id="@+id/editTextHeight"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="cm"
-            android:text="167"/>
-    </LinearLayout>
+            <EditText
+                android:id="@+id/editTextHeight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_background"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="cm"
+                android:inputType="textPersonName"
+                android:text="167" />
+        </TableRow>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
-        android:orientation="horizontal">
+        <TableRow>
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Waga"
-            tools:layout_editor_absoluteX="36dp"
-            tools:layout_editor_absoluteY="280dp" />
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:text="@string/Weight"
+                android:textSize="20sp"
+                tools:layout_editor_absoluteX="36dp"
+                tools:layout_editor_absoluteY="280dp" />
 
-        <EditText
-            android:text="66.45"
-            android:id="@+id/editTextWeight"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="kg" />
+            <EditText
+                android:id="@+id/editTextWeight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_background"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="kg"
+                android:inputType="textPersonName"
+                android:text="66.45" />
 
-    </LinearLayout>
+        </TableRow>
+
+    </TableLayout>
+
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="10dp"-->
+    <!--        android:gravity="center"-->
+    <!--        android:orientation="horizontal">-->
+    <!--        -->
+    <!--    </LinearLayout>-->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -125,7 +142,9 @@
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Aktywność fizyczna"
+            android:layout_marginRight="5dp"
+            android:text="@string/Physical_activity"
+            android:textSize="20sp"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="329dp" />
 
@@ -138,35 +157,62 @@
     </LinearLayout>
 
     <Button
-        android:onClick="buttonCalculateTotalMetabolism"
+        android:background="@drawable/button_background"
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:text="Oblicz" />
+        android:layout_marginVertical="10dp"
+        android:onClick="buttonCalculateTotalMetabolism"
+        android:text="@string/Calculate" />
 
-    <TextView
-        android:id="@+id/textViewResultCompleteMetabolism"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"/>
+    <!--    <TextView-->
+    <!--        android:id="@+id/textViewResultCompleteMetabolism"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_gravity="center"-->
+    <!--        android:layout_marginTop="10dp"-->
+    <!--        android:textSize="18sp" />-->
 
-    <TextView
-        android:id="@+id/textViewResultCompleteMetabolismMacros"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp" />
+<!--    <TextView-->
+<!--        android:id="@+id/textViewResultCompleteMetabolismMacros"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:text="Dzienne zapotrzebowanie na makroskładniki"-->
+<!--        android:textColor="#000000"-->
+<!--        android:textSize="18sp" />-->
 
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
         android:columnCount="4"
-        android:rowCount="3">
+        android:rowCount="4">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnSpan="2"
+            android:layout_columnWeight="1"
+            android:background="@drawable/cell_shape_total_metabolism"
+            android:gravity="center"
+            android:paddingVertical="3dp"
+            android:text="@string/Daily_calories_requirement" />
+
+        <TextView
+            android:id="@+id/textViewTotalMetabolismTotal_Kcal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnSpan="2"
+            android:layout_columnWeight="1"
+            android:background="@drawable/cell_shape_total_metabolism"
+            android:gravity="center"
+            android:paddingVertical="3dp"
+            android:text="0 kcal" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -176,7 +222,8 @@
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape_total_metabolism"
             android:gravity="center"
-            android:text="Białko" />
+            android:paddingVertical="3dp"
+            android:text="@string/Protein" />
 
         <TextView
             android:id="@+id/textViewTotalMetabolismProtein_Gram"
@@ -185,7 +232,7 @@
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape_total_metabolism"
             android:gravity="center"
-            android:padding="2dp"
+            android:paddingVertical="3dp"
             android:text="0g" />
 
         <TextView
@@ -194,7 +241,7 @@
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape_total_metabolism"
             android:gravity="center"
-            android:padding="2dp"
+            android:paddingVertical="3dp"
             android:text="0 kcal" />
 
         <TextView
@@ -203,7 +250,7 @@
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape_total_metabolism"
             android:gravity="center"
-            android:padding="2dp"
+            android:paddingVertical="3dp"
             android:text="0%" />
 
         <TextView
@@ -211,8 +258,8 @@
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape_total_metabolism"
             android:gravity="center"
-            android:padding="2dp"
-            android:text="Tłuszcze" />
+            android:paddingVertical="3dp"
+            android:text="@string/Fats" />
 
         <TextView
             android:id="@+id/textViewTotalMetabolismFats_Gram"
@@ -221,7 +268,7 @@
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape_total_metabolism"
             android:gravity="center"
-            android:padding="2dp"
+            android:paddingVertical="3dp"
             android:text="0g" />
 
         <TextView
@@ -230,7 +277,7 @@
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape_total_metabolism"
             android:gravity="center"
-            android:padding="2dp"
+            android:paddingVertical="3dp"
             android:text="0 kcal" />
 
         <TextView
@@ -239,7 +286,7 @@
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape_total_metabolism"
             android:gravity="center"
-            android:padding="2dp"
+            android:paddingVertical="3dp"
             android:text="0%" />
 
         <TextView
@@ -247,8 +294,8 @@
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape_total_metabolism"
             android:gravity="center"
-            android:padding="2dp"
-            android:text="Węglowodany" />
+            android:paddingVertical="3dp"
+            android:text="@string/Carbohydrates" />
 
         <TextView
             android:id="@+id/textViewTotalMetabolismCarbo_Gram"
@@ -256,7 +303,7 @@
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape_total_metabolism"
             android:gravity="center"
-            android:padding="2dp"
+            android:paddingVertical="3dp"
             android:text="0g" />
 
         <TextView
@@ -265,7 +312,7 @@
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape_total_metabolism"
             android:gravity="center"
-            android:padding="2dp"
+            android:paddingVertical="3dp"
             android:text="0 kcal" />
 
         <TextView
@@ -274,7 +321,7 @@
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape_total_metabolism"
             android:gravity="center"
-            android:padding="2dp"
+            android:paddingVertical="3dp"
             android:text="0%" />
 
     </GridLayout>

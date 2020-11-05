@@ -7,7 +7,7 @@
     <string name="Compose_The_Meal">Compose The Meal</string>
     <string name="Goal_2500ml">Goal 2500ml</string>
     <string name="ADD_250ML_WATER">ADD 250ML WATER</string>
-    <string name="RESET_WATER">RESET WATER</string>
+    <string name="RESET_WATER">RESET</string>
     <string name="Height_in_cm">Height in cm</string>
     <string name="Weight_in_kg">Weight in kg</string>
     <string name="Your_Result">Your Result</string>
@@ -85,11 +85,24 @@
     <string name="No_index_provided">No index provided</string>
 
     <string-array name="CPM">
-        <item>Brak aktywności</item>
-        <item>Niska aktywność</item>
-        <item>Średnia aktywność</item>
-        <item>Wysoka aktywność</item>
-        <item>Bardzo wysoka aktywność</item>
+        <item>Inactivity</item>
+        <item>Low activity</item>
+        <item>Average activity</item>
+        <item>High activity</item>
+        <item>Very high activity</item>
     </string-array>
+    <string name="Gender">Gender</string>
+    <string name="Male">Male</string>
+    <string name="Female">Female</string>
+    <string name="Age">Age</string>
+    <string name="Physical_activity">Physical\nactivity</string>
+    <string name="Daily_calories_requirement">Daily calories requirement</string>
+    <string name="Height">Height</string>
+    <string name="Weight">Weight</string>
+    <string name="Inactivity">Inactivity</string>
+    <string name="Low_activity">Low activity</string>
+    <string name="Average_activity">Average activity</string>
+    <string name="High_activity">High activity</string>
+    <string name="Very_high_activity">Very high activity</string>
 
 </resources>

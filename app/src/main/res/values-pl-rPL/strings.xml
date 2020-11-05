@@ -8,7 +8,7 @@
     <string name="Compose_The_Meal">Układanie Posiłku</string>
     <string name="Goal_2500ml">Cel 2500ml</string>
     <string name="ADD_250ML_WATER">DODAJ 250ML WODY</string>
-    <string name="RESET_WATER">ZRESETUJ WODĘ</string>
+    <string name="RESET_WATER">ZRESETUJ</string>
     <string name="Height_in_cm">Wzrost w cm</string>
     <string name="Weight_in_kg">Waga w kg</string>
     <string name="Your_Result">Twój Wynik</string>
@@ -84,5 +84,27 @@
     <string name="No_data_Composed_Daily_Meals">Brak skomponowanych dziennych posiłków.\nDzienne posiłki pojawią się tutaj po dodaniu ich w \"Skomponowane Posiłki\"</string>
     <string name="Include">Dołącz</string>
     <string name="No_index_provided">Nie podano numeru</string>
+
+    <string-array name="CPM">
+        <item>Brak aktywności</item>
+        <item>Niska aktywność</item>
+        <item>Średnia aktywność</item>
+        <item>Wysoka aktywność</item>
+        <item>Bardzo wysoka aktywność</item>
+    </string-array>
+
+    <string name="Gender">Płeć</string>
+    <string name="Male">Mężczyzna</string>
+    <string name="Female">Kobieta</string>
+    <string name="Age">Wiek</string>
+    <string name="Physical_activity">Aktywność\nfizyczna</string>
+    <string name="Daily_calories_requirement">Dzienne zapotrzebowanie na kalorie</string>
+    <string name="Height">Wzrost</string>
+    <string name="Weight">Waga</string>
+    <string name="Inactivity">Brak aktywności</string>
+    <string name="Low_activity">Niska aktywność</string>
+    <string name="Average_activity">Średnia aktywność</string>
+    <string name="High_activity">Wysoka aktywność</string>
+    <string name="Very_high_activity">Bardzo wysoka aktywność</string>
 
 </resources>

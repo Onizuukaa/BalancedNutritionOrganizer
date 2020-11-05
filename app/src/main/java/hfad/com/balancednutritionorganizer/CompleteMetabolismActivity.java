@@ -21,9 +21,9 @@ public class CompleteMetabolismActivity extends AppCompatActivity {
     RadioButton radioButtonGender;
     EditText editTextAge, editTextHeight, editTextWeight;
     Spinner spinnerPhysicalActivity;
-    TextView textViewResultCompleteMetabolism, textViewResultCompleteMetabolismMacros, textViewTotalMetabolismProtein_Gram,
+    TextView textViewResultCompleteMetabolismMacros, textViewTotalMetabolismProtein_Gram,
             textViewTotalMetabolismFats_Gram, textViewTotalMetabolismCarbo_Gram, textViewTotalMetabolismProtein_Kcal, textViewTotalMetabolismFats_Kcal,
-            textViewTotalMetabolismCarbo_Kcal, textViewTotalMetabolismProtein_Percent, textViewTotalMetabolismFats_Percent, textViewTotalMetabolismCarbo_Percent;
+            textViewTotalMetabolismCarbo_Kcal, textViewTotalMetabolismProtein_Percent, textViewTotalMetabolismFats_Percent, textViewTotalMetabolismCarbo_Percent, textViewTotalMetabolismTotal_Kcal;
     int selectedGender;
     double result, resultFull, selectedPhysicalActivity, proteinGram, proteinCalories, fatsGram, fatsCalories, carboGram,
             carboCalories, percentProtein, percentFats, percentCarbo;
@@ -34,6 +34,7 @@ public class CompleteMetabolismActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_complete_metabolism);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         initViews();
 
@@ -48,18 +49,18 @@ public class CompleteMetabolismActivity extends AppCompatActivity {
         int radioId = radioGroupGender.getCheckedRadioButtonId();
         radioButtonGender = findViewById(radioId);
         spinnerPhysicalActivity = findViewById(R.id.spinnerPhysicalActivity);
-        if (String.valueOf(spinnerPhysicalActivity.getSelectedItem()).equals("Brak aktywności"))
+        if (String.valueOf(spinnerPhysicalActivity.getSelectedItem()).equals(getString(R.string.Inactivity)))
             selectedPhysicalActivity = 1.2;
-        if (String.valueOf(spinnerPhysicalActivity.getSelectedItem()).equals("Niska aktywność"))
+        if (String.valueOf(spinnerPhysicalActivity.getSelectedItem()).equals(getString(R.string.Low_activity)))
             selectedPhysicalActivity = 1.35;
-        if (String.valueOf(spinnerPhysicalActivity.getSelectedItem()).equals("Średnia aktywność"))
+        if (String.valueOf(spinnerPhysicalActivity.getSelectedItem()).equals(getString(R.string.Average_activity)))
             selectedPhysicalActivity = 1.55;
-        if (String.valueOf(spinnerPhysicalActivity.getSelectedItem()).equals("Wysoka aktywność"))
+        if (String.valueOf(spinnerPhysicalActivity.getSelectedItem()).equals(getString(R.string.High_activity)))
             selectedPhysicalActivity = 1.75;
-        if (String.valueOf(spinnerPhysicalActivity.getSelectedItem()).equals("Bardzo wysoka aktywność"))
+        if (String.valueOf(spinnerPhysicalActivity.getSelectedItem()).equals(getString(R.string.Very_high_activity)))
             selectedPhysicalActivity = 2.05;
 
-        if (radioButtonGender.getText().equals("Mężczyzna")) {
+        if (radioButtonGender.getText().equals(R.string.Male)) {
             selectedGender = 5;
         } else selectedGender = -161;
 
@@ -69,22 +70,22 @@ public class CompleteMetabolismActivity extends AppCompatActivity {
                 + selectedGender;
         resultFull = result * selectedPhysicalActivity;
 
-        proteinGram = 1.2 * parseDouble(editTextWeight.getText().toString());
+        proteinGram = selectedPhysicalActivity * parseDouble(editTextWeight.getText().toString());
         proteinCalories = proteinGram * 4;
 
         fatsCalories = resultFull * 0.25;
         fatsGram = fatsCalories / 9;
 
         carboCalories = (resultFull - fatsCalories) - proteinCalories;
-        System.out.println("carbo: " + carboCalories);
+        //System.out.println("carbo: " + carboCalories);
         carboGram = carboCalories / 4;
 
         percentProtein = (proteinCalories / resultFull) * 100;
         percentFats = (fatsCalories / resultFull) * 100;
         percentCarbo = (carboCalories / resultFull) * 100;
 
-        textViewResultCompleteMetabolism.setText("Dzienne zapotrzebowanie na kalorie: " + format.format(resultFull));
-        textViewResultCompleteMetabolismMacros.setText("Dzienne zapotrzebowanie na makroskładniki.");
+        //textViewResultCompleteMetabolism.setText("Dzienne zapotrzebowanie na kalorie: " + format.format(resultFull));
+       // textViewResultCompleteMetabolismMacros.setText("Dzienne zapotrzebowanie na makroskładniki.");
 //                "\n" +
 //                "białko: " + format.format(proteinGram) + "g " + format.format(proteinCalories) + " kcal " + format.format(percentProtein) + "%" + "\n" +
 //                "tłuszcze: " + format.format(fatsGram) + "g " + format.format(fatsCalories) + " kcal " + format.format(percentFats) + "%" + "\n" +
@@ -99,14 +100,15 @@ public class CompleteMetabolismActivity extends AppCompatActivity {
         textViewTotalMetabolismProtein_Percent.setText(format.format(percentProtein) + "%");
         textViewTotalMetabolismFats_Percent.setText(format.format(percentFats) + "%");
         textViewTotalMetabolismCarbo_Percent.setText(format.format(percentCarbo) + "%");
+        textViewTotalMetabolismTotal_Kcal.setText(format.format(resultFull) + " kcal");
     }
 
     private void initViews() {
         editTextAge = findViewById(R.id.editTextAge);
         editTextHeight = findViewById(R.id.editTextHeight);
         editTextWeight = findViewById(R.id.editTextWeight);
-        textViewResultCompleteMetabolism = findViewById(R.id.textViewResultCompleteMetabolism);
-        textViewResultCompleteMetabolismMacros = findViewById(R.id.textViewResultCompleteMetabolismMacros);
+//        textViewResultCompleteMetabolism = findViewById(R.id.textViewResultCompleteMetabolism);
+       // textViewResultCompleteMetabolismMacros = findViewById(R.id.textViewResultCompleteMetabolismMacros);
         radioGroupGender = findViewById(R.id.radioGroupGender);
 
         textViewTotalMetabolismProtein_Gram = findViewById(R.id.textViewTotalMetabolismProtein_Gram);
@@ -118,5 +120,6 @@ public class CompleteMetabolismActivity extends AppCompatActivity {
         textViewTotalMetabolismProtein_Percent = findViewById(R.id.textViewTotalMetabolismProtein_Percent);
         textViewTotalMetabolismFats_Percent = findViewById(R.id.textViewTotalMetabolismFats_Percent);
         textViewTotalMetabolismCarbo_Percent = findViewById(R.id.textViewTotalMetabolismCarbo_Percent);
+        textViewTotalMetabolismTotal_Kcal = findViewById(R.id.textViewTotalMetabolismTotal_Kcal);
     }
 }
