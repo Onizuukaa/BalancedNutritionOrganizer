@@ -106,6 +106,7 @@
     <string name="Average_activity">Average activity</string>
     <string name="High_activity">High activity</string>
     <string name="Very_high_activity">Very high activity</string>
+    <string name="Metabolism_Calculator">TDEE Calculator</string>
 
 
 </resources>

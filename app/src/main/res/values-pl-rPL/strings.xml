@@ -106,5 +106,6 @@
     <string name="Average_activity">Średnia aktywność</string>
     <string name="High_activity">Wysoka aktywność</string>
     <string name="Very_high_activity">Bardzo wysoka aktywność</string>
+    <string name="Metabolism_Calculator">Kalkulator CPM</string>
 
 </resources>

@@ -34,6 +34,7 @@ public class CompleteMetabolismActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_complete_metabolism);
+        setTitle(R.string.Metabolism_Calculator);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         initViews();
