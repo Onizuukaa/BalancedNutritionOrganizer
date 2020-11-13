@@ -38,6 +38,12 @@ public class HealthyInfoBottomSheetDialog extends BottomSheetDialogFragment {
         if (whichLayoutOpen.equals("carbohydrates")){
             v = inflater.inflate(R.layout.carbohydrates_bottom_sheet_layout, container, false);
         }
+        if (whichLayoutOpen.equals("protein")){
+            v = inflater.inflate(R.layout.protein_bottom_sheet_layout, container, false);
+        }
+        if (whichLayoutOpen.equals("fats")){
+            v = inflater.inflate(R.layout.fats_bottom_sheet_layout, container, false);
+        }
 
         Button button_Exit_BottomSheet = v.findViewById(R.id.button_Exit_BottomSheet);
         button_Exit_BottomSheet.setOnClickListener(new View.OnClickListener() {

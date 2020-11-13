@@ -45,6 +45,7 @@ public class HealthyInfoActivity extends AppCompatActivity implements HealthyInf
         newBundle.putInt("key2", R.drawable.protein);
         newBundle.putInt("key3", 1000);
         newBundle.putInt("key4", 379);
+        newBundle.putString("key5", "protein");
         HealthyInfoBottomSheetDialog bottomSheet = new HealthyInfoBottomSheetDialog();
         bottomSheet.show(getSupportFragmentManager(), "exampleBottomSheet");
         bottomSheet.setArguments(newBundle);
@@ -55,6 +56,7 @@ public class HealthyInfoActivity extends AppCompatActivity implements HealthyInf
         newBundle.putInt("key2", R.drawable.fats);
         newBundle.putInt("key3", 1000);
         newBundle.putInt("key4", 420);
+        newBundle.putString("key5", "fats");
         HealthyInfoBottomSheetDialog bottomSheet = new HealthyInfoBottomSheetDialog();
         bottomSheet.show(getSupportFragmentManager(), "exampleBottomSheet");
         bottomSheet.setArguments(newBundle);
