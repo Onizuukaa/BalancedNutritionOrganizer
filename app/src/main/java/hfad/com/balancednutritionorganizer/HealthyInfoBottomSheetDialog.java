@@ -10,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
@@ -18,21 +17,27 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 public class HealthyInfoBottomSheetDialog extends BottomSheetDialogFragment {
     private BottomSheetListener mListener;
-    String textWithMacros;
-    TextView textViewBottomSheet;
+    String whichLayoutOpen;
     ImageView imageViewBottomSheet;
-    int srcImage, widthImage, heightImage;
+    //int srcImage, widthImage, heightImage;
+    View v;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         if(getArguments() != null) {
-            textWithMacros = getArguments().getString("key");
-            srcImage = getArguments().getInt("key2");
-            widthImage = getArguments().getInt("key3");
-            heightImage = getArguments().getInt("key4");
+            //textWithMacros = getArguments().getString("key");
+            //srcImage = getArguments().getInt("key2");
+            //widthImage = getArguments().getInt("key3");
+            //heightImage = getArguments().getInt("key4");
+            whichLayoutOpen = getArguments().getString("key5");
         }
-        View v = inflater.inflate(R.layout.calories_bottom_sheet_layout, container, false);
+        if (whichLayoutOpen.equals("calories")){
+            v = inflater.inflate(R.layout.calories_bottom_sheet_layout, container, false);
+        }
+        if (whichLayoutOpen.equals("carbohydrates")){
+            v = inflater.inflate(R.layout.carbohydrates_bottom_sheet_layout, container, false);
+        }
 
         Button button_Exit_BottomSheet = v.findViewById(R.id.button_Exit_BottomSheet);
         button_Exit_BottomSheet.setOnClickListener(new View.OnClickListener() {
@@ -42,13 +47,11 @@ public class HealthyInfoBottomSheetDialog extends BottomSheetDialogFragment {
             }
         });
 
-        imageViewBottomSheet = v.findViewById(R.id.imageViewBottomSheet);
-        textViewBottomSheet = v.findViewById(R.id.textViewBottomSheet);
-        textViewBottomSheet.setText(textWithMacros);
-        imageViewBottomSheet.setImageResource(srcImage);
+        //imageViewBottomSheet = v.findViewById(R.id.imageViewBottomSheet);
+        //imageViewBottomSheet.setImageResource(srcImage);
 
-        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(widthImage, heightImage);
-        imageViewBottomSheet.setLayoutParams(layoutParams);
+        //LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(widthImage, heightImage);
+        //imageViewBottomSheet.setLayoutParams(layoutParams);
 
         return v;
     }

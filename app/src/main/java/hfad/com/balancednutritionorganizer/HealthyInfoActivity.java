@@ -20,10 +20,10 @@ public class HealthyInfoActivity extends AppCompatActivity implements HealthyInf
     }
 
     public void openInfoAboutCalories(View view){
-        newBundle.putString("key", "Kalorie Przelicznik kalorii. 1g białka to 4kcal, 1g węglowodanów to 1kcal. 1g tłuszczy to 9 kcal");
-        newBundle.putInt("key2", R.drawable.calories);
+        //newBundle.putInt("key2", R.drawable.calories);
         newBundle.putInt("key3", 1000);
         newBundle.putInt("key4", 212);
+        newBundle.putString("key5", "calories");
         HealthyInfoBottomSheetDialog bottomSheet = new HealthyInfoBottomSheetDialog();
         bottomSheet.show(getSupportFragmentManager(), "exampleBottomSheet");
         bottomSheet.setArguments(newBundle);
@@ -34,6 +34,7 @@ public class HealthyInfoActivity extends AppCompatActivity implements HealthyInf
         newBundle.putInt("key2", R.drawable.carbohydrates);
         newBundle.putInt("key3", 1000);
         newBundle.putInt("key4", 389);
+        newBundle.putString("key5", "carbohydrates");
         HealthyInfoBottomSheetDialog bottomSheet = new HealthyInfoBottomSheetDialog();
         bottomSheet.show(getSupportFragmentManager(), "exampleBottomSheet");
         bottomSheet.setArguments(newBundle);
