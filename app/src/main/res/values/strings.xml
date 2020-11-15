@@ -105,5 +105,6 @@
     <string name="High_activity">High activity</string>
     <string name="Very_high_activity">Very high activity</string>
     <string name="Metabolism_Calculator">TDEE Calculator</string>
+    <string name="Healthy_Information">Here are healthy information about food. Click on the selected item.</string>
 
 </resources>

@@ -5,60 +5,67 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#0D11FF02"
     tools:context=".HealthyInfoActivity">
 
     <TextView
+        android:paddingHorizontal="5dp"
+        android:background="#A2E3A4"
+        android:paddingVertical="8dp"
         android:shape="rectangle"
         android:layout_width="match_parent"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:background="@drawable/rounded_corner"
-        android:text="Here are healthy information about food! Choose what do you want to know."
+        android:text="@string/Healthy_Information"
         android:textSize="20sp" />
 
     <TextView
+        android:paddingVertical="8dp"
         android:id="@+id/textView_InfoCalories"
         android:onClick="openInfoAboutCalories"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        android:background="@drawable/rounded_corner"
+        android:background="@drawable/rounded_corner_calories"
         android:gravity="center"
-        android:text="Information about Calories"
+        android:text="@string/Calories"
         android:textSize="30sp"
         android:textStyle="bold" />
 
     <TextView
+        android:background="@drawable/rounded_corner_carbo"
+        android:paddingVertical="8dp"
         android:onClick="openInfoAboutCarbohydrates"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:background="@android:color/holo_blue_light"
         android:gravity="center"
-        android:text="Information about Carbohydrates"
+        android:text="@string/Carbohydrates"
         android:textSize="30sp"
         android:textStyle="bold" />
 
     <TextView
+        android:paddingVertical="8dp"
         android:onClick="openInfoAboutProtein"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        android:background="@android:color/holo_red_light"
+        android:background="@drawable/rounded_corner_protein"
         android:gravity="center"
-        android:text="Information about Protein"
+        android:text="@string/Protein"
         android:textSize="30sp"
         android:textStyle="bold" />
 
     <TextView
+        android:paddingVertical="8dp"
         android:onClick="openInfoAboutFats"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:background="@android:color/holo_blue_bright"
+        android:background="@drawable/rounded_corner_fats"
         android:gravity="center"
-        android:text="Information about Fats"
+        android:text="@string/Fats"
         android:textSize="30sp"
         android:textStyle="bold" />
 

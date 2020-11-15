@@ -15,11 +15,178 @@
         android:padding="5dp">
 
         <ImageView
-            android:layout_marginBottom="5dp"
             android:id="@+id/imageViewBottomSheet"
             android:layout_width="wrap_content"
             android:layout_height="125dp"
+            android:layout_marginBottom="5dp"
             app:srcCompat="@drawable/protein" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:text="Organizm na bieżąco wykorzystuje białko i nie gromadzi jego zapasów na inny czas. Nadmiar protein jest zwyczajnie wydalany, więc każdego dnia trzeba dbać o spożycie odpowiedniej ilości." />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="5dp"
+            android:text="Jedną z najważniejszych funkcji jest budowanie masy mięśniowej i regeneracja komórek mięśniowych." />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="5dp"
+            android:text="Zapotrzebowanie na białko jest zależne od wielu czynników, między innymi wieku, płci, aktywności fizycznej."
+            android:textStyle="bold" />
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/cell_shape_calories"
+            android:columnCount="2"
+            android:rowCount="6">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_rowWeight="1"
+                android:layout_columnSpan="1"
+                android:layout_columnWeight="1"
+                android:background="@drawable/cell_shape_calories"
+                android:gravity="center"
+                android:paddingVertical="4dp"
+                android:text="zdrowa osoba" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnSpan="1"
+                android:layout_columnWeight="1"
+                android:background="@drawable/cell_shape_calories"
+                android:gravity="center"
+                android:text="1g/1kg masy ciała" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_rowWeight="1"
+                android:layout_columnSpan="1"
+                android:layout_columnWeight="1"
+                android:background="@drawable/cell_shape_calories"
+                android:gravity="center"
+                android:paddingVertical="4dp"
+                android:text="kobieta w ciąży" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnSpan="1"
+                android:layout_columnWeight="1"
+                android:background="@drawable/cell_shape_calories"
+                android:gravity="center"
+                android:text="1,5g/kg masy ciała" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_rowWeight="1"
+                android:layout_columnSpan="1"
+                android:layout_columnWeight="1"
+                android:background="@drawable/cell_shape_calories"
+                android:gravity="center"
+                android:paddingHorizontal="5dp"
+                android:paddingVertical="4dp"
+                android:text="kobieta karmiąca piersią" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnSpan="1"
+                android:layout_columnWeight="1"
+                android:background="@drawable/cell_shape_calories"
+                android:gravity="center"
+                android:text="1,3g/1kg masy ciała" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_rowWeight="1"
+                android:layout_columnSpan="1"
+                android:layout_columnWeight="1"
+                android:background="@drawable/cell_shape_calories"
+                android:gravity="center"
+                android:paddingVertical="4dp"
+                android:text="niemowlęta" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnSpan="1"
+                android:layout_columnWeight="1"
+                android:background="@drawable/cell_shape_calories"
+                android:gravity="center"
+                android:text="1,52g/kg masy ciała" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_rowWeight="1"
+                android:layout_columnSpan="1"
+                android:layout_columnWeight="1"
+                android:background="@drawable/cell_shape_calories"
+                android:gravity="center"
+                android:paddingVertical="4dp"
+                android:text="dzieci do 15. roku życia" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnSpan="1"
+                android:layout_columnWeight="1"
+                android:background="@drawable/cell_shape_calories"
+                android:gravity="center"
+                android:paddingHorizontal="5dp"
+                android:text="1,5-2g/1kg masy ciała" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_rowWeight="1"
+                android:layout_columnSpan="1"
+                android:layout_columnWeight="1"
+                android:background="@drawable/cell_shape_calories"
+                android:gravity="center"
+                android:paddingVertical="4dp"
+                android:text="osoby uprawiające sport" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnSpan="1"
+                android:layout_columnWeight="1"
+                android:background="@drawable/cell_shape_calories"
+                android:gravity="center"
+                android:text="1,5-2g/kg masy ciała" />
+
+        </GridLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="5dp"
+            android:text="Zapotrzebowanie dzienne nie powinno być niezaspokojone gdyż obniża metabolizm, odporność, samopoczucie, kondycję skóry, włosów i paznokci ani przekraczane gdyż obciążą wątrobę i nerki, zwiększa ryzyko rozwoju stanów zapalnych." />
 
         <Button
             android:id="@+id/button_Exit_BottomSheet"

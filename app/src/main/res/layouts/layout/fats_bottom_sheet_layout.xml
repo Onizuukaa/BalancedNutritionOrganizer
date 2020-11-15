@@ -21,6 +21,96 @@
             android:layout_height="130dp"
             app:srcCompat="@drawable/fats" />
 
+        <TextView
+            android:layout_marginBottom="5dp"
+            android:paddingHorizontal="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tłuszcze są najbardziej kalorycznym składnikiem naszej diety. 1g = 9kcal, ponad 2 razy więcej niż białko i węglowodany. Nie wszystkie tłuszcze są złe, niektóre są potrzebne do życia."/>
+
+        <TextView
+            android:background="@drawable/cell_shape_carbohydrates"
+            android:layout_marginBottom="5dp"
+            android:paddingHorizontal="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Zawierają w sobie nasycone i nienasycone. Nienasycone są lepsze. Tłuszcze zwierzęce mają dużo kalorii, cholesterolu i nasyconych kwasów tłuszczowych, które odnoszą poziom cholesterolu we krwi i przyspieszają rozwój miażdżycy."/>
+
+        <TextView
+            android:layout_marginBottom="5dp"
+            android:paddingHorizontal="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tłuszcze nasycone nie powinny dostarczać więcej niż 10% kcal dziennie. Lepiej unikać beztłuszczowych wynalazków gdyż pozbawimy się wtedy cennych witamin rozpuszczanych w tłuszczach: A, D, E, K."/>
+
+        <TextView
+            android:textStyle="bold"
+            android:layout_marginBottom="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Niski poziom tłuszczów w diecie może przyczyniać się do:"/>
+
+        <GridLayout
+            android:layout_marginBottom="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:background="@drawable/cell_shape_calories"
+            android:columnCount="1"
+            android:rowCount="6">
+
+            <TextView
+                android:paddingHorizontal="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_rowWeight="1"
+                android:layout_columnSpan="1"
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:paddingVertical="4dp"
+                android:text="zahamowanie wzrostu i rozwoju" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnSpan="1"
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="problemów skórnych" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_rowWeight="1"
+                android:layout_columnSpan="1"
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:paddingVertical="4dp"
+                android:text="zaburzeń lipidowych" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnSpan="1"
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="osłabienia odporności" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_rowWeight="1"
+                android:layout_columnSpan="1"
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:paddingHorizontal="5dp"
+                android:paddingVertical="4dp"
+                android:text="bezpłodności" />
+
+        </GridLayout>
+
         <Button
             android:id="@+id/button_Exit_BottomSheet"
             android:layout_width="wrap_content"

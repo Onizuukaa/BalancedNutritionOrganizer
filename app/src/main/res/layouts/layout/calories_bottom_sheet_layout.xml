@@ -64,6 +64,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:gravity="center"
                 android:layout_rowWeight="1"
                 android:layout_columnSpan="1"
                 android:layout_columnWeight="1"
@@ -85,6 +86,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:gravity="center"
                 android:layout_rowWeight="1"
                 android:layout_columnSpan="1"
                 android:layout_columnWeight="1"
