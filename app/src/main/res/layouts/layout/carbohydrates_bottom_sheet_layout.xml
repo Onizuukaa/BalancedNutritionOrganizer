@@ -23,36 +23,36 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Węglowodany składają się z cukrów prostych i złożonych. Złożone są korzystniejsze dla organizmu gdyż dostarczają energię na dłużej. Proste to cukier. Złożone znajdują się w np. makaronie, mące." />
+            android:text="@string/Carbo_1st" />
 
         <TextView
             android:background="@drawable/cell_shape_carbohydrates"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Są magazynowane w niewielkich ilościach, 250-321g i starcza to na 12 godzin przy zapotrzebowaniu 2000kcal. Gdy nie dostarcza się wystarczającej ilości to organizm zużywa białko i tłuszcze. Nadmiar jest przekształcany w tłuszcze prowadząc do otyłości." />
+            android:text="@string/Carbo_2nd" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Powinny dostarczać 50-60% dziennego zapotrzebowania kalorycznego. Są niezbędne do utrzymania prawidłowego zdrowia, potrzebne aby być długo aktywnym i sprawnym fizycznie." />
+            android:text="@string/Carbo_3rd" />
 
         <TextView
             android:background="@drawable/cell_shape_carbohydrates"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Są dobrym źródłem energii dlatego powinny być dostarczane organizmowi rano, po przebudzeniu. Powinny znaleźć się w śniadaniu, drugim śniadaniu i obiedzie. Rano organizm potrzebuje dawki energii, żeby przyspieszyć tempo metabolizmu, które zwolniło w nocy. Wieczorem lepiej unikać węglowodanów gdyż organizm nie wykorzysta energii i przekształci nadmiar w tkankę tłuszczową."/>
+            android:text="@string/Carbo_4th"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Należy unikać pustych kalorii czyli wyrobów cukierniczych, słodyczy, słodkich napojów gazowanych, słodkich napojów niegazowanych i wysoko przetworzonej żywności, gdyż nie mają żadnych wartościowych składników odżywczych." />
+            android:text="@string/Carbo_5th" />
 
         <Button
             android:id="@+id/button_Exit_BottomSheet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="Exit" />
+            android:text="@string/Exit" />
 
     </LinearLayout>
 

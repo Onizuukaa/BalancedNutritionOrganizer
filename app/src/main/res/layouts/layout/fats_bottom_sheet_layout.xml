@@ -26,7 +26,7 @@
             android:paddingHorizontal="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tłuszcze są najbardziej kalorycznym składnikiem naszej diety. 1g = 9kcal, ponad 2 razy więcej niż białko i węglowodany. Nie wszystkie tłuszcze są złe, niektóre są potrzebne do życia."/>
+            android:text="@string/Fats_1st"/>
 
         <TextView
             android:background="@drawable/cell_shape_carbohydrates"
@@ -34,21 +34,21 @@
             android:paddingHorizontal="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Zawierają w sobie nasycone i nienasycone. Nienasycone są lepsze. Tłuszcze zwierzęce mają dużo kalorii, cholesterolu i nasyconych kwasów tłuszczowych, które odnoszą poziom cholesterolu we krwi i przyspieszają rozwój miażdżycy."/>
+            android:text="@string/Fats_2nd"/>
 
         <TextView
             android:layout_marginBottom="5dp"
             android:paddingHorizontal="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tłuszcze nasycone nie powinny dostarczać więcej niż 10% kcal dziennie. Lepiej unikać beztłuszczowych wynalazków gdyż pozbawimy się wtedy cennych witamin rozpuszczanych w tłuszczach: A, D, E, K."/>
+            android:text="@string/Fats_3rd"/>
 
         <TextView
             android:textStyle="bold"
             android:layout_marginBottom="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Niski poziom tłuszczów w diecie może przyczyniać się do:"/>
+            android:text="@string/fats_4th"/>
 
         <GridLayout
             android:layout_marginBottom="5dp"
@@ -68,7 +68,7 @@
                 android:layout_columnWeight="1"
                 android:gravity="center"
                 android:paddingVertical="4dp"
-                android:text="zahamowanie wzrostu i rozwoju" />
+                android:text="@string/inhibition_of_growth_and_development" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -77,7 +77,7 @@
                 android:layout_columnSpan="1"
                 android:layout_columnWeight="1"
                 android:gravity="center"
-                android:text="problemów skórnych" />
+                android:text="@string/skin_problems" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -87,7 +87,7 @@
                 android:layout_columnWeight="1"
                 android:gravity="center"
                 android:paddingVertical="4dp"
-                android:text="zaburzeń lipidowych" />
+                android:text="@string/lipid_disorders" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -96,7 +96,7 @@
                 android:layout_columnSpan="1"
                 android:layout_columnWeight="1"
                 android:gravity="center"
-                android:text="osłabienia odporności" />
+                android:text="@string/weakening_of_immunity" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -107,7 +107,7 @@
                 android:gravity="center"
                 android:paddingHorizontal="5dp"
                 android:paddingVertical="4dp"
-                android:text="bezpłodności" />
+                android:text="@string/infertility" />
 
         </GridLayout>
 
@@ -117,7 +117,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/gridLayoutCalories"
             android:layout_marginTop="5dp"
-            android:text="Exit" />
+            android:text="@string/Exit" />
 
     </LinearLayout>
 

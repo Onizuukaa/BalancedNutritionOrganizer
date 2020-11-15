@@ -106,5 +106,49 @@
     <string name="Very_high_activity">Very high activity</string>
     <string name="Metabolism_Calculator">TDEE Calculator</string>
     <string name="Healthy_Information">Here are healthy information about food. Click on the selected item.</string>
+    <string name="Calories_1st">The caloric requirement of each person is different depending on many factors. Such as weight, height and physical activity. The calorie converter is:</string>
+    <string name="Calories_2nd">1g protein = 4kcal 1g carbohydrates = 4kcal 1g fats = 9kcal</string>
+    <string name="Calories_3rd">The average person needs about 2,000 kcal per day. This is how much is included in the packaging of food products.\nThe demand consists of BMR (basal metabolic rate) multiplied by the value of physical activity. There are formulas to calculate BMR. The BNO uses the Mifflin-St Jeor formula.</string>
+    <string name="Male_Calories">Male</string>
+    <string name="Female_Calories">Female</string>
+    <string name="TDEE_PATERN_Male">[9,99 * weight (kg)] + [6,25 * height (cm)]\n- [4,92 * age (years)] + 5</string>
+    <string name="Activity_value">Activity value</string>
+    <string name="Activity_degree">Activity degree</string>
+    <string name="TDEE_PATERN_Female">[9,99 * weight (kg)] + [6,25 * height (cm)]\n- [4,92 * age (years)] - 161</string>
+    <string name="inactivity_sitting_work">inactivity, sitting work</string>
+    <string name="low_activity">low activity (sitting work\nand 1 - 2 workouts per week)</string>
+    <string name="moderate_activity">moderate activity (sitting work\nand 3 - 4 workouts a week)</string>
+    <string name="high_activity">high activity (physical work\nand 3-4 workouts a week)</string>
+    <string name="very_high_activity">very high activity\n(professional athletes, people\ntraining every day)</string>
+    <string name="Carbo_1st">Carbohydrates are made up of simple and complex sugars. Complex ones are more beneficial for the body as they provide energy for longer. Simple is sugar. Complex ones are found in e.g. pasta, flour.</string>
+    <string name="Carbo_2nd">They are stored in small quantities, 250-321g and it is enough for 12 hours with a demand of 2000kcal. When not enough is supplied, the body uses up protein and fats. The excess is converted into fats leading to obesity.</string>
+    <string name="Carbo_3rd">They should provide 50-60% of the daily caloric requirement. They are necessary to maintain proper health, necessary to be active and physically fit for a long time.</string>
+    <string name="Carbo_4th">They are a good source of energy, so they should be supplied to the body in the morning after waking up. They should be included in breakfast, lunch and dinner. In the morning, the body needs a dose of energy to accelerate the metabolic rate that has slowed down during the night. In the evening, it is better to avoid carbohydrates because the body will not use energy and transform the excess into adipose tissue.</string>
+    <string name="Carbo_5th">Avoid empty calories such as confectionery, sweets, sugary carbonated drinks, sweet non-carbonated beverages and highly processed foods, as they do not have any valuable nutrients.</string>
+    <string name="Exit">Exit</string>
+    <string name="Protein_1st">The body uses protein on an ongoing basis and does not store its reserves for another time. Excess protein is simply excreted, so make sure you get the right amount every day.</string>
+    <string name="Protein_2nd">One of the most important functions is building muscle mass and regenerating muscle cells.</string>
+    <string name="Protein_3rd">The demand for protein depends on many factors, including age, gender and physical activity.</string>
+    <string name="Protein_4th">The daily requirement should not be unsatisfied because it lowers the metabolism, immunity, well-being, condition of the skin, hair and nails, or exceeded it, because it overloads the liver and kidneys, increases the risk of inflammation.</string>
+    <string name="healthy_person">healthy person</string>
+    <string name="pregnant_woman">pregnant woman</string>
+    <string name="breastfeeding_woman">breastfeeding woman</string>
+    <string name="babies">babies</string>
+    <string name="children_up_to_15_years_of_age">children up to 15 years of age</string>
+    <string name="people_practicing_sports">people practicing sports</string>
+    <string name="Protein_V1">1g / 1kg body weight</string>
+    <string name="Protein_V2">1,5g / 1kg body weight</string>
+    <string name="Protein_V3">1,3g / 1kg body weight</string>
+    <string name="Protein_V4">1,52g / 1kg body weight</string>
+    <string name="Protein_V5">1,5-2g / 1kg body weight</string>
+    <string name="Fats_1st">Fats are the most caloric component of our diet. 1g = 9kcal, more than 2 times more than protein and carbohydrates. Not all fats are bad, some fats are needed for life.</string>
+    <string name="Fats_2nd">They contain saturated and unsaturated ones. The unsaturated are healthier. Animal fats are high in calories, cholesterol, and saturated fatty acids which relate blood cholesterol levels and accelerate the development of atherosclerosis.</string>
+    <string name="Fats_3rd">Saturated fat should not provide more than 10% of calories per day. It is better to avoid fat-free inventions because then we will deprive ourselves of valuable vitamins dissolved in fats: A, D, E, K.</string>
+    <string name="fats_4th">Low levels of dietary fat may contribute to:</string>
+    <string name="inhibition_of_growth_and_development">inhibition of growth and development</string>
+    <string name="skin_problems">skin problems</string>
+    <string name="lipid_disorders">lipid disorders</string>
+    <string name="weakening_of_immunity">weakening of immunity</string>
+    <string name="infertility">infertility</string>
 
 </resources>

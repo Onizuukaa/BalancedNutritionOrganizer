@@ -108,5 +108,49 @@
     <string name="Very_high_activity">Bardzo wysoka aktywność</string>
     <string name="Metabolism_Calculator">Kalkulator CPM</string>
     <string name="Healthy_Information">Oto zdrowe informacje o jedzeniu. Kliknij w wybraną pozycję.</string>
+    <string name="Calories_1st">Zapotrzebowanie na kalorie dla każdego człowieka jest inne w zależności od wielu czynników. Takich jak waga, wzrost i aktywność fizyczna. Przelicznik kalorii wynosi:</string>
+    <string name="Calories_2nd">1g białka = 4kcal 1g węglowodanów = 4kcal 1g tłuszczy = 9kcal</string>
+    <string name="Calories_3rd">Przeciętny człowiek potrzebuje dziennie ok. 2000 kcal. Tyle jest uwzględnione na opakowaniach produktów spożywczych.\nNa zapotrzebowanie składa się PPM (podstawowa przemiana materii) pomnożona przez wartość odpowiadającą aktywności fizycznej. Istnieją wzory do wyliczenia PPM. W BNO stosuje się wzór Mifflin-St Jeor.</string>
+    <string name="Male_Calories">Mężczyźni</string>
+    <string name="Female_Calories">Kobiety</string>
+    <string name="TDEE_PATERN_Male">[9,99 * masa ciała (kg)] + [6,25 * wzrost (cm)]\n- [4,92 * wiek (lata)] + 5</string>
+    <string name="Activity_value">Wartość aktywności</string>
+    <string name="Activity_degree">Stopień aktywności</string>
+    <string name="TDEE_PATERN_Female">[9,99 * masa ciała (kg)] + [6,25 * wzrost (cm)]\n- [4,92 * wiek (lata)] - 161</string>
+    <string name="inactivity_sitting_work">brak aktywności, praca siedząca</string>
+    <string name="low_activity">niska aktywność (praca siedząca\ni 1 - 2 treningi w tygodniu)</string>
+    <string name="moderate_activity">średnia aktywność (praca siedząca\ni 3 - 4 treningi w tygodniu)</string>
+    <string name="high_activity">wysoka aktywność (praca fizyczna\ni 3 - 4 treningi w tygodniu)</string>
+    <string name="very_high_activity">bardzo wysoka aktywność\n(zawodowi sportowcy, osoby\ncodziennie trenujące</string>
+    <string name="Carbo_1st">Węglowodany składają się z cukrów prostych i złożonych. Złożone są korzystniejsze dla organizmu gdyż dostarczają energię na dłużej. Proste to cukier. Złożone znajdują się w np. makaronie, mące.</string>
+    <string name="Carbo_2nd">Są magazynowane w niewielkich ilościach, 250-321g i starcza to na 12 godzin przy zapotrzebowaniu 2000kcal. Gdy nie dostarcza się wystarczającej ilości to organizm zużywa białko i tłuszcze. Nadmiar jest przekształcany w tłuszcze prowadząc do otyłości.</string>
+    <string name="Carbo_3rd">Powinny dostarczać 50-60% dziennego zapotrzebowania kalorycznego. Są niezbędne do utrzymania prawidłowego zdrowia, potrzebne aby być długo aktywnym i sprawnym fizycznie.</string>
+    <string name="Carbo_4th">Są dobrym źródłem energii dlatego powinny być dostarczane organizmowi rano, po przebudzeniu. Powinny znaleźć się w śniadaniu, drugim śniadaniu i obiedzie. Rano organizm potrzebuje dawki energii, żeby przyspieszyć tempo metabolizmu, które zwolniło w nocy. Wieczorem lepiej unikać węglowodanów gdyż organizm nie wykorzysta energii i przekształci nadmiar w tkankę tłuszczową.</string>
+    <string name="Carbo_5th">Należy unikać pustych kalorii czyli wyrobów cukierniczych, słodyczy, słodkich napojów gazowanych, słodkich napojów niegazowanych i wysoko przetworzonej żywności, gdyż nie mają żadnych wartościowych składników odżywczych.</string>
+    <string name="Exit">Wyjście</string>
+    <string name="Protein_1st">Organizm na bieżąco wykorzystuje białko i nie gromadzi jego zapasów na inny czas. Nadmiar protein jest zwyczajnie wydalany, więc każdego dnia trzeba dbać o spożycie odpowiedniej ilości.</string>
+    <string name="Protein_2nd">Jedną z najważniejszych funkcji jest budowanie masy mięśniowej i regeneracja komórek mięśniowych.</string>
+    <string name="Protein_3rd">Zapotrzebowanie na białko jest zależne od wielu czynników, między innymi wieku, płci, aktywności fizycznej.</string>
+    <string name="Protein_4th">Zapotrzebowanie dzienne nie powinno być niezaspokojone gdyż obniża metabolizm, odporność, samopoczucie, kondycję skóry, włosów i paznokci ani przekraczane gdyż obciążą wątrobę i nerki, zwiększa ryzyko rozwoju stanów zapalnych.</string>
+    <string name="healthy_person">zdrowa osoba</string>
+    <string name="pregnant_woman">kobieta w ciąży</string>
+    <string name="breastfeeding_woman">kobieta karmiąca piersią</string>
+    <string name="babies">niemowlęta</string>
+    <string name="children_up_to_15_years_of_age">dzieci do 15 roku życia</string>
+    <string name="people_practicing_sports">osoby uprawiające sport</string>
+    <string name="Protein_V1">1g / 1kg masy ciała</string>
+    <string name="Protein_V2">1,5g / 1kg masy ciała</string>
+    <string name="Protein_V3">1,3g / 1kg masy ciała</string>
+    <string name="Protein_V4">1,52g / 1kg masy ciała</string>
+    <string name="Protein_V5">1,5-2g / 1kg masy ciała</string>
+    <string name="Fats_1st">Tłuszcze są najbardziej kalorycznym składnikiem naszej diety. 1g = 9kcal, ponad 2 razy więcej niż białko i węglowodany. Nie wszystkie tłuszcze są złe, niektóre są potrzebne do życia.</string>
+    <string name="Fats_2nd">Zawierają w sobie nasycone i nienasycone. Nienasycone są zdrowsze. Tłuszcze zwierzęce mają dużo kalorii, cholesterolu i nasyconych kwasów tłuszczowych, które odnoszą poziom cholesterolu we krwi i przyspieszają rozwój miażdżycy.</string>
+    <string name="Fats_3rd">Tłuszcze nasycone nie powinny dostarczać więcej niż 10% kcal dziennie. Lepiej unikać beztłuszczowych wynalazków gdyż pozbawimy się wtedy cennych witamin rozpuszczanych w tłuszczach: A, D, E, K.</string>
+    <string name="fats_4th">Niski poziom tłuszczów w diecie może przyczyniać się do:</string>
+    <string name="inhibition_of_growth_and_development">zahamowanie wzrostu i rozwoju</string>
+    <string name="skin_problems">problemów skórnych</string>
+    <string name="lipid_disorders">zaburzeń lipidowych</string>
+    <string name="weakening_of_immunity">osłabienia odporności</string>
+    <string name="infertility">bezpłodności</string>
 
 </resources>

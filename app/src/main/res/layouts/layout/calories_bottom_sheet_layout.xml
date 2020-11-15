@@ -25,13 +25,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="5dp"
-            android:text="Zapotrzebowanie na kalorie dla każdego człowieka jest inne w zależności od wielu czynników. Takich jak waga, wzrost i aktywność fizyczna. Przelicznik kalorii wynosi:" />
+            android:text="@string/Calories_1st" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="5dp"
-            android:text="1g białka = 4kcal 1g węglowodanów = 4kcal 1g tłuszczy = 9kcal"
+            android:text="@string/Calories_2nd"
             android:textStyle="bold" />
 
         <TextView
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/imageViewBottomSheet"
             android:layout_marginHorizontal="5dp"
-            android:text="Przeciętny człowiek potrzebuje dziennie ok. 2000 kcal. Tyle jest uwzględnione na opakowaniach produktów spożywczych.\nNa zapotrzebowanie składa się PPM (podstawowa przemiana materii) pomnożona przez wartość odpowiadającą aktywności fizycznej. Istnieją wzory do wyliczenia PPM. W BNO stosuje się wzór Mifflin-St Jeor." />
+            android:text="@string/Calories_3rd"/>
 
 
         <GridLayout
@@ -56,11 +56,11 @@
                 android:layout_rowWeight="1"
                 android:layout_columnSpan="1"
                 android:layout_columnWeight="1"
-                android:padding="2dp"
+                android:paddingHorizontal="3dp"
                 android:background="@drawable/cell_shape_calories"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Mężczyźni"
+                android:text="@string/Male_Calories"
                 android:textStyle="bold" />
 
             <TextView
@@ -72,17 +72,17 @@
                 android:background="@drawable/cell_shape_calories"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="[9,99 * masa ciała (kg)] + [6,25 * wzrost (cm)]\n- [4,92 * wiek (lata)] + 5" />
+                android:text="@string/TDEE_PATERN_Male" />
 
             <TextView
                 android:layout_rowWeight="1"
                 android:layout_columnSpan="1"
                 android:layout_columnWeight="1"
-                android:padding="2dp"
+                android:paddingHorizontal="3dp"
                 android:background="@drawable/cell_shape_calories"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Kobiety"
+                android:text="@string/Female_Calories"
                 android:textStyle="bold" />
 
             <TextView
@@ -94,7 +94,7 @@
                 android:background="@drawable/cell_shape_calories"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="[9,99 * masa ciała (kg)] + [6,25 * wzrost (cm)]\n- [4,92 * wiek (lata)] - 161" />
+                android:text="@string/TDEE_PATERN_Female" />
 
         </GridLayout>
 
@@ -113,7 +113,7 @@
                 android:layout_columnSpan="1"
                 android:layout_columnWeight="1"
                 android:gravity="center"
-                android:text="Wartość aktywności"
+                android:text="@string/Activity_value"
                 android:textStyle="bold" />
 
             <TextView
@@ -122,7 +122,7 @@
                 android:layout_columnSpan="1"
                 android:layout_columnWeight="1"
                 android:gravity="center"
-                android:text="Stopień aktywności"
+                android:text="@string/Activity_degree"
                 android:textStyle="bold" />
 
             <TextView
@@ -139,7 +139,7 @@
                 android:layout_rowWeight="1"
                 android:layout_columnSpan="1"
                 android:layout_columnWeight="1"
-                android:text="brak aktywności, praca siedząca" />
+                android:text="@string/inactivity_sitting_work" />
 
             <TextView
                 android:background="@drawable/cell_shape_calories"
@@ -155,7 +155,7 @@
                 android:layout_rowWeight="1"
                 android:layout_columnSpan="1"
                 android:layout_columnWeight="1"
-                android:text="niska aktywność (praca siedząca\ni 1 - 2 treningi w tygodniu)" />
+                android:text="@string/low_activity" />
 
             <TextView
                 android:background="@drawable/cell_shape_calories"
@@ -175,7 +175,7 @@
                 android:layout_rowWeight="1"
                 android:layout_columnSpan="1"
                 android:layout_columnWeight="1"
-                android:text="Średnia aktywność (praca siedząca\ni treningi 3 - 4 razy w tygodniu)" />
+                android:text="@string/moderate_activity" />
 
             <TextView
                 android:background="@drawable/cell_shape_calories"
@@ -195,7 +195,7 @@
                 android:layout_rowWeight="1"
                 android:layout_columnSpan="1"
                 android:layout_columnWeight="1"
-                android:text="wysoka aktywność (praca fizyczna i\n 3 - 4 treningi w tygodniu)" />
+                android:text="@string/high_activity" />
 
             <TextView
                 android:background="@drawable/cell_shape_calories"
@@ -215,7 +215,7 @@
                 android:layout_rowWeight="1"
                 android:layout_columnSpan="1"
                 android:layout_columnWeight="1"
-                android:text="bardzo wysoka aktywność\n(zawodowi sportowcy, osoby\ncodziennie trenujące" />
+                android:text="@string/very_high_activity" />
 
         </GridLayout>
 
@@ -225,7 +225,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/gridLayoutCalories"
             android:layout_marginTop="5dp"
-            android:text="Exit" />
+            android:text="@string/Exit" />
 
     </LinearLayout>
 
