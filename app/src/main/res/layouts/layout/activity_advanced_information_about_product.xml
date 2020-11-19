@@ -45,7 +45,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/cell_shape"
                 android:gravity="center"
-                android:text="Calories" />
+                android:text="@string/Calories" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -55,7 +55,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/cell_shape"
                 android:gravity="center"
-                android:text="Węglowodany \n(w tym cukry)" />
+                android:text="@string/Carbo_wih_sugar" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -65,7 +65,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/cell_shape"
                 android:gravity="center"
-                android:text="Tłuszcze \n(w tym nasycone)" />
+                android:text="@string/Fats_with_saturated_fats" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -74,7 +74,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/cell_shape"
                 android:gravity="center"
-                android:text="Białko" />
+                android:text="@string/Protein" />
         </TableRow>
 
         <TableRow>

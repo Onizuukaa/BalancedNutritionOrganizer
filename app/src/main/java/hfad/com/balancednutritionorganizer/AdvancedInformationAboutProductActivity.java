@@ -42,6 +42,7 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_advanced_information_about_product);
+        setTitle(R.string.Advanced_information);
 
         ComposeMealDBHelper dbHelper = new ComposeMealDBHelper(this);
         mDatabase = dbHelper.getWritableDatabase();

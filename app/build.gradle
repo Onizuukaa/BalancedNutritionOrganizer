@@ -47,7 +47,7 @@ dependencies {
     implementation 'androidx.cardview:cardview:1.0.0'
 
     // RecyclerView umożliwia przewijanie zawartości
-    implementation 'androidx.recyclerview:recyclerview:1.2.0-alpha05'
+    implementation 'androidx.recyclerview:recyclerview:1.2.0-alpha06'
 
     //glide - to chyba dla okrągłego obrazka, chyba obydwie niżej
     implementation 'com.github.bumptech.glide:glide:4.11.0'

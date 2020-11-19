@@ -52,7 +52,7 @@
     <string name="Macronutrients_has_been_sent">Makroskładniki zostały wysłane</string>
     <string name="No_product_with_this_index">Brak produktu o takim indeksie</string>
     <string name="No_data_ComposedMeals">Brak skomponowanych posiłków.\nPosiłki pojawią się tutaj po dodaniu ich w \"Skomponuj Posiłek\"</string>
-    <string name="app_name">Balanced Nutrition Organizer</string>
+    <string name="app_name">BNO</string>
     <string name="No_data_CustomFood">Brak własnej żywności.\nWłasna żywność pojawi się tutaj po dodaniu jej z Tabela Żywności > + DODAJ ŻYWNOŚĆ</string>
     <string name="Added_Food">Dodana żywność</string>
     <string name="Add_Food">+ DODAJ ŻYWNOŚĆ</string>
@@ -144,7 +144,7 @@
     <string name="Protein_V4">1,52g / 1kg masy ciała</string>
     <string name="Protein_V5">1,5-2g / 1kg masy ciała</string>
     <string name="Fats_1st">Tłuszcze są najbardziej kalorycznym składnikiem naszej diety. 1g = 9kcal, ponad 2 razy więcej niż białko i węglowodany. Nie wszystkie tłuszcze są złe, niektóre są potrzebne do życia.</string>
-    <string name="Fats_2nd">Zawierają w sobie nasycone i nienasycone. Nienasycone są zdrowsze. Tłuszcze zwierzęce mają dużo kalorii, cholesterolu i nasyconych kwasów tłuszczowych, które odnoszą poziom cholesterolu we krwi i przyspieszają rozwój miażdżycy.</string>
+    <string name="Fats_2nd">Zawierają w sobie nasycone i nienasycone. Nienasycone są zdrowsze. Tłuszcze zwierzęce mają dużo kalorii, cholesterolu i nasyconych kwasów tłuszczowych, które podnoszą poziom cholesterolu we krwi i przyspieszają rozwój miażdżycy.</string>
     <string name="Fats_3rd">Tłuszcze nasycone nie powinny dostarczać więcej niż 10% kcal dziennie. Lepiej unikać beztłuszczowych wynalazków gdyż pozbawimy się wtedy cennych witamin rozpuszczanych w tłuszczach: A, D, E, K.</string>
     <string name="fats_4th">Niski poziom tłuszczów w diecie może przyczyniać się do:</string>
     <string name="inhibition_of_growth_and_development">zahamowanie wzrostu i rozwoju</string>
@@ -152,5 +152,8 @@
     <string name="lipid_disorders">zaburzeń lipidowych</string>
     <string name="weakening_of_immunity">osłabienia odporności</string>
     <string name="infertility">bezpłodności</string>
+    <string name="Advanced_information">Zaawansowane informacje</string>
+    <string name="Carbo_wih_sugar">Węglowodany\n(w tym cukry)</string>
+    <string name="Fats_with_saturated_fats">Tłuszcze\n(w tym nasycone)</string>
 
 </resources>

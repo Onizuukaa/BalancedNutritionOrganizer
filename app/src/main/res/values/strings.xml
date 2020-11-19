@@ -39,7 +39,7 @@
     <string name="Meat">Meat</string>
     <string name="Sweets">Sweets</string>
     <string name="Drinks">Drinks</string>
-    <string name="Send_The_Macronutrients">Send the macronutrients for compose the meal</string>
+    <string name="Send_The_Macronutrients">Send macronutrients to composing the meal</string>
     <string name="Reset">Reset</string>
     <string name="Add_Meal">Add Meal</string>
     <string name="Remove_Product">Remove Food</string>
@@ -51,7 +51,7 @@
     <string name="Macronutrients_has_been_sent">Macronutrients has been sent</string>
     <string name="No_product_with_this_index">No product with this index</string>
     <string name="No_data_ComposedMeals">No Composed Meals.\nMeals will be here after add from \"Compose The Meal\"</string>
-    <string name="app_name">Balanced Nutrition Organizer</string>
+    <string name="app_name">BNO</string>
     <string name="No_data_CustomFood">No custom food.\nCustom food will be here after add from Food Table > + ADD FOOD</string>
     <string name="Added_Food">Added Food</string>
     <string name="Add_Food">+ ADD FOOD</string>
@@ -142,7 +142,7 @@
     <string name="Protein_V4">1,52g / 1kg body weight</string>
     <string name="Protein_V5">1,5-2g / 1kg body weight</string>
     <string name="Fats_1st">Fats are the most caloric component of our diet. 1g = 9kcal, more than 2 times more than protein and carbohydrates. Not all fats are bad, some fats are needed for life.</string>
-    <string name="Fats_2nd">They contain saturated and unsaturated ones. The unsaturated are healthier. Animal fats are high in calories, cholesterol, and saturated fatty acids which relate blood cholesterol levels and accelerate the development of atherosclerosis.</string>
+    <string name="Fats_2nd">They contain in saturated and unsaturated. The unsaturated are healthier. Animal fats are high in calories, cholesterol, and saturated fats that raise blood cholesterol and accelerate the development of atherosclerosis.</string>
     <string name="Fats_3rd">Saturated fat should not provide more than 10% of calories per day. It is better to avoid fat-free inventions because then we will deprive ourselves of valuable vitamins dissolved in fats: A, D, E, K.</string>
     <string name="fats_4th">Low levels of dietary fat may contribute to:</string>
     <string name="inhibition_of_growth_and_development">inhibition of growth and development</string>
@@ -150,5 +150,8 @@
     <string name="lipid_disorders">lipid disorders</string>
     <string name="weakening_of_immunity">weakening of immunity</string>
     <string name="infertility">infertility</string>
+    <string name="Advanced_information">Advanced information</string>
+    <string name="Carbo_wih_sugar">Carbohydrates\n(inc. sugars)</string>
+    <string name="Fats_with_saturated_fats">Fats\n(inc. saturated)</string>
 
 </resources>
