@@ -39,13 +39,10 @@ public class DatabaseAccess {
     //Method to query and return the result from database. Here from table vegetablesValues
     public Cursor getAllDataFromTableVegetables() {
         cursor = db.rawQuery("select * from vegetablesValues", null);
-        return cursor;
-    }
-
+        return cursor; }
     public Cursor getAllDataFromTableFruits() {
         cursor = db.rawQuery("select * from fruitsValues", null);
-        return cursor;
-    }
+        return cursor; }
 
     public Cursor getAllDataFromTableGrainProducts() {
         cursor = db.rawQuery("select * from grainProductsValues", null);
@@ -76,6 +73,4 @@ public class DatabaseAccess {
         cursor = db.rawQuery("select * from drinksValues", null);
         return cursor;
     }
-
-
 }

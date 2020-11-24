@@ -16,7 +16,7 @@ import java.text.DecimalFormatSymbols;
 import hfad.com.balancednutritionorganizer.database_things.ComposeMealColumns;
 import hfad.com.balancednutritionorganizer.R;
 
-public class RecyclerViewComposeMealAdapter extends RecyclerView.Adapter<RecyclerViewComposeMealAdapter.GroceryViewHolder> {
+public class RecyclerViewComposeMealAdapter extends RecyclerView.Adapter<RecyclerViewComposeMealAdapter.ComposeMealViewHolder> {
     private Context mContext;
     private Cursor mCursor;
     DecimalFormatSymbols symbols = DecimalFormatSymbols.getInstance();
@@ -26,34 +26,31 @@ public class RecyclerViewComposeMealAdapter extends RecyclerView.Adapter<Recycle
         mCursor = cursor;
     }
 
-    public class GroceryViewHolder extends RecyclerView.ViewHolder {
-        public TextView nameText;
-        public TextView countText;
-
-        public GroceryViewHolder(@NonNull View itemView) {
+    public class ComposeMealViewHolder extends RecyclerView.ViewHolder {
+        public TextView composeMealNameFood, composeMealCaloriesFood;
+        public ComposeMealViewHolder(@NonNull View itemView) {
             super(itemView);
-
-            nameText = itemView.findViewById(R.id.textViewProductLeft);
-            countText = itemView.findViewById(R.id.textViewHowManyGramProduct);
+            composeMealNameFood = itemView.findViewById(R.id.composeMealNameFood);
+            composeMealCaloriesFood = itemView.findViewById(R.id.composeMealCaloriesFood);
         }
     }
 
     @NonNull
     @Override
-    public GroceryViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ComposeMealViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(mContext);
         View view = inflater.inflate(R.layout.scheme_compose_meals, parent, false);
-        return new GroceryViewHolder(view);
+        return new ComposeMealViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull GroceryViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ComposeMealViewHolder holder, int position) {
         if (!mCursor.moveToPosition(position)) {
             return;
         }
-        long id = mCursor.getLong(mCursor.getColumnIndex(ComposeMealColumns.GroceryEntry._ID));
-        String name = mCursor.getString(mCursor.getColumnIndex(ComposeMealColumns.GroceryEntry.COLUMN_NAME));
-        double amount = mCursor.getDouble(mCursor.getColumnIndex(ComposeMealColumns.GroceryEntry.COLUMN_AMOUNT));
+        long id = mCursor.getLong(mCursor.getColumnIndex(ComposeMealColumns.ComposeMealColumnsEntry._ID));
+        String name = mCursor.getString(mCursor.getColumnIndex(ComposeMealColumns.ComposeMealColumnsEntry.COLUMN_NAME));
+        double amount = mCursor.getDouble(mCursor.getColumnIndex(ComposeMealColumns.ComposeMealColumnsEntry.COLUMN_AMOUNT));
 
         symbols.setDecimalSeparator('.');
         format = new DecimalFormat("#.#");
@@ -62,9 +59,9 @@ public class RecyclerViewComposeMealAdapter extends RecyclerView.Adapter<Recycle
         format.setDecimalSeparatorAlwaysShown(false);
 
         holder.itemView.setTag(id);
-        holder.nameText.setText(position+1 + ".  " + name);
+        holder.composeMealNameFood.setText(position+1 + ".  " + name);
         //holder.countText.setText(String.valueOf(amount));
-        holder.countText.setText(format.format(amount) + " KCAL");
+        holder.composeMealCaloriesFood.setText(format.format(amount) + " KCAL");
     }
 
     @Override

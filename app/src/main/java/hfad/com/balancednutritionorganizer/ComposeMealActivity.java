@@ -84,8 +84,8 @@ public class ComposeMealActivity extends AppCompatActivity {
     }
 
     private void removeItemSwiped(long id) {
-        mDatabase.delete(ComposeMealColumns.GroceryEntry.TABLE_NAME,
-                ComposeMealColumns.GroceryEntry._ID + "=" + id, null);
+        mDatabase.delete(ComposeMealColumns.ComposeMealColumnsEntry.TABLE_NAME,
+                ComposeMealColumns.ComposeMealColumnsEntry._ID + "=" + id, null);
         mAdapter.swapCursor(getAllItems());
 
         cursor = getAllItems();
@@ -133,8 +133,8 @@ public class ComposeMealActivity extends AppCompatActivity {
                 cursor.moveToPosition(position);
                 int productPosition = cursor.getInt(0);
 
-                mDatabase.delete(ComposeMealColumns.GroceryEntry.TABLE_NAME,
-                        ComposeMealColumns.GroceryEntry._ID + "=" + productPosition, null);
+                mDatabase.delete(ComposeMealColumns.ComposeMealColumnsEntry.TABLE_NAME,
+                        ComposeMealColumns.ComposeMealColumnsEntry._ID + "=" + productPosition, null);
                 mAdapter.swapCursor(getAllItems());
 
                 sumAndViewMacros();
@@ -149,17 +149,15 @@ public class ComposeMealActivity extends AppCompatActivity {
 
     private void initRecyclerView() {
         recyclerView = findViewById(R.id.composingDishesRecyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         mAdapter = new RecyclerViewComposeMealAdapter(this, getAllItems());
-
         recyclerView.setAdapter(mAdapter);
-
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         showOrHideNoDataTextView();
     }
 
     private Cursor getAllItems() {
         return mDatabase.query(
-                ComposeMealColumns.GroceryEntry.TABLE_NAME,
+                ComposeMealColumns.ComposeMealColumnsEntry.TABLE_NAME,
                 null,
                 null,
                 null,
@@ -202,8 +200,8 @@ public class ComposeMealActivity extends AppCompatActivity {
 
     public void button_ClearProductTable(View view) {
 
-        mDatabase.delete(ComposeMealColumns.GroceryEntry.TABLE_NAME,
-                ComposeMealColumns.GroceryEntry._ID + ">" + 0, null);
+        mDatabase.delete(ComposeMealColumns.ComposeMealColumnsEntry.TABLE_NAME,
+                ComposeMealColumns.ComposeMealColumnsEntry._ID + ">" + 0, null);
         mAdapter.swapCursor(getAllItems());
 
         sumAndViewMacros();

@@ -84,7 +84,7 @@
     <string name="Include">Include</string>
     <string name="No_index_provided">No index provided</string>
 
-    <string-array name="CPM">
+    <string-array name="TDEE">
         <item>Inactivity</item>
         <item>Low activity</item>
         <item>Average activity</item>

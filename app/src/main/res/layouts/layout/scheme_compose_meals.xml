@@ -15,7 +15,7 @@
         android:layout_margin="4dp">
 
         <TextView
-            android:id="@+id/textViewProductLeft"
+            android:id="@+id/composeMealNameFood"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Bakłażan"
@@ -24,14 +24,14 @@
             android:textColor="@android:color/black" />
 
         <TextView
-            android:id="@+id/textViewHowManyGramProduct"
+            android:id="@+id/composeMealCaloriesFood"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="125 Kcal"
             android:textSize="20sp"
             android:textStyle="bold"
             android:textColor="@android:color/black"
-            android:layout_toRightOf="@+id/textViewProductLeft"
+            android:layout_toRightOf="@+id/composeMealNameFood"
             android:layout_marginStart="20dp"/>
 
     </RelativeLayout>

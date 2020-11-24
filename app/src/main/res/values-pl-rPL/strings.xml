@@ -85,7 +85,7 @@
     <string name="Include">Dołącz</string>
     <string name="No_index_provided">Nie podano numeru</string>
 
-    <string-array name="CPM">
+    <string-array name="TDEE">
         <item>Brak aktywności</item>
         <item>Niska aktywność</item>
         <item>Średnia aktywność</item>

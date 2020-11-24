@@ -102,15 +102,15 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
             String wlasnaNazwaTabeli = "testowa";
             System.out.println("wysłane dane: "+theNumberOfGramsEnteredByTheUser);
             ContentValues cv = new ContentValues();
-            cv.put(ComposeMealColumns.GroceryEntry.COLUMN_NAME, productName);
-            cv.put(ComposeMealColumns.GroceryEntry.COLUMN_AMOUNT, caloriesInOneGramProduct * theNumberOfGramsEnteredByTheUser);
-            cv.put(ComposeMealColumns.GroceryEntry.COLUMN_CARBO, carbohydratesInOneGramProduct * theNumberOfGramsEnteredByTheUser);
-            cv.put(ComposeMealColumns.GroceryEntry.COLUMN_SUGAR, sugarInOneGramProduct * theNumberOfGramsEnteredByTheUser);
-            cv.put(ComposeMealColumns.GroceryEntry.COLUMN_FATS, FatsInOneGramProduct * theNumberOfGramsEnteredByTheUser);
-            cv.put(ComposeMealColumns.GroceryEntry.COLUMN_SATURATEDFATS, saturatedFatsInOneGramProduct * theNumberOfGramsEnteredByTheUser);
-            cv.put(ComposeMealColumns.GroceryEntry.COLUMN_PROTEIN, proteinInOneGramProduct * theNumberOfGramsEnteredByTheUser);
-            cv.put(ComposeMealColumns.GroceryEntry.COLUMN_WEIGHT, theNumberOfGramsEnteredByTheUserString);
-            mDatabase.insert(ComposeMealColumns.GroceryEntry.TABLE_NAME, null, cv);
+            cv.put(ComposeMealColumns.ComposeMealColumnsEntry.COLUMN_NAME, productName);
+            cv.put(ComposeMealColumns.ComposeMealColumnsEntry.COLUMN_AMOUNT, caloriesInOneGramProduct * theNumberOfGramsEnteredByTheUser);
+            cv.put(ComposeMealColumns.ComposeMealColumnsEntry.COLUMN_CARBO, carbohydratesInOneGramProduct * theNumberOfGramsEnteredByTheUser);
+            cv.put(ComposeMealColumns.ComposeMealColumnsEntry.COLUMN_SUGAR, sugarInOneGramProduct * theNumberOfGramsEnteredByTheUser);
+            cv.put(ComposeMealColumns.ComposeMealColumnsEntry.COLUMN_FATS, FatsInOneGramProduct * theNumberOfGramsEnteredByTheUser);
+            cv.put(ComposeMealColumns.ComposeMealColumnsEntry.COLUMN_SATURATEDFATS, saturatedFatsInOneGramProduct * theNumberOfGramsEnteredByTheUser);
+            cv.put(ComposeMealColumns.ComposeMealColumnsEntry.COLUMN_PROTEIN, proteinInOneGramProduct * theNumberOfGramsEnteredByTheUser);
+            cv.put(ComposeMealColumns.ComposeMealColumnsEntry.COLUMN_WEIGHT, theNumberOfGramsEnteredByTheUserString);
+            mDatabase.insert(ComposeMealColumns.ComposeMealColumnsEntry.TABLE_NAME, null, cv);
             //mDatabase.insert(wlasnaNazwaTabeli, null, cv);
 
             Toast.makeText(this, R.string.Macronutrients_has_been_sent, Toast.LENGTH_SHORT).show();
