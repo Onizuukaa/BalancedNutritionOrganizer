@@ -18,12 +18,12 @@ public class ComposeMealDBHelper extends SQLiteOpenHelper {
         final String SQL_CREATE_composeMeal_TABLE = "CREATE TABLE " +
                 ComposeMealColumnsEntry.TABLE_NAME + " (" +
                 ComposeMealColumnsEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                ComposeMealColumnsEntry.COLUMN_NAME + " TEXT NOT NULL, " +
-                ComposeMealColumnsEntry.COLUMN_AMOUNT + " DOUBLE NOT NULL, " +
+                ComposeMealColumnsEntry.COLUMN_mealNAME + " TEXT NOT NULL, " +
+                ComposeMealColumnsEntry.COLUMN_CALORIES + " DOUBLE NOT NULL, " +
                 ComposeMealColumnsEntry.COLUMN_CARBO + " DOUBLE NOT NULL, " +
                 ComposeMealColumnsEntry.COLUMN_SUGAR + " DOUBLE NOT NULL, " +
                 ComposeMealColumnsEntry.COLUMN_FATS + " DOUBLE NOT NULL, " +
-                ComposeMealColumnsEntry.COLUMN_SATURATEDFATS + " DOUBLE NOT NULL, " +
+                ComposeMealColumnsEntry.COLUMN_saturatedFATS + " DOUBLE NOT NULL, " +
                 ComposeMealColumnsEntry.COLUMN_PROTEIN + " DOUBLE NOT NULL, " +
                 ComposeMealColumnsEntry.COLUMN_WEIGHT + " DOUBLE NOT NULL" +
                 ");";

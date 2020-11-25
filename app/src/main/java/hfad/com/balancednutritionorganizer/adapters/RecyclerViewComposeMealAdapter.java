@@ -49,8 +49,8 @@ public class RecyclerViewComposeMealAdapter extends RecyclerView.Adapter<Recycle
             return;
         }
         long id = mCursor.getLong(mCursor.getColumnIndex(ComposeMealColumns.ComposeMealColumnsEntry._ID));
-        String name = mCursor.getString(mCursor.getColumnIndex(ComposeMealColumns.ComposeMealColumnsEntry.COLUMN_NAME));
-        double amount = mCursor.getDouble(mCursor.getColumnIndex(ComposeMealColumns.ComposeMealColumnsEntry.COLUMN_AMOUNT));
+        String name = mCursor.getString(mCursor.getColumnIndex(ComposeMealColumns.ComposeMealColumnsEntry.COLUMN_mealNAME));
+        double amount = mCursor.getDouble(mCursor.getColumnIndex(ComposeMealColumns.ComposeMealColumnsEntry.COLUMN_CALORIES));
 
         symbols.setDecimalSeparator('.');
         format = new DecimalFormat("#.#");
