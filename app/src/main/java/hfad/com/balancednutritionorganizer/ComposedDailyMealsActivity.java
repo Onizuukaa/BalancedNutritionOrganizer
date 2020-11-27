@@ -17,12 +17,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.text.DecimalFormat;
-
 import hfad.com.balancednutritionorganizer.adapters.RecyclerViewComposedDailyMealsAdapter;
 import hfad.com.balancednutritionorganizer.database_things.ComposedDailyMealsColumns;
 import hfad.com.balancednutritionorganizer.database_things.ComposedDailyMealsDBHelper;
-import hfad.com.balancednutritionorganizer.database_things.ComposedMealsColumns;
 
 import static java.lang.Integer.parseInt;
 
@@ -104,7 +101,7 @@ public class ComposedDailyMealsActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.example_menu, menu);
+        inflater.inflate(R.menu.search_menu, menu);
 
         MenuItem searchItem = menu.findItem(R.id.action_search);
         androidx.appcompat.widget.SearchView searchView = (androidx.appcompat.widget.SearchView) searchItem.getActionView();

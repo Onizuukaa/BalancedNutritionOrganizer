@@ -8,8 +8,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -24,7 +22,6 @@ import hfad.com.balancednutritionorganizer.adapters.RecyclerViewCustomProductAda
 import hfad.com.balancednutritionorganizer.database_things.CustomProductsColumns;
 import hfad.com.balancednutritionorganizer.database_things.CustomProductsDBHelper;
 
-import static java.lang.Double.parseDouble;
 import static java.lang.Integer.parseInt;
 
 public class CustomProductListActivity extends AppCompatActivity {
@@ -107,7 +104,7 @@ public class CustomProductListActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.example_menu, menu);
+        inflater.inflate(R.menu.search_menu, menu);
 
         MenuItem searchItem = menu.findItem(R.id.action_search);
         androidx.appcompat.widget.SearchView searchView = (androidx.appcompat.widget.SearchView) searchItem.getActionView();

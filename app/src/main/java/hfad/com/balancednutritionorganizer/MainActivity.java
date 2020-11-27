@@ -4,19 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
-import com.bumptech.glide.Glide;
-
-import java.net.URI;
 
 public class MainActivity extends AppCompatActivity {
     ProgressBar progressBarWater;
@@ -42,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void imageView_openProductTableActivity(View view) {
-        Intent intent = new Intent(this, ProductTableActivity.class);
+        Intent intent = new Intent(this, FoodTableActivity.class);
         startActivity(intent);
     }
 

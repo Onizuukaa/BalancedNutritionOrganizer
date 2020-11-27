@@ -24,6 +24,12 @@ public class RecyclerViewComposeMealAdapter extends RecyclerView.Adapter<Recycle
     public RecyclerViewComposeMealAdapter(Context context, Cursor cursor) {
         mContext = context;
         mCursor = cursor;
+
+        symbols.setDecimalSeparator('.');
+        format = new DecimalFormat("#.#");
+        format.setDecimalFormatSymbols(symbols);
+        format.setMaximumFractionDigits(1);
+        format.setDecimalSeparatorAlwaysShown(false);
     }
 
     public class ComposeMealViewHolder extends RecyclerView.ViewHolder {
@@ -50,18 +56,11 @@ public class RecyclerViewComposeMealAdapter extends RecyclerView.Adapter<Recycle
         }
         long id = mCursor.getLong(mCursor.getColumnIndex(ComposeMealColumns.ComposeMealColumnsEntry._ID));
         String name = mCursor.getString(mCursor.getColumnIndex(ComposeMealColumns.ComposeMealColumnsEntry.COLUMN_mealNAME));
-        double amount = mCursor.getDouble(mCursor.getColumnIndex(ComposeMealColumns.ComposeMealColumnsEntry.COLUMN_CALORIES));
-
-        symbols.setDecimalSeparator('.');
-        format = new DecimalFormat("#.#");
-        format.setDecimalFormatSymbols(symbols);
-        format.setMaximumFractionDigits(1);
-        format.setDecimalSeparatorAlwaysShown(false);
+        double calories = mCursor.getDouble(mCursor.getColumnIndex(ComposeMealColumns.ComposeMealColumnsEntry.COLUMN_CALORIES));
 
         holder.itemView.setTag(id);
         holder.composeMealNameFood.setText(position+1 + ".  " + name);
-        //holder.countText.setText(String.valueOf(amount));
-        holder.composeMealCaloriesFood.setText(format.format(amount) + " KCAL");
+        holder.composeMealCaloriesFood.setText(format.format(calories) + " KCAL");
     }
 
     @Override

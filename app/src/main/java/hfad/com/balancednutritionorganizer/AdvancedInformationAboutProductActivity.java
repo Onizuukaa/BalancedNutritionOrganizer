@@ -37,7 +37,7 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
     String productName, imageUrl, theNumberOfGramsEnteredByTheUserString;
     DecimalFormatSymbols symbols = DecimalFormatSymbols.getInstance();
     DecimalFormat format;
-
+String a, b;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -200,6 +200,37 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 theNumberOfGramsEnteredByTheUserString = editTextCustomNutritionalValues.getText().toString();
+
+                //String a = theNumberOfGramsEnteredByTheUserString.substring(0, 1);
+        //System.out.println("CZY DZIAŁA: " + a);
+                if (theNumberOfGramsEnteredByTheUserString.equals(".")){
+                    theNumberOfGramsEnteredByTheUserString = "";
+                    editTextCustomNutritionalValues.setText("");
+                }
+                    //a = theNumberOfGramsEnteredByTheUserString.charAt(1).;
+
+                if(theNumberOfGramsEnteredByTheUserString.length()== 3){
+                        a = theNumberOfGramsEnteredByTheUserString.substring(1,2);
+                        b = theNumberOfGramsEnteredByTheUserString.substring(2,3);
+                System.out.println("POZYCJA PIERWSZA TO: " + a + "POZYCJA DRUGA TO: " + b);
+                        if ( a.equals(".") && b.equals(".") ){
+                            theNumberOfGramsEnteredByTheUserString = theNumberOfGramsEnteredByTheUserString.substring(0, 2);
+                            editTextCustomNutritionalValues.setText(theNumberOfGramsEnteredByTheUserString);
+                        }
+
+                    //if (
+                             //theNumberOfGramsEnteredByTheUserString.substring(1,1).equals(".") && theNumberOfGramsEnteredByTheUserString.substring(1,2).equals("."))
+                    //{
+                        // if (theNumberOfGramsEnteredByTheUserString.charAt(1) == theNumberOfGramsEnteredByTheUserString.charAt(2)){
+                        //editTextCustomNutritionalValues.setText(theNumberOfGramsEnteredByTheUserString);
+                        //}
+                    //}
+                }
+                    //if(theNumberOfGramsEnteredByTheUserString.charAt(1) == ".")
+
+                    //theNumberOfGramsEnteredByTheUserString.charAt(1) == "."
+                    // to usuń jedną kropkę
+               // }
 
                 if (theNumberOfGramsEnteredByTheUserString.equals("")) {
                     textViewResultForCustomValueCalories.setText("0");

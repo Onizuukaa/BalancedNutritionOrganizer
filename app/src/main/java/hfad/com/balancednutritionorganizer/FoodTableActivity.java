@@ -20,7 +20,7 @@ import hfad.com.balancednutritionorganizer.productsList.MeatListActivity;
 import hfad.com.balancednutritionorganizer.productsList.SweetsListActivity;
 import hfad.com.balancednutritionorganizer.productsList.VegetablesListActivity;
 
-public class ProductTableActivity extends AppCompatActivity {
+public class FoodTableActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

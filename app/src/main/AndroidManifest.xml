@@ -16,28 +16,28 @@
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".AddCustomProductActivity"
-            android:parentActivityName=".ProductTableActivity" />
+            android:parentActivityName=".FoodTableActivity" />
         <activity
             android:name=".productsList.CustomProductListActivity"
-            android:parentActivityName=".ProductTableActivity" />
+            android:parentActivityName=".FoodTableActivity" />
         <activity
             android:name=".productsList.DrinksListActivity"
-            android:parentActivityName=".ProductTableActivity" />
+            android:parentActivityName=".FoodTableActivity" />
         <activity
             android:name=".productsList.SweetsListActivity"
-            android:parentActivityName=".ProductTableActivity" />
+            android:parentActivityName=".FoodTableActivity" />
         <activity
             android:name=".productsList.MeatListActivity"
-            android:parentActivityName=".ProductTableActivity" />
+            android:parentActivityName=".FoodTableActivity" />
         <activity
             android:name=".productsList.FishListActivity"
-            android:parentActivityName=".ProductTableActivity" />
+            android:parentActivityName=".FoodTableActivity" />
         <activity
             android:name=".productsList.DairyListActivity"
-            android:parentActivityName=".ProductTableActivity" />
+            android:parentActivityName=".FoodTableActivity" />
         <activity
             android:name=".productsList.GrainProductsListActivity"
-            android:parentActivityName=".ProductTableActivity" />
+            android:parentActivityName=".FoodTableActivity" />
         <activity
             android:name=".HealthyInfoActivity"
             android:parentActivityName=".MainActivity" />
@@ -56,12 +56,12 @@
         <activity android:name=".AdvancedInformationAboutProductActivity" />
         <activity
             android:name=".productsList.FruitsListActivity"
-            android:parentActivityName=".ProductTableActivity" />
+            android:parentActivityName=".FoodTableActivity" />
         <activity
             android:name=".productsList.VegetablesListActivity"
-            android:parentActivityName=".ProductTableActivity" />
+            android:parentActivityName=".FoodTableActivity" />
         <activity
-            android:name=".ProductTableActivity"
+            android:name=".FoodTableActivity"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

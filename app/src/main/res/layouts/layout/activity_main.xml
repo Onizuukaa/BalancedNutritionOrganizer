@@ -110,17 +110,17 @@
         <TableRow android:layout_width="match_parent">
 
             <TextView
-                android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/Metabolism_Calculator"
                 android:textSize="20dp" />
 
             <TextView
-                android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/Calculate_Your_BMI"
                 android:textSize="20dp" />
