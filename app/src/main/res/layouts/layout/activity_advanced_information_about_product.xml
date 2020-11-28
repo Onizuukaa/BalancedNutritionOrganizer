@@ -213,7 +213,7 @@
                 android:background="@drawable/cell_shape"
                 android:digits="0123456789."
                 android:gravity="center"
-                android:maxLength="4"
+                android:maxLength="3"
                 android:textSize="20dp" />
 
             <TextView

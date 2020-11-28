@@ -8,7 +8,9 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.InputType;
 import android.text.TextWatcher;
+import android.text.method.DigitsKeyListener;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -73,17 +75,16 @@ String a, b;
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.item1:
+            case R.id.menuHome:
                 Intent intent = new Intent(this, MainActivity.class);
-                //Zapobiega odnowieniu MainActivity
-//                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
             case android.R.id.home:
                 onBackPressed();
                 finish();
             default:
-                return super.onOptionsItemSelected(item);
+               break;// return super.onOptionsItemSelected(item);
         }
+        return true;
     }
 
     public void button_SendInformationAboutCurrentProductConfiguration(View view) {
@@ -188,6 +189,12 @@ String a, b;
         editTextCustomNutritionalValues = (EditText) findViewById(R.id.editTextCustomNutritionalValues);
         editTextCustomNutritionalValues.requestFocus();
 
+        editTextCustomNutritionalValues.setInputType(InputType.TYPE_CLASS_NUMBER);
+        editTextCustomNutritionalValues.setInputType(InputType.TYPE_NUMBER_FLAG_DECIMAL);
+                editTextCustomNutritionalValues.setKeyListener(DigitsKeyListener.getInstance(false,true));
+
+                //public static DigitsKeyListener getInstance(boolean sign, boolean decimal)
+
         editTextCustomNutritionalValues.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -201,36 +208,20 @@ String a, b;
             public void afterTextChanged(Editable s) {
                 theNumberOfGramsEnteredByTheUserString = editTextCustomNutritionalValues.getText().toString();
 
-                //String a = theNumberOfGramsEnteredByTheUserString.substring(0, 1);
-        //System.out.println("CZY DZIAŁA: " + a);
                 if (theNumberOfGramsEnteredByTheUserString.equals(".")){
                     theNumberOfGramsEnteredByTheUserString = "";
                     editTextCustomNutritionalValues.setText("");
                 }
-                    //a = theNumberOfGramsEnteredByTheUserString.charAt(1).;
 
-                if(theNumberOfGramsEnteredByTheUserString.length()== 3){
-                        a = theNumberOfGramsEnteredByTheUserString.substring(1,2);
-                        b = theNumberOfGramsEnteredByTheUserString.substring(2,3);
-                System.out.println("POZYCJA PIERWSZA TO: " + a + "POZYCJA DRUGA TO: " + b);
-                        if ( a.equals(".") && b.equals(".") ){
-                            theNumberOfGramsEnteredByTheUserString = theNumberOfGramsEnteredByTheUserString.substring(0, 2);
-                            editTextCustomNutritionalValues.setText(theNumberOfGramsEnteredByTheUserString);
-                        }
-
-                    //if (
-                             //theNumberOfGramsEnteredByTheUserString.substring(1,1).equals(".") && theNumberOfGramsEnteredByTheUserString.substring(1,2).equals("."))
-                    //{
-                        // if (theNumberOfGramsEnteredByTheUserString.charAt(1) == theNumberOfGramsEnteredByTheUserString.charAt(2)){
-                        //editTextCustomNutritionalValues.setText(theNumberOfGramsEnteredByTheUserString);
-                        //}
-                    //}
-                }
-                    //if(theNumberOfGramsEnteredByTheUserString.charAt(1) == ".")
-
-                    //theNumberOfGramsEnteredByTheUserString.charAt(1) == "."
-                    // to usuń jedną kropkę
-               // }
+//                if(theNumberOfGramsEnteredByTheUserString.length()== 3){
+//                    a = theNumberOfGramsEnteredByTheUserString.substring(1,2);
+//                    b = theNumberOfGramsEnteredByTheUserString.substring(2,3);
+//                    System.out.println("POZYCJA PIERWSZA TO: " + a + "POZYCJA DRUGA TO: " + b);
+//                    if ( a.equals(".") && b.equals(".") ){
+//                        theNumberOfGramsEnteredByTheUserString = theNumberOfGramsEnteredByTheUserString.substring(0, 2);
+//                        editTextCustomNutritionalValues.setText(theNumberOfGramsEnteredByTheUserString);
+//                    }
+//                }
 
                 if (theNumberOfGramsEnteredByTheUserString.equals("")) {
                     textViewResultForCustomValueCalories.setText("0");

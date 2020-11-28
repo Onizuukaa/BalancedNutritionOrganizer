@@ -48,19 +48,19 @@
 
         android:columnCount="5"
         android:rowCount="12">
-<!--        android:background="#5597B5"-->
+        <!--        android:background="#5597B5"-->
 
         <TextView
-            android:textSize="12sp"
             android:id="@+id/textViewComposedDailyMealsName"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
-            android:layout_rowWeight="1"
             android:layout_rowSpan="2"
+            android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape_yellow"
             android:gravity="center"
             android:text="Light Monday"
+            android:textSize="12sp"
             android:textStyle="bold" />
 
         <TextView
@@ -110,15 +110,15 @@
 
         <TextView
             android:id="@+id/textViewComposedDailyMealsName_FirstProduct"
-            android:textSize="12sp"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
-            android:layout_rowWeight="1"
             android:layout_rowSpan="2"
+            android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
             android:text="Cucumber soup"
+            android:textSize="12sp"
             android:textStyle="bold" />
 
         <TextView
@@ -168,15 +168,15 @@
 
         <TextView
             android:id="@+id/textViewComposedDailyMealsName_SecondProduct"
-            android:textSize="12sp"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
-            android:layout_rowWeight="1"
             android:layout_rowSpan="2"
+            android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
             android:text="Ogórkowa"
+            android:textSize="12sp"
             android:textStyle="bold" />
 
         <TextView
@@ -226,15 +226,15 @@
 
         <TextView
             android:id="@+id/textViewComposedDailyMealsName_ThirdProduct"
-            android:textSize="12sp"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
-            android:layout_rowWeight="1"
             android:layout_rowSpan="2"
+            android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
             android:text="Wodzionka"
+            android:textSize="12sp"
             android:textStyle="bold" />
 
         <TextView
@@ -284,15 +284,15 @@
 
         <TextView
             android:id="@+id/textViewComposedDailyMealsName_FourthProduct"
-            android:textSize="12sp"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
-            android:layout_rowWeight="1"
             android:layout_rowSpan="2"
+            android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
             android:text="Żurek"
+            android:textSize="12sp"
             android:textStyle="bold" />
 
         <TextView
@@ -342,15 +342,15 @@
 
         <TextView
             android:id="@+id/textViewComposedDailyMealsName_FifthProduct"
-            android:textSize="12sp"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
-            android:layout_rowWeight="1"
             android:layout_rowSpan="2"
+            android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
             android:text="Barszcz biały"
+            android:textSize="12sp"
             android:textStyle="bold" />
 
         <TextView
@@ -385,16 +385,17 @@
             android:gravity="center"
 
             android:paddingVertical="2dp"
-            android:text="fats 8G | s. fats 4G" />
+            android:text="fats 8G | s. fats 43G" />
 
         <TextView
             android:id="@+id/textViewComposedDailyMeals_PROTEIN_FifthProduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_rowWeight="1"
             android:layout_columnSpan="2"
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
-
             android:paddingVertical="2dp"
             android:text="protein 0.3g" />
 
