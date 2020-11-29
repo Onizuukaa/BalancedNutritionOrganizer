@@ -30,29 +30,33 @@ public class BmiActivity extends AppCompatActivity {
         height = editTextHeight.getText().toString();
         weight = editTextWeight.getText().toString();
         if (height != null && !"".equals(height) && weight != null && !"".equals(weight)) {
-            float heightValue = Float.parseFloat(height) / 100;
-            float weightValue = Float.parseFloat(weight);
+            if (height.equals(".") || weight.equals(".")){
 
-            float bmi = weightValue / (heightValue * heightValue);
+            }else{
+                float heightValue = Float.parseFloat(height) / 100;
+                float weightValue = Float.parseFloat(weight);
 
-            textView_starvation.setTypeface(null, Typeface.NORMAL);
-            textView_starvationNumbers.setTypeface(null, Typeface.NORMAL);
-            textView_significantlyUnderweight.setTypeface(null, Typeface.NORMAL);
-            textView_significantlyUnderweightNumbers.setTypeface(null, Typeface.NORMAL);
-            textView_underweight.setTypeface(null, Typeface.NORMAL);
-            textView_underweightNumbers.setTypeface(null, Typeface.NORMAL);
-            textView_normal.setTypeface(null, Typeface.NORMAL);
-            textView_normalNumbers.setTypeface(null, Typeface.NORMAL);
-            textView_overweight.setTypeface(null, Typeface.NORMAL);
-            textView_overweightNumbers.setTypeface(null, Typeface.NORMAL);
-            textView_class1obesity.setTypeface(null, Typeface.NORMAL);
-            textView_class1obesityNumbers.setTypeface(null, Typeface.NORMAL);
-            textView_class2obesity.setTypeface(null, Typeface.NORMAL);
-            textView_class2obesityNumbers.setTypeface(null, Typeface.NORMAL);
-            textView_class3obesity.setTypeface(null, Typeface.NORMAL);
-            textView_class3obesityNumbers.setTypeface(null, Typeface.NORMAL);
+                float bmi = weightValue / (heightValue * heightValue);
 
-            displayBMI(bmi);
+                textView_starvation.setTypeface(null, Typeface.NORMAL);
+                textView_starvationNumbers.setTypeface(null, Typeface.NORMAL);
+                textView_significantlyUnderweight.setTypeface(null, Typeface.NORMAL);
+                textView_significantlyUnderweightNumbers.setTypeface(null, Typeface.NORMAL);
+                textView_underweight.setTypeface(null, Typeface.NORMAL);
+                textView_underweightNumbers.setTypeface(null, Typeface.NORMAL);
+                textView_normal.setTypeface(null, Typeface.NORMAL);
+                textView_normalNumbers.setTypeface(null, Typeface.NORMAL);
+                textView_overweight.setTypeface(null, Typeface.NORMAL);
+                textView_overweightNumbers.setTypeface(null, Typeface.NORMAL);
+                textView_class1obesity.setTypeface(null, Typeface.NORMAL);
+                textView_class1obesityNumbers.setTypeface(null, Typeface.NORMAL);
+                textView_class2obesity.setTypeface(null, Typeface.NORMAL);
+                textView_class2obesityNumbers.setTypeface(null, Typeface.NORMAL);
+                textView_class3obesity.setTypeface(null, Typeface.NORMAL);
+                textView_class3obesityNumbers.setTypeface(null, Typeface.NORMAL);
+
+                displayBMI(bmi);
+            }
         }
     }
 

@@ -12,6 +12,7 @@
         android:id="@+id/textViewProductName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="Product Name"
         android:textSize="30dp"
         android:textStyle="bold" />
@@ -204,15 +205,14 @@
         <TableRow>
 
             <EditText
-                android:inputType="numberDecimal"
                 android:id="@+id/editTextCustomNutritionalValues"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/cell_shape"
-                android:digits="0123456789."
                 android:gravity="center"
+                android:inputType="numberDecimal"
                 android:maxLength="3"
                 android:textSize="20dp" />
 
@@ -266,12 +266,12 @@
         android:onClick="button_SendInformationAboutCurrentProductConfiguration"
         android:text="@string/Send_The_Macronutrients" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/buttonOpenComposhingDishesActivity"
-            android:text="@string/Open_Compose_The_Meal"
-            android:onClick="button_openComposhingDishesActivity"/>
+    <Button
+        android:id="@+id/buttonOpenComposhingDishesActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="button_openComposhingDishesActivity"
+        android:text="@string/Open_Compose_The_Meal" />
     <!--    <ImageView-->
     <!--        android:id="@+id/obrazek"-->
     <!--        android:layout_width="wrap_content"-->

@@ -71,26 +71,30 @@ public class AddCustomProductActivity extends AppCompatActivity {
     }
 
     public void addCustomProduct(View view) {
-
-        if (customProductName.getText().toString().length() != 0 && imageData != null && customProductCalories.getText().toString().length() != 0
-                && customProductCarbohydrates.getText().toString().length() != 0 && customProductSugar.getText().toString().length() != 0
-                && customProductFats.getText().toString().length() != 0 && customProductSaturatedFats.getText().toString().length() != 0
-                && customProductProtein.getText().toString().length() != 0) {
-
-            ContentValues cv = new ContentValues();
-            cv.put(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productName, customProductName.getText().toString());
-            cv.put(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productImage, imageData.toString());
-            cv.put(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productCalories, customProductCalories.getText().toString());
-            cv.put(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productCarbohydrates, customProductCarbohydrates.getText().toString());
-            cv.put(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productSugar, customProductSugar.getText().toString());
-            cv.put(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productFats, customProductFats.getText().toString());
-            cv.put(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productSaturatedFats, customProductSaturatedFats.getText().toString());
-            cv.put(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productProtein, customProductProtein.getText().toString());
-            databaseCustomProduct.insert(CustomProductsColumns.CustomProductsColumnsEntry.TABLE_NAME, null, cv);
-            Toast.makeText(this, getString(R.string.Food_added), Toast.LENGTH_SHORT).show();
-
-        } else {
+        if (customProductCalories.getText().toString().equals(".") || customProductCarbohydrates.getText().toString().equals(".") || customProductSugar.getText().toString().equals(".")
+                || customProductFats.getText().toString().equals(".") || customProductSaturatedFats.getText().toString().equals(".")
+                || customProductProtein.getText().toString().equals(".")) {
             Toast.makeText(this, getString(R.string.No_all_information_provided), Toast.LENGTH_SHORT).show();
+        } else {
+            if (customProductName.getText().toString().length() != 0 && imageData != null && customProductCalories.getText().toString().length() != 0
+                    && customProductCarbohydrates.getText().toString().length() != 0 && customProductSugar.getText().toString().length() != 0
+                    && customProductFats.getText().toString().length() != 0 && customProductSaturatedFats.getText().toString().length() != 0
+                    && customProductProtein.getText().toString().length() != 0) {
+
+                ContentValues cv = new ContentValues();
+                cv.put(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productName, customProductName.getText().toString());
+                cv.put(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productImage, imageData.toString());
+                cv.put(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productCalories, customProductCalories.getText().toString());
+                cv.put(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productCarbohydrates, customProductCarbohydrates.getText().toString());
+                cv.put(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productSugar, customProductSugar.getText().toString());
+                cv.put(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productFats, customProductFats.getText().toString());
+                cv.put(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productSaturatedFats, customProductSaturatedFats.getText().toString());
+                cv.put(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productProtein, customProductProtein.getText().toString());
+                databaseCustomProduct.insert(CustomProductsColumns.CustomProductsColumnsEntry.TABLE_NAME, null, cv);
+                Toast.makeText(this, getString(R.string.Food_added), Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, getString(R.string.No_all_information_provided), Toast.LENGTH_SHORT).show();
+            }
         }
     }
 

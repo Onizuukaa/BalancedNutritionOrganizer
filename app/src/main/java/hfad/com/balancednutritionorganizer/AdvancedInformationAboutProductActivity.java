@@ -8,9 +8,7 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.Editable;
-import android.text.InputType;
 import android.text.TextWatcher;
-import android.text.method.DigitsKeyListener;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -31,15 +29,15 @@ import static java.lang.Integer.parseInt;
 public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
 
     private SQLiteDatabase mDatabase;
-    public double caloriesInOneGramProduct, carbohydratesInOneGramProduct, sugarInOneGramProduct, FatsInOneGramProduct,
-            saturatedFatsInOneGramProduct, proteinInOneGramProduct, theNumberOfGramsEnteredByTheUser;
-    public TextView textViewResultForCustomValueCalories, textViewResultForCustomValueCarbohydratesAndSugar,
-            textViewResultForCustomValueFatsAndSaturatedFats, textViewResultForCustomValueProtein;
+    public double caloriesOneGramFood, carboOneGramFood, sugarOneGramFood, FatsOneGramFood,
+            saturFatsOneGramFood, proteinOneGramFood, gramFromUser;
+    public TextView resultCalories, resultCarboAndSugar,
+            resultFatsAndSaturFats, resultProtein;
     public EditText editTextCustomNutritionalValues;
-    String productName, imageUrl, theNumberOfGramsEnteredByTheUserString;
+    String productName, imageUrl, gramFromUserString;
     DecimalFormatSymbols symbols = DecimalFormatSymbols.getInstance();
     DecimalFormat format;
-String a, b;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,41 +89,34 @@ String a, b;
 
         if (editTextCustomNutritionalValues.length() == 0) {
             Toast.makeText(this, R.string.No_data_to_send, Toast.LENGTH_SHORT).show();
-            theNumberOfGramsEnteredByTheUser = 0;
+            gramFromUser = 0;
         }
 
-        //if (editTextCustomNutritionalValues.getText().toString().contains("0")) {
         if (editTextCustomNutritionalValues.getText().toString().equals("0")) {
             Toast.makeText(this, R.string.zero_will_not_be_sent, Toast.LENGTH_SHORT).show();
         }
 
-        if (theNumberOfGramsEnteredByTheUser != 0) {
-            String wlasnaNazwaTabeli = "testowa";
-            System.out.println("wysłane dane: "+theNumberOfGramsEnteredByTheUser);
+        if (gramFromUser != 0) {
+            System.out.println("wysłane dane: "+ gramFromUser);
             ContentValues cv = new ContentValues();
             cv.put(ComposeMealColumns.ComposeMealColumnsEntry.COLUMN_mealNAME, productName);
-            cv.put(ComposeMealColumns.ComposeMealColumnsEntry.COLUMN_CALORIES, caloriesInOneGramProduct * theNumberOfGramsEnteredByTheUser);
-            cv.put(ComposeMealColumns.ComposeMealColumnsEntry.COLUMN_CARBO, carbohydratesInOneGramProduct * theNumberOfGramsEnteredByTheUser);
-            cv.put(ComposeMealColumns.ComposeMealColumnsEntry.COLUMN_SUGAR, sugarInOneGramProduct * theNumberOfGramsEnteredByTheUser);
-            cv.put(ComposeMealColumns.ComposeMealColumnsEntry.COLUMN_FATS, FatsInOneGramProduct * theNumberOfGramsEnteredByTheUser);
-            cv.put(ComposeMealColumns.ComposeMealColumnsEntry.COLUMN_saturatedFATS, saturatedFatsInOneGramProduct * theNumberOfGramsEnteredByTheUser);
-            cv.put(ComposeMealColumns.ComposeMealColumnsEntry.COLUMN_PROTEIN, proteinInOneGramProduct * theNumberOfGramsEnteredByTheUser);
-            cv.put(ComposeMealColumns.ComposeMealColumnsEntry.COLUMN_WEIGHT, theNumberOfGramsEnteredByTheUserString);
+            cv.put(ComposeMealColumns.ComposeMealColumnsEntry.COLUMN_CALORIES, caloriesOneGramFood * gramFromUser);
+            cv.put(ComposeMealColumns.ComposeMealColumnsEntry.COLUMN_CARBO, carboOneGramFood * gramFromUser);
+            cv.put(ComposeMealColumns.ComposeMealColumnsEntry.COLUMN_SUGAR, sugarOneGramFood * gramFromUser);
+            cv.put(ComposeMealColumns.ComposeMealColumnsEntry.COLUMN_FATS, FatsOneGramFood * gramFromUser);
+            cv.put(ComposeMealColumns.ComposeMealColumnsEntry.COLUMN_saturatedFATS, saturFatsOneGramFood * gramFromUser);
+            cv.put(ComposeMealColumns.ComposeMealColumnsEntry.COLUMN_PROTEIN, proteinOneGramFood * gramFromUser);
+            cv.put(ComposeMealColumns.ComposeMealColumnsEntry.COLUMN_WEIGHT, gramFromUserString);
             mDatabase.insert(ComposeMealColumns.ComposeMealColumnsEntry.TABLE_NAME, null, cv);
-            //mDatabase.insert(wlasnaNazwaTabeli, null, cv);
 
             Toast.makeText(this, R.string.Macronutrients_has_been_sent, Toast.LENGTH_SHORT).show();
             //Kod poniżej żeby zapobiec crashowi w momencie wciśnięcia przycisku po usunięciu wpisanej wartości ale bez wychodzenia z aktywności
-            theNumberOfGramsEnteredByTheUser = 0;
+            gramFromUser = 0;
         }
 
     }
 
     private void getIncomingIntent() {
-//        if (getIntent().hasExtra("product_name") && getIntent().hasExtra("product_calories")
-//                && getIntent().hasExtra("product_image") && getIntent().hasExtra("product_carbohydrates")
-//                && getIntent().hasExtra("product_fats") && getIntent().hasExtra("product_saturatedfats")
-//                && getIntent().hasExtra("product_protein")) {
         if (getIntent().hasExtra("product_name") && getIntent().hasExtra("product_calories")
                 && getIntent().hasExtra("product_carbohydrates")
                 && getIntent().hasExtra("product_fats") && getIntent().hasExtra("product_saturatedfats")
@@ -133,7 +124,6 @@ String a, b;
 
             productName = getIntent().getStringExtra("product_name");
             String productCaloriesFor100Gram = getIntent().getStringExtra("product_calories");
-            //imageUrl = getIntent().getStringExtra("product_image"); // Obrazek
             String productCarbohydratesFor100Gram = getIntent().getStringExtra("product_carbohydrates");
             String productSugarFor100Gram = getIntent().getStringExtra("product_sugar");
             String productFatsFor100Gram = getIntent().getStringExtra("product_fats");
@@ -158,17 +148,17 @@ String a, b;
         TextView productProteinFor100Gram = findViewById(R.id.textViewProteinFor100Gram);
         TextView productProteinFor200Gram = findViewById(R.id.textViewProteinFor200Gram);
 
-        textViewResultForCustomValueCalories = (TextView) findViewById(R.id.textViewResultCustomValueCalories);
-        textViewResultForCustomValueCarbohydratesAndSugar = (TextView) findViewById(R.id.textViewResultCustomValueCarbohydratesAndSugar);
-        textViewResultForCustomValueFatsAndSaturatedFats = (TextView) findViewById(R.id.textViewResultCustomValueFatsAndSaturatedFats);
-        textViewResultForCustomValueProtein = (TextView) findViewById(R.id.textViewResultCustomValueProtein);
+        resultCalories = (TextView) findViewById(R.id.textViewResultCustomValueCalories);
+        resultCarboAndSugar = (TextView) findViewById(R.id.textViewResultCustomValueCarbohydratesAndSugar);
+        resultFatsAndSaturFats = (TextView) findViewById(R.id.textViewResultCustomValueFatsAndSaturatedFats);
+        resultProtein = (TextView) findViewById(R.id.textViewResultCustomValueProtein);
 
-        caloriesInOneGramProduct = parseDouble(productsCaloriesFor100Gram) / 100.0;
-        carbohydratesInOneGramProduct = parseDouble(productCarbohydratesFor100Gram) / 100.0;
-        sugarInOneGramProduct = parseDouble(productSugarFor100Gram) / 100.0;
-        FatsInOneGramProduct = parseDouble(productFats) / 100.0;
-        saturatedFatsInOneGramProduct = parseDouble(productSaturatedFats) / 100.0;
-        proteinInOneGramProduct = parseDouble(productProtein) / 100.0;
+        caloriesOneGramFood = parseDouble(productsCaloriesFor100Gram) / 100.0;
+        carboOneGramFood = parseDouble(productCarbohydratesFor100Gram) / 100.0;
+        sugarOneGramFood = parseDouble(productSugarFor100Gram) / 100.0;
+        FatsOneGramFood = parseDouble(productFats) / 100.0;
+        saturFatsOneGramFood = parseDouble(productSaturatedFats) / 100.0;
+        proteinOneGramFood = parseDouble(productProtein) / 100.0;
 
         productName.setText(productNames);
 
@@ -186,15 +176,8 @@ String a, b;
     }
 
     private void initViews() {
-        editTextCustomNutritionalValues = (EditText) findViewById(R.id.editTextCustomNutritionalValues);
+        editTextCustomNutritionalValues = findViewById(R.id.editTextCustomNutritionalValues);
         editTextCustomNutritionalValues.requestFocus();
-
-        editTextCustomNutritionalValues.setInputType(InputType.TYPE_CLASS_NUMBER);
-        editTextCustomNutritionalValues.setInputType(InputType.TYPE_NUMBER_FLAG_DECIMAL);
-                editTextCustomNutritionalValues.setKeyListener(DigitsKeyListener.getInstance(false,true));
-
-                //public static DigitsKeyListener getInstance(boolean sign, boolean decimal)
-
         editTextCustomNutritionalValues.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -206,34 +189,25 @@ String a, b;
 
             @Override
             public void afterTextChanged(Editable s) {
-                theNumberOfGramsEnteredByTheUserString = editTextCustomNutritionalValues.getText().toString();
+                gramFromUserString = editTextCustomNutritionalValues.getText().toString();
 
-                if (theNumberOfGramsEnteredByTheUserString.equals(".")){
-                    theNumberOfGramsEnteredByTheUserString = "";
+                if (gramFromUserString.equals(".")){
+                    gramFromUserString = "";
                     editTextCustomNutritionalValues.setText("");
                 }
-
-//                if(theNumberOfGramsEnteredByTheUserString.length()== 3){
-//                    a = theNumberOfGramsEnteredByTheUserString.substring(1,2);
-//                    b = theNumberOfGramsEnteredByTheUserString.substring(2,3);
-//                    System.out.println("POZYCJA PIERWSZA TO: " + a + "POZYCJA DRUGA TO: " + b);
-//                    if ( a.equals(".") && b.equals(".") ){
-//                        theNumberOfGramsEnteredByTheUserString = theNumberOfGramsEnteredByTheUserString.substring(0, 2);
-//                        editTextCustomNutritionalValues.setText(theNumberOfGramsEnteredByTheUserString);
-//                    }
-//                }
-
-                if (theNumberOfGramsEnteredByTheUserString.equals("")) {
-                    textViewResultForCustomValueCalories.setText("0");
-                    textViewResultForCustomValueCarbohydratesAndSugar.setText("0");
-                    textViewResultForCustomValueFatsAndSaturatedFats.setText("0");
-                    textViewResultForCustomValueProtein.setText("0");
+                if (gramFromUserString.equals("")) {
+                    resultCalories.setText("0");
+                    resultCarboAndSugar.setText("0");
+                    resultFatsAndSaturFats.setText("0");
+                    resultProtein.setText("0");
                 } else {
-                    theNumberOfGramsEnteredByTheUser = parseDouble(theNumberOfGramsEnteredByTheUserString);
-                    textViewResultForCustomValueCalories.setText(format.format(caloriesInOneGramProduct * theNumberOfGramsEnteredByTheUser));
-                    textViewResultForCustomValueCarbohydratesAndSugar.setText(format.format(carbohydratesInOneGramProduct * theNumberOfGramsEnteredByTheUser) + " (" + format.format(sugarInOneGramProduct * theNumberOfGramsEnteredByTheUser) + ")");
-                    textViewResultForCustomValueFatsAndSaturatedFats.setText(format.format(FatsInOneGramProduct * theNumberOfGramsEnteredByTheUser) + " (" + format.format(saturatedFatsInOneGramProduct * theNumberOfGramsEnteredByTheUser) + ")");
-                    textViewResultForCustomValueProtein.setText(format.format(proteinInOneGramProduct * theNumberOfGramsEnteredByTheUser));
+                    gramFromUser = parseDouble(gramFromUserString);
+                    resultCalories.setText(format.format(caloriesOneGramFood * gramFromUser));
+                    resultCarboAndSugar.setText(format.format(carboOneGramFood * gramFromUser)
+                            + " (" + format.format(sugarOneGramFood * gramFromUser) + ")");
+                    resultFatsAndSaturFats.setText(format.format(FatsOneGramFood * gramFromUser)
+                            + " (" + format.format(saturFatsOneGramFood * gramFromUser) + ")");
+                    resultProtein.setText(format.format(proteinOneGramFood * gramFromUser));
                 }
             }
         });

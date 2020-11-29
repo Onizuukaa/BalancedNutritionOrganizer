@@ -69,7 +69,8 @@
                 android:ems="10"
                 android:gravity="center"
                 android:hint="18-120 lat"
-                android:inputType="textPersonName"
+                android:inputType="numberDecimal"
+                android:maxLength="3"
                 android:text="27" />
         </TableRow>
 
@@ -84,14 +85,15 @@
                 android:textSize="20sp" />
 
             <EditText
+                android:maxLength="3"
                 android:id="@+id/editTextHeight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/edit_background"
+                android:inputType="numberDecimal"
                 android:ems="10"
                 android:gravity="center"
                 android:hint="cm"
-                android:inputType="textPersonName"
                 android:text="167" />
         </TableRow>
 
@@ -108,14 +110,15 @@
                 tools:layout_editor_absoluteY="280dp" />
 
             <EditText
+                android:maxLength="5"
                 android:id="@+id/editTextWeight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/edit_background"
+                android:inputType="numberDecimal"
                 android:ems="10"
                 android:gravity="center"
                 android:hint="kg"
-                android:inputType="textPersonName"
                 android:text="66.45" />
 
         </TableRow>
@@ -155,12 +158,12 @@
     </LinearLayout>
 
     <Button
-        android:background="@drawable/button_background"
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginVertical="10dp"
+        android:background="@drawable/button_background"
         android:onClick="buttonCalculateTotalMetabolism"
         android:text="@string/Calculate" />
 
@@ -172,15 +175,15 @@
     <!--        android:layout_marginTop="10dp"-->
     <!--        android:textSize="18sp" />-->
 
-<!--    <TextView-->
-<!--        android:id="@+id/textViewResultCompleteMetabolismMacros"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_gravity="center"-->
-<!--        android:layout_marginTop="10dp"-->
-<!--        android:text="Dzienne zapotrzebowanie na makroskładniki"-->
-<!--        android:textColor="#000000"-->
-<!--        android:textSize="18sp" />-->
+    <!--    <TextView-->
+    <!--        android:id="@+id/textViewResultCompleteMetabolismMacros"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_gravity="center"-->
+    <!--        android:layout_marginTop="10dp"-->
+    <!--        android:text="Dzienne zapotrzebowanie na makroskładniki"-->
+    <!--        android:textColor="#000000"-->
+    <!--        android:textSize="18sp" />-->
 
     <GridLayout
         android:layout_width="match_parent"

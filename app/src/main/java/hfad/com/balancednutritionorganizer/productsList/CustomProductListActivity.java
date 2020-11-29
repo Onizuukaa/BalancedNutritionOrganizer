@@ -95,9 +95,12 @@ public class CustomProductListActivity extends AppCompatActivity {
                 customProductsDatabase.delete(CustomProductsColumns.CustomProductsColumnsEntry.TABLE_NAME,
                         CustomProductsColumns.CustomProductsColumnsEntry._ID + "=" + productPosition, null);
                 adapter.swapCursor(getAllItems());
+                initRecyclerView();
+                cursor = getAllItems();
+                showOrHideNoDataTextView();
             }
-            cursor = getAllItems();
-            showOrHideNoDataTextView();
+            //cursor = getAllItems();
+            //showOrHideNoDataTextView();
         }
     }
 

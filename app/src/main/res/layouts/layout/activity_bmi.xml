@@ -48,10 +48,9 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/edit_background"
                     android:ems="11"
-
                     android:hint="cm"
                     android:inputType="numberDecimal"
-                    android:maxLength="5"
+                    android:maxLength="3"
                     android:paddingLeft="10dp" />
             </TableRow>
 

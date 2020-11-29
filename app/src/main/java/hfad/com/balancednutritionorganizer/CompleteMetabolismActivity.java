@@ -65,45 +65,50 @@ public class CompleteMetabolismActivity extends AppCompatActivity {
             selectedGender = 5;
         } else selectedGender = -161;
 
-        result = (9.99 * parseDouble(editTextWeight.getText().toString()))
-                + (6.25 * parseDouble(editTextHeight.getText().toString()))
-                - (4.92 * parseDouble(editTextAge.getText().toString()))
-                + selectedGender;
-        resultFull = result * selectedPhysicalActivity;
+        if (editTextWeight.getText().toString().equals("") || editTextHeight.getText().toString().equals(".")
+        || editTextAge.getText().toString().equals(".")){
 
-        proteinGram = selectedPhysicalActivity * parseDouble(editTextWeight.getText().toString());
-        proteinCalories = proteinGram * 4;
+        }else{
+            result = (9.99 * parseDouble(editTextWeight.getText().toString()))
+                    + (6.25 * parseDouble(editTextHeight.getText().toString()))
+                    - (4.92 * parseDouble(editTextAge.getText().toString()))
+                    + selectedGender;
 
-        fatsCalories = resultFull * 0.25;
-        fatsGram = fatsCalories / 9;
+            resultFull = result * selectedPhysicalActivity;
 
-        carboCalories = (resultFull - fatsCalories) - proteinCalories;
-        //System.out.println("carbo: " + carboCalories);
-        carboGram = carboCalories / 4;
+            proteinGram = selectedPhysicalActivity * parseDouble(editTextWeight.getText().toString());
+            proteinCalories = proteinGram * 4;
 
-        percentProtein = (proteinCalories / resultFull) * 100;
-        percentFats = (fatsCalories / resultFull) * 100;
-        percentCarbo = (carboCalories / resultFull) * 100;
+            fatsCalories = resultFull * 0.25;
+            fatsGram = fatsCalories / 9;
 
-        //textViewResultCompleteMetabolism.setText("Dzienne zapotrzebowanie na kalorie: " + format.format(resultFull));
-       // textViewResultCompleteMetabolismMacros.setText("Dzienne zapotrzebowanie na makroskładniki.");
+            carboCalories = (resultFull - fatsCalories) - proteinCalories;
+            //System.out.println("carbo: " + carboCalories);
+            carboGram = carboCalories / 4;
+
+            percentProtein = (proteinCalories / resultFull) * 100;
+            percentFats = (fatsCalories / resultFull) * 100;
+            percentCarbo = (carboCalories / resultFull) * 100;
+
+            //textViewResultCompleteMetabolism.setText("Dzienne zapotrzebowanie na kalorie: " + format.format(resultFull));
+            // textViewResultCompleteMetabolismMacros.setText("Dzienne zapotrzebowanie na makroskładniki.");
 //                "\n" +
 //                "białko: " + format.format(proteinGram) + "g " + format.format(proteinCalories) + " kcal " + format.format(percentProtein) + "%" + "\n" +
 //                "tłuszcze: " + format.format(fatsGram) + "g " + format.format(fatsCalories) + " kcal " + format.format(percentFats) + "%" + "\n" +
 //                "węglowodany: " + format.format(carboGram) + "g " + format.format(carboCalories) + " kcal " + format.format(percentCarbo) + "%");
 
-        textViewTotalMetabolismProtein_Gram.setText(format.format(proteinGram) + "g");
-        textViewTotalMetabolismFats_Gram.setText(format.format(fatsGram) + "g");
-        textViewTotalMetabolismCarbo_Gram.setText(format.format(carboGram) + "g");
-        textViewTotalMetabolismProtein_Kcal.setText(format.format(proteinCalories) + "kcal");
-        textViewTotalMetabolismFats_Kcal.setText(format.format(fatsCalories) + "kcal");
-        textViewTotalMetabolismCarbo_Kcal.setText(format.format(carboCalories) + "kcal");
-        textViewTotalMetabolismProtein_Percent.setText(format.format(percentProtein) + "%");
-        textViewTotalMetabolismFats_Percent.setText(format.format(percentFats) + "%");
-        textViewTotalMetabolismCarbo_Percent.setText(format.format(percentCarbo) + "%");
-        textViewTotalMetabolismTotal_Kcal.setText(format.format(resultFull) + " kcal");
+            textViewTotalMetabolismProtein_Gram.setText(format.format(proteinGram) + "g");
+            textViewTotalMetabolismFats_Gram.setText(format.format(fatsGram) + "g");
+            textViewTotalMetabolismCarbo_Gram.setText(format.format(carboGram) + "g");
+            textViewTotalMetabolismProtein_Kcal.setText(format.format(proteinCalories) + "kcal");
+            textViewTotalMetabolismFats_Kcal.setText(format.format(fatsCalories) + "kcal");
+            textViewTotalMetabolismCarbo_Kcal.setText(format.format(carboCalories) + "kcal");
+            textViewTotalMetabolismProtein_Percent.setText(format.format(percentProtein) + "%");
+            textViewTotalMetabolismFats_Percent.setText(format.format(percentFats) + "%");
+            textViewTotalMetabolismCarbo_Percent.setText(format.format(percentCarbo) + "%");
+            textViewTotalMetabolismTotal_Kcal.setText(format.format(resultFull) + " kcal");
+        }
     }
-
     private void initViews() {
         editTextAge = findViewById(R.id.editTextAge);
         editTextHeight = findViewById(R.id.editTextHeight);

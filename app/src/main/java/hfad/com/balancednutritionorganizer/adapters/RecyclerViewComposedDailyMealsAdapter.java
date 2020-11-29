@@ -13,12 +13,10 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 import hfad.com.balancednutritionorganizer.R;
 import hfad.com.balancednutritionorganizer.ReturnItemComposedDailyMeals;
-import hfad.com.balancednutritionorganizer.ReturnItemComposedMeals;
 import hfad.com.balancednutritionorganizer.database_things.ComposedDailyMealsColumns;
 
 public class RecyclerViewComposedDailyMealsAdapter extends RecyclerView.Adapter<RecyclerViewComposedDailyMealsAdapter.RecyclerViewComposedDailyMealsViewHolder> implements Filterable {
@@ -59,17 +57,21 @@ public class RecyclerViewComposedDailyMealsAdapter extends RecyclerView.Adapter<
 
     public class RecyclerViewComposedDailyMealsViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView textViewComposedDailyMealsName, textViewComposedDailyMeals_KCAL_WEIGHT_SUM, textViewComposedDailyMeals_CARBO_SUGAR_SUM,
-                textViewComposedDailyMeals_FATS_sFATS_SUM, textViewComposedDailyMeals_PROTEIN_SUM, textViewComposedDailyMealsName_FirstProduct,
-                textViewComposedDailyMeals_KCAL_WEIGHT_FirstProduct, textViewComposedDailyMeals_CARBO_SUGAR_FirstProduct,
-                textViewComposedDailyMeals_FATS_sFats_FirstProduct, textViewComposedDailyMeals_PROTEIN_FirstProduct, textViewComposedDailyMealsName_SecondProduct,
-                textViewComposedDailyMeals_KCAL_WEIGHT_SecondProduct, textViewComposedDailyMeals_CARBO_SUGAR_SecondProduct,
-                textViewComposedDailyMeals_FATS_sFats_SecondProduct, textViewComposedDailyMeals_PROTEIN_SecondProduct, textViewComposedDailyMealsName_ThirdProduct,
-                textViewComposedDailyMeals_KCAL_WEIGHT_ThirdProduct, textViewComposedDailyMeals_CARBO_SUGAR_ThirdProduct, textViewComposedDailyMeals_FATS_sFats_ThirdProduct,
+        public TextView textViewComposedDailyMealsName, textViewComposedDailyMeals_KCAL_WEIGHT_SUM, textViewComposedDailyMeals_CARBO_SUM,
+                textViewComposedDailyMeals_SUGAR_SUM,
+                textViewComposedDailyMeals_FATS_SUM, textViewComposedDailyMeals_saturatedFATS_SUM, textViewComposedDailyMeals_PROTEIN_SUM, textViewComposedDailyMealsName_FirstProduct,
+                textViewComposedDailyMeals_KCAL_WEIGHT_FirstProduct, textViewComposedDailyMeals_CARBO_FirstProduct, textViewComposedDailyMeals_SUGAR_FirstProduct,
+                textViewComposedDailyMeals_FATS_FirstProduct, textViewComposedDailyMeals_saturatedFATS_FirstProduct, textViewComposedDailyMeals_PROTEIN_FirstProduct, textViewComposedDailyMealsName_SecondProduct,
+                textViewComposedDailyMeals_KCAL_WEIGHT_SecondProduct, textViewComposedDailyMeals_CARBO_SecondProduct, textViewComposedDailyMeals_SUGAR_SecondProduct,
+                textViewComposedDailyMeals_FATS_SecondProduct, textViewComposedDailyMeals_saturatedFATS_SecondProduct,textViewComposedDailyMeals_PROTEIN_SecondProduct, textViewComposedDailyMealsName_ThirdProduct,
+                textViewComposedDailyMeals_KCAL_WEIGHT_ThirdProduct, textViewComposedDailyMeals_CARBO_ThirdProduct, textViewComposedDailyMeals_SUGAR_ThirdProduct,textViewComposedDailyMeals_FATS_ThirdProduct,
+                textViewComposedDailyMeals_saturatedFATS_ThirdProduct,
                 textViewComposedDailyMeals_PROTEIN_ThirdProduct, textViewComposedDailyMealsName_FourthProduct, textViewComposedDailyMeals_KCAL_WEIGHT_FourthProduct,
-                textViewComposedDailyMeals_CARBO_SUGAR_FourthProduct, textViewComposedDailyMeals_FATS_sFats_FourthProduct, textViewComposedDailyMeals_PROTEIN_FourthProduct,
-                textViewComposedDailyMealsName_FifthProduct, textViewComposedDailyMeals_KCAL_WEIGHT_FifthProduct, textViewComposedDailyMeals_CARBO_SUGAR_FifthProduct,
-                textViewComposedDailyMeals_FATS_sFats_FifthProduct, textViewComposedDailyMeals_PROTEIN_FifthProduct, textViewProductsIncludedComposedDailyMeal_FirstProduct,
+                textViewComposedDailyMeals_CARBO_FourthProduct, textViewComposedDailyMeals_SUGAR_FourthProduct, textViewComposedDailyMeals_FATS_FourthProduct,
+                textViewComposedDailyMeals_saturatedFATS_FourthProduct, textViewComposedDailyMeals_PROTEIN_FourthProduct,
+                textViewComposedDailyMealsName_FifthProduct, textViewComposedDailyMeals_KCAL_WEIGHT_FifthProduct, textViewComposedDailyMeals_CARBO_FifthProduct,
+                textViewComposedDailyMeals_SUGAR_FifthProduct,
+                textViewComposedDailyMeals_FATS_FifthProduct, textViewComposedDailyMeals_saturatedFATS_FifthProduct, textViewComposedDailyMeals_PROTEIN_FifthProduct, textViewProductsIncludedComposedDailyMeal_FirstProduct,
                 textViewProductsIncludedComposedDailyMeal_SecondProduct,textViewProductsIncludedComposedDailyMeal_ThirdProduct,textViewProductsIncludedComposedDailyMeal_FourthProduct,
                 textViewProductsIncludedComposedDailyMeal_FifthProduct;
 
@@ -79,38 +81,50 @@ public class RecyclerViewComposedDailyMealsAdapter extends RecyclerView.Adapter<
             super(itemView);
             textViewComposedDailyMealsName = itemView.findViewById(R.id.textViewComposedDailyMealsName);
             textViewComposedDailyMeals_KCAL_WEIGHT_SUM = itemView.findViewById(R.id.textViewComposedDailyMeals_KCAL_WEIGHT_SUM);
-            textViewComposedDailyMeals_CARBO_SUGAR_SUM = itemView.findViewById(R.id.textViewComposedDailyMeals_CARBO_SUGAR_SUM);
-            textViewComposedDailyMeals_FATS_sFATS_SUM = itemView.findViewById(R.id.textViewComposedDailyMeals_FATS_sFATS_SUM);
+            textViewComposedDailyMeals_CARBO_SUM = itemView.findViewById(R.id.textViewComposedDailyMeals_CARBO_SUM);
+            textViewComposedDailyMeals_SUGAR_SUM = itemView.findViewById(R.id.textViewComposedDailyMeals_SUGAR_SUM);
+            textViewComposedDailyMeals_FATS_SUM = itemView.findViewById(R.id.textViewComposedDailyMeals_FATS_SUM);
+            textViewComposedDailyMeals_saturatedFATS_SUM = itemView.findViewById(R.id.textViewComposedDailyMeals_sFATS_SUM);
             textViewComposedDailyMeals_PROTEIN_SUM = itemView.findViewById(R.id.textViewComposedDailyMeals_PROTEIN_SUM);
 
             textViewComposedDailyMealsName_FirstProduct = itemView.findViewById(R.id.textViewComposedDailyMealsName_FirstProduct);
             textViewComposedDailyMeals_KCAL_WEIGHT_FirstProduct = itemView.findViewById(R.id.textViewComposedDailyMeals_KCAL_WEIGHT_FirstProduct);
-            textViewComposedDailyMeals_CARBO_SUGAR_FirstProduct = itemView.findViewById(R.id.textViewComposedDailyMeals_CARBO_SUGAR_FirstProduct);
-            textViewComposedDailyMeals_FATS_sFats_FirstProduct = itemView.findViewById(R.id.textViewComposedDailyMeals_FATS_sFats_FirstProduct);
+            textViewComposedDailyMeals_CARBO_FirstProduct = itemView.findViewById(R.id.textViewComposedDailyMeals_CARBO_FirstProduct);
+            textViewComposedDailyMeals_SUGAR_FirstProduct = itemView.findViewById(R.id.textViewComposedDailyMeals_SUGAR_FirstProduct);
+            textViewComposedDailyMeals_FATS_FirstProduct = itemView.findViewById(R.id.textViewComposedDailyMeals_FATS_FirstProduct);
+            textViewComposedDailyMeals_saturatedFATS_FirstProduct = itemView.findViewById(R.id.textViewComposedDailyMeals_sFATS_FirstProduct);
             textViewComposedDailyMeals_PROTEIN_FirstProduct = itemView.findViewById(R.id.textViewComposedDailyMeals_PROTEIN_FirstProduct);
 
             textViewComposedDailyMealsName_SecondProduct = itemView.findViewById(R.id.textViewComposedDailyMealsName_SecondProduct);
             textViewComposedDailyMeals_KCAL_WEIGHT_SecondProduct = itemView.findViewById(R.id.textViewComposedDailyMeals_KCAL_WEIGHT_SecondProduct);
-            textViewComposedDailyMeals_CARBO_SUGAR_SecondProduct = itemView.findViewById(R.id.textViewComposedDailyMeals_CARBO_SUGAR_SecondProduct);
-            textViewComposedDailyMeals_FATS_sFats_SecondProduct = itemView.findViewById(R.id.textViewComposedDailyMeals_FATS_sFats_SecondProduct);
+            textViewComposedDailyMeals_CARBO_SecondProduct = itemView.findViewById(R.id.textViewComposedDailyMeals_CARBO_SecondProduct);
+            textViewComposedDailyMeals_SUGAR_SecondProduct = itemView.findViewById(R.id.textViewComposedDailyMeals_SUGAR_SecondProduct);
+            textViewComposedDailyMeals_FATS_SecondProduct = itemView.findViewById(R.id.textViewComposedDailyMeals_FATS_SecondProduct);
+            textViewComposedDailyMeals_saturatedFATS_SecondProduct = itemView.findViewById(R.id.textViewComposedDailyMeals_sFATS_SecondProduct);
             textViewComposedDailyMeals_PROTEIN_SecondProduct = itemView.findViewById(R.id.textViewComposedDailyMeals_PROTEIN_SecondProduct);
 
             textViewComposedDailyMealsName_ThirdProduct = itemView.findViewById(R.id.textViewComposedDailyMealsName_ThirdProduct);
             textViewComposedDailyMeals_KCAL_WEIGHT_ThirdProduct = itemView.findViewById(R.id.textViewComposedDailyMeals_KCAL_WEIGHT_ThirdProduct);
-            textViewComposedDailyMeals_CARBO_SUGAR_ThirdProduct = itemView.findViewById(R.id.textViewComposedDailyMeals_CARBO_SUGAR_ThirdProduct);
-            textViewComposedDailyMeals_FATS_sFats_ThirdProduct = itemView.findViewById(R.id.textViewComposedDailyMeals_FATS_sFats_ThirdProduct);
+            textViewComposedDailyMeals_CARBO_ThirdProduct = itemView.findViewById(R.id.textViewComposedDailyMeals_CARBO_ThirdProduct);
+            textViewComposedDailyMeals_SUGAR_ThirdProduct = itemView.findViewById(R.id.textViewComposedDailyMeals_SUGAR_ThirdProduct);
+            textViewComposedDailyMeals_FATS_ThirdProduct = itemView.findViewById(R.id.textViewComposedDailyMeals_FATS_ThirdProduct);
+            textViewComposedDailyMeals_saturatedFATS_ThirdProduct = itemView.findViewById(R.id.textViewComposedDailyMeals_sFATS_ThirdProduct);
             textViewComposedDailyMeals_PROTEIN_ThirdProduct = itemView.findViewById(R.id.textViewComposedDailyMeals_PROTEIN_ThirdProduct);
 
             textViewComposedDailyMealsName_FourthProduct = itemView.findViewById(R.id.textViewComposedDailyMealsName_FourthProduct);
             textViewComposedDailyMeals_KCAL_WEIGHT_FourthProduct = itemView.findViewById(R.id.textViewComposedDailyMeals_KCAL_WEIGHT_FourthProduct);
-            textViewComposedDailyMeals_CARBO_SUGAR_FourthProduct = itemView.findViewById(R.id.textViewComposedDailyMeals_CARBO_SUGAR_FourthProduct);
-            textViewComposedDailyMeals_FATS_sFats_FourthProduct = itemView.findViewById(R.id.textViewComposedDailyMeals_FATS_sFats_FourthProduct);
+            textViewComposedDailyMeals_CARBO_FourthProduct = itemView.findViewById(R.id.textViewComposedDailyMeals_CARBO_FourthProduct);
+            textViewComposedDailyMeals_SUGAR_FourthProduct = itemView.findViewById(R.id.textViewComposedDailyMeals_SUGAR_FourthProduct);
+            textViewComposedDailyMeals_FATS_FourthProduct = itemView.findViewById(R.id.textViewComposedDailyMeals_FATS_FourthProduct);
+            textViewComposedDailyMeals_saturatedFATS_FourthProduct = itemView.findViewById(R.id.textViewComposedDailyMeals_sFATS_FourthProduct);
             textViewComposedDailyMeals_PROTEIN_FourthProduct = itemView.findViewById(R.id.textViewComposedDailyMeals_PROTEIN_FourthProduct);
 
             textViewComposedDailyMealsName_FifthProduct = itemView.findViewById(R.id.textViewComposedDailyMealsName_FifthProduct);
             textViewComposedDailyMeals_KCAL_WEIGHT_FifthProduct = itemView.findViewById(R.id.textViewComposedDailyMeals_KCAL_WEIGHT_FifthProduct);
-            textViewComposedDailyMeals_CARBO_SUGAR_FifthProduct = itemView.findViewById(R.id.textViewComposedDailyMeals_CARBO_SUGAR_FifthProduct);
-            textViewComposedDailyMeals_FATS_sFats_FifthProduct = itemView.findViewById(R.id.textViewComposedDailyMeals_FATS_sFats_FifthProduct);
+            textViewComposedDailyMeals_CARBO_FifthProduct = itemView.findViewById(R.id.textViewComposedDailyMeals_CARBO_FifthProduct);
+            textViewComposedDailyMeals_SUGAR_FifthProduct = itemView.findViewById(R.id.textViewComposedDailyMeals_SUGAR_FifthProduct);
+            textViewComposedDailyMeals_FATS_FifthProduct = itemView.findViewById(R.id.textViewComposedDailyMeals_FATS_FifthProduct);
+            textViewComposedDailyMeals_saturatedFATS_FifthProduct = itemView.findViewById(R.id.textViewComposedDailyMeals_sFATS_FifthProduct);
             textViewComposedDailyMeals_PROTEIN_FifthProduct = itemView.findViewById(R.id.textViewComposedDailyMeals_PROTEIN_FifthProduct);
 
             textViewProductsIncludedComposedDailyMeal_FirstProduct = itemView.findViewById(R.id.textViewProductsIncludedComposedDailyMeal_FirstProduct);
@@ -143,39 +157,51 @@ public class RecyclerViewComposedDailyMealsAdapter extends RecyclerView.Adapter<
         holder.itemView.setTag(id);
 
         holder.textViewComposedDailyMealsName.setText(currentItem.getProductDailyMealsPosition() + 1 + ".  " + currentItem.getComposedDailyMeals_Name());
-        holder.textViewComposedDailyMeals_KCAL_WEIGHT_SUM.setText("KCAL "+currentItem.getComposedDailyMeals_KCAL_SUM()+"/"+currentItem.getComposedDailyMeals_WEIGHT_SUM()+"G");
-        holder.textViewComposedDailyMeals_CARBO_SUGAR_SUM.setText("carbo "+currentItem.getComposedDailyMeals_CARBOHYDRATES_SUM()+"G | sugar "+currentItem.getComposedDailyMeals_SUGAR_SUM()+"G");
-        holder.textViewComposedDailyMeals_FATS_sFATS_SUM.setText("fats "+currentItem.getComposedDailyMeals_FATS_SUM()+"G | s. fats "+currentItem.getComposedDailyMeals_saturatedFATS_SUM()+"G");
+        holder.textViewComposedDailyMeals_KCAL_WEIGHT_SUM.setText("kcal "+currentItem.getComposedDailyMeals_KCAL_SUM()+"/"+currentItem.getComposedDailyMeals_WEIGHT_SUM()+"G");
+        holder.textViewComposedDailyMeals_CARBO_SUM.setText("carbo "+currentItem.getComposedDailyMeals_CARBOHYDRATES_SUM()+"G");
+        holder.textViewComposedDailyMeals_SUGAR_SUM.setText("sugar "+currentItem.getComposedDailyMeals_SUGAR_SUM()+"G");
+        holder.textViewComposedDailyMeals_FATS_SUM.setText("fats "+currentItem.getComposedDailyMeals_FATS_SUM()+"G");
+        holder.textViewComposedDailyMeals_saturatedFATS_SUM.setText("s. fats "+currentItem.getComposedDailyMeals_saturatedFATS_SUM()+"G");
         holder.textViewComposedDailyMeals_PROTEIN_SUM.setText("protein "+currentItem.getComposedDailyMeals_PROTEIN_SUM()+"G");
 
         holder.textViewComposedDailyMealsName_FirstProduct.setText(currentItem.getFirstProduct_NAME());
-        holder.textViewComposedDailyMeals_KCAL_WEIGHT_FirstProduct.setText("KCAL "+currentItem.getFirstProduct_KCAL()+"/"+currentItem.getFirstProduct_WEIGHT()+"G");
-        holder.textViewComposedDailyMeals_CARBO_SUGAR_FirstProduct.setText("carbo "+currentItem.getFirstProduct_CARBOHYDRATES()+"G | sugar "+currentItem.getFirstProduct_SUGAR()+"G");
-        holder.textViewComposedDailyMeals_FATS_sFats_FirstProduct.setText("fats "+currentItem.getFirstProduct_FATS()+"G | s. fats "+currentItem.getFirstProduct_saturatedFATS()+"G");
+        holder.textViewComposedDailyMeals_KCAL_WEIGHT_FirstProduct.setText("kcal "+currentItem.getFirstProduct_KCAL()+"/"+currentItem.getFirstProduct_WEIGHT()+"G");
+        holder.textViewComposedDailyMeals_CARBO_FirstProduct.setText("carbo "+currentItem.getFirstProduct_CARBOHYDRATES()+"G");
+        holder.textViewComposedDailyMeals_SUGAR_FirstProduct.setText("sugar "+currentItem.getFirstProduct_SUGAR()+"G");
+        holder.textViewComposedDailyMeals_FATS_FirstProduct.setText("fats "+currentItem.getFirstProduct_FATS()+"G");
+        holder.textViewComposedDailyMeals_saturatedFATS_FirstProduct.setText("s. fats "+currentItem.getFirstProduct_saturatedFATS()+"G");
         holder.textViewComposedDailyMeals_PROTEIN_FirstProduct.setText("protein "+currentItem.getFirstProduct_PROTEIN()+"G");
 
         holder.textViewComposedDailyMealsName_SecondProduct.setText(currentItem.getSecondProduct_NAME());
-        holder.textViewComposedDailyMeals_KCAL_WEIGHT_SecondProduct.setText("KCAL "+currentItem.getSecondProduct_KCAL()+"/"+currentItem.getSecondProduct_WEIGHT()+"G");
-        holder.textViewComposedDailyMeals_CARBO_SUGAR_SecondProduct.setText("carbo "+currentItem.getSecondProduct_CARBOHYDRATES()+"G | sugar "+currentItem.getSecondProduct_SUGAR()+"G");
-        holder.textViewComposedDailyMeals_FATS_sFats_SecondProduct.setText("fats "+currentItem.getSecondProduct_FATS()+"G | s. fats "+currentItem.getSecondProduct_saturatedFATS()+"G");
+        holder.textViewComposedDailyMeals_KCAL_WEIGHT_SecondProduct.setText("kcal "+currentItem.getSecondProduct_KCAL()+"/"+currentItem.getSecondProduct_WEIGHT()+"G");
+        holder.textViewComposedDailyMeals_CARBO_SecondProduct.setText("carbo "+currentItem.getSecondProduct_CARBOHYDRATES()+"G");
+        holder.textViewComposedDailyMeals_SUGAR_SecondProduct.setText("sugar "+currentItem.getSecondProduct_SUGAR()+"G");
+        holder.textViewComposedDailyMeals_FATS_SecondProduct.setText("fats "+currentItem.getSecondProduct_FATS()+"G");
+        holder.textViewComposedDailyMeals_saturatedFATS_SecondProduct.setText("s. fats "+currentItem.getSecondProduct_saturatedFATS()+"G");
         holder.textViewComposedDailyMeals_PROTEIN_SecondProduct.setText("protein "+currentItem.getSecondProduct_PROTEIN()+"G");
 
         holder.textViewComposedDailyMealsName_ThirdProduct.setText(currentItem.getThirdProduct_NAME());
-        holder.textViewComposedDailyMeals_KCAL_WEIGHT_ThirdProduct.setText("KCAL "+currentItem.getThirdProduct_KCAL()+"/"+currentItem.getThirdProduct_WEIGHT()+"G");
-        holder.textViewComposedDailyMeals_CARBO_SUGAR_ThirdProduct.setText("carbo "+currentItem.getThirdProduct_CARBOHYDRATES()+"G | sugar "+currentItem.getThirdProduct_SUGAR()+"G");
-        holder.textViewComposedDailyMeals_FATS_sFats_ThirdProduct.setText("fats "+currentItem.getThirdProduct_FATS()+"G | s. fats "+currentItem.getThirdProduct_saturatedFATS()+"G");
+        holder.textViewComposedDailyMeals_KCAL_WEIGHT_ThirdProduct.setText("kcal "+currentItem.getThirdProduct_KCAL()+"/"+currentItem.getThirdProduct_WEIGHT()+"G");
+        holder.textViewComposedDailyMeals_CARBO_ThirdProduct.setText("carbo "+currentItem.getThirdProduct_CARBOHYDRATES()+"G");
+        holder.textViewComposedDailyMeals_SUGAR_ThirdProduct.setText("sugar "+currentItem.getThirdProduct_SUGAR()+"G");
+        holder.textViewComposedDailyMeals_FATS_ThirdProduct.setText("fats "+currentItem.getThirdProduct_FATS()+"G");
+        holder.textViewComposedDailyMeals_saturatedFATS_ThirdProduct.setText("s. fats "+currentItem.getThirdProduct_saturatedFATS()+"G");
         holder.textViewComposedDailyMeals_PROTEIN_ThirdProduct.setText("protein "+currentItem.getThirdProduct_PROTEIN()+"G");
 
         holder.textViewComposedDailyMealsName_FourthProduct.setText(currentItem.getFourthProduct_NAME());
-        holder.textViewComposedDailyMeals_KCAL_WEIGHT_FourthProduct.setText("KCAL "+currentItem.getFourthProduct_KCAL()+"/"+currentItem.getFourthProduct_WEIGHT()+"G");
-        holder.textViewComposedDailyMeals_CARBO_SUGAR_FourthProduct.setText("carbo "+currentItem.getFourthProduct_CARBOHYDRATES()+"G | sugar "+currentItem.getFourthProduct_SUGAR()+"G");
-        holder.textViewComposedDailyMeals_FATS_sFats_FourthProduct.setText("fats "+currentItem.getFourthProduct_FATS()+"G | s. fats "+currentItem.getFourthProduct_saturatedFATS()+"G");
+        holder.textViewComposedDailyMeals_KCAL_WEIGHT_FourthProduct.setText("kcal "+currentItem.getFourthProduct_KCAL()+"/"+currentItem.getFourthProduct_WEIGHT()+"G");
+        holder.textViewComposedDailyMeals_CARBO_FourthProduct.setText("carbo "+currentItem.getFourthProduct_CARBOHYDRATES()+"G");
+        holder.textViewComposedDailyMeals_SUGAR_FourthProduct.setText("sugar "+currentItem.getFourthProduct_SUGAR()+"G");
+        holder.textViewComposedDailyMeals_FATS_FourthProduct.setText("fats "+currentItem.getFourthProduct_FATS()+"G");
+        holder.textViewComposedDailyMeals_saturatedFATS_FourthProduct.setText("s. fats "+currentItem.getFourthProduct_saturatedFATS()+"G");
         holder.textViewComposedDailyMeals_PROTEIN_FourthProduct.setText("protein "+currentItem.getFourthProduct_PROTEIN()+"G");
 
         holder.textViewComposedDailyMealsName_FifthProduct.setText(currentItem.getFifthProduct_NAME());
-        holder.textViewComposedDailyMeals_KCAL_WEIGHT_FifthProduct.setText("KCAL "+currentItem.getFifthProduct_KCAL()+"/"+currentItem.getFifthProduct_WEIGHT()+"G");
-        holder.textViewComposedDailyMeals_CARBO_SUGAR_FifthProduct.setText("carbo "+currentItem.getFifthProduct_CARBOHYDRATES()+"G | sugar "+currentItem.getFifthProduct_SUGAR()+"G");
-        holder.textViewComposedDailyMeals_FATS_sFats_FifthProduct.setText("fats "+currentItem.getFifthProduct_FATS()+"G | s. fats "+currentItem.getFifthProduct_saturatedFATS()+"G");
+        holder.textViewComposedDailyMeals_KCAL_WEIGHT_FifthProduct.setText("kcal "+currentItem.getFifthProduct_KCAL()+"/"+currentItem.getFifthProduct_WEIGHT()+"G");
+        holder.textViewComposedDailyMeals_CARBO_FifthProduct.setText("carbo "+currentItem.getFifthProduct_CARBOHYDRATES()+"G");
+        holder.textViewComposedDailyMeals_SUGAR_FifthProduct.setText("sugar "+currentItem.getFifthProduct_SUGAR()+"G");
+        holder.textViewComposedDailyMeals_FATS_FifthProduct.setText("fats "+currentItem.getFifthProduct_FATS()+"G");
+        holder.textViewComposedDailyMeals_saturatedFATS_FifthProduct.setText("s. fats "+currentItem.getFifthProduct_saturatedFATS()+"G");
         holder.textViewComposedDailyMeals_PROTEIN_FifthProduct.setText("protein "+currentItem.getFifthProduct_PROTEIN()+"G");
 
         holder.textViewProductsIncludedComposedDailyMeal_FirstProduct.setText(currentItem.getProductsIncludedFirstProduct());

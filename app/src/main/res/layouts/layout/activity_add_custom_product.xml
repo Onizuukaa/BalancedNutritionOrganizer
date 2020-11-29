@@ -32,8 +32,9 @@
             android:text="@string/Food_Name" />
 
         <EditText
+            android:maxLength="30"
             android:id="@+id/customProductName"
-            android:layout_width="wrap_content"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
@@ -49,8 +50,9 @@
             android:text="@string/Calories" />
 
         <EditText
+            android:maxLength="3"
             android:id="@+id/customProductCalories"
-            android:layout_width="wrap_content"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
@@ -67,8 +69,9 @@
             android:text="@string/Carbohydrates" />
 
         <EditText
+            android:maxLength="3"
             android:id="@+id/customProductCarbohydrates"
-            android:layout_width="wrap_content"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
@@ -85,8 +88,9 @@
             android:text="@string/Sugar" />
 
         <EditText
+            android:maxLength="3"
             android:id="@+id/customProductSugar"
-            android:layout_width="wrap_content"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
@@ -103,8 +107,9 @@
             android:text="@string/Fats" />
 
         <EditText
+            android:maxLength="3"
             android:id="@+id/customProductFats"
-            android:layout_width="wrap_content"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
@@ -121,8 +126,9 @@
             android:text="@string/Saturated_Fats" />
 
         <EditText
+            android:maxLength="3"
             android:id="@+id/customProductSaturatedFats"
-            android:layout_width="wrap_content"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
@@ -139,8 +145,9 @@
             android:text="@string/Protein" />
 
         <EditText
+            android:maxLength="3"
             android:id="@+id/customProductProtein"
-            android:layout_width="wrap_content"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"

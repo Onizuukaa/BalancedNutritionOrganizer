@@ -19,6 +19,7 @@
             android:text="@string/Remove_Product" />
 
         <EditText
+            android:maxLength="2"
             android:id="@+id/editText_removeItem_CustomProduct"
             android:gravity="center"
             android:layout_width="30dp"
