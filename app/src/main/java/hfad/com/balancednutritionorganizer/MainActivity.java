@@ -3,7 +3,9 @@ package hfad.com.balancednutritionorganizer;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -12,10 +14,12 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import static java.lang.Integer.parseInt;
+
 public class MainActivity extends AppCompatActivity {
     ProgressBar progressBarWater;
     TextView textView_progressBarWater;
-    int glassOfWater = 10, water = 0;
+    int glassOfWaterForProgressBar = 0, textViewWater = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +28,43 @@ public class MainActivity extends AppCompatActivity {
         setTitle("Balanced Nutrition Organizer");
         initViews();
     }
+
+    public void resetWater(View view) {
+        progressBarWater.setProgress(0);
+        glassOfWaterForProgressBar = 0;
+        textViewWater = 0;
+        textView_progressBarWater.setText(textViewWater + "/2500");
+    }
+
+    public void button_addWater(View view) {
+        glassOfWaterForProgressBar += 10;
+        System.out.println("CO JEST: " + glassOfWaterForProgressBar);
+        progressBarWater.setProgress(glassOfWaterForProgressBar);
+        textViewWater += 250;
+        textView_progressBarWater.setText(textViewWater + "/2500");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
+        textView_progressBarWater.setText(sharedPref.getString("textViewWater","") + "/2500");
+        progressBarWater.setProgress(sharedPref.getInt("glassOfWaterForProgressBar",0));
+        glassOfWaterForProgressBar = sharedPref.getInt("glassOfWaterForProgressBar",0);
+        textViewWater = sharedPref.getInt("textViewWater2",0);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString("textViewWater", String.valueOf(textViewWater));
+        editor.putInt("glassOfWaterForProgressBar", glassOfWaterForProgressBar);
+        editor.putInt("textViewWater2", textViewWater);
+        editor.commit();
+    }
+
 
     public void imageView_openYourDish(View view) {
         Intent intent = new Intent(this, ComposedMealsActivity.class);
@@ -45,13 +86,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void resetWater(View view) {
-        progressBarWater.setProgress(0);
-        glassOfWater = 10;
-        water = 0;
-        textView_progressBarWater.setText(water + "/2500");
-    }
-
     public void imageView_OpenComposeTheDish(View view) {
         Intent intent = new Intent(this, ComposeMealActivity.class);
         startActivity(intent);
@@ -62,14 +96,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void button_addWater(View view){
-        progressBarWater.setProgress(glassOfWater);
-        glassOfWater += 10;
-        water+=250;
-        textView_progressBarWater.setText(water + "/2500");
-    }
-
-    private void initViews(){
+    private void initViews() {
         progressBarWater = findViewById(R.id.progressBarWater);
         textView_progressBarWater = findViewById(R.id.textView_progressBarWater);
     }
