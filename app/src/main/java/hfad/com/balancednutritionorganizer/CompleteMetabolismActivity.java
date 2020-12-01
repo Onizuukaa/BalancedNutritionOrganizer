@@ -2,6 +2,8 @@ package hfad.com.balancednutritionorganizer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -14,6 +16,7 @@ import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 
 import static java.lang.Double.parseDouble;
+import static java.lang.Integer.parseInt;
 
 public class CompleteMetabolismActivity extends AppCompatActivity {
 
@@ -29,6 +32,10 @@ public class CompleteMetabolismActivity extends AppCompatActivity {
             carboCalories, percentProtein, percentFats, percentCarbo;
     DecimalFormat format;
     DecimalFormatSymbols symbols = DecimalFormatSymbols.getInstance();
+    Bundle bundleForWater;
+
+    int waterNeeded;
+    double waterNeededDouble;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +82,15 @@ public class CompleteMetabolismActivity extends AppCompatActivity {
                     + selectedGender;
 
             resultFull = result * selectedPhysicalActivity;
+
+            //waterNeededDouble = resultFull;
+            waterNeeded = (int)resultFull;
+            System.out.println("ILE WYSZŁO?: " + waterNeeded);
+            bundleForWater = new Bundle();
+            bundleForWater.putInt("key", waterNeeded);
+            Intent i = new Intent(this, MainActivity.class);
+            i.putExtra("dawid", waterNeeded);
+            //MainActivity.fa.finish();
 
             proteinGram = selectedPhysicalActivity * parseDouble(editTextWeight.getText().toString());
             proteinCalories = proteinGram * 4;

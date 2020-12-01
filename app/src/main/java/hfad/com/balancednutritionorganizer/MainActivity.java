@@ -3,6 +3,7 @@ package hfad.com.balancednutritionorganizer;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -21,12 +22,20 @@ public class MainActivity extends AppCompatActivity {
     TextView textView_progressBarWater;
     int glassOfWaterForProgressBar = 0, textViewWater = 0;
 
+    Bundle extras;
+    int test;
+    //public static Activity fa;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setTitle("Balanced Nutrition Organizer");
         initViews();
+
+
+        //fa = this;
+
     }
 
     public void resetWater(View view) {
@@ -52,6 +61,12 @@ public class MainActivity extends AppCompatActivity {
         progressBarWater.setProgress(sharedPref.getInt("glassOfWaterForProgressBar",0));
         glassOfWaterForProgressBar = sharedPref.getInt("glassOfWaterForProgressBar",0);
         textViewWater = sharedPref.getInt("textViewWater2",0);
+
+        extras = getIntent().getExtras();
+        if (extras != null) {
+            test = extras.getInt("dawid");
+        }
+        System.out.println("DAWID EXTRAS: " + test);
     }
 
     @Override
