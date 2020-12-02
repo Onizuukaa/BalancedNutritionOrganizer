@@ -23,7 +23,7 @@ import hfad.com.balancednutritionorganizer.database_things.ComposedDailyMealsDBH
 
 import static java.lang.Integer.parseInt;
 
-public class ComposedDailyMealsActivity extends AppCompatActivity {
+public class ComposedDailyMealsActivity extends AppCompatActivity implements BottomSheetDialog.BottomSheetListener{
 
     RecyclerView recyclerView;
     private SQLiteDatabase mDatabaseComposedDailyMeals;
@@ -120,5 +120,10 @@ public class ComposedDailyMealsActivity extends AppCompatActivity {
         });
         searchView.setImeOptions(EditorInfo.IME_ACTION_DONE);
         return true;
+    }
+
+    @Override
+    public void onButtonClicked(String text) {
+
     }
 }

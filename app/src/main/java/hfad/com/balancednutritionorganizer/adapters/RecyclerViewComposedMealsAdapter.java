@@ -148,19 +148,21 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
         holder.textViewComposedMealsSaturatedFats.setText(currentItem.getProductSaturatedFats() + "g\nsaturated fats");
         holder.textViewProductsIncludedComposedMeal.setText(currentItem.getProductMacros() + "");
 
-
-        arrayListProductIncluded.add(currentItem.getProductMacros());
-
         bundleWithMacros = new Bundle();
 
-        bundleWithMacros.putStringArrayList("key", arrayListProductIncluded);
+
 
         holder.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //arrayListProductIncluded.add(currentItem.getProductMacros());
+                //bundleWithMacros.putStringArrayList("key", arrayListProductIncluded);
+                String a = currentItem.getProductMacros();
+                bundleWithMacros.putString("key", a);
+
                 BottomSheetDialog bottomSheet = new BottomSheetDialog();
                 bottomSheet.show(((ComposedMealsActivity) mContext).getSupportFragmentManager(), bottomSheet.getTag());
-                bundleWithMacros.putInt("key2", position);
+                //bundleWithMacros.putInt("key2", position);
                 bottomSheet.setArguments(bundleWithMacros);
             }
         });
