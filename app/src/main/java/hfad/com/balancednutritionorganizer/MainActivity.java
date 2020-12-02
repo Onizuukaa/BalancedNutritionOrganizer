@@ -12,12 +12,13 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import static java.lang.Integer.parseInt;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements ExampleDialog.ExampleDialogListener {
     ProgressBar progressBarWater;
     TextView textView_progressBarWater;
     int glassOfWaterForProgressBar = 0, textViewWater = 0;
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     Bundle extras;
     int test;
     //public static Activity fa;
+    Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,10 +34,24 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         setTitle("Balanced Nutrition Organizer");
         initViews();
-
-
+button = (Button) findViewById(R.id.button);
+button.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        openDialog();
+    }
+});
         //fa = this;
+    }
 
+    @Override
+    public void applyTexts(String username, String password) {
+        textView_progressBarWater.setText(username);
+    }
+
+    public void openDialog() {
+        ExampleDialog exampleDialog = new ExampleDialog();
+        exampleDialog.show(getSupportFragmentManager(), "example dialog");
     }
 
     public void resetWater(View view) {
