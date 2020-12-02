@@ -153,5 +153,12 @@
     <string name="Advanced_information">Advanced information</string>
     <string name="Carbo_wih_sugar">Carbohydrates\n(inc. sugars)</string>
     <string name="Fats_with_saturated_fats">Fats\n(inc. saturated)</string>
+    <string name="Water">Water</string>
+    <string name="Water_V1">Water is essential for the proper functioning of the human psyche and its physical fitness. Without it, you can get headaches and a bad mood.</string>
+    <string name="Water_V2">It is a building block of the joint space, therefore it prevents arthritis and back pain. It protects the brain, spinal cord, tissues and organs. It strengthens the production of neurotransmitters, improves memory and slows down the aging process.</string>
+    <string name="Water_V3">Children have the highest amount of water in the body, it is 78%, and by the first year the value drops to 65%. Adult males are approximately 60% and adult females approximately 55%. The difference is that adipose tissue in women is a greater part of the body than in men, and fat contains less water than lean tissue.</string>
+    <string name="Water_V4">Every day about 6% of body fluid is lost through sweat, 6% in stool, and 28% through skin evaporation and breathing. 60% is lost with the urine.</string>
+    <string name="Water_V5">The water requirement can be calculated by multiplying your body weight by 0.030. It is assumed that for 1 kg of body weight, 30 milliliters of water should be provided. For 1 calorie consumed, you should take 1 milliliter of water. Therefore, for 2000 kcal, you need to consume 2000 milliliters, which is 2 liters.</string>
+    <string name="Water_V6">It is estimated that about 60% of water is absorbed from drinks, 30% from food, and another 10% is produced as a result of metabolism.</string>
 
 </resources>

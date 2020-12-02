@@ -155,5 +155,12 @@
     <string name="Advanced_information">Zaawansowane informacje</string>
     <string name="Carbo_wih_sugar">Węglowodany\n(w tym cukry)</string>
     <string name="Fats_with_saturated_fats">Tłuszcze\n(w tym nasycone)</string>
+    <string name="Water">Woda</string>
+    <string name="Water_V1">Woda jest niezbędna dla prawidłowego funkcjonowania psychiki człowieka i jego sprawności fizycznej. Bez niej mogą doskwierać bóle głowy, zły nastrój.</string>
+    <string name="Water_V2">Jest budulcem przestrzeni stawowej, dlatego też zapobiega zapaleniom stawów i bólom pleców. Chroni mózg, rdzeń kręgowy, tkanki i narządy. Wzmacnia produkcję neuroprzekaźników, usprawnia pamięć, a także spowalnia proces starzenia.</string>
+    <string name="Water_V3">Najwięcej wody w organizmie mają dzieci a jest to 78%, a do pierwszego roku wartość zmniejsza się do 65%. Dorośli mężczyźni mają około 60%, a dorosłe kobiety około 55%. Różnica wynika z tego, że tkanka tłuszczowa u kobiet stanowi większą cześć ciała niż u mężczyzn, a tłuszcz zawiera mniej wody niż tkanka beztłuszczowa.</string>
+    <string name="Water_V4">Każdego dnia traci się około 6% płynów ustrojowych poprzez wydzielanie potu, 6% w kale, a 28% poprzez parowanie wody ze skóry i oddychanie. 60% traci się razem z moczem.</string>
+    <string name="Water_V5">Zapotrzebowanie na wodę można obliczyć mnożą masę ciała przez 0.030. Przyjmuje się, że na 1 kg masy ciała, należy dostarczyć 30 mililitrów wody. Na 1 spożytą kalorię, powinno się przyjąć 1 mililitr wody. Zatem dla 2000 kcal należy spożyć 2000 mililitrów co daje 2 litry.</string>
+    <string name="Water_V6">Szacuje się, że z napojów wchłania się około 60% wody, z pożywienia 30%, a w wyniku metabolizmu wytwarzane jest kolejne 10%.</string>
 
 </resources>

@@ -69,4 +69,16 @@
         android:textSize="30sp"
         android:textStyle="bold" />
 
+    <TextView
+        android:paddingVertical="8dp"
+        android:onClick="openInfoAboutWater"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/rounded_corner_water"
+        android:gravity="center"
+        android:text="@string/Water"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
 </LinearLayout>
