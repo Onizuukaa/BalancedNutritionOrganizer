@@ -133,26 +133,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="10dp"
         android:gravity="center">
 
         <TableRow android:gravity="center">
 
             <Button
+                android:background="@drawable/button_background"
+                android:onClick="openDialogSetCup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Set cup"/>
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
                 <ProgressBar
                     android:id="@+id/progressBarWater"
                     style="?android:attr/progressBarStyleHorizontal"
                     android:layout_width="200dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginRight="10dp"
+                    android:layout_height="30dp"
+                    android:layout_marginHorizontal="5dp"
                     android:gravity="center"
                     android:progress="0"
                     android:progressDrawable="@drawable/progress_bar_states" />
@@ -167,13 +169,14 @@
                     android:layout_alignBottom="@id/progressBarWater"
                     android:background="#00000000"
                     android:gravity="center"
-                    android:text="0/2500"
+                    android:text="0/2000"
                     android:textSize="20dp" />
 
             </RelativeLayout>
 
             <Button
-                android:id="@+id/button"
+                android:background="@drawable/button_background"
+                android:onClick="openDialogWater"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"

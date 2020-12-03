@@ -162,6 +162,7 @@
     <string name="Water_V4">Every day about 6% of body fluid is lost through sweat, 6% in stool, and 28% through skin evaporation and breathing. 60% is lost with the urine.</string>
     <string name="Water_V5">The water requirement can be calculated by multiplying your body weight by 0.030. It is assumed that for 1 kg of body weight, 30 milliliters of water should be provided. For 1 calorie consumed, you should take 1 milliliter of water. Therefore, for 2000 kcal, you need to consume 2000 milliliters, which is 2 liters.</string>
     <string name="Water_V6">It is estimated that about 60% of water is absorbed from drinks, 30% from food, and another 10% is produced as a result of metabolism.</string>
+    <string name="ADD">ADD</string>
 
 
 </resources>

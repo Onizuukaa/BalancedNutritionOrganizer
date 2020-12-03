@@ -162,5 +162,6 @@
     <string name="Water_V4">Każdego dnia traci się około 6% płynów ustrojowych poprzez wydzielanie potu, 6% w kale, a 28% poprzez parowanie wody ze skóry i oddychanie. 60% traci się razem z moczem.</string>
     <string name="Water_V5">Zapotrzebowanie na wodę można obliczyć mnożą masę ciała przez 0.030. Przyjmuje się, że na 1 kg masy ciała, należy dostarczyć 30 mililitrów wody. Na 1 spożytą kalorię, powinno się przyjąć 1 mililitr wody. Zatem dla 2000 kcal należy spożyć 2000 mililitrów co daje 2 litry.</string>
     <string name="Water_V6">Szacuje się, że z napojów wchłania się około 60% wody, z pożywienia 30%, a w wyniku metabolizmu wytwarzane jest kolejne 10%.</string>
+    <string name="ADD">DODAJ</string>
 
 </resources>

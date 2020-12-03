@@ -13,10 +13,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatDialogFragment;
 
-public class ExampleDialog extends AppCompatDialogFragment {
-
-    private EditText editTextSetCup;
-    private ExampleDialogListener listener;
+public class DialogSetGoalWater extends AppCompatDialogFragment {
+    private EditText editTextUsername;
+    private WaterDialogListener listener;
 
     @NonNull
     @Override
@@ -24,10 +23,10 @@ public class ExampleDialog extends AppCompatDialogFragment {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
         LayoutInflater inflater = getActivity().getLayoutInflater();
-        View view = inflater.inflate(R.layout.dialog_set_cup, null);
+        View view = inflater.inflate(R.layout.layout_dialog, null);
 
         builder.setView(view)
-                .setTitle("Input glass capacity")
+                .setTitle("Enter weight")
                 .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -36,12 +35,12 @@ public class ExampleDialog extends AppCompatDialogFragment {
                 .setPositiveButton("ok", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                String username = editTextSetCup.getText().toString();
-                listener.applyTextss(username);
+                        String username = editTextUsername.getText().toString();
+                        listener.applyWeight(username);
                     }
                 });
 
-        editTextSetCup = view.findViewById(R.id.editText_set_cup);
+        editTextUsername = view.findViewById(R.id.edit_username);
 
         return builder.create();
     }
@@ -51,14 +50,14 @@ public class ExampleDialog extends AppCompatDialogFragment {
         super.onAttach(context);
 
         try {
-            listener = (ExampleDialogListener) context;
+            listener = (WaterDialogListener) context;
         } catch (ClassCastException e) {
             throw new ClassCastException(context.toString() +
                     "must implement ExampleDialogListener");
         }
     }
 
-    public interface ExampleDialogListener{
-        void applyTextss(String username);
+    public interface WaterDialogListener {
+        void applyWeight(String username);
     }
 }

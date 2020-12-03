@@ -4,11 +4,11 @@
     android:padding="16dp">
 
     <EditText
-        android:maxLength="5"
+        android:maxLength="3"
         android:inputType="numberDecimal"
-        android:id="@+id/edit_username"
+        android:id="@+id/editText_set_cup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="kg" />
+        android:hint="ml" />
 
 </RelativeLayout>
