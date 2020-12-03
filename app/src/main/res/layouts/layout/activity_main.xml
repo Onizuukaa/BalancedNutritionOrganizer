@@ -138,6 +138,11 @@
 
         <TableRow android:gravity="center">
 
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Set cup"/>
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -172,8 +177,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="BUTTON"
-                android:textSize="10dp" />
+                android:text="Set Goal" />
 
         </TableRow>
     </TableLayout>

@@ -16,17 +16,22 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
+
+import static java.lang.Double.parseDouble;
 import static java.lang.Integer.parseInt;
 
 public class MainActivity extends AppCompatActivity implements ExampleDialog.ExampleDialogListener {
     ProgressBar progressBarWater;
     TextView textView_progressBarWater;
     int glassOfWaterForProgressBar = 0, textViewWater = 0;
+    double glassCapacity = 10;
 
     Bundle extras;
     int test;
     //public static Activity fa;
     Button button;
+    String waterGoal = "/2500 ml";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,19 +39,25 @@ public class MainActivity extends AppCompatActivity implements ExampleDialog.Exa
         setContentView(R.layout.activity_main);
         setTitle("Balanced Nutrition Organizer");
         initViews();
-button = (Button) findViewById(R.id.button);
-button.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View view) {
-        openDialog();
-    }
-});
+        button = (Button) findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openDialog();
+            }
+        });
         //fa = this;
     }
 
     @Override
-    public void applyTexts(String username, String password) {
-        textView_progressBarWater.setText(username);
+    public void applyTexts(String weight) {
+        double waterNeeds = (parseDouble(weight) * 0.030) * 1000;
+        int newWaterGoal = (int) Math.round(waterNeeds);
+        waterGoal = "/" + newWaterGoal + " ml";
+        textView_progressBarWater.setText(textViewWater + waterGoal +"");
+        //double newWaterGoalInDouble = newWaterGoal;
+        //glassCapacity = ( (250/newWaterGoalInDouble) * 100);
+        //System.out.println("WYNIK " + glassCapacity);
     }
 
     public void openDialog() {
@@ -58,25 +69,25 @@ button.setOnClickListener(new View.OnClickListener() {
         progressBarWater.setProgress(0);
         glassOfWaterForProgressBar = 0;
         textViewWater = 0;
-        textView_progressBarWater.setText(textViewWater + "/2500");
+        textView_progressBarWater.setText(textViewWater + waterGoal);
     }
 
     public void button_addWater(View view) {
-        glassOfWaterForProgressBar += 10;
-        System.out.println("CO JEST: " + glassOfWaterForProgressBar);
+        glassOfWaterForProgressBar += glassCapacity;
+        //System.out.println("CO JEST: " + glassOfWaterForProgressBar);
         progressBarWater.setProgress(glassOfWaterForProgressBar);
         textViewWater += 250;
-        textView_progressBarWater.setText(textViewWater + "/2500");
+        textView_progressBarWater.setText(textViewWater + waterGoal);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
-        textView_progressBarWater.setText(sharedPref.getString("textViewWater","") + "/2500");
-        progressBarWater.setProgress(sharedPref.getInt("glassOfWaterForProgressBar",0));
-        glassOfWaterForProgressBar = sharedPref.getInt("glassOfWaterForProgressBar",0);
-        textViewWater = sharedPref.getInt("textViewWater2",0);
+        textView_progressBarWater.setText(sharedPref.getString("textViewWater", "") + "/2500");
+        progressBarWater.setProgress(sharedPref.getInt("glassOfWaterForProgressBar", 0));
+        glassOfWaterForProgressBar = sharedPref.getInt("glassOfWaterForProgressBar", 0);
+        textViewWater = sharedPref.getInt("textViewWater2", 0);
 
         extras = getIntent().getExtras();
         if (extras != null) {

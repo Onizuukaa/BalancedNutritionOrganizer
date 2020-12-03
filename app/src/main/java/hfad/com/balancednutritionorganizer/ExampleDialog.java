@@ -15,7 +15,6 @@ import androidx.appcompat.app.AppCompatDialogFragment;
 
 public class ExampleDialog extends AppCompatDialogFragment {
     private EditText editTextUsername;
-    private EditText editTextPassword;
     private ExampleDialogListener listener;
 
     @NonNull
@@ -27,25 +26,21 @@ public class ExampleDialog extends AppCompatDialogFragment {
         View view = inflater.inflate(R.layout.layout_dialog, null);
 
         builder.setView(view)
-                .setTitle("Login")
+                .setTitle("Enter weight")
                 .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-
                     }
                 })
                 .setPositiveButton("ok", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         String username = editTextUsername.getText().toString();
-                        String password = editTextPassword.getText().toString();
-                        listener.applyTexts(username, password);
-
+                        listener.applyTexts(username);
                     }
                 });
 
         editTextUsername = view.findViewById(R.id.edit_username);
-        editTextPassword = view.findViewById(R.id.edit_password);
 
         return builder.create();
     }
@@ -63,6 +58,6 @@ public class ExampleDialog extends AppCompatDialogFragment {
     }
 
     public interface ExampleDialogListener {
-        void applyTexts(String username, String password);
+        void applyTexts(String username);
     }
 }

@@ -24,7 +24,7 @@ public class CompleteMetabolismActivity extends AppCompatActivity {
     RadioButton radioButtonGender;
     EditText editTextAge, editTextHeight, editTextWeight;
     Spinner spinnerPhysicalActivity;
-    TextView textViewResultCompleteMetabolismMacros, textViewTotalMetabolismProtein_Gram,
+    TextView textViewTotalMetabolismProtein_Gram,
             textViewTotalMetabolismFats_Gram, textViewTotalMetabolismCarbo_Gram, textViewTotalMetabolismProtein_Kcal, textViewTotalMetabolismFats_Kcal,
             textViewTotalMetabolismCarbo_Kcal, textViewTotalMetabolismProtein_Percent, textViewTotalMetabolismFats_Percent, textViewTotalMetabolismCarbo_Percent, textViewTotalMetabolismTotal_Kcal;
     int selectedGender;
@@ -35,7 +35,6 @@ public class CompleteMetabolismActivity extends AppCompatActivity {
     Bundle bundleForWater;
 
     int waterNeeded;
-    double waterNeededDouble;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
