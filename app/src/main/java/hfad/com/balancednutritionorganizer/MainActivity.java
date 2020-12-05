@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements DialogSetGoalWate
     Button buttonAddWater;
     int glassOfWaterForProgressBarCounter = 0, waterForTextViewValueStart = 0, capacityForGlassOfWater_ForTextView = 250,
             glassCapacity_ForProgressBar = 125000000, waterGoal = 2000;
-    double waterNeedsDouble, maksymalnaWartosc_double = 2000;
+    double maksymalnaWartosc_double = 2000;
     String waterGoalForTextView = "/2000 ml";
 
     @Override
@@ -46,8 +46,7 @@ public class MainActivity extends AppCompatActivity implements DialogSetGoalWate
 
     @Override
     public void setGoal(String weight) {
-        waterNeedsDouble = (parseDouble(weight) * 0.030) * 1000; //waga używana do policzenia zapotrzebowania, wynik 2009,9999998 coś takiego
-        waterGoal = (int) Math.round(waterNeedsDouble); // zaokrąglony wynik do 2010
+        waterGoal = (int) Math.round( (parseDouble(weight) * 0.030) * 1000 ); // //waga używana do policzenia zapotrzebowania, wynik 2009,9999998 coś takiego i zaokrąglony wynik do 2010
         waterGoalForTextView = waterForTextViewValueStart + "/" + waterGoal + " ml";
         textView_progressBarWater.setText(waterGoalForTextView + "");
         glassCapacity_ForProgressBar = (int) ((capacityForGlassOfWater_ForTextView / (double) waterGoal) * 1000000000); //2010 w double czyli może 2010.0 i po to żeby podzielić przez to
