@@ -13,7 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatDialogFragment;
 
-public class ExampleDialog extends AppCompatDialogFragment {
+public class DialogSetCupWater extends AppCompatDialogFragment {
 
     private EditText editTextSetCup;
     private ExampleDialogListener listener;

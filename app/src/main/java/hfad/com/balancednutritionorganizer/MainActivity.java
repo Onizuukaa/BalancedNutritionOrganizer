@@ -14,17 +14,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import static java.lang.Double.parseDouble;
 import static java.lang.Integer.parseInt;
 
-public class MainActivity extends AppCompatActivity implements DialogSetGoalWater.WaterDialogListener, ExampleDialog.ExampleDialogListener {
+public class MainActivity extends AppCompatActivity implements DialogSetGoalWater.WaterDialogListener, DialogSetCupWater.ExampleDialogListener {
     ProgressBar progressBarWater;
     TextView textView_progressBarWater;
     Button buttonAddWater;
-    int glassOfWaterForProgressBarCounter = 0, waterForTextViewValueStart = 0, capacityForGlassOfWater_ForTextView = 250,
-            glassCapacity_ForProgressBar = 125000000, waterGoal = 2000;
+    int pbCounter = 0, tvDrunk = 0, tvGlassCapacity = 250,
+            pbGlassCapacity = 125000000, waterGoal = 2000;
     String waterGoalForTextView = "/2000 ml";
 
     @Override
@@ -38,50 +37,50 @@ public class MainActivity extends AppCompatActivity implements DialogSetGoalWate
 
     @Override
     public void setCup(String username) {
-        capacityForGlassOfWater_ForTextView = parseInt(username);
-        buttonAddWater.setText(getString(R.string.ADD) + " " + capacityForGlassOfWater_ForTextView + " ML " + getString(R.string.Water));
-        glassCapacity_ForProgressBar = (int) ((capacityForGlassOfWater_ForTextView / (double)waterGoal) * 1000000000);
+        tvGlassCapacity = parseInt(username);
+        buttonAddWater.setText(getString(R.string.ADD) + " " + tvGlassCapacity + " ML " + getString(R.string.Water));
+        pbGlassCapacity = (int) ((tvGlassCapacity / (double)waterGoal) * 1000000000);
     }
 
     @Override
     public void setGoal(String weight) {
         waterGoal = (int) Math.round( (parseDouble(weight) * 0.030) * 1000 ); // //waga używana do policzenia zapotrzebowania, wynik 2009,9999998 coś takiego i zaokrąglony wynik do 2010
-        waterGoalForTextView = waterForTextViewValueStart + "/" + waterGoal + " ml";
+        waterGoalForTextView = tvDrunk + "/" + waterGoal + " ml";
         textView_progressBarWater.setText(waterGoalForTextView + "");
-        glassCapacity_ForProgressBar = (int) ((capacityForGlassOfWater_ForTextView / (double) waterGoal) * 1000000000); //2010 w double czyli może 2010.0 i po to żeby podzielić przez to
-        glassOfWaterForProgressBarCounter = (int) (((double) waterForTextViewValueStart / (double) waterGoal) * 1000000000);
-        progressBarWater.setProgress(glassOfWaterForProgressBarCounter);
+        pbGlassCapacity = (int) ((tvGlassCapacity / (double) waterGoal) * 1000000000); //2010 w double czyli może 2010.0 i po to żeby podzielić przez to
+        pbCounter = (int) (((double) tvDrunk / (double) waterGoal) * 1000000000);
+        progressBarWater.setProgress(pbCounter);
         // pojemność szklanki w int dla progress bar ( pojemność szklanki dla textView / nowy cel do wypicia)
     }
 
     public void resetWater(View view) {
         progressBarWater.setProgress(0);
-        glassOfWaterForProgressBarCounter = 0;
-        waterForTextViewValueStart = 0;
-        textView_progressBarWater.setText(waterForTextViewValueStart + waterGoalForTextView);
+        pbCounter = 0;
+        tvDrunk = 0;
+        textView_progressBarWater.setText(tvDrunk + waterGoalForTextView);
     }
 
     public void button_addWater(View view) {
-        glassOfWaterForProgressBarCounter += glassCapacity_ForProgressBar;
-        progressBarWater.setProgress(glassOfWaterForProgressBarCounter);
-        waterForTextViewValueStart += capacityForGlassOfWater_ForTextView;
+        pbCounter += pbGlassCapacity;
+        progressBarWater.setProgress(pbCounter);
+        tvDrunk += tvGlassCapacity;
         waterGoalForTextView = "/" + waterGoal + " ml";
-        textView_progressBarWater.setText(waterForTextViewValueStart + waterGoalForTextView);
+        textView_progressBarWater.setText(tvDrunk + waterGoalForTextView);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
-        waterForTextViewValueStart = sharedPref.getInt("waterForTextViewValueStart", 0);
+        tvDrunk = sharedPref.getInt("tvDrunk", 0);
         waterGoal = sharedPref.getInt("waterGoal", 2000);
-        glassOfWaterForProgressBarCounter = sharedPref.getInt("glassOfWaterForProgressBarCounter", 0);
-        glassCapacity_ForProgressBar = sharedPref.getInt("glassCapacity_ForProgressBar", 125000000);
-        capacityForGlassOfWater_ForTextView = sharedPref.getInt("capacityForGlassOfWater_ForTextView", 250);
-        buttonAddWater.setText(getString(R.string.ADD) + " " + capacityForGlassOfWater_ForTextView + " ML " + getString(R.string.Water));
-        progressBarWater.setProgress(glassOfWaterForProgressBarCounter);
+        pbCounter = sharedPref.getInt("pbCounter", 0);
+        pbGlassCapacity = sharedPref.getInt("pbGlassCapacity", 125000000);
+        tvGlassCapacity = sharedPref.getInt("tvGlassCapacity", 250);
+        buttonAddWater.setText(getString(R.string.ADD) + " " + tvGlassCapacity + " ML " + getString(R.string.Water));
+        progressBarWater.setProgress(pbCounter);
         waterGoalForTextView = "/" + waterGoal + " ml";
-        textView_progressBarWater.setText(waterForTextViewValueStart + waterGoalForTextView);
+        textView_progressBarWater.setText(tvDrunk + waterGoalForTextView);
     }
 
     @Override
@@ -89,11 +88,11 @@ public class MainActivity extends AppCompatActivity implements DialogSetGoalWate
         super.onPause();
         SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putInt("waterForTextViewValueStart", waterForTextViewValueStart);
+        editor.putInt("tvDrunk", tvDrunk);
         editor.putInt("waterGoal", waterGoal);
-        editor.putInt("glassOfWaterForProgressBarCounter", glassOfWaterForProgressBarCounter);
-        editor.putInt("glassCapacity_ForProgressBar", glassCapacity_ForProgressBar);
-        editor.putInt("capacityForGlassOfWater_ForTextView", capacityForGlassOfWater_ForTextView);
+        editor.putInt("pbCounter", pbCounter);
+        editor.putInt("pbGlassCapacity", pbGlassCapacity);
+        editor.putInt("tvGlassCapacity", tvGlassCapacity);
         editor.commit();
     }
 
@@ -133,8 +132,8 @@ public class MainActivity extends AppCompatActivity implements DialogSetGoalWate
     }
 
     public void openDialogSetCup(View view) {
-        ExampleDialog exampleDialog = new ExampleDialog();
-        exampleDialog.show(getSupportFragmentManager(), "example dialog");
+        DialogSetCupWater dialogSetCupWater = new DialogSetCupWater();
+        dialogSetCupWater.show(getSupportFragmentManager(), "example dialog");
     }
 
     private void initViews() {
