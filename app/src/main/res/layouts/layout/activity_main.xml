@@ -169,7 +169,7 @@
                     android:layout_alignBottom="@id/progressBarWater"
                     android:background="#00000000"
                     android:gravity="center"
-                    android:text="0/2000"
+                    android:text="0/2000 ml"
                     android:textSize="20dp" />
 
             </RelativeLayout>
