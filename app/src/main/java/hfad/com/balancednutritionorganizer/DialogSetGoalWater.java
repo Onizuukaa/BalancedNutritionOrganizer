@@ -36,7 +36,7 @@ public class DialogSetGoalWater extends AppCompatDialogFragment {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         String username = editTextUsername.getText().toString();
-                        listener.applyWeight(username);
+                        listener.setGoal(username);
                     }
                 });
 
@@ -58,6 +58,6 @@ public class DialogSetGoalWater extends AppCompatDialogFragment {
     }
 
     public interface WaterDialogListener {
-        void applyWeight(String username);
+        void setGoal(String username);
     }
 }

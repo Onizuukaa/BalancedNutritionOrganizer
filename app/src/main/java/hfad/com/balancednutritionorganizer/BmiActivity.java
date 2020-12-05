@@ -30,9 +30,9 @@ public class BmiActivity extends AppCompatActivity {
         height = editTextHeight.getText().toString();
         weight = editTextWeight.getText().toString();
         if (height != null && !"".equals(height) && weight != null && !"".equals(weight)) {
-            if (height.equals(".") || weight.equals(".")){
+            if (height.equals(".") || weight.equals(".")) {
 
-            }else{
+            } else {
                 float heightValue = Float.parseFloat(height) / 100;
                 float weightValue = Float.parseFloat(weight);
 

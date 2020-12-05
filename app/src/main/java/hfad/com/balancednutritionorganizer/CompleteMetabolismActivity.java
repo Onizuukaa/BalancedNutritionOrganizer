@@ -2,8 +2,6 @@ package hfad.com.balancednutritionorganizer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -28,13 +26,10 @@ public class CompleteMetabolismActivity extends AppCompatActivity {
             textViewTotalMetabolismFats_Gram, textViewTotalMetabolismCarbo_Gram, textViewTotalMetabolismProtein_Kcal, textViewTotalMetabolismFats_Kcal,
             textViewTotalMetabolismCarbo_Kcal, textViewTotalMetabolismProtein_Percent, textViewTotalMetabolismFats_Percent, textViewTotalMetabolismCarbo_Percent, textViewTotalMetabolismTotal_Kcal;
     int selectedGender;
-    double result, resultFull, selectedPhysicalActivity, proteinGram, proteinCalories, fatsGram, fatsCalories, carboGram,
+    double caloriesRequirementWithoutActivity, caloriesRequirement, selectedPhysicalActivity, proteinGram, proteinCalories, fatsGram, fatsCalories, carboGram,
             carboCalories, percentProtein, percentFats, percentCarbo;
     DecimalFormat format;
     DecimalFormatSymbols symbols = DecimalFormatSymbols.getInstance();
-    Bundle bundleForWater;
-
-    int waterNeeded;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,46 +66,29 @@ public class CompleteMetabolismActivity extends AppCompatActivity {
             selectedGender = 5;
         } else selectedGender = -161;
 
-        if (editTextWeight.getText().toString().equals("") || editTextHeight.getText().toString().equals(".")
-        || editTextAge.getText().toString().equals(".")){
+        if (editTextWeight.getText().toString().equals("") || editTextWeight.getText().toString().equals(".") || editTextHeight.getText().toString().equals(".")
+        || editTextHeight.getText().toString().equals("") || editTextAge.getText().toString().equals(".") || editTextAge.getText().toString().equals("")){
 
         }else{
-            result = (9.99 * parseDouble(editTextWeight.getText().toString()))
+            caloriesRequirementWithoutActivity = (9.99 * parseDouble(editTextWeight.getText().toString()))
                     + (6.25 * parseDouble(editTextHeight.getText().toString()))
                     - (4.92 * parseDouble(editTextAge.getText().toString()))
                     + selectedGender;
 
-            resultFull = result * selectedPhysicalActivity;
-
-            //waterNeededDouble = resultFull;
-            waterNeeded = (int)resultFull;
-            System.out.println("ILE WYSZŁO?: " + waterNeeded);
-            bundleForWater = new Bundle();
-            bundleForWater.putInt("key", waterNeeded);
-            Intent i = new Intent(this, MainActivity.class);
-            i.putExtra("dawid", waterNeeded);
-            //MainActivity.fa.finish();
+            caloriesRequirement = caloriesRequirementWithoutActivity * selectedPhysicalActivity;
 
             proteinGram = selectedPhysicalActivity * parseDouble(editTextWeight.getText().toString());
             proteinCalories = proteinGram * 4;
 
-            fatsCalories = resultFull * 0.25;
+            fatsCalories = caloriesRequirement * 0.25;
             fatsGram = fatsCalories / 9;
 
-            carboCalories = (resultFull - fatsCalories) - proteinCalories;
-            //System.out.println("carbo: " + carboCalories);
+            carboCalories = (caloriesRequirement - fatsCalories) - proteinCalories;
             carboGram = carboCalories / 4;
 
-            percentProtein = (proteinCalories / resultFull) * 100;
-            percentFats = (fatsCalories / resultFull) * 100;
-            percentCarbo = (carboCalories / resultFull) * 100;
-
-            //textViewResultCompleteMetabolism.setText("Dzienne zapotrzebowanie na kalorie: " + format.format(resultFull));
-            // textViewResultCompleteMetabolismMacros.setText("Dzienne zapotrzebowanie na makroskładniki.");
-//                "\n" +
-//                "białko: " + format.format(proteinGram) + "g " + format.format(proteinCalories) + " kcal " + format.format(percentProtein) + "%" + "\n" +
-//                "tłuszcze: " + format.format(fatsGram) + "g " + format.format(fatsCalories) + " kcal " + format.format(percentFats) + "%" + "\n" +
-//                "węglowodany: " + format.format(carboGram) + "g " + format.format(carboCalories) + " kcal " + format.format(percentCarbo) + "%");
+            percentProtein = (proteinCalories / caloriesRequirement) * 100;
+            percentFats = (fatsCalories / caloriesRequirement) * 100;
+            percentCarbo = (carboCalories / caloriesRequirement) * 100;
 
             textViewTotalMetabolismProtein_Gram.setText(format.format(proteinGram) + "g");
             textViewTotalMetabolismFats_Gram.setText(format.format(fatsGram) + "g");
@@ -121,15 +99,13 @@ public class CompleteMetabolismActivity extends AppCompatActivity {
             textViewTotalMetabolismProtein_Percent.setText(format.format(percentProtein) + "%");
             textViewTotalMetabolismFats_Percent.setText(format.format(percentFats) + "%");
             textViewTotalMetabolismCarbo_Percent.setText(format.format(percentCarbo) + "%");
-            textViewTotalMetabolismTotal_Kcal.setText(format.format(resultFull) + " kcal");
+            textViewTotalMetabolismTotal_Kcal.setText(format.format(caloriesRequirement) + " kcal");
         }
     }
     private void initViews() {
         editTextAge = findViewById(R.id.editTextAge);
         editTextHeight = findViewById(R.id.editTextHeight);
         editTextWeight = findViewById(R.id.editTextWeight);
-//        textViewResultCompleteMetabolism = findViewById(R.id.textViewResultCompleteMetabolism);
-       // textViewResultCompleteMetabolismMacros = findViewById(R.id.textViewResultCompleteMetabolismMacros);
         radioGroupGender = findViewById(R.id.radioGroupGender);
 
         textViewTotalMetabolismProtein_Gram = findViewById(R.id.textViewTotalMetabolismProtein_Gram);

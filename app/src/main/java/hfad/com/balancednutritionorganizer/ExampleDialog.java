@@ -37,7 +37,7 @@ public class ExampleDialog extends AppCompatDialogFragment {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                 String username = editTextSetCup.getText().toString();
-                listener.applyTextss(username);
+                listener.setCup(username);
                     }
                 });
 
@@ -59,6 +59,6 @@ public class ExampleDialog extends AppCompatDialogFragment {
     }
 
     public interface ExampleDialogListener{
-        void applyTextss(String username);
+        void setCup(String username);
     }
 }
