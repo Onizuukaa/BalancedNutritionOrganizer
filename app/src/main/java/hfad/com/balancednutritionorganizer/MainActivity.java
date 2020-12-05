@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity implements DialogSetGoalWate
     Button buttonAddWater;
     int glassOfWaterForProgressBarCounter = 0, waterForTextViewValueStart = 0, capacityForGlassOfWater_ForTextView = 250,
             glassCapacity_ForProgressBar = 125000000, waterGoal = 2000;
-    double maksymalnaWartosc_double = 2000;
     String waterGoalForTextView = "/2000 ml";
 
     @Override
@@ -41,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements DialogSetGoalWate
     public void setCup(String username) {
         capacityForGlassOfWater_ForTextView = parseInt(username);
         buttonAddWater.setText(getString(R.string.ADD) + " " + capacityForGlassOfWater_ForTextView + " ML " + getString(R.string.Water));
-        glassCapacity_ForProgressBar = (int) ((capacityForGlassOfWater_ForTextView / maksymalnaWartosc_double) * 1000000000);
+        glassCapacity_ForProgressBar = (int) ((capacityForGlassOfWater_ForTextView / (double)waterGoal) * 1000000000);
     }
 
     @Override
@@ -53,7 +52,6 @@ public class MainActivity extends AppCompatActivity implements DialogSetGoalWate
         glassOfWaterForProgressBarCounter = (int) (((double) waterForTextViewValueStart / (double) waterGoal) * 1000000000);
         progressBarWater.setProgress(glassOfWaterForProgressBarCounter);
         // pojemność szklanki w int dla progress bar ( pojemność szklanki dla textView / nowy cel do wypicia)
-        maksymalnaWartosc_double = waterGoal;
     }
 
     public void resetWater(View view) {
