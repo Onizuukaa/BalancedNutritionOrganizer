@@ -173,6 +173,8 @@
             app:srcCompat="@mipmap/ic_launcher" />
 
         <Button
+            android:layout_marginTop="5dp"
+            android:background="@drawable/button_background"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"

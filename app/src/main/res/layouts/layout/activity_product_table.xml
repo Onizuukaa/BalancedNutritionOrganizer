@@ -177,13 +177,13 @@
         <TableRow
             android:layout_marginTop="5dp"
             android:background="#B8B6B6"
-            android:gravity="center">
+            android:gravity="center"
+            android:onClick="openCustomProductsActivity">
 
             <ImageView
                 android:id="@+id/imageViewCustomProductsTable"
                 android:layout_width="189dp"
                 android:layout_height="75dp"
-                android:onClick="openCustomProductsActivity"
                 app:srcCompat="@drawable/custom_food" />
 
             <TextView

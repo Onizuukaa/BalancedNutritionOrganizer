@@ -6,6 +6,7 @@
     tools:context=".ComposedMealsActivity">
 
     <LinearLayout
+        android:layout_marginTop="5dp"
         android:id="@+id/linearLayoutComposedMealActivity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -13,7 +14,8 @@
         android:orientation="horizontal">
 
         <Button
-            android:layout_width="wrap_content"
+            android:background="@drawable/button_background"
+            android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:onClick="button_removeMeal"
             android:text="@string/REMOVE_MEAL" />
@@ -37,6 +39,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:layout_marginTop="5dp"
         android:id="@+id/linearLayoutComposedMealActivity_AddToDB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -45,12 +48,14 @@
         android:orientation="horizontal">
 
         <Button
+            android:background="@drawable/button_background"
             android:id="@+id/button_addMealsToDailyMenu"
-            android:layout_width="wrap_content"
+            android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:text="@string/ADD_MEALS_TO_DAILY_MENU" />
 
         <TextView
+            android:layout_marginLeft="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Select_the_meals_you_want_to_add_to_the_daily_menu"

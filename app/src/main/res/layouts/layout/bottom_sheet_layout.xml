@@ -20,8 +20,9 @@
         android:text="aaa" />
 
     <Button
+        android:background="@drawable/button_background"
         android:id="@+id/button_Exit_BottomSheet"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:text="Exit" />
 

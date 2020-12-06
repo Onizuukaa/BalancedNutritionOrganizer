@@ -6,12 +6,14 @@
     tools:context=".ComposeMealActivity">
 
     <LinearLayout
+        android:layout_marginTop="4dp"
         android:gravity="center"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <Button
+            android:background="@drawable/button_background"
             android:id="@+id/buttonResetIngredients"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -26,6 +28,7 @@
             android:hint="@string/Meal_Name" />
 
         <Button
+            android:background="@drawable/button_background"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="button_AddMeal"
@@ -37,7 +40,7 @@
         android:id="@+id/gridLayoutComposhingDishes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="55dp"
         android:layout_marginBottom="15dp"
         android:background="#5597B5"
         android:columnCount="3"
@@ -138,8 +141,9 @@
             android:hint="1" />
 
         <Button
+            android:background="@drawable/button_background"
             android:onClick="buttonRemoveItem"
-            android:layout_width="wrap_content"
+            android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:text="@string/Remove_Product" />
     </LinearLayout>
