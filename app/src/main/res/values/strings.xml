@@ -162,5 +162,11 @@
     <string name="Water_V6">It is estimated that about 60% of water is absorbed from drinks, 30% from food, and another 10% is produced as a result of metabolism.</string>
     <string name="ADD">ADD</string>
     <string name="Water2">Water</string>
+    <string name="Saved_in_added_food">Saved in added food</string>
+    <string name="Cup">Cup</string>
+    <string name="Goal">Goal</string>
+    <string name="Input_glass_capacity">Input glass capacity</string>
+    <string name="Enter_weight">Enter weight</string>
+    <string name="Cancel">Cancel</string>
 
 </resources>

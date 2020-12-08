@@ -58,7 +58,7 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
         initViews();
     }
 
-    public void button_openComposhingDishesActivity(View view) {
+    public void button_openComposeMealActivity(View view) {
         Intent intent = new Intent(this, ComposeMealActivity.class);
         startActivity(intent);
     }

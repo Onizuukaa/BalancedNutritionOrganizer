@@ -91,7 +91,7 @@ public class AddCustomProductActivity extends AppCompatActivity {
                 cv.put(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productSaturatedFats, customProductSaturatedFats.getText().toString());
                 cv.put(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productProtein, customProductProtein.getText().toString());
                 databaseCustomProduct.insert(CustomProductsColumns.CustomProductsColumnsEntry.TABLE_NAME, null, cv);
-                Toast.makeText(this, getString(R.string.Food_added), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getString(R.string.Saved_in_added_food), Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(this, getString(R.string.No_all_information_provided), Toast.LENGTH_SHORT).show();
             }

@@ -273,7 +273,7 @@
         android:id="@+id/buttonOpenComposhingDishesActivity"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:onClick="button_openComposhingDishesActivity"
+        android:onClick="button_openComposeMealActivity"
         android:text="@string/Open_Compose_The_Meal" />
     <!--    <ImageView-->
     <!--        android:id="@+id/obrazek"-->

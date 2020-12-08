@@ -56,8 +56,6 @@ public class ComposeMealActivity extends AppCompatActivity {
         mDatabaseComposedMeals = dbHelperComposedMeals.getWritableDatabase();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//        format = new DecimalFormat("#.#");
-//        format.setDecimalSeparatorAlwaysShown(false);
 
         symbols.setDecimalSeparator('.');
         format = new DecimalFormat("#.#");

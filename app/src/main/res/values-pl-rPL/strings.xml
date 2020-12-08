@@ -164,5 +164,11 @@
     <string name="Water_V6">Szacuje się, że z napojów wchłania się około 60% wody, z pożywienia 30%, a w wyniku metabolizmu wytwarzane jest kolejne 10%.</string>
     <string name="ADD">DODAJ</string>
     <string name="Water2">Wody</string>
+    <string name="Saved_in_added_food">Zapisano w dodanej żywności</string>
+    <string name="Cup">Szklanka</string>
+    <string name="Goal">Cel</string>
+    <string name="Input_glass_capacity">Podaj pojemność szklanki</string>
+    <string name="Enter_weight">Podaj wagę</string>
+    <string name="Cancel">Anuluj</string>
 
 </resources>

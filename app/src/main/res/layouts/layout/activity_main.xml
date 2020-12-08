@@ -132,7 +132,6 @@
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
         android:layout_marginBottom="5dp"
         android:gravity="center">
 
@@ -143,7 +142,7 @@
                 android:onClick="openDialogSetCup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Cup"/>
+                android:text="@string/Cup"/>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -180,7 +179,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Goal" />
+                android:text="@string/Goal" />
 
         </TableRow>
     </TableLayout>

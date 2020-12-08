@@ -27,8 +27,8 @@ public class DialogSetCupWater extends AppCompatDialogFragment {
         View view = inflater.inflate(R.layout.dialog_set_cup, null);
 
         builder.setView(view)
-                .setTitle("Input glass capacity")
-                .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                .setTitle(getString(R.string.Input_glass_capacity))
+                .setNegativeButton(getString(R.string.Cancel), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                     }
