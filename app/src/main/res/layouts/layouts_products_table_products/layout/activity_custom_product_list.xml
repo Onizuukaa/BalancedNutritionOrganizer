@@ -6,6 +6,7 @@
     tools:context=".productsList.CustomProductListActivity">
 
     <LinearLayout
+        android:layout_marginTop="5dp"
         android:id="@+id/linearLayoutCustomProductActivity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -13,8 +14,9 @@
         android:orientation="horizontal">
 
         <Button
+            android:background="@drawable/button_background"
             android:onClick="button_removeCustomProduct"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:text="@string/Remove_Product" />
 

@@ -9,6 +9,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
@@ -68,7 +69,7 @@ public class CompleteMetabolismActivity extends AppCompatActivity {
 
         if (editTextWeight.getText().toString().equals("") || editTextWeight.getText().toString().equals(".") || editTextHeight.getText().toString().equals(".")
         || editTextHeight.getText().toString().equals("") || editTextAge.getText().toString().equals(".") || editTextAge.getText().toString().equals("")){
-
+            Toast.makeText(this, getString(R.string.No_all_information_provided), Toast.LENGTH_SHORT).show();
         }else{
             caloriesRequirementWithoutActivity = (9.99 * parseDouble(editTextWeight.getText().toString()))
                     + (6.25 * parseDouble(editTextHeight.getText().toString()))
