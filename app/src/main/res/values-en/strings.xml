@@ -145,8 +145,8 @@
     <string name="Protein_V5">1,5-2g / 1kg body weight</string>
     <string name="Fats_1st">Fats are the most caloric component of our diet. 1g = 9kcal, more than 2 times more than protein and carbohydrates. Not all fats are bad, some fats are needed for life.</string>
     <string name="Fats_2nd">They contain in saturated and unsaturated. The unsaturated are healthier. Animal fats are high in calories, cholesterol, and saturated fats that raise blood cholesterol and accelerate the development of atherosclerosis.</string>
-    <string name="Fats_3rd">Saturated fat should not provide more than 10% of calories per day. It is better to avoid fat-free inventions because then we will deprive ourselves of valuable vitamins dissolved in fats: A, D, E, K.</string>
-    <string name="fats_4th">Low levels of dietary fat may contribute to:</string>
+    <string name="Fats_3rd">Saturated fats should not provide more than 10% of calories per day. It is better to avoid fat-free inventions because then we will deprive ourselves of valuable vitamins dissolved in fats: A, D, E, K.</string>
+    <string name="fats_4th">Low levels of dietary fats may contribute to:</string>
     <string name="inhibition_of_growth_and_development">inhibition of growth and development</string>
     <string name="skin_problems">skin problems</string>
     <string name="lipid_disorders">lipid disorders</string>

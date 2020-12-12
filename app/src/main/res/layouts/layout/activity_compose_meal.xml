@@ -17,7 +17,7 @@
             android:id="@+id/buttonResetIngredients"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="button_ClearProductTable"
+            android:onClick="button_ClearFoodList"
             android:text="@string/Reset" />
 
         <EditText

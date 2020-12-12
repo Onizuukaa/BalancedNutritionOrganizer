@@ -85,33 +85,7 @@ public class ComposeMealActivity extends AppCompatActivity {
         mDatabase.delete(ComposeMealColumns.ComposeMealColumnsEntry.TABLE_NAME,
                 ComposeMealColumns.ComposeMealColumnsEntry._ID + "=" + id, null);
         mAdapter.swapCursor(getAllItems());
-
-        cursor = getAllItems();
-        caloriesSum = 0.0;
-        carbohydratesSum = 0.0;
-        sugarSum = 0.0;
-        fatsSum = 0.0;
-        saturatedFatsSum = 0.0;
-        proteinSum = 0.0;
-        gramSum = 0.0;
-
-        while (cursor.moveToNext()) {
-            caloriesSum += cursor.getDouble(2);
-            carbohydratesSum += cursor.getDouble(3);
-            sugarSum += cursor.getDouble(4);
-            fatsSum += cursor.getDouble(5);
-            saturatedFatsSum += cursor.getDouble(6);
-            proteinSum += cursor.getDouble(7);
-            gramSum += cursor.getDouble(8);
-        }
-        textViewComposeMealKcal.setText(format.format(caloriesSum) + "\nKCAL");
-        textViewComposeMealCarbohydrates.setText(format.format(carbohydratesSum) + "\ncarbohydrates");
-        textViewComposeMealSugar.setText(format.format(sugarSum) + "\nsugar");
-        textViewComposeMealFats.setText(format.format(fatsSum) + "\nfats");
-        textViewComposeMealSaturatedFats.setText(format.format(saturatedFatsSum) + "\nsaturated fats");
-        textViewComposeMealProtein.setText(format.format(proteinSum) + "\nprotein");
-        textViewComposeMealGram.setText(format.format(gramSum) + "\nweight");
-
+        sumAndViewMacros();
         showOrHideNoDataTextView();
     }
 
@@ -196,7 +170,7 @@ public class ComposeMealActivity extends AppCompatActivity {
         textViewComposeMealGram.setText(format.format(gramSum) + "\nweight");
     }
 
-    public void button_ClearProductTable(View view) {
+    public void button_ClearFoodList(View view) {
 
         mDatabase.delete(ComposeMealColumns.ComposeMealColumnsEntry.TABLE_NAME,
                 ComposeMealColumns.ComposeMealColumnsEntry._ID + ">" + 0, null);
