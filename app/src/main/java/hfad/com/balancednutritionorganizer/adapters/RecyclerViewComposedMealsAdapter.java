@@ -136,6 +136,7 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
             public void onClick(View v) {
                 String a = currentItem.getProductMacros();
                 bundleWithMacros.putString("key", a);
+                bundleWithMacros.putString("key2", currentItem.getProductName());
 
                 BottomSheetDialog bottomSheet = new BottomSheetDialog();
                 bottomSheet.show(((ComposedMealsActivity) mContext).getSupportFragmentManager(), bottomSheet.getTag());

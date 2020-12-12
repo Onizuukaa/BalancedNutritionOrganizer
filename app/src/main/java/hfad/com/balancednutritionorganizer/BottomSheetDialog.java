@@ -19,15 +19,16 @@ import java.util.ArrayList;
 
 public class BottomSheetDialog extends BottomSheetDialogFragment {
     private BottomSheetListener mListener;
-    String textWithMacros;
+    String textWithMacros, mealName;
     int numer;
-    TextView textViewBottomSheet;
+    TextView textViewBottomSheet, textViewMealNameBottomSheet;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         if(getArguments() != null) {
             textWithMacros = getArguments().getString("key");
+            mealName = getArguments().getString("key2");
            // numer = getArguments().getInt("key2");
         }
         View v = inflater.inflate(R.layout.bottom_sheet_layout, container, false);
@@ -42,8 +43,10 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
         });
 
         textViewBottomSheet = v.findViewById(R.id.textViewBottomSheet);
+        textViewMealNameBottomSheet = v.findViewById(R.id.textViewMealNameBottomSheet);
         //textViewBottomSheet.setText(textWithMacros.get(numer));
         textViewBottomSheet.setText(textWithMacros);
+        textViewMealNameBottomSheet.setText(mealName);
 
         return v;
     }

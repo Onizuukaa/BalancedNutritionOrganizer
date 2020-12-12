@@ -226,6 +226,7 @@ public class RecyclerViewComposedDailyMealsAdapter extends RecyclerView.Adapter<
             @Override
             public void onClick(View v) {
                 bundleWithMacros.putString("key", currentItem.getProductsIncludedFirstProduct());
+                bundleWithMacros.putString("key2", currentItem.getFirstProduct_NAME());
                 BottomSheetDialog bottomSheet = new BottomSheetDialog();
                 bottomSheet.show(((ComposedDailyMealsActivity) mContext).getSupportFragmentManager(), bottomSheet.getTag());
                 bottomSheet.setArguments(bundleWithMacros);
@@ -235,6 +236,7 @@ public class RecyclerViewComposedDailyMealsAdapter extends RecyclerView.Adapter<
             @Override
             public void onClick(View v) {
                 bundleWithMacros.putString("key", currentItem.getProductsIncludedSecondProduct());
+                bundleWithMacros.putString("key2", currentItem.getSecondProduct_NAME());
                 BottomSheetDialog bottomSheet = new BottomSheetDialog();
                 bottomSheet.show(((ComposedDailyMealsActivity) mContext).getSupportFragmentManager(), bottomSheet.getTag());
                 bottomSheet.setArguments(bundleWithMacros);
@@ -244,6 +246,7 @@ public class RecyclerViewComposedDailyMealsAdapter extends RecyclerView.Adapter<
             @Override
             public void onClick(View v) {
                 bundleWithMacros.putString("key", currentItem.getProductsIncludedThirdProduct());
+                bundleWithMacros.putString("key2", currentItem.getThirdProduct_NAME());
                 BottomSheetDialog bottomSheet = new BottomSheetDialog();
                 bottomSheet.show(((ComposedDailyMealsActivity) mContext).getSupportFragmentManager(), bottomSheet.getTag());
                 bottomSheet.setArguments(bundleWithMacros);
@@ -253,6 +256,7 @@ public class RecyclerViewComposedDailyMealsAdapter extends RecyclerView.Adapter<
             @Override
             public void onClick(View v) {
                 bundleWithMacros.putString("key", currentItem.getProductsIncludedFourthProduct());
+                bundleWithMacros.putString("key2", currentItem.getFourthProduct_NAME());
                 BottomSheetDialog bottomSheet = new BottomSheetDialog();
                 bottomSheet.show(((ComposedDailyMealsActivity) mContext).getSupportFragmentManager(), bottomSheet.getTag());
                 bottomSheet.setArguments(bundleWithMacros);
@@ -262,6 +266,7 @@ public class RecyclerViewComposedDailyMealsAdapter extends RecyclerView.Adapter<
             @Override
             public void onClick(View v) {
                 bundleWithMacros.putString("key", currentItem.getProductsIncludedFifthProduct());
+                bundleWithMacros.putString("key2", currentItem.getFifthProduct_NAME());
                 BottomSheetDialog bottomSheet = new BottomSheetDialog();
                 bottomSheet.show(((ComposedDailyMealsActivity) mContext).getSupportFragmentManager(), bottomSheet.getTag());
                 bottomSheet.setArguments(bundleWithMacros);

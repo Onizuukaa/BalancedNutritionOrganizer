@@ -12,6 +12,14 @@
     android:padding="16dp">
 
     <TextView
+        android:id="@+id/textViewMealNameBottomSheet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Meal Name"
+        android:layout_marginVertical="5dp"/>
+
+    <TextView
         android:id="@+id/textViewBottomSheet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
