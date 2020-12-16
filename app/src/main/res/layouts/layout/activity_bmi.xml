@@ -149,6 +149,8 @@
             <TableRow>
 
                 <TextView
+                    android:layout_gravity="center"
+                    android:layout_span="2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/CLASIFICATION_BMI"
@@ -217,7 +219,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/cell_shape_composhing_dishes"
                     android:gravity="center"
-                    android:text=">17 - 18.5"
+                    android:text=" > 17 - 18.5 "
                     android:textColor="@color/LightOrange"
                     android:textSize="20dp" />
             </TableRow>
@@ -239,7 +241,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/cell_shape_composhing_dishes"
                     android:gravity="center"
-                    android:text=">18.5 - 25"
+                    android:text=" > 18.5 - 25 "
                     android:textColor="@color/Green"
                     android:textSize="20dp" />
             </TableRow>
@@ -261,7 +263,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/cell_shape_composhing_dishes"
                     android:gravity="center"
-                    android:text=">25 - 30"
+                    android:text="> 25 - 30"
                     android:textColor="@color/LightOrange"
                     android:textSize="20dp" />
             </TableRow>
@@ -283,7 +285,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/cell_shape_composhing_dishes"
                     android:gravity="center"
-                    android:text=">30 - 35"
+                    android:text="> 30 - 35"
                     android:textColor="@color/Orange"
                     android:textSize="20dp" />
             </TableRow>
@@ -305,7 +307,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/cell_shape_composhing_dishes"
                     android:gravity="center"
-                    android:text=">35 - 40"
+                    android:text="> 35 - 40"
                     android:textColor="@color/DarkOrange"
                     android:textSize="20dp" />
             </TableRow>
