@@ -94,9 +94,9 @@ public class CompleteMetabolismActivity extends AppCompatActivity {
             textViewTotalMetabolismProtein_Gram.setText(format.format(proteinGram) + "g");
             textViewTotalMetabolismFats_Gram.setText(format.format(fatsGram) + "g");
             textViewTotalMetabolismCarbo_Gram.setText(format.format(carboGram) + "g");
-            textViewTotalMetabolismProtein_Kcal.setText(format.format(proteinCalories) + "kcal");
-            textViewTotalMetabolismFats_Kcal.setText(format.format(fatsCalories) + "kcal");
-            textViewTotalMetabolismCarbo_Kcal.setText(format.format(carboCalories) + "kcal");
+            textViewTotalMetabolismProtein_Kcal.setText(format.format(proteinCalories) + " kcal");
+            textViewTotalMetabolismFats_Kcal.setText(format.format(fatsCalories) + " kcal");
+            textViewTotalMetabolismCarbo_Kcal.setText(format.format(carboCalories) + " kcal");
             textViewTotalMetabolismProtein_Percent.setText(format.format(percentProtein) + "%");
             textViewTotalMetabolismFats_Percent.setText(format.format(percentFats) + "%");
             textViewTotalMetabolismCarbo_Percent.setText(format.format(percentCarbo) + "%");

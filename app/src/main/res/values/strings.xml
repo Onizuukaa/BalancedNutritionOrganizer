@@ -52,7 +52,7 @@
     <string name="No_product_with_this_index">No product with this index</string>
     <string name="No_data_ComposedMeals">No Composed Meals.\nMeals will be here after add from \"Compose The Meal\"</string>
     <string name="app_name">BNO</string>
-    <string name="No_data_CustomFood">No added food.\nAdded food will be here after add from Food Table > \n+ ADD FOOD</string>
+    <string name="No_data_CustomFood">No added food.\nAdded food will be here after add from Food Table\n+ ADD FOOD</string>
     <string name="Added_Food">Added Food</string>
     <string name="Add_Food">+ ADD FOOD</string>
     <string name="REMOVE_MEAL">Remove Meal</string>

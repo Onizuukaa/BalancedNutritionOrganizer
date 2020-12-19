@@ -35,7 +35,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/cell_shape"
                 android:gravity="center"
-                android:text="Gram" />
+                android:text="gram" />
 
             <TextView
                 android:layout_width="match_parent"

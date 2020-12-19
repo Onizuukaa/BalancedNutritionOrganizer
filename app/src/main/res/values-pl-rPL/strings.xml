@@ -53,7 +53,7 @@
     <string name="No_product_with_this_index">Brak produktu o takim indeksie</string>
     <string name="No_data_ComposedMeals">Brak skomponowanych posiłków.\nPosiłki pojawią się tutaj po dodaniu ich w \"Skomponuj Posiłek\"</string>
     <string name="app_name">BNO</string>
-    <string name="No_data_CustomFood">Brak dodanej żywności.\nDodana żywność pojawi się tutaj po dodaniu jej z Tabela Żywności > \n+ DODAJ ŻYWNOŚĆ</string>
+    <string name="No_data_CustomFood">Brak dodanej żywności.\nDodana żywność pojawi się tutaj po dodaniu jej z Tabela Żywności\n+ DODAJ ŻYWNOŚĆ</string>
     <string name="Added_Food">Dodana żywność</string>
     <string name="Add_Food">+ DODAJ ŻYWNOŚĆ</string>
     <string name="REMOVE_MEAL">Usuń Posiłek</string>

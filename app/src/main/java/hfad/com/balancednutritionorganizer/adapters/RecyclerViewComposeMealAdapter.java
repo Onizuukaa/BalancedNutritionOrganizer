@@ -60,7 +60,7 @@ public class RecyclerViewComposeMealAdapter extends RecyclerView.Adapter<Recycle
 
         holder.itemView.setTag(id);
         holder.composeMealNameFood.setText(position+1 + ".  " + name);
-        holder.composeMealCaloriesFood.setText(format.format(calories) + " KCAL");
+        holder.composeMealCaloriesFood.setText(format.format(calories) + " kcal");
     }
 
     @Override

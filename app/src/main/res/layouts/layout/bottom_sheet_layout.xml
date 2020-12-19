@@ -20,6 +20,7 @@
         android:layout_marginVertical="5dp"/>
 
     <TextView
+        android:textColor="@color/Black"
         android:id="@+id/textViewBottomSheet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

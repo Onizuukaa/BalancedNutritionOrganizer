@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/textViewProductCaloriesFor100Gram"
         android:layout_toRightOf="@+id/textViewProductCaloriesFor100Gram"
-        android:text=" KCAL/100G"
+        android:text=" kcal/100g"
         android:textSize="15sp" />
 
     <TextView

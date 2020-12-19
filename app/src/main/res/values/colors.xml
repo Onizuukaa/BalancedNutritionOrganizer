@@ -9,4 +9,5 @@
     <color name="Orange">#FF9800</color>
     <color name="DarkOrange">#FF5722</color>
     <color name="VeryDarkOrange">#F44336</color>
+    <color name="Black">#000000</color>
 </resources>

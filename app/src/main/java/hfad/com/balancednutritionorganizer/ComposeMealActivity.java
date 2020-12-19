@@ -161,13 +161,13 @@ public class ComposeMealActivity extends AppCompatActivity {
             proteinSum += cursor.getDouble(7);
             gramSum += cursor.getDouble(8);
         }
-        textViewComposeMealKcal.setText(format.format(caloriesSum) + "\nKCAL");
+        textViewComposeMealKcal.setText(format.format(caloriesSum) + "\nkcal");
         textViewComposeMealCarbohydrates.setText(format.format(carbohydratesSum) + "\ncarbohydrates");
         textViewComposeMealSugar.setText(format.format(sugarSum) + "\nsugar");
         textViewComposeMealFats.setText(format.format(fatsSum) + "\nfats");
         textViewComposeMealSaturatedFats.setText(format.format(saturatedFatsSum) + "\nsaturated fats");
         textViewComposeMealProtein.setText(format.format(proteinSum) + "\nprotein");
-        textViewComposeMealGram.setText(format.format(gramSum) + "\nweight");
+        textViewComposeMealGram.setText(format.format(gramSum) + "g\nweight");
     }
 
     public void button_ClearFoodList(View view) {

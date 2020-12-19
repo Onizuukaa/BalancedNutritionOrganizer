@@ -54,7 +54,7 @@
             android:background="@drawable/cell_shape"
             android:gravity="center"
             android:padding="2dp"
-            android:text="213 \ncalories" />
+            android:text="213 \nkcal" />
 
         <TextView
             android:id="@+id/textViewComposhingDishesGram"
@@ -63,7 +63,7 @@
             android:background="@drawable/cell_shape"
             android:gravity="center"
             android:padding="2dp"
-            android:text="213g \nweight" />
+            android:text="213g \ngram" />
 
         <TextView
             android:id="@+id/textViewComposhingDishesCarbohydrates"
