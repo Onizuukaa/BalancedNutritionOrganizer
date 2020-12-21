@@ -37,7 +37,6 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
     Boolean whatToReturn = false;
 
     DecimalFormat format;
-
     public RecyclerViewComposedMealsAdapter(Context context, Cursor cursor) {
         mContext = context;
         mCursor = cursor;
@@ -118,15 +117,15 @@ public class RecyclerViewComposedMealsAdapter extends RecyclerView.Adapter<Recyc
 
         holder.textViewComposedMealsName.setText(currentItem.getProductPosition() + 1 + ".  " + currentItem.getProductName());
 
-        holder.textViewComposedMealsKcal.setText(currentItem.getProductCalories() + "\ncalories");
-        holder.textViewComposedMealsGram.setText(currentItem.getProductWeight() + "g\nweight");
-        holder.textViewComposedMealsCarbohydrates.setText(currentItem.getProductCarbohydrates() + "g\ncarbohydrates");
-        holder.textViewComposedMealsFats.setText(currentItem.getProductFats() + "g\nfats");
-        holder.textViewComposedMealsProtein.setText(currentItem.getProductProtein() + "g\nprotein");
+        holder.textViewComposedMealsKcal.setText(currentItem.getProductCalories() + "\n"+ mContext.getResources().getString(R.string.calories_small));
+        holder.textViewComposedMealsGram.setText(currentItem.getProductWeight() + "g\n" + mContext.getResources().getString(R.string.weight_small));
+        holder.textViewComposedMealsCarbohydrates.setText(currentItem.getProductCarbohydrates() + "g\n" + mContext.getResources().getString(R.string.carbohydrates_small));
+        holder.textViewComposedMealsFats.setText(currentItem.getProductFats() + "g\n" + mContext.getResources().getString(R.string.fats_small));
+        holder.textViewComposedMealsProtein.setText(currentItem.getProductProtein() + "g\n" + mContext.getResources().getString(R.string.protein_small));
 
-        holder.textViewComposedMealsSugar.setText(currentItem.getProductSugar() + "g\nsugar");
+        holder.textViewComposedMealsSugar.setText(currentItem.getProductSugar() + "g\n" + mContext.getResources().getString(R.string.sugar_small));
 
-        holder.textViewComposedMealsSaturatedFats.setText(currentItem.getProductSaturatedFats() + "g\nsaturated fats");
+        holder.textViewComposedMealsSaturatedFats.setText(currentItem.getProductSaturatedFats() + "g\n" + mContext.getResources().getString(R.string.saturated_fats_small));
         holder.textViewProductsIncludedComposedMeal.setText(currentItem.getProductMacros() + "");
 
         bundleWithMacros = new Bundle();

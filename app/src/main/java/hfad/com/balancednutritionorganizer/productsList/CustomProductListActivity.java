@@ -81,13 +81,13 @@ public class CustomProductListActivity extends AppCompatActivity {
         int position;
 
         if (positionString.length() == 0) {
-            Toast.makeText(this, "No index provided", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.No_index_provided), Toast.LENGTH_SHORT).show();
         }
         if (positionString.length() != 0) {
             position = parseInt(positionString) - 1;
 
             if (position >= cursor.getCount() || position == -1) {
-                Toast.makeText(this, "No product with this index", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getString(R.string.No_product_with_this_index), Toast.LENGTH_SHORT).show();
             } else {
                 cursor.moveToPosition(position);
                 int productPosition = cursor.getInt(0); //Pozycja kolumny z _id, które jest wyznacznikiem pozycji

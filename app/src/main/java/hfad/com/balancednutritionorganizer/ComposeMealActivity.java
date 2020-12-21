@@ -161,13 +161,13 @@ public class ComposeMealActivity extends AppCompatActivity {
             proteinSum += cursor.getDouble(7);
             gramSum += cursor.getDouble(8);
         }
-        textViewComposeMealKcal.setText(format.format(caloriesSum) + "\nkcal");
-        textViewComposeMealCarbohydrates.setText(format.format(carbohydratesSum) + "\ncarbohydrates");
-        textViewComposeMealSugar.setText(format.format(sugarSum) + "\nsugar");
-        textViewComposeMealFats.setText(format.format(fatsSum) + "\nfats");
-        textViewComposeMealSaturatedFats.setText(format.format(saturatedFatsSum) + "\nsaturated fats");
-        textViewComposeMealProtein.setText(format.format(proteinSum) + "\nprotein");
-        textViewComposeMealGram.setText(format.format(gramSum) + "g\nweight");
+        textViewComposeMealKcal.setText(format.format(caloriesSum) + "\n"+getString(R.string.calories_small));
+        textViewComposeMealCarbohydrates.setText(format.format(carbohydratesSum) + "\n" + getString(R.string.carbohydrates_small));
+        textViewComposeMealSugar.setText(format.format(sugarSum) + "\n" + getString(R.string.sugar_small));
+        textViewComposeMealFats.setText(format.format(fatsSum) + "\n" + getString(R.string.fats_small));
+        textViewComposeMealSaturatedFats.setText(format.format(saturatedFatsSum) + "\n" + getString(R.string.saturated_fats_small));
+        textViewComposeMealProtein.setText(format.format(proteinSum) + "\n" + getString(R.string.protein_small));
+        textViewComposeMealGram.setText(format.format(gramSum) + "g\n" + getString(R.string.weight_small));
     }
 
     public void button_ClearFoodList(View view) {
@@ -190,14 +190,14 @@ public class ComposeMealActivity extends AppCompatActivity {
 
             if (cursor.getCount() > 0) {
                 while (cursor.moveToNext()) {
-                    macrosForMeal += "| " + cursor.getString(1) + " | calories " + format.format(cursor.getDouble(2))
+                    macrosForMeal += "" + cursor.getString(1) + " | calories " + format.format(cursor.getDouble(2))
                             + " | carbo " + format.format(cursor.getDouble(3)) + "g | "
                             + " sugar " + format.format(cursor.getDouble(4)) + "g | "
                             + " fats " + format.format(cursor.getDouble(5)) + "g | "
                             + " saturated fats " + format.format(cursor.getDouble(6)) + "g | "
                             + " protein " + format.format(cursor.getDouble(7)) + "g | "
-                            + " weight " + format.format(cursor.getDouble(8)) + "g |  " +
-                            "----------------------------------------------------------------------------------------------\n";
+                            + " weight " + format.format(cursor.getDouble(8)) + "g" +
+                            "\n\n";
                 }
 
                 //aaa = " | Apple | calories 52 | carbo 14g | sugar 10g | fats 0.2g | saturatedfats 0g | protein 0.3g | weight 100g";

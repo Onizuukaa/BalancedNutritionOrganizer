@@ -18,15 +18,15 @@
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
         android:background="#5597B5"
-        android:columnCount="3"
+        android:columnCount="4"
         android:rowCount="3">
 
         <TextView
             android:id="@+id/textViewComposedMealsName"
-            android:layout_width="140dp"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
             android:layout_rowWeight="1"
-            android:layout_columnSpan="1"
+            android:layout_columnSpan="4"
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
@@ -34,20 +34,21 @@
             android:textStyle="bold" />
 
         <TextView
-            android:layout_width="70dp"
             android:id="@+id/textViewComposedMealsKcal"
+            android:layout_width="70dp"
             android:layout_rowWeight="1"
             android:layout_columnSpan="1"
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
             android:padding="2dp"
-            android:text="341 \nKCAL" />
+            android:text="341 \nkcal" />
 
         <TextView
-            android:layout_width="70dp"
             android:id="@+id/textViewComposedMealsGram"
+            android:layout_width="70dp"
             android:layout_rowWeight="1"
+            android:layout_columnSpan="1"
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
@@ -55,9 +56,10 @@
             android:text="213g \nweight" />
 
         <TextView
-            android:layout_width="140dp"
             android:id="@+id/textViewComposedMealsCarbohydrates"
+            android:layout_width="70dp"
             android:layout_rowWeight="1"
+            android:layout_columnSpan="1"
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
@@ -65,9 +67,10 @@
             android:text="34g \ncarbohydrates" />
 
         <TextView
-            android:layout_width="70dp"
             android:id="@+id/textViewComposedMealsFats"
+            android:layout_width="70dp"
             android:layout_rowWeight="1"
+            android:layout_columnSpan="1"
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
@@ -75,10 +78,11 @@
             android:text="21g \nfats" />
 
         <TextView
-            android:layout_width="70dp"
             android:id="@+id/textViewComposedMealsProtein"
+            android:layout_width="70dp"
             android:layout_rowSpan="1"
             android:layout_rowWeight="1"
+            android:layout_columnSpan="1"
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
@@ -86,9 +90,10 @@
             android:text="3g \nprotein" />
 
         <TextView
-            android:layout_width="140dp"
             android:id="@+id/textViewComposedMealsSugar"
+            android:layout_width="70dp"
             android:layout_rowWeight="1"
+            android:layout_columnSpan="1"
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
@@ -96,20 +101,22 @@
             android:text="21g \nsugar" />
 
         <TextView
-            android:layout_width="70dp"
             android:id="@+id/textViewComposedMealsSaturatedFats"
+            android:layout_width="70dp"
             android:layout_rowWeight="1"
+            android:layout_columnSpan="1"
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:gravity="center"
             android:padding="2dp"
-            android:text="11g \nsaturatedFats" />
+            android:text="11g \nsaturated fats" />
 
         <CheckBox
-            android:layout_width="70dp"
             android:id="@+id/checkBox_composedMeals"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
+            android:layout_columnSpan="1"
             android:layout_columnWeight="1"
             android:background="@drawable/cell_shape"
             android:text="@string/Include" />

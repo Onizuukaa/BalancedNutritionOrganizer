@@ -168,5 +168,12 @@
     <string name="Input_glass_capacity">Input glass capacity</string>
     <string name="Enter_weight">Enter weight</string>
     <string name="Cancel">Cancel</string>
+    <string name="protein_small">protein</string>
+    <string name="carbohydrates_small">carbohydrates</string>
+    <string name="calories_small">calories</string>
+    <string name="sugar_small">sugar</string>
+    <string name="weight_small">weight</string>
+    <string name="fats_small">fats</string>
+    <string name="saturated_fats_small">saturated fats</string>
 
 </resources>

@@ -14,6 +14,7 @@
         android:src="@mipmap/ic_launcher" />
 
     <TextView
+        android:layout_marginStart="8dp"
         android:id="@+id/textViewProductName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -25,6 +26,7 @@
         android:textStyle="bold" />
 
     <TextView
+        android:textColor="@color/Black"
         android:id="@+id/textViewProductCaloriesFor100Gram"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -35,6 +37,7 @@
         android:textSize="15sp" />
 
     <TextView
+        android:textColor="@color/Black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/textViewProductCaloriesFor100Gram"

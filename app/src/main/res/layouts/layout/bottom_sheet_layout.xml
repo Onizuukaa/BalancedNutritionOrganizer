@@ -12,6 +12,7 @@
     android:padding="16dp">
 
     <TextView
+        android:textColor="@color/Black"
         android:id="@+id/textViewMealNameBottomSheet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
