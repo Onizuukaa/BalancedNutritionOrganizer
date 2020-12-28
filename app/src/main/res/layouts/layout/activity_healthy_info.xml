@@ -81,4 +81,16 @@
         android:textSize="30sp"
         android:textStyle="bold" />
 
+    <TextView
+        android:paddingVertical="8dp"
+        android:onClick="openInfoAboutMeals"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/rounded_corner_meals"
+        android:gravity="center"
+        android:text="@string/meals_a_day"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
 </LinearLayout>

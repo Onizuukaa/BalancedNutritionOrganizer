@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:id="@+id/caloriesRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#0D11FF02"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <ImageView
+            android:id="@+id/imageViewBottomSheet"
+            android:layout_width="wrap_content"
+            android:layout_height="125dp"
+            android:layout_marginBottom="5dp"
+            app:srcCompat="@drawable/meals" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:text="Prawidłowa dieta powinna opierać się na odpowiednio zbilansowanych posiłkach spożywanych częściej, ale w mniejszych ilościach. Optymalną formą jest jedzenie śniadania, drugiego śniadania, obiadu, podwieczorku oraz kolacji w odstępach około 3 godzin." />
+
+        <TextView
+            android:background="@drawable/cell_shape_carbohydrates"
+            android:layout_marginBottom="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:text="Regularność ma znaczenie bo organizm, który o określonych godzinach przyjmuje konkretną dawkę wartości odżywczych, jest przyzwyczajony, aby w odpowiednim czasie wydzielać insulinę. Zapobiega to skokom glukozy, a tym samym odkładaniu się tkanki tłuszczowej." />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:text="Śniadanie jedz jak król, obiad jak książę, a kolację jak żebrak"
+            android:textStyle="bold" />
+
+        <TextView
+            android:background="@drawable/cell_shape_carbohydrates"
+            android:layout_marginBottom="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:text="Śniadanie dostarcza energii, aby zacząć dzień na wysokich obrotach. Nie mniej ważny jest obiad. Drugie śniadanie oraz podwieczorek powinny być zdecydowanie mniej kaloryczne niż posiłki główne, np. jogurt, banan. Kolacja powinna być lekka i powinno się ją jeść 2-3 godziny przed snem." />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:text="Przygotowując dzienne menu warto sugerować się ilością kalorii w posiłkach a ich skład przedstawia się następująco:" />
+
+        <GridLayout
+            android:background="@drawable/cell_shape_calories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:columnCount="2"
+            android:rowCount="5">
+
+            <TextView
+                android:layout_rowWeight="1"
+                android:layout_columnSpan="1"
+                android:layout_columnWeight="1"
+                android:paddingHorizontal="3dp"
+                android:background="@drawable/cell_shape_calories"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="1 Śniadanie"
+                android:textStyle="bold" />
+
+            <TextView
+                android:gravity="center"
+                android:layout_rowWeight="1"
+                android:layout_columnSpan="1"
+                android:layout_columnWeight="1"
+                android:padding="4dp"
+                android:background="@drawable/cell_shape_calories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="25 - 30%" />
+
+            <TextView
+                android:layout_rowWeight="1"
+                android:layout_columnSpan="1"
+                android:layout_columnWeight="1"
+                android:paddingHorizontal="3dp"
+                android:background="@drawable/cell_shape_calories"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="2 Śniadanie"
+                android:textStyle="bold" />
+
+            <TextView
+                android:gravity="center"
+                android:layout_rowWeight="1"
+                android:layout_columnSpan="1"
+                android:layout_columnWeight="1"
+                android:padding="2dp"
+                android:background="@drawable/cell_shape_calories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5 - 10%" />
+
+            <TextView
+                android:layout_rowWeight="1"
+                android:layout_columnSpan="1"
+                android:layout_columnWeight="1"
+                android:paddingHorizontal="3dp"
+                android:background="@drawable/cell_shape_calories"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Obiad"
+                android:textStyle="bold" />
+
+            <TextView
+                android:gravity="center"
+                android:layout_rowWeight="1"
+                android:layout_columnSpan="1"
+                android:layout_columnWeight="1"
+                android:padding="2dp"
+                android:background="@drawable/cell_shape_calories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="30 - 35%" />
+
+            <TextView
+                android:layout_rowWeight="1"
+                android:layout_columnSpan="1"
+                android:layout_columnWeight="1"
+                android:paddingHorizontal="3dp"
+                android:background="@drawable/cell_shape_calories"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Podwieczorek"
+                android:textStyle="bold" />
+
+            <TextView
+                android:gravity="center"
+                android:layout_rowWeight="1"
+                android:layout_columnSpan="1"
+                android:layout_columnWeight="1"
+                android:padding="2dp"
+                android:background="@drawable/cell_shape_calories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5 - 10%" />
+
+            <TextView
+                android:layout_rowWeight="1"
+                android:layout_columnSpan="1"
+                android:layout_columnWeight="1"
+                android:paddingHorizontal="3dp"
+                android:background="@drawable/cell_shape_calories"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Kolacja"
+                android:textStyle="bold" />
+
+            <TextView
+                android:gravity="center"
+                android:layout_rowWeight="1"
+                android:layout_columnSpan="1"
+                android:layout_columnWeight="1"
+                android:padding="2dp"
+                android:background="@drawable/cell_shape_calories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="15 - 20%" />
+
+        </GridLayout>
+
+        <Button
+            android:id="@+id/button_Exit_BottomSheet"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/gridLayoutCalories"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/button_background"
+            android:text="@string/Exit" />
+
+    </LinearLayout>
+
+</ScrollView>

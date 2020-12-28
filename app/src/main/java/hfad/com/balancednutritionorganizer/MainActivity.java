@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements DialogSetGoalWate
     @Override
     public void setCup(String username) {
         tvGlassCapacity = parseInt(username);
-        buttonAddWater.setText(getString(R.string.ADD) + " " + tvGlassCapacity + " ML " + getString(R.string.Water));
+        buttonAddWater.setText(getString(R.string.ADD) + " " + tvGlassCapacity + " ML " + getString(R.string.Water2));
         pbGlassCapacity = (int) ((tvGlassCapacity / (double)waterGoal) * 1000000000);
     }
 

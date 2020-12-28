@@ -72,7 +72,7 @@
     <string name="Protein">Białko</string>
     <string name="No_all_information_provided">Nie podano wszystkich danych</string>
     <string name="Food_added">Dodano żywność do ułożonych posiłków</string>
-    <string name="Healthy_Info">Zdrowe informacje</string>
+    <string name="Healthy_Info">Informacje o zdrowiu</string>
     <string name="Click_the_name_of_product_to_get_information_about_his_composition">Kliknij nazwę produktu aby uzyskać informacje o jego składzie</string>
     <string name="Meal_Added">Posiłek dodano</string>
     <string name="First_add_food">Najpierw należy dodać żywność</string>
@@ -108,8 +108,8 @@
     <string name="Very_high_activity">Bardzo wysoka aktywność</string>
     <string name="Metabolism_Calculator">Kalkulator CPM</string>
     <string name="Healthy_Information">Oto zdrowe informacje o jedzeniu. Kliknij w wybraną pozycję.</string>
-    <string name="Calories_1st">Zapotrzebowanie na kalorie dla każdego człowieka jest inne w zależności od wielu czynników. Takich jak waga, wzrost i aktywność fizyczna. Przelicznik kalorii wynosi:</string>
-    <string name="Calories_2nd">1g białka = 4kcal 1g węglowodanów = 4kcal 1g tłuszczy = 9kcal</string>
+    <string name="Calories_1st">Zapotrzebowanie na kalorie dla każdego człowieka jest inne w zależności od wielu czynników. Takich jak waga, wzrost i\u00A0aktywność fizyczna. Przelicznik kalorii wynosi:</string>
+    <string name="Calories_2nd">1g białka = 4kcal 1g węglowodanów = 4kcal 1g\u00A0tłuszczy\u00A0=\u00A09kcal</string>
     <string name="Calories_3rd">Przeciętny człowiek potrzebuje dziennie ok. 2000 kcal. Tyle jest uwzględnione na opakowaniach produktów spożywczych.\nNa zapotrzebowanie składa się PPM (podstawowa przemiana materii) pomnożona przez wartość odpowiadającą aktywności fizycznej. Istnieją wzory do wyliczenia PPM. W BNO stosuje się wzór Mifflin-St Jeor.</string>
     <string name="Male_Calories">Mężczyźni</string>
     <string name="Female_Calories">Kobiety</string>
@@ -122,13 +122,13 @@
     <string name="moderate_activity">średnia aktywność (praca siedząca\ni 3 - 4 treningi w tygodniu)</string>
     <string name="high_activity">wysoka aktywność (praca fizyczna\ni 3 - 4 treningi w tygodniu)</string>
     <string name="very_high_activity">bardzo wysoka aktywność\n(zawodowi sportowcy, osoby\ncodziennie trenujące</string>
-    <string name="Carbo_1st">Węglowodany składają się z cukrów prostych i złożonych. Złożone są korzystniejsze dla organizmu gdyż dostarczają energię na dłużej. Proste to cukier. Złożone znajdują się w np. makaronie, mące.</string>
-    <string name="Carbo_2nd">Są magazynowane w niewielkich ilościach, 250-321g i starcza to na 12 godzin przy zapotrzebowaniu 2000kcal. Gdy nie dostarcza się wystarczającej ilości to organizm zużywa białko i tłuszcze. Nadmiar jest przekształcany w tłuszcze prowadząc do otyłości.</string>
-    <string name="Carbo_3rd">Powinny dostarczać 50-60% dziennego zapotrzebowania kalorycznego. Są niezbędne do utrzymania prawidłowego zdrowia, potrzebne aby być długo aktywnym i sprawnym fizycznie.</string>
-    <string name="Carbo_4th">Są dobrym źródłem energii dlatego powinny być dostarczane organizmowi rano, po przebudzeniu. Powinny znaleźć się w śniadaniu, drugim śniadaniu i obiedzie. Rano organizm potrzebuje dawki energii, żeby przyspieszyć tempo metabolizmu, które zwolniło w nocy. Wieczorem lepiej unikać węglowodanów gdyż organizm nie wykorzysta energii i przekształci nadmiar w tkankę tłuszczową.</string>
-    <string name="Carbo_5th">Należy unikać pustych kalorii czyli wyrobów cukierniczych, słodyczy, słodkich napojów gazowanych, słodkich napojów niegazowanych i wysoko przetworzonej żywności, gdyż nie mają żadnych wartościowych składników odżywczych.</string>
+    <string name="Carbo_1st">Węglowodany składają się z cukrów prostych i\u00A0złożonych. Złożone cukry są korzystniejsze dla organizmu gdyż dostarczają energię na dłużej. Proste to cukier. Złożone znajdują się w np. makaronie, mące.</string>
+    <string name="Carbo_2nd">Są magazynowane w niewielkich ilościach, 250-321g i\u00A0starcza to na 12 godzin przy zapotrzebowaniu 2000kcal. Gdy nie dostarcza się wystarczającej ilości to organizm zużywa białko i tłuszcze. Nadmiar jest przekształcany w\u00A0tłuszcze prowadząc do otyłości.</string>
+    <string name="Carbo_3rd">Powinny dostarczać 50-60% dziennego zapotrzebowania kalorycznego. Są niezbędne do utrzymania prawidłowego zdrowia, potrzebne aby być długo aktywnym i\u00A0sprawnym fizycznie.</string>
+    <string name="Carbo_4th">Są dobrym źródłem energii dlatego powinny być dostarczane organizmowi rano, po przebudzeniu. Powinny znaleźć się w śniadaniu, drugim śniadaniu i\u00A0obiedzie. Rano organizm potrzebuje dawki energii, żeby przyspieszyć tempo metabolizmu, które zwolniło w nocy. Wieczorem lepiej unikać węglowodanów gdyż organizm nie wykorzysta energii i przekształci nadmiar w tkankę tłuszczową.</string>
+    <string name="Carbo_5th">Należy unikać \"pustych\" kalorii czyli wyrobów cukierniczych, słodyczy, słodkich napojów gazowanych, słodkich napojów niegazowanych i wysoko przetworzonej żywności, gdyż nie mają żadnych wartościowych składników odżywczych.</string>
     <string name="Exit">Wyjście</string>
-    <string name="Protein_1st">Organizm na bieżąco wykorzystuje białko i nie gromadzi jego zapasów na inny czas. Nadmiar protein jest zwyczajnie wydalany, więc każdego dnia trzeba dbać o spożycie odpowiedniej ilości.</string>
+    <string name="Protein_1st">Organizm na bieżąco wykorzystuje białko i nie gromadzi jego zapasów na inny czas. Nadmiar protein jest zwyczajnie wydalany, więc każdego dnia trzeba dbać o\u00A0spożycie odpowiedniej ilości.</string>
     <string name="Protein_2nd">Jedną z najważniejszych funkcji jest budowanie masy mięśniowej i regeneracja komórek mięśniowych.</string>
     <string name="Protein_3rd">Zapotrzebowanie na białko jest zależne od wielu czynników, między innymi wieku, płci, aktywności fizycznej.</string>
     <string name="Protein_4th">Zapotrzebowanie dzienne nie powinno być niezaspokojone gdyż obniża metabolizm, odporność, samopoczucie, kondycję skóry, włosów i paznokci ani przekraczane gdyż obciążą wątrobę i nerki, zwiększa ryzyko rozwoju stanów zapalnych.</string>
@@ -143,7 +143,7 @@
     <string name="Protein_V3">1,3g / 1kg masy ciała</string>
     <string name="Protein_V4">1,52g / 1kg masy ciała</string>
     <string name="Protein_V5">1,5-2g / 1kg masy ciała</string>
-    <string name="Fats_1st">Tłuszcze są najbardziej kalorycznym składnikiem naszej diety. 1g = 9kcal, ponad 2 razy więcej niż białko i węglowodany. Nie wszystkie tłuszcze są złe, niektóre są potrzebne do życia.</string>
+    <string name="Fats_1st">Tłuszcze są najbardziej kalorycznym składnikiem naszej diety. 1g = 9kcal, ponad 2 razy więcej niż białko i\u00A0węglowodany. Nie wszystkie tłuszcze są złe, niektóre są potrzebne do życia.</string>
     <string name="Fats_2nd">Zawierają w sobie nasycone i nienasycone. Nienasycone są zdrowsze. Tłuszcze zwierzęce mają dużo kalorii, cholesterolu i nasyconych kwasów tłuszczowych, które podnoszą poziom cholesterolu we krwi i przyspieszają rozwój miażdżycy.</string>
     <string name="Fats_3rd">Tłuszcze nasycone nie powinny dostarczać więcej niż 10% kcal dziennie. Lepiej unikać beztłuszczowych wynalazków gdyż pozbawimy się wtedy cennych witamin rozpuszczanych w tłuszczach: A, D, E, K.</string>
     <string name="fats_4th">Niski poziom tłuszczów w diecie może przyczyniać się do:</string>
@@ -158,10 +158,10 @@
     <string name="Water">Woda</string>
     <string name="Water_V1">Woda jest niezbędna dla prawidłowego funkcjonowania psychiki człowieka i jego sprawności fizycznej. Bez niej mogą doskwierać bóle głowy, zły nastrój.</string>
     <string name="Water_V2">Jest budulcem przestrzeni stawowej, dlatego też zapobiega zapaleniom stawów i bólom pleców. Chroni mózg, rdzeń kręgowy, tkanki i narządy. Wzmacnia produkcję neuroprzekaźników, usprawnia pamięć, a także spowalnia proces starzenia.</string>
-    <string name="Water_V3">Najwięcej wody w organizmie mają dzieci a jest to 78%, a do pierwszego roku wartość zmniejsza się do 65%. Dorośli mężczyźni mają około 60%, a dorosłe kobiety około 55%. Różnica wynika z tego, że tkanka tłuszczowa u kobiet stanowi większą cześć ciała niż u mężczyzn, a tłuszcz zawiera mniej wody niż tkanka beztłuszczowa.</string>
+    <string name="Water_V3">Najwięcej wody w organizmie mają dzieci a jest to 78%, a\u00A0do pierwszego roku wartość zmniejsza się do 65%. Dorośli mężczyźni mają około 60%, a dorosłe kobiety około 55%. Różnica wynika z tego, że tkanka tłuszczowa u kobiet stanowi większą cześć ciała niż u mężczyzn, a tłuszcz zawiera mniej wody niż tkanka beztłuszczowa.</string>
     <string name="Water_V4">Każdego dnia traci się około 6% płynów ustrojowych poprzez wydzielanie potu, 6% w kale, a 28% poprzez parowanie wody ze skóry i oddychanie. 60% traci się razem z moczem.</string>
     <string name="Water_V5">Zapotrzebowanie na wodę można obliczyć mnożą masę ciała przez 0.030. Przyjmuje się, że na 1 kg masy ciała, należy dostarczyć 30 mililitrów wody. Na 1 spożytą kalorię, powinno się przyjąć 1 mililitr wody. Zatem dla 2000 kcal należy spożyć 2000 mililitrów co daje 2 litry.</string>
-    <string name="Water_V6">Szacuje się, że z napojów wchłania się około 60% wody, z pożywienia 30%, a w wyniku metabolizmu wytwarzane jest kolejne 10%.</string>
+    <string name="Water_V6">Szacuje się, że z napojów wchłania się około 60% wody, z\u00A0pożywienia 30%, a w wyniku metabolizmu wytwarzane jest kolejne 10%.</string>
     <string name="ADD">DODAJ</string>
     <string name="Water2">Wody</string>
     <string name="Saved_in_added_food">Zapisano w dodanej żywności</string>
@@ -177,5 +177,8 @@
     <string name="weight_small">waga</string>
     <string name="fats_small">tłuszcze</string>
     <string name="saturated_fats_small">tłuszcze nasycone</string>
+    <string name="Body_Mass_Index">Wskaźnik Masy Ciała</string>
+    <string name="Total_Daily_Energy_Expenditure">Całkowita Przemiana Materii</string>
+    <string name="meals_a_day">5 posiłków dziennie</string>
 
 </resources>

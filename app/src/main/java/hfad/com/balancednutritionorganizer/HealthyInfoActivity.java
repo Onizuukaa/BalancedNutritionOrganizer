@@ -69,6 +69,13 @@ public class HealthyInfoActivity extends AppCompatActivity implements HealthyInf
         bottomSheet.setArguments(newBundle);
     }
 
+    public void openInfoAboutMeals(View view){
+        newBundle.putString("key5", "meals");
+        HealthyInfoBottomSheetDialog bottomSheet = new HealthyInfoBottomSheetDialog();
+        bottomSheet.show(getSupportFragmentManager(), "exampleBottomSheet");
+        bottomSheet.setArguments(newBundle);
+    }
+
     @Override
     public void onButtonClicked(String text) {
 

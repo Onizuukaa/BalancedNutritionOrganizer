@@ -71,7 +71,7 @@
     <string name="Protein">Protein</string>
     <string name="No_all_information_provided">No all information provided</string>
     <string name="Food_added">Food added to Composed Meals</string>
-    <string name="Healthy_Info">Healthy Info</string>
+    <string name="Healthy_Info">Health Info</string>
     <string name="Click_the_name_of_product_to_get_information_about_his_composition">Click the meal name to get information about its ingredients</string>
     <string name="Meal_Added">Meal Added</string>
     <string name="First_add_food">First add food</string>
@@ -175,5 +175,8 @@
     <string name="weight_small">weight</string>
     <string name="fats_small">fats</string>
     <string name="saturated_fats_small">saturated fats</string>
+    <string name="Body_Mass_Index">Body Mass Index</string>
+    <string name="Total_Daily_Energy_Expenditure">Total Daily Energy Expenditure</string>
+    <string name="meals_a_day">5 meals a day</string>
 
 </resources>
