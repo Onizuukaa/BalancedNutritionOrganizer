@@ -12,4 +12,8 @@
         <item name="android:scrollbarThumbVertical">@color/colorPrimaryDark</item>
     </style>
 
+    <style name="Button" parent="Widget.AppCompat.Button">
+        <item name="android:textAllCaps">false</item>
+    </style>
+
 </resources>

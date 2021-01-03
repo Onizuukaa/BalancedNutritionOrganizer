@@ -6,7 +6,7 @@
     <string name="Composed_Daily_Meals">Composed\nDaily Meals</string>
     <string name="Compose_The_Meal">Compose The Meal</string>
     <string name="Goal_2500ml">Goal 2500ml</string>
-    <string name="ADD_250ML_WATER">ADD 250ML WATER</string>
+    <string name="ADD_250ML_WATER">ADD 250 ml WATER</string>
     <string name="RESET_WATER">RESET</string>
     <string name="Height_in_cm">Height in cm</string>
     <string name="Weight_in_kg">Weight in kg</string>
@@ -107,7 +107,7 @@
     <string name="Metabolism_Calculator">TDEE Calculator</string>
     <string name="Healthy_Information">Here are healthy information about food. Click on the selected item.</string>
     <string name="Calories_1st">The caloric requirement for every person is different depending on many factors, such as weight, height and physical activity. The calorie converter is:</string>
-    <string name="Calories_2nd">1g protein = 4kcal 1g carbohydrates = 4kcal 1g fats = 9kcal</string>
+    <string name="Calories_2nd">1g protein = 4kcal 1g carbohydrates = 4kcal 1g\u00A0fats\u00A0=\u00A09kcal</string>
     <string name="Calories_3rd">The average person needs about 2,000 kcal per day. This is how much is included in the package of food products.\nThe requirement consists of BMR (basal metabolic rate) multiplied by the value of physical activity. There are formulas to calculate BMR. The BNO uses the Mifflin-St Jeor formula.</string>
     <string name="Male_Calories">Male</string>
     <string name="Female_Calories">Female</string>
@@ -159,9 +159,9 @@
     <string name="Water_V3">Children have the highest amount of water in the body, it is 78% and in the first year the value drops to 65%. Adult males are approximately 60% and adult females approximately 55%. The difference is that adipose tissue in women is a greater part of the body than in men, and fat contains less water than lean tissue.</string>
     <string name="Water_V4">Every day about 6% of body fluid is lost through sweat, 6% in stool, and 28% through skin evaporation and breathing. 60% is lost with the urine.</string>
     <string name="Water_V5">The water requirement can be calculated by multiplying your body weight by 0.030. It is assumed that for 1 kg of body weight, 30 milliliters of water should be provided. You should take 1 milliliter of water for every 1 calorie consumed. Therefore, for 2000 kcal, you need to consume 2000 milliliters, which is 2 liters.</string>
-    <string name="Water_V6">It is estimated that about 60% of water is absorbed from drinks, 30% from food, and another 10% is produced as a result of metabolism.</string>
+    <string name="Water_V6">It is estimated that about 60% of water is absorbed from drinks, 30% from food, and another 10% is produced as a\u00A0result of metabolism.</string>
     <string name="ADD">ADD</string>
-    <string name="Water2">Water</string>
+    <string name="Water2">WATER</string>
     <string name="Saved_in_added_food">Saved in added food</string>
     <string name="Cup">Cup</string>
     <string name="Goal">Goal</string>

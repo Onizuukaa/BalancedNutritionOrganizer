@@ -7,7 +7,7 @@
     <string name="Composed_Daily_Meals">Ułożone\nDzienne Posiłki</string>
     <string name="Compose_The_Meal">Układanie Posiłku</string>
     <string name="Goal_2500ml">Cel 2500ml</string>
-    <string name="ADD_250ML_WATER">DODAJ 250ML WODY</string>
+    <string name="ADD_250ML_WATER">DODAJ 250 ml WODY</string>
     <string name="RESET_WATER">ZRESETUJ</string>
     <string name="Height_in_cm">Wzrost w cm</string>
     <string name="Weight_in_kg">Waga w kg</string>
@@ -163,7 +163,7 @@
     <string name="Water_V5">Zapotrzebowanie na wodę można obliczyć mnożą masę ciała przez 0.030. Przyjmuje się, że na 1 kg masy ciała, należy dostarczyć 30 mililitrów wody. Na 1 spożytą kalorię, powinno się przyjąć 1 mililitr wody. Zatem dla 2000 kcal należy spożyć 2000 mililitrów co daje 2 litry.</string>
     <string name="Water_V6">Szacuje się, że z napojów wchłania się około 60% wody, z\u00A0pożywienia 30%, a w wyniku metabolizmu wytwarzane jest kolejne 10%.</string>
     <string name="ADD">DODAJ</string>
-    <string name="Water2">Wody</string>
+    <string name="Water2">WODY</string>
     <string name="Saved_in_added_food">Zapisano w dodanej żywności</string>
     <string name="Cup">Szklanka</string>
     <string name="Goal">Cel</string>
