@@ -68,10 +68,9 @@
                 android:background="@drawable/edit_background"
                 android:ems="10"
                 android:gravity="center"
-                android:hint="18-120 lat"
+                android:hint="18-120"
                 android:inputType="numberDecimal"
-                android:maxLength="3"
-                android:text="27" />
+                android:maxLength="3" />
         </TableRow>
 
         <TableRow>
@@ -93,8 +92,7 @@
                 android:inputType="numberDecimal"
                 android:ems="10"
                 android:gravity="center"
-                android:hint="cm"
-                android:text="167" />
+                android:hint="cm" />
         </TableRow>
 
         <TableRow>
@@ -118,21 +116,11 @@
                 android:inputType="numberDecimal"
                 android:ems="10"
                 android:gravity="center"
-                android:hint="kg"
-                android:text="66.45" />
+                android:hint="kg" />
 
         </TableRow>
 
     </TableLayout>
-
-    <!--    <LinearLayout-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_marginTop="10dp"-->
-    <!--        android:gravity="center"-->
-    <!--        android:orientation="horizontal">-->
-    <!--        -->
-    <!--    </LinearLayout>-->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -166,25 +154,7 @@
         android:background="@drawable/button_background"
         android:onClick="buttonCalculateTotalMetabolism"
         android:text="@string/Calculate" />
-
-    <!--    <TextView-->
-    <!--        android:id="@+id/textViewResultCompleteMetabolism"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_gravity="center"-->
-    <!--        android:layout_marginTop="10dp"-->
-    <!--        android:textSize="18sp" />-->
-
-    <!--    <TextView-->
-    <!--        android:id="@+id/textViewResultCompleteMetabolismMacros"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_gravity="center"-->
-    <!--        android:layout_marginTop="10dp"-->
-    <!--        android:text="Dzienne zapotrzebowanie na makroskładniki"-->
-    <!--        android:textColor="#000000"-->
-    <!--        android:textSize="18sp" />-->
-
+    
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -13,15 +13,6 @@
         android:orientation="vertical"
         tools:context=".BmiActivity">
 
-        <!--        <TextView-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_marginVertical="25dp"-->
-        <!--            android:text="BMI CALCULATOR"-->
-        <!--            android:textAllCaps="true"-->
-        <!--            android:textSize="26sp"-->
-        <!--            android:textStyle="bold" />-->
-
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -76,40 +67,6 @@
             </TableRow>
 
         </TableLayout>
-
-        <!--        <TextView-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_marginHorizontal="50dp"-->
-        <!--            android:text="@string/Height_in_cm" />-->
-
-        <!--        <EditText-->
-        <!--            android:id="@+id/editTextInsertHeight"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_marginHorizontal="50dp"-->
-        <!--            android:layout_marginVertical="10dp"-->
-        <!--            android:background="@drawable/edit_background"-->
-        <!--            android:inputType="numberDecimal"-->
-        <!--            android:maxLength="5"-->
-        <!--            android:paddingLeft="10dp" />-->
-
-        <!--        <TextView-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_marginHorizontal="50dp"-->
-        <!--            android:text="@string/Weight_in_kg" />-->
-
-        <!--        <EditText-->
-        <!--            android:id="@+id/editTextInsertWeight"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_marginHorizontal="50dp"-->
-        <!--            android:layout_marginVertical="12dp"-->
-        <!--            android:background="@drawable/edit_background"-->
-        <!--            android:inputType="numberDecimal"-->
-        <!--            android:maxLength="5"-->
-        <!--            android:paddingLeft="10dp" />-->
 
         <Button
             android:id="@+id/buttonCalculateBMI"

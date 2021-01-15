@@ -32,14 +32,13 @@
             android:text="@string/Food_Name" />
 
         <EditText
-            android:maxLength="30"
+            android:maxLength="17"
             android:id="@+id/customProductName"
             android:layout_width="70dp"
-            android:layout_height="wrap_content"
+            android:layout_height="65dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:gravity="center"
-            android:text="Pomidor" />
+            android:gravity="bottom|center" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -57,8 +56,7 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:gravity="center"
-            android:inputType="numberDecimal"
-            android:text="120" />
+            android:inputType="numberDecimal" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -76,8 +74,7 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:gravity="center"
-            android:inputType="numberDecimal"
-            android:text="39" />
+            android:inputType="numberDecimal" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -95,8 +92,7 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:gravity="center"
-            android:inputType="numberDecimal"
-            android:text="11" />
+            android:inputType="numberDecimal" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -114,8 +110,7 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:gravity="center"
-            android:inputType="numberDecimal"
-            android:text="7" />
+            android:inputType="numberDecimal" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -133,8 +128,7 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:gravity="center"
-            android:inputType="numberDecimal"
-            android:text="3" />
+            android:inputType="numberDecimal" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -152,8 +146,7 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:gravity="center"
-            android:inputType="numberDecimal"
-            android:text="22" />
+            android:inputType="numberDecimal" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -165,8 +158,8 @@
 
         <ImageView
             android:id="@+id/customProductImage"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:gravity="center"
