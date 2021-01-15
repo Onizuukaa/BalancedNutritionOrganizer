@@ -6,17 +6,17 @@
     tools:context=".ComposeMealActivity">
 
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:gravity="center"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:orientation="horizontal">
 
         <Button
-            android:background="@drawable/button_background"
             android:id="@+id/buttonResetIngredients"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
             android:onClick="button_ClearFoodList"
             android:text="@string/Reset" />
 
@@ -24,13 +24,13 @@
             android:id="@+id/editTextMealName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:maxLength="21"
-            android:hint="@string/Meal_Name" />
+            android:hint="@string/Meal_Name"
+            android:maxLength="21" />
 
         <Button
-            android:background="@drawable/button_background"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
             android:onClick="button_AddMeal"
             android:text="@string/Add_Meal" />
 
@@ -132,19 +132,19 @@
 
         <EditText
             android:id="@+id/editText_removeItem"
-            android:gravity="center"
             android:layout_width="30dp"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:hint="1"
             android:inputType="number"
-            android:maxLength="2"
-            android:hint="1" />
+            android:maxLength="2" />
 
         <Button
-            android:background="@drawable/button_background"
-            android:onClick="buttonRemoveItem"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
+            android:onClick="buttonRemoveItem"
             android:text="@string/Remove_Product" />
     </LinearLayout>
 
@@ -157,15 +157,5 @@
         android:gravity="center"
         android:text="@string/No_data"
         android:textSize="30dp" />
-
-    <!--    <TextView-->
-    <!--        android:id="@+id/textViewUltraTest"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_below="@+id/textViewNoData"-->
-    <!--        android:layout_margin="10dp"-->
-    <!--        android:text="1. Apple | calories 52 | carbo 14g | sugar 10g | fats 0.2g | saturatedfats 0g | protein 0.3g | weight 100g-->
-    <!--                    \n2. Pear | calories 114 | carbo 30g | sugar 20g | fats 0.2g | saturatedfats 0g | protein 0.8g | weight 200g-->
-    <!--                    \n3. Smoked Mackerel | calories 666 | carbo 0g | sugar 0g | fats 46.5g | saturatedfats 11.64g | protein 62.1g | weight 300g" />-->
-
+    
 </RelativeLayout>

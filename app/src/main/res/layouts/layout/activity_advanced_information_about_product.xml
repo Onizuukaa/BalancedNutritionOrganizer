@@ -260,25 +260,20 @@
     </TableLayout>
 
     <Button
-        android:background="@drawable/button_background"
         android:id="@+id/buttonInformationSender"
         android:layout_width="360dp"
         android:layout_height="wrap_content"
+        android:background="@drawable/button_background"
         android:onClick="button_SendInformationAboutCurrentProductConfiguration"
         android:text="@string/Send_The_Macronutrients" />
 
     <Button
-        android:layout_marginTop="10dp"
-        android:background="@drawable/button_background"
         android:id="@+id/buttonOpenComposhingDishesActivity"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_background"
         android:onClick="button_openComposeMealActivity"
         android:text="@string/Open_Compose_The_Meal" />
-    <!--    <ImageView-->
-    <!--        android:id="@+id/obrazek"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="200dp"-->
-    <!--        android:src="@mipmap/ic_launcher" />-->
 </LinearLayout>
 

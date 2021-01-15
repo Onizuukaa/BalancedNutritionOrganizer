@@ -47,7 +47,6 @@
         android:layout_marginBottom="5dp"
         android:columnCount="5"
         android:rowCount="18">
-        <!--        android:background="#5597B5"-->
 
         <TextView
             android:id="@+id/textViewComposedDailyMealsName"

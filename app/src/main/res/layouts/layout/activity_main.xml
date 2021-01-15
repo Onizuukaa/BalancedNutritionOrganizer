@@ -138,11 +138,11 @@
         <TableRow android:gravity="center">
 
             <Button
-                android:background="@drawable/button_background"
-                android:onClick="openDialogSetCup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/Cup"/>
+                android:background="@drawable/button_background"
+                android:onClick="openDialogSetCup"
+                android:text="@string/Cup" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -174,11 +174,11 @@
             </RelativeLayout>
 
             <Button
-                android:background="@drawable/button_background"
-                android:onClick="openDialogWater"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/button_background"
                 android:gravity="center"
+                android:onClick="openDialogWater"
                 android:text="@string/Goal" />
 
         </TableRow>
@@ -193,14 +193,14 @@
             android:gravity="center">
 
             <Button
-                android:textAllCaps="false"
                 android:id="@+id/buttonAddWater"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
                 android:background="@drawable/button_background"
                 android:onClick="button_addWater"
-                android:text="@string/ADD_250ML_WATER" />
+                android:text="@string/ADD_250ML_WATER"
+                android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/buttonResetWater"
