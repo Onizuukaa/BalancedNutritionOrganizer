@@ -180,6 +180,16 @@
     <string name="Body_Mass_Index">Body Mass Index</string>
     <string name="Total_Daily_Energy_Expenditure">Total Daily Energy Expenditure</string>
     <string name="meals_a_day">5 meals a day</string>
+    <string name="meals_1">A proper diet should be based on properly balanced smaller meals but consumed more often. The optimal form is to eat breakfast, morning snack, lunch, afternoon snack and dinner at intervals of about 3 hours.</string>
+    <string name="meals_2">Regularity matters because an organism that takes a\u00A0specific dose of nutrients at certain times is used to releasing insulin at the right time. That prevents glucose spikes, and thus the accumulation of the adipose tissue.</string>
+    <string name="meals_3">Eat breakfast like a king, lunch like a prince, and dinner like a beggar</string>
+    <string name="meals_4">Breakfast provides the energy to start the day in high gear. Dinner is no less important. Morning and afternoon snacks should be much less caloric than main meals, e.g. yoghurt or banana. Dinner should be light and eaten 2-3 hours before bedtime.</string>
+    <string name="meals_5">While preparing the daily menu, it is worth to take into account the number of calories in meals and their composition should go as follows:</string>
+    <string name="Breakfast">Breakfast</string>
+    <string name="Morning_Snack">Morning Snack</string>
+    <string name="Lunch">Lunch</string>
+    <string name="Afternoon_Snack">Afternoon Snack</string>
+    <string name="Dinner">Dinner</string>
 
 
 </resources>

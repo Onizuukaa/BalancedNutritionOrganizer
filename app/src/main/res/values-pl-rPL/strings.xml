@@ -180,5 +180,15 @@
     <string name="Body_Mass_Index">Wskaźnik Masy Ciała</string>
     <string name="Total_Daily_Energy_Expenditure">Całkowita Przemiana Materii</string>
     <string name="meals_a_day">5 posiłków dziennie</string>
+    <string name="meals_1">Prawidłowa dieta powinna opierać się na odpowiednio zbilansowanych posiłkach spożywanych częściej, ale w mniejszych ilościach. Optymalną formą jest jedzenie śniadania, porannej przekąski, obiadu, popołudniowej przekąski oraz kolacji w odstępach około 3 godzin.</string>
+    <string name="meals_2">Regularność ma znaczenie bo organizm, który o\u00A0określonych godzinach przyjmuje konkretną dawkę wartości odżywczych, jest przyzwyczajony, aby w\u00A0odpowiednim czasie wydzielać insulinę. Zapobiega to skokom glukozy, a tym samym odkładaniu się tkanki tłuszczowej.</string>
+    <string name="meals_3">Śniadanie jedz jak król, obiad jak książę, a kolację jak żebrak</string>
+    <string name="meals_4">Śniadanie dostarcza energii, aby zacząć dzień na wysokich obrotach. Nie mniej ważny jest obiad. Poranna i\u00A0popołudniowa przekąska powinny być zdecydowanie mniej kaloryczne niż posiłki główne, np. jogurt, banan. Kolacja powinna być lekka i\u00A0powinno się ją jeść 2-3 godziny przed snem.</string>
+    <string name="meals_5">Przygotowując dzienne menu warto sugerować się ilością kalorii w posiłkach a ich skład przedstawia się następująco:</string>
+    <string name="Breakfast">1 Śniadanie</string>
+    <string name="Morning_Snack">2 Śniadanie</string>
+    <string name="Lunch">Obiad</string>
+    <string name="Afternoon_Snack">Podwieczorek</string>
+    <string name="Dinner">Kolacja</string>
 
 </resources>
