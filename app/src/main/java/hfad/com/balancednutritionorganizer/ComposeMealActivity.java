@@ -110,10 +110,6 @@ public class ComposeMealActivity extends AppCompatActivity {
                 mAdapter.swapCursor(getAllItems());
 
                 sumAndViewMacros();
-                //Pozostałości kodu, zostawiłem dla notifyRemoved(position) bo nie wiem co to robi.
-//            productSaturatedFatsArrayList.remove(position);
-//            productProteinArrayList.remove(position);
-//            adapter.notifyItemRemoved(position);
             }
             showOrHideNoDataTextView();
         }
@@ -135,7 +131,6 @@ public class ComposeMealActivity extends AppCompatActivity {
                 null,
                 null,
                 null,
-                //GroceryContract.GroceryEntry.COLUMN_TIMESTAMP + " DESC"
                 null
         );
     }
@@ -181,8 +176,6 @@ public class ComposeMealActivity extends AppCompatActivity {
     }
 
     public void button_AddMeal(View view) {
-        //W tym miejscu ma być kod, który wyśle do bazy produkty wraz z nazwą posiłku - jednak może na początku inaczej
-
         if ( editTextMealName.getText().toString().length() == 0 ){
             Toast.makeText(this, R.string.Name_was_not_provided, Toast.LENGTH_SHORT).show();
         }else{
@@ -200,8 +193,6 @@ public class ComposeMealActivity extends AppCompatActivity {
                             "\n\n";
                 }
 
-                //aaa = " | Apple | calories 52 | carbo 14g | sugar 10g | fats 0.2g | saturatedfats 0g | protein 0.3g | weight 100g";
-                //aaa = "1. Apple | calories 52 | carbo 14g | sugar 10g | fats 0.2g | saturatedfats 0g | protein 0.3g | weight 100g";
                 ContentValues cv = new ContentValues();
                 cv.put(ComposedMealsColumns.ComposedMealsColumnsEntry.COLUMN_MEALNAME, editTextMealName.getText().toString());
                 cv.put(ComposedMealsColumns.ComposedMealsColumnsEntry.COLUMN_CALORIES, format.format(caloriesSum));

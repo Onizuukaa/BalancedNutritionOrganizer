@@ -42,8 +42,6 @@ public class ComposedMealsActivity extends AppCompatActivity implements BottomSh
     EditText editText_removeMeal, editText_dailyMealName;
     TextView textViewNoDataComposed;
     String dailyMealName;
-
-    //DecimalFormatSymbols symbols = DecimalFormatSymbols.getInstance();
     DecimalFormat format;
 
     @Override
@@ -53,10 +51,7 @@ public class ComposedMealsActivity extends AppCompatActivity implements BottomSh
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setTitle(R.string.Composed_Meals);
 
-        //symbols.setDecimalSeparator('.');
         format = new DecimalFormat("#.#");
-//        format.setDecimalFormatSymbols(symbols);
-//        format.setMaximumFractionDigits(1);
         format.setDecimalSeparatorAlwaysShown(false);
 
         ComposedMealsDBHelper dbHelperComposedMeals = new ComposedMealsDBHelper(this);
@@ -84,39 +79,16 @@ public class ComposedMealsActivity extends AppCompatActivity implements BottomSh
                     if (selectedMeals.size() != 5) {
                         Toast.makeText(ComposedMealsActivity.this, R.string.Please_select_5_meals, Toast.LENGTH_SHORT).show();
                     } else {
-//                StringBuilder composedMealsNames = new StringBuilder();
-//                StringBuilder composedMealsCalories = new StringBuilder();
 
                         for (int i = 0; i < selectedMeals.size(); i++) {
-                            // if (i == 0) {
-
-                            //composedMealsNames.append(selectedMeals.get(i).getProductName());
-                            //composedMealsCalories.append(selectedMeals.get(i).getProductWeight());
-
-                            //kcal_Sum += parseDouble(selectedMeals.get(i).getProductCalories());
-
                             kcal_Sum += parseDouble(selectedMeals.get(i).getProductCalories());
-
-
                             weight_Sum += parseDouble(selectedMeals.get(i).getProductWeight());
                             carbohydrates_Sum += parseDouble(selectedMeals.get(i).getProductCarbohydrates());
                             sugar_Sum += parseDouble(selectedMeals.get(i).getProductSugar());
                             fats_Sum += parseDouble(selectedMeals.get(i).getProductFats());
                             saturatedFats_Sum += parseDouble(selectedMeals.get(i).getProductSaturatedFats());
                             protein_Sum += parseDouble(selectedMeals.get(i).getProductProtein());
-
-                            // } else {
-                            //composedMealsNames.append("\n").append(selectedMeals.get(i).getProductName());
-                            //composedMealsCalories.append("\n").append(selectedMeals.get(i).getProductWeight());
-//                        kcal_Sum += parseDouble(selectedMeals.get(i).getProductWeight());
-//                        weight_Sum += parseDouble(selectedMeals.get(i).getProductWeight());
-                            // }
                         }
-                        //Toast.makeText(ComposedMealsActivity.this, composedMealsNames.toString(), Toast.LENGTH_SHORT).show();
-                        //Toast.makeText(ComposedMealsActivity.this, composedMealsCalories.toString(), Toast.LENGTH_SHORT).show();
-                        //Toast.makeText(ComposedMealsActivity.this, kcal_Sum + "", Toast.LENGTH_SHORT).show();
-                        //Toast.makeText(ComposedMealsActivity.this, weight_Sum + "", Toast.LENGTH_SHORT).show();
-
                         cv.put(ComposedDailyMealsColumns.ComposedDailyMealsColumnsEntry.COLUMN_composedDailyMeals_Name, dailyMealName);
                         cv.put(ComposedDailyMealsColumns.ComposedDailyMealsColumnsEntry.COLUMN_ComposedDailyMeals_KCAL_SUM, format.format(kcal_Sum));
                         cv.put(ComposedDailyMealsColumns.ComposedDailyMealsColumnsEntry.COLUMN_ComposedDailyMeals_WEIGHT_SUM, format.format(weight_Sum));
@@ -247,8 +219,6 @@ public class ComposedMealsActivity extends AppCompatActivity implements BottomSh
                 cursor = getAllItems();
                 showOrHideNoDataTextView();
             }
-//            cursor = getAllItems();
-//            showOrHideNoDataTextView();
         }
     }
 

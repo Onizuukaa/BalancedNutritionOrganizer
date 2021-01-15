@@ -1,7 +1,5 @@
 package hfad.com.balancednutritionorganizer;
 
-import android.content.Context;
-
 public class ReturnItem {
     private String productName;
     private String productImage;
@@ -57,6 +55,5 @@ public class ReturnItem {
     public String getProductProtein() {
         return productProtein;
     }
-
 
 }

@@ -30,7 +30,6 @@ public class CustomProductListActivity extends AppCompatActivity {
     private RecyclerViewCustomProductAdapter adapter;
     Cursor cursor;
 
-    //private ArrayList<ReturnItem> mExampleList;
     EditText editText_removeItem_CustomProduct;
     TextView textViewNoData_customProducts;
 
@@ -47,31 +46,14 @@ public class CustomProductListActivity extends AppCompatActivity {
         CustomProductsDBHelper dbHelperCustomProducts = new CustomProductsDBHelper(this);
         customProductsDatabase = dbHelperCustomProducts.getWritableDatabase();
         initRecyclerView();
-        //cursorForCustomProducts = getAllItems();
-        //createExampleList();
 
         cursor = getAllItems();
         showOrHideNoDataTextView();
     }
 
-//    public void createExampleList() {
-//        mExampleList = new ArrayList<>();
-//
-//        while (cursorForCustomProducts.moveToNext()) {
-//            mExampleList.add(new ReturnItem(cursorForCustomProducts.getString(0), cursorForCustomProducts.getString(1),
-//                    cursorForCustomProducts.getString(2), cursorForCustomProducts.getString(3),
-//                    cursorForCustomProducts.getString(4), cursorForCustomProducts.getString(5),
-//                    cursorForCustomProducts.getString(6), cursorForCustomProducts.getString(7)));
-//        }
-//
-//        cursorForCustomProducts.close();
-//        initRecyclerView();
-//    }
-
     private void initRecyclerView() {
         recyclerView = findViewById(R.id.customProductsRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        //adapter = new RecyclerViewSpecificProductListAdapter(this, mExampleList);
         adapter = new RecyclerViewCustomProductAdapter(this, getAllItems());
         recyclerView.setAdapter(adapter);
     }
@@ -99,8 +81,6 @@ public class CustomProductListActivity extends AppCompatActivity {
                 cursor = getAllItems();
                 showOrHideNoDataTextView();
             }
-            //cursor = getAllItems();
-            //showOrHideNoDataTextView();
         }
     }
 

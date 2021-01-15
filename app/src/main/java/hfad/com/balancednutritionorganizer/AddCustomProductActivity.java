@@ -63,11 +63,9 @@ public class AddCustomProductActivity extends AppCompatActivity {
                 intent.setType("image/*");
                 intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true); // nowe
                 intent.setAction(Intent.ACTION_OPEN_DOCUMENT); // nowe
-                // intent.setAction(Intent.ACTION_GET_CONTENT);
                 startActivityForResult(Intent.createChooser(intent, "Pick an image"), GALLERY_REQUEST_CODE);
             }
         });
-
     }
 
     public void addCustomProduct(View view) {

@@ -76,7 +76,6 @@ public class RecyclerViewSpecificProductListAdapter extends RecyclerView.Adapter
                 Intent intent = new Intent(mContext, AdvancedInformationAboutProductActivity.class);
                 intent.putExtra("product_name", currentItem.getProductName());
                 intent.putExtra("product_calories", currentItem.getProductCalories());
-                //intent.putExtra("product_image", mProductImages.get(position));
                 intent.putExtra("product_carbohydrates", currentItem.getProductCarbohydrates());
                 intent.putExtra("product_sugar", currentItem.getProductSugar());
                 intent.putExtra("product_fats", currentItem.getProductFats());

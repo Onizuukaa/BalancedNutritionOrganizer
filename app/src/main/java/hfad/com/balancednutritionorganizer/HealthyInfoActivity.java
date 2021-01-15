@@ -20,7 +20,6 @@ public class HealthyInfoActivity extends AppCompatActivity implements HealthyInf
     }
 
     public void openInfoAboutCalories(View view){
-        //newBundle.putInt("key2", R.drawable.calories);
         newBundle.putInt("key3", 1000);
         newBundle.putInt("key4", 212);
         newBundle.putString("key5", "calories");

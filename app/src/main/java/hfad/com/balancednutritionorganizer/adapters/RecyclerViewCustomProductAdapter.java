@@ -89,17 +89,7 @@ public class RecyclerViewCustomProductAdapter extends RecyclerView.Adapter<Recyc
         }
         long id = mCursor.getLong(mCursor.getColumnIndex(CustomProductsColumns.CustomProductsColumnsEntry._ID));
 
-//        productName = mCursor.getString(mCursor.getColumnIndex(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productName));
-//        productCalories = mCursor.getString(mCursor.getColumnIndex(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productCalories));
-//        productCarbohydrates = mCursor.getString(mCursor.getColumnIndex(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productCarbohydrates));
-//        productSugar = mCursor.getString(mCursor.getColumnIndex(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productSugar));
-//        productFats = mCursor.getString(mCursor.getColumnIndex(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productFats));
-//        productSaturatedFats = mCursor.getString(mCursor.getColumnIndex(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productSaturatedFats));
-//        productProtein = mCursor.getString(mCursor.getColumnIndex(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productProtein));
-//        productImage = mCursor.getString(mCursor.getColumnIndex(CustomProductsColumns.CustomProductsColumnsEntry.COLUMN_productImage));
-
         holder.itemView.setTag(id);
-
 
         holder.productName.setText(position + 1 + ".  " + currentItem.getProductName());
 
@@ -115,22 +105,6 @@ public class RecyclerViewCustomProductAdapter extends RecyclerView.Adapter<Recyc
         holder.productSaturatedFats.setText(currentItem.getProductSaturatedFats());
         holder.productProtein.setText(currentItem.getProductProtein());
 
-
-//        holder.productName.setText(position + 1 + ".  " + productName);
-//        holder.productCalories.setText(productCalories);
-//
-//        Glide.with(mContext)
-//                .asBitmap()
-//                .load(productImage)
-//                .into(holder.productImage);
-//
-//        holder.productCarbohydrates.setText(productCarbohydrates);
-//        holder.productSugar.setText(productSugar);
-//        holder.productFats.setText(productFats);
-//        holder.productSaturatedFats.setText(productSaturatedFats);
-//        holder.productProtein.setText(productProtein);
-
-        //bundleWithMacros = new Bundle();
         holder.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

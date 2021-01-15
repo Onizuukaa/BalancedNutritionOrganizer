@@ -20,16 +20,14 @@ import java.util.ArrayList;
 public class BottomSheetDialog extends BottomSheetDialogFragment {
     private BottomSheetListener mListener;
     String textWithMacros, mealName;
-    int numer;
     TextView textViewBottomSheet, textViewMealNameBottomSheet;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        if(getArguments() != null) {
+        if (getArguments() != null) {
             textWithMacros = getArguments().getString("key");
             mealName = getArguments().getString("key2");
-           // numer = getArguments().getInt("key2");
         }
         View v = inflater.inflate(R.layout.bottom_sheet_layout, container, false);
 
@@ -37,14 +35,12 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
         button_Exit_BottomSheet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //mListener.onButtonClicked("Button Exit clicked");
                 dismiss();
             }
         });
 
         textViewBottomSheet = v.findViewById(R.id.textViewBottomSheet);
         textViewMealNameBottomSheet = v.findViewById(R.id.textViewMealNameBottomSheet);
-        //textViewBottomSheet.setText(textWithMacros.get(numer));
         textViewBottomSheet.setText(textWithMacros);
         textViewMealNameBottomSheet.setText(mealName);
 
@@ -63,7 +59,7 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
             mListener = (BottomSheetListener) context;
         } catch (ClassCastException e) {
             throw new ClassCastException(context.toString()
-            + " must implement BottomSheetListener");
+                    + " must implement BottomSheetListener");
         }
     }
 }

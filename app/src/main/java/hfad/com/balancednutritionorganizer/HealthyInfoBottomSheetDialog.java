@@ -18,18 +18,12 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 public class HealthyInfoBottomSheetDialog extends BottomSheetDialogFragment {
     private BottomSheetListener mListener;
     String whichLayoutOpen;
-    ImageView imageViewBottomSheet;
-    //int srcImage, widthImage, heightImage;
     View v;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         if(getArguments() != null) {
-            //textWithMacros = getArguments().getString("key");
-            //srcImage = getArguments().getInt("key2");
-            //widthImage = getArguments().getInt("key3");
-            //heightImage = getArguments().getInt("key4");
             whichLayoutOpen = getArguments().getString("key5");
         }
         if (whichLayoutOpen.equals("calories")){
@@ -58,12 +52,6 @@ public class HealthyInfoBottomSheetDialog extends BottomSheetDialogFragment {
                 dismiss();
             }
         });
-
-        //imageViewBottomSheet = v.findViewById(R.id.imageViewBottomSheet);
-        //imageViewBottomSheet.setImageResource(srcImage);
-
-        //LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(widthImage, heightImage);
-        //imageViewBottomSheet.setLayoutParams(layoutParams);
 
         return v;
     }

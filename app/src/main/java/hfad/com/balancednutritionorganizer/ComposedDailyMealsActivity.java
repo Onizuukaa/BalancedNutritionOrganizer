@@ -79,8 +79,6 @@ public class ComposedDailyMealsActivity extends AppCompatActivity implements Bot
                 cursor = getAllItems();
                 showOrHideNoDataTextView();
             }
-//            cursor = getAllItems();
-//            showOrHideNoDataTextView();
         }
     }
 

@@ -80,7 +80,7 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
                 onBackPressed();
                 finish();
             default:
-               break;// return super.onOptionsItemSelected(item);
+               break;
         }
         return true;
     }
@@ -212,5 +212,4 @@ public class AdvancedInformationAboutProductActivity extends AppCompatActivity {
             }
         });
     }
-
 }
